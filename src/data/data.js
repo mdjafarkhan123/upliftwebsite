@@ -28,7 +28,7 @@ import ProjectImg1 from "../assets/images/project-one.jpg";
 
 /* ============================ About section ============================ */
 export const hero = {
-    badge: "affordable . fully managed . all in one",
+    badge: "affordable . simple, all in one",
     title: "Website design, systems & marketing for contractors & home service pros",
     description:
         "Everything you need to <strong>book more jobs from Google and social media</strong> without spending <strong>thousands of dollars</strong> on paid ads, expensive websites and multiple tools.",
@@ -340,4 +340,26 @@ export const cta = {
     title: "Let’s build a website and system that actually brings you jobs.",
     description:
         "In this quick strategy call, we will walk through how contractors and home service businesses set up their websites and systems to better capture and manage leads from Google & Social Media without wasting money on ads or expensive web design.",
+};
+
+export const footer = {
+    intro: {
+        title: "High Converting Website, System & Marketing for Contractors ",
+        facebook: "#",
+        instagram: "#",
+        linkedin: "#",
+    },
+
+    company: {
+        title: "Navigation",
+        items: ["Home, about, services, projects, process, faq"],
+    },
+    resources: {
+        title: "Resources",
+        items: ["Privacy policy, terms & conditions, documentation, support"],
+    },
+    contact: {
+        title: "Contact info",
+        items: ["Privacy policy, terms & conditions, documentation, support"],
+    },
 };
