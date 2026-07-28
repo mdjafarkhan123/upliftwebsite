@@ -1,0 +1,54 @@
+---
+import Button from "./Button.astro";
+import Logo from "./Logo.astro";
+---
+
+<header id="header" class="header">
+    <div class="header__container container">
+        <nav class="header__nav" aria-label="Main navigation">
+            <a
+                href="/"
+                class="header__logo"
+                aria-label="Uplift Contractor - Home"
+            >
+                <Logo width="27" height="32" />
+            </a>
+            <ul class="header__menu" id="main-navigation">
+                <li class="header__menu-item">
+                    <a href="#about" class="header__menu-link">Home</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#about" class="header__menu-link">About</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#service" class="header__menu-link">Services</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#testimonial" class="header__menu-link"
+                        >Testimonial</a
+                    >
+                </li>
+                <li class="header__menu-item">
+                    <a href="#testimonial" class="header__menu-link"
+                        >Locations</a
+                    >
+                </li>
+            </ul>
+            <Button
+                id="header__cta-desktop"
+                type="primary header__cta--desktop"
+                title="Login now"
+            />
+            <button
+                class="header__menu-toggler"
+                aria-label="Toggle menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,27 @@
+---
+import Icon from "./Svg.astro";
+const { question, answer, number } = Astro.props;
+---
+
+<div class:list={["faq__item", { "is-open": number === 0 }]} role="listitem">
+    <h3 class="faq__item-heading">
+        <button
+            class="faq__trigger"
+            aria-expanded={number === 0 ? "true" : "false"}
+            aria-controls={`faq-panel-${number}`}
+        >
+            <span class="faq__index">0{number + 1}</span>
+            <span class="faq__question">
+                {question}
+            </span>
+            <span class="faq__icon" aria-hidden="true">
+                <Icon name="plus-icon" />
+            </span>
+        </button>
+    </h3>
+    <div id={`faq-panel-${number}`} class="faq__panel" role="region">
+        <div class="faq__answer">
+            <p>{answer}</p>
+        </div>
+    </div>
+</div>

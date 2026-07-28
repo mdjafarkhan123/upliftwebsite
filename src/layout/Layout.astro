@@ -1,0 +1,201 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import utfFooterCss from "../styles/pages/footer/footer.scss?url";
+import baseStyle from "../styles/globals/base.scss?url";
+import criticalCss from "../styles/critical.css?raw";
+
+// Define TypeScript props for flexible page-level SEO configuration
+interface Props {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    author?: string;
+    ogImage?: string;
+    ogType?: string;
+    canonicalUrl?: string;
+}
+
+// Extract props with highly optimized defaults based on business.md
+const {
+    title = "Contractor Turbo | High-Converting Websites & Automation for Contractors",
+    description = "Uplift Contractor offers Contractor Turbo: high-converting websites, CRM, AI chatbot, missed call text-back, review boosters, and automation tools built for local service contractors.",
+    keywords = "contractor website design, local SEO for contractors, contractor CRM, missed call text-back, contractor lead generation, home service marketing, Google Review booster, contractor automation",
+    author = "Uplift Contractor",
+    ogImage = "/og-image.jpg", // Default social sharing image (placed in the public folder)
+    ogType = "website",
+    canonicalUrl,
+} = Astro.props;
+
+// Dynamically generate the current absolute URL for canonical tag
+const cleanCanonical = canonicalUrl || Astro.url.href;
+
+// Standard base domain for organization mapping
+const baseDomain = "https://upliftcontractor.com";
+
+// Rich JSON-LD Structured Data Schema representing the business & UpliftContractor service catalog
+const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": `${cleanCanonical}#website`,
+            "url": cleanCanonical,
+            "name": "Uplift Contractor",
+            "description": "High-converting websites and marketing automation systems for local contractors.",
+            "publisher": {
+                "@id": `${baseDomain}/#organization`
+            },
+            "inLanguage": "en-US"
+        },
+        {
+            "@type": "Organization",
+            "@id": `${baseDomain}/#organization`,
+            "name": "Uplift Contractor",
+            "url": baseDomain,
+            "logo": {
+                "@type": "ImageObject",
+                "url": `${baseDomain}/assets/images/logo.png`,
+                "caption": "Uplift Contractor Logo"
+            },
+            "sameAs": [
+                "https://facebook.com/upliftcontractor",
+                "https://instagram.com/upliftcontractor",
+                "https://linkedin.com/company/upliftcontractor"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+8801834969563",
+                "contactType": "customer support",
+                "email": "dev.jafarkhan@gmail.com",
+                "availableLanguage": "en"
+            }
+        },
+        {
+            "@type": "ProfessionalService",
+            "@id": `${baseDomain}/#service`,
+            "name": "Uplift Contractor",
+            "image": `${baseDomain}/assets/images/brandlogo.png`,
+            "priceRange": "$$",
+            "telephone": "+8801834969563",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "12 Technical Road, Mirpur",
+                "addressLocality": "Dhaka",
+                "addressCountry": "BD"
+            },
+            "description": "Grow your local contracting business with UpliftContractor. We build fast, mobile-first, high-converting websites and configure CRM systems, AI Chatbots, Missed Call Text-Back, Review Boosters, and Online schedulers.",
+            "areaServed": ["United States", "Canada", "United Kingdom", "Australia"],
+            "offers": {
+                "@type": "Offer",
+                "name": "UpliftContractor Core Package",
+                "description": "Comprehensive digital solution for contractors: Custom high-converting website, CRM lead pipeline, AI Chatbot widget, Missed Call Text-Back, Google Review booster, automated SMS/email follow-ups, and GBP optimization."
+            }
+        }
+    ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- SEO Technical Meta Tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content={author} />
+        
+        <!-- Primary SEO Meta Tags -->
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <link rel="canonical" href={cleanCanonical} />
+
+        <!-- Open Graph / Facebook (Crucial for Social Media visibility & CTR) -->
+        <meta property="og:type" content={ogType} />
+        <meta property="og:url" content={cleanCanonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="Uplift Contractor" />
+
+        <!-- Twitter Card Meta Tags (Optimizes display on X/Twitter) -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={cleanCanonical} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+
+        <!-- Favicons & Touch Icons (Points to public/favicon.svg) -->
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+
+        <!-- Font Preloading (Improves Page Speed / Core Web Vitals which is a key Google ranking factor) -->
+        <link
+            rel="preload"
+            href="/fonts/body-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/body-500.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/body-600.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/body-700.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+
+        <!-- Inline Critical CSS for Page Load Speed Optimization -->
+        <style is:inline set:html={criticalCss}></style>
+
+        <!-- Rich JSON-LD Structured Data / Schema Markup for Search Engines -->
+        <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+
+        <!-- Deferred Non-Critical CSS -->
+        <link
+            rel="stylesheet"
+            href={baseStyle}
+            media="print"
+            onload="this.media='all'"
+        />
+        <slot name="bottom-style" />
+        <link
+            rel="stylesheet"
+            href={utfFooterCss}
+            media="print"
+            onload="this.media='all'"
+        />
+
+        <!-- Fallback for users with JavaScript disabled -->
+        <noscript>
+            <link rel="stylesheet" href={baseStyle} />
+            <link rel="stylesheet" href={utfFooterCss} />
+        </noscript>
+
+        <!-- Scripts -->
+        <script src="../code/interaction.js"></script>
+    </body>
+</html>

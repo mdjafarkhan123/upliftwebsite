@@ -1,0 +1,20 @@
+# =========================================================================
+# robots.txt - SEO Search Engine Crawler Configuration
+# =========================================================================
+# This file tells search engines (like Google and Bing) which pages they can 
+# and cannot index on your website. Learn more: https://robots-txt.com
+
+# 1. Global Crawler Rules: Apply these rules to ALL search engines
+User-agent: *
+
+# Allow crawling of the entire public site
+Allow: /
+
+# (Optional) Hide pages you don't want search engines to crawl or show in search results
+# Disallow: /private-folder/
+# Disallow: /test-page
+
+# 2. XML Sitemap Location
+# This tells search engines exactly where to find your sitemap so they can index your pages.
+# WARNING: Change "https://upliftcontractor.com" to your actual live domain once deployed!
+Sitemap: https://upliftcontractor.com/sitemap-index.xml

@@ -1,0 +1,474 @@
+---
+import Button from "../components/Button.astro";
+import underTheFold from "../styles/pages/home/home.scss?url";
+import splideCssUrl from "@splidejs/splide/css?url";
+import Layout from "../layout/Layout.astro";
+import Icon from "../components/Svg.astro";
+import SliderController from "../components/SliderController.astro";
+import Accordion from "../components/Accordion.astro";
+import { Image } from "astro:assets";
+import Badge from "../components/Badge.astro";
+import {
+    hero,
+    about,
+    services,
+    reason,
+    projects,
+    contractors,
+    process,
+    faq,
+    cta,
+} from "../data/data.js";
+
+//===== Assets import =========//
+import Jafar from "../assets/images/jafar.jpg";
+import HeroBgAvif from "../assets/images/hero-bg.avif";
+import HeroBgWebp from "../assets/images/hero-bg.webp";
+import HeroBgMobileAvif from "../assets/images/hero-bg-mobile.avif";
+import HeroBgMobileWebp from "../assets/images/hero-bg-mobile.webp";
+import HeroBgMobile from "../assets/images/hero-bg-mobile.jpg";
+import CrmLgAvif from "../assets/images/crm-lg.avif";
+import CrmLgWebp from "../assets/images/crm-lg.webp";
+import CrmSmAvif from "../assets/images/crm-sm.avif";
+import CrmSmWebp from "../assets/images/crm-sm.webp";
+import GoogleIcon from "../assets/images/google.avif";
+import FbIcon from "../assets/images/facebook.avif";
+import ServiceBgSmAvif from "../assets/images/service-bg-sm.avif";
+import ServiceBgSmWebp from "../assets/images/service-bg-sm.webp";
+import ServiceBgAvif from "../assets/images/service-bg.avif";
+import ServiceBgWebp from "../assets/images/service-bg.webp";
+---
+
+<Layout>
+    <section id="hero" class="hero" aria-labelledby="hero-heading">
+        <div class="hero__backdrop">
+            <picture>
+                <source
+                    media="(min-width: 768px)"
+                    srcset={HeroBgAvif.src}
+                    type="image/avif"
+                />
+                <source
+                    media="(min-width: 768px)"
+                    srcset={HeroBgWebp.src}
+                    type="image/webp"
+                />
+
+                <source srcset={HeroBgMobileAvif.src} type="image/avif" />
+                <source srcset={HeroBgMobileWebp.src} type="image/webp" />
+
+                <img
+                    src={HeroBgMobile.src}
+                    alt="Robert the lawyer"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="sync"
+                    width={HeroBgMobile.width}
+                    class="hero__img"
+                />
+            </picture>
+        </div>
+        <div class="hero__wrapper container">
+            <div class="hero__content flex-center flex-column">
+                <div class="hero-badge flex-center">
+                    <span
+                        class="hero-badge__icon flex-center"
+                        aria-hidden="true"
+                    >
+                        <Icon name="shining-fill" src="abovethefold" />
+                    </span>
+                    <div class="hero-badge__text">
+                        {hero.badge}
+                    </div>
+                </div>
+                <h1
+                    id="hero-heading"
+                    class="hero__intro"
+                    set:html={hero.title}
+                />
+                <p class="hero__description" set:html={hero.description} />
+                <div class="hero__cta">
+                    <Button title="Book A Call" icon="phone-fill" />
+                    <div class="rating-card">
+                        <div class="rating-card__media">
+                            <Image src={GoogleIcon} alt="Google" width="44" />
+                            <Image src={FbIcon} alt="Facebook" width={44} />
+                        </div>
+
+                        <div class="rating-card__body">
+                            <div class="rating-card__score">
+                                <div
+                                    class="rating-card__stars"
+                                    aria-hidden="true"
+                                >
+                                    {
+                                        Array.from({ length: 5 }).map(
+                                            (_, i) => (
+                                                <Icon
+                                                    name="star-icon"
+                                                    className="rating-card__star"
+                                                    src="abovethefold"
+                                                />
+                                            ),
+                                        )
+                                    }
+                                </div>
+                                <span class="rating-card__value">5.0</span>
+                            </div>
+
+                            <div class="rating-card__meta">User review</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__media">
+                <picture>
+                    <source
+                        media="(min-width: 768px)"
+                        srcset={CrmLgAvif.src}
+                        type="image/avif"
+                    />
+                    <source
+                        media="(min-width: 768px)"
+                        srcset={CrmLgWebp.src}
+                        type="image/webp"
+                    />
+
+                    <source srcset={CrmSmAvif.src} type="image/avif" />
+                    <source srcset={CrmSmWebp.src} type="image/webp" />
+
+                    <img
+                        src={CrmSmWebp.src}
+                        alt="Robert the lawyer"
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="sync"
+                        width={HeroBgMobile.width}
+                        class="hero__img"
+                    />
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <section id="why" class="why">
+        <div class="why__wrapper container flex-row">
+            <div class="why__reason flex-row">
+                {
+                    reason.content.map((item) => (
+                        <div class="why__reason-item flex-center-y">
+                            <div class="why__reason-icon">
+                                <Icon name={item.icon} />
+                            </div>
+                            <div class="why__reason-title">{item.title}</div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services" aria-labelledby="services-heading">
+        <div class="services__wrapper container">
+            <div class="services__header flex-column flex-center-y">
+                <Badge title="Our service" icon="arrow-right" />
+                <h2
+                    id="services-heading"
+                    class="services__heading"
+                    set:html={services.intro}
+                />
+            </div>
+            <div class="services__body flex-column">
+                {
+                    services.content.map((item) => (
+                        <div class="services__item flex-column">
+                            <div class="services__item-image">
+                                <Image src={item.thumbnail} alt={item.title} />
+                            </div>
+                            <div class="services__item-content flex-column">
+                                <h3 class="services__item-title">
+                                    {item.title}
+                                </h3>
+                                <p class="services__item-benifit">
+                                    {item.description}
+                                </p>
+                                <div class="services__item-list flex-column">
+                                    {item.items.map((subitem) => (
+                                        <div class="services__item-subitem flex">
+                                            <Icon name="checkbox-icon" />
+                                            <p set:html={subitem} />
+                                        </div>
+                                    ))}
+                                </div>
+                                <Button title="Quick demo" icon="play-fill" />
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects" aria-labelledby="projects-heading">
+        <div class="projects__wrapper container">
+            <div class="projects__intro flex-column flex-center-y">
+                <Badge title="Our works" />
+                <h2
+                    id="projects-heading"
+                    class="projects__heading"
+                    set:html={projects.title}
+                />
+            </div>
+            <div class="projects__content">
+                {
+                    projects.items.map((item) => (
+                        <div class="projects__item">
+                            <Image src={item.thumbnail} alt={item.title} />
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section
+        id="contractors"
+        class="contractors"
+        aria-labelledby="contractors-heading"
+    >
+        <div class="contractors__wrapper container">
+            <div class="contractors__intro">
+                <Badge title={contractors.badge} />
+                <h2
+                    id="contractors-heading"
+                    class="contractors__heading"
+                    set:html={contractors.title}
+                />
+            </div>
+            <div class="contractors__content">
+                <ul class="contractors__content-item">
+                    {
+                        contractors.contractors.slice(0, 12).map((item) => (
+                            <li class="contractors__item ">
+                                <Icon name="checkbox-fill" />
+                                <span>{item}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <ul class="contractors__content-item">
+                    {
+                        contractors.contractors.slice(12, 24).map((item) => (
+                            <li class="contractors__item">
+                                <Icon name="checkbox-fill" />
+                                <span>{item}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <ul class="contractors__content-item">
+                    {
+                        contractors.contractors.slice(24, 36).map((item) => (
+                            <li class="contractors__item">
+                                <Icon name="checkbox-fill" />
+                                <span>{item}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <ul class="contractors__content-item">
+                    {
+                        contractors.contractors.slice(36, 48).map((item) => (
+                            <li class="contractors__item">
+                                <Icon name="checkbox-fill" />
+                                <span>{item}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <ul class="contractors__content-item">
+                    {
+                        contractors.contractors.slice(48).map((item) => (
+                            <li class="contractors__item">
+                                <Icon name="checkbox-fill" />
+                                <span>{item}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-heading">
+        <div class="about__wrapper container">
+            <div class="about__intro">
+                <Badge title={about.badge} type="primary" />
+                <h2 id="about-heading" class="about__heading">
+                    <span class="marked-text">{about.heading.marked}</span>{
+                        about.heading.rest
+                    }
+                </h2>
+                <div class="about__author">
+                    <div class="about__author-image">
+                        <Image src={Jafar} alt="Jafar Khan" />
+                    </div>
+                    <div class="about__author-info">
+                        <div class="about__author-name">
+                            {about.author.name}
+                        </div>
+                        <p class="about__author-role">
+                            {about.author.role}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="about__details flex-column">
+                <p class="about__description trunced-text">
+                    {about.description}
+                </p>
+                <a href="#!" class="read-more flex-center-y"
+                    ><span class="read-more__text">{about.readMore}</span>
+                    <span class="read-more__icon"
+                        ><svg
+                            width="41"
+                            height="15"
+                            viewBox="0 0 41 15"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M40.7071 8.07106C41.0976 7.68054 41.0976 7.04737 40.7071 6.65685L34.3431 0.292885C33.9526 -0.0976396 33.3195 -0.0976396 32.9289 0.292885C32.5384 0.683409 32.5384 1.31657 32.9289 1.7071L38.5858 7.36395L32.9289 13.0208C32.5384 13.4113 32.5384 14.0445 32.9289 14.435C33.3195 14.8255 33.9526 14.8255 34.3431 14.435L40.7071 8.07106ZM0 7.36395V8.36395H40V7.36395V6.36395H0V7.36395Z"
+                                fill="#555555"></path>
+                        </svg>
+                    </span></a
+                >
+                <div class="about__author">
+                    <div class="about__author-image">
+                        <Image src={Jafar} alt="Jafar Khan" />
+                    </div>
+                    <div class="about__author-info">
+                        <div class="about__author-name">
+                            {about.author.name}
+                        </div>
+                        <p class="about__author-role">
+                            {about.author.role}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reason" class="reason" aria-labelledby="reason-heading">
+        <div class="reason__wrapper container">
+            <div class="reason__intro flex-center flex-column">
+                <Badge title={reason.badge} />
+                <h2
+                    id="reason-heading"
+                    class="reason__heading"
+                    set:html={reason.title}
+                />
+            </div>
+            <div class="reason__content">
+                {
+                    reason.content.map((item) => (
+                        <div class="reason__item flex-column">
+                            <div class="reason__icon">
+                                <Icon name={item.icon} />
+                            </div>
+                            <div class="reason__item-title">{item.title}</div>
+                            <p class="reason__item-description">
+                                {item.description}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process" aria-labelledby="process-heading">
+        <div class="process__wrapper container">
+            <div class="process__intro flex-center flex-column">
+                <Badge title={process.badge} />
+                <h2
+                    id="process-heading"
+                    class="process__heading"
+                    set:html={process.title}
+                />
+                <Button title="Book A Call" icon="phone-fill" />
+            </div>
+            <div class="process__content flex-column">
+                {
+                    process.steps.map((item, i) => (
+                        <div class="process__item">
+                            <div class="process__item-index">{i + 1}</div>
+                            <div class="process__item-content">
+                                <h3 class="process__item-title">
+                                    {item.title}
+                                </h3>
+                                <p class="process__item-description">
+                                    {item.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq" aria-labelledby="faq-heading">
+        <div class="faq__wrapper container">
+            <div class="faq__intro flex-column flex-center">
+                <Badge title={faq.badge} />
+                <h2
+                    id="faq-heading"
+                    class="faq__heading"
+                    set:html={faq.title}
+                />
+            </div>
+
+            <div class="faq__list" role="list">
+                {
+                    faq.content.map((item, i) => (
+                        <Accordion
+                            question={item.question}
+                            answer={item.answer}
+                            number={i}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="cta" aria-labelledby="cta-heading">
+        <div class="cta__wrapper container">
+            <div class="cta__content">
+                <h2 id="cta-heading" class="cta__heading">{cta.title}</h2>
+                <p class="cta__description">{cta.description}</p>
+                <Button title="Book a call" icon="phone-fill" />
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<Fragment slot="bottom-style">
+    <link
+        rel="stylesheet"
+        href={underTheFold}
+        media="print"
+        onload="this.media='all'"
+    />
+    <link
+        rel="stylesheet"
+        href={splideCssUrl}
+        media="print"
+        onload="this.media='all'"
+    />
+    <noscript>
+        <link rel="stylesheet" href={underTheFold} />
+        <link rel="stylesheet" href={splideCssUrl} />
+    </noscript>
+</Fragment>

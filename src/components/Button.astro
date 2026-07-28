@@ -1,0 +1,38 @@
+---
+type Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};
+
+type Props = Prettify<{
+    /** The text label displayed on the button. Default: "Get started" */
+    title?: string;
+    /** The visual style type of the button (e.g., "primary", "secondary"). Default: "primary" */
+    type?: string;
+    /** Optional HTML ID for the anchor element. */
+    id?: string;
+    src?: string;
+    icon?: string;
+}>;
+
+import Icon from "./Svg.astro";
+const {
+    title = "Get started",
+    type = "primary",
+    id,
+    src = "abovethefold",
+    icon = "arrow-button",
+} = Astro.props;
+---
+
+<a
+    id={id}
+    href="#"
+    class=`btn btn--${type} magnetic-button`
+    role="button"
+    aria-label={title}
+>
+    <span class="btn__text text">{title}</span>
+    <span class="btn__icon" aria-hidden="true">
+        <Icon name={icon} src={src} />
+    </span>
+</a>
