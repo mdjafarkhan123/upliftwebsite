@@ -175,7 +175,7 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
                 <h2
                     id="services-heading"
                     class="services__heading"
-                    set:html={services.intro}
+                    set:html={services.title}
                 />
             </div>
             <div class="services__body flex-column">
@@ -309,11 +309,11 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
         <div class="about__wrapper container">
             <div class="about__intro">
                 <Badge title={about.badge} type="primary" icon="person-icon" />
-                <h2 id="about-heading" class="about__heading">
-                    <span class="marked-text">{about.heading.marked}</span>{
-                        about.heading.rest
-                    }
-                </h2>
+                <h2
+                    id="about-heading"
+                    class="about__heading"
+                    set:html={about.title}
+                />
                 <div class="about__author">
                     <div class="about__author-image">
                         <Image src={Jafar} alt="Jafar Khan" />

@@ -29,7 +29,7 @@ import ProjectImg1 from "../assets/images/project-one.jpg";
 /* ============================ About section ============================ */
 export const hero = {
     badge: "affordable . simple. all in one",
-    title: "Website design, systems & marketing for contractors & home service pros",
+    title: `Website design, systems & marketing for <span class="marked-text">contractors & home service pros</span>`,
     description:
         "Everything you need to <strong>book more jobs from Google and social media</strong> without spending <strong>thousands of dollars</strong> on paid ads, expensive websites and multiple tools.",
     cta: `Book a call`,
@@ -38,7 +38,7 @@ export const hero = {
 export const reason = {
     badge: "Why choose us",
     icon: "arrow-right",
-    title: "Why we are totally unique",
+    title: `Why we're <span class="marked-text">"totally unique"</span>...just like everyone else, right?`,
     content: [
         {
             icon: "simplicity-icon",
@@ -73,10 +73,7 @@ export const about = {
     badge: "About us",
 
     // Heading is split so the highlighted word can use .marked-text
-    heading: {
-        marked: "The reason",
-        rest: " we built this",
-    },
+    title: "How it all started",
 
     // Author block (image is imported separately in index.astro, not here)
     author: {
@@ -123,7 +120,7 @@ export const about = {
 export const services = {
     badge: "Our services",
     icon: "icon",
-    intro: `Simple systems that actually work. No degrees required`,
+    title: `Simple systems that <span class="marked-text">actually work</span>. No degrees required`,
     content: [
         {
             thumbnail: ProjectImg1,
@@ -217,7 +214,7 @@ export const projects = {
 
 export const contractors = {
     badge: "Contractors",
-    title: 'Build for all types of <span class="marked-text">Contractors</span> ',
+    title: 'Built for <span class="marked-text">all types</span> of contractors',
     contractors: [
         "Home builders",
         "Custom home builders",
@@ -285,7 +282,7 @@ export const contractors = {
 
 export const process = {
     badge: "Process",
-    title: "Our simple 3 step process",
+    title: "What working with us looks like",
     steps: [
         {
             title: "15 minutes demo call",
@@ -369,5 +366,4 @@ export const footer = {
         email: "info@upliftcontractor.com",
         phone: "(+88)01834969563",
     },
-    
 };
