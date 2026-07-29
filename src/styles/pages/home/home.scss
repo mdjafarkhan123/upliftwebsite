@@ -239,6 +239,9 @@
     &__intro {
         text-align: center;
     }
+    &__heading {
+        max-width: 800px;
+    }
 
     &__content {
         display: grid;

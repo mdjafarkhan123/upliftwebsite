@@ -31,7 +31,7 @@ export const hero = {
     badge: "affordable . simple. all in one",
     title: `Website design, systems & marketing for <span class="marked-text">contractors & home service pros</span>`,
     description:
-        "Everything you need to <strong>book more jobs from Google and social media</strong> without spending <strong>thousands of dollars</strong> on paid ads, expensive websites and multiple tools.",
+        "Nobody has miracle solutions. We will provide a <strong>simple yet extremely effective</strong> foundational marketing system to help you win <strong>without spending thousands upfront</strong> on a website and paid ads. But you need to commit to using it!",
     cta: `Book a call`,
 };
 

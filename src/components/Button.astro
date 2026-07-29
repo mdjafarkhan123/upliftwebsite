@@ -12,6 +12,7 @@ type Props = Prettify<{
     id?: string;
     src?: string;
     icon?: string;
+    link?: string;
 }>;
 
 import Icon from "./Svg.astro";
@@ -21,12 +22,13 @@ const {
     id,
     src = "abovethefold",
     icon = "arrow-button",
+    link = "#!",
 } = Astro.props;
 ---
 
 <a
     id={id}
-    href="#"
+    href={link}
     class=`btn btn--${type} magnetic-button`
     role="button"
     aria-label={title}
