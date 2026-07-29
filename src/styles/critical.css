@@ -110,7 +110,7 @@ section {
     --fs-xl: 2.4rem;
     --fs-fluid-md: clamp(2.8rem, 2.487rem + 0.625vw, 3.2rem);
     --fs-fluid-lg: clamp(3.6rem, 3.029rem + 1.143vw, 4.4rem);
-    --fs-fluid-xl: clamp(4.4rem, 3.114rem + 2.571vw, 6.2rem);
+    --fs-fluid-xl: clamp(4rem, 2.68rem + 2.933vw, 6.2rem);
     --space-3xsm: 4px;
     --space-2xsm: 8px;
     --space-xsm: 12px;
@@ -316,7 +316,7 @@ h4 {
 
 .header {
     position: relative;
-    padding-bottom: var(--space-2xl);
+    padding-block: var(--space-2xsm) var(--space-2xl);
     z-index: 900;
 }
 .header__container.container {
@@ -327,8 +327,9 @@ h4 {
     align-items: center;
     justify-content: center;
     background-color: var(--color-white);
-    box-shadow: 0 0 40px 0 #134a2540;
+    box-shadow: 0 0 40px 0 #134a251a;
     margin-block-start: 0.8rem;
+    outline: 2px solid #c1ebe39c;
     border-radius: var(--round-md);
     background-color: unset;
 }
@@ -509,6 +510,7 @@ h4 {
     border: 1px solid var(--color-border);
     border-radius: 100px;
     gap: var(--space-2xsm);
+    z-index: 2;
 }
 .hero-badge__icon {
     --size: 30px;

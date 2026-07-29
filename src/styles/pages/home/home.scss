@@ -67,6 +67,7 @@
     }
 
     &__item {
+        position: relative;
         background-color: var(--color-primary-soft);
         padding: var(--space-xl) var(--space-sm);
         border-radius: var(--round-lg);

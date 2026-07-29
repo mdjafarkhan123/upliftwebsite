@@ -2,6 +2,7 @@
 import Logo from "./Logo.astro";
 import Icon from "./Svg.astro";
 import { Image } from "astro:assets";
+import { footer } from "../data/data.js";
 ---
 
 <footer id="footer" class="footer">
@@ -16,13 +17,12 @@ import { Image } from "astro:assets";
                     <Logo width="27" height="32" />
                 </a>
                 <p class="footer-main__description">
-                    Your reliable partner for professional legal advice and
-                    strong advocacy.
+                    {footer.intro.title}
                 </p>
                 <ul class="footer__social" role="list">
                     <li class="footer__social-item">
                         <a
-                            href="https://facebook.com/yourpage"
+                            href={footer.intro.facebook}
                             class="footer__social-link"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -35,7 +35,7 @@ import { Image } from "astro:assets";
                     </li>
                     <li class="footer__social-item">
                         <a
-                            href="https://facebook.com/yourpage"
+                            href={footer.intro.instagram}
                             class="footer__social-link"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -48,7 +48,7 @@ import { Image } from "astro:assets";
                     </li>
                     <li class="footer__social-item">
                         <a
-                            href="https://facebook.com/yourpage"
+                            href={footer.intro.linkedin}
                             class="footer__social-link"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -62,55 +62,44 @@ import { Image } from "astro:assets";
                 </ul>
             </div>
             <div class="footer-main__nav">
-                <h3 class="footer-main__nav-title">Navigation</h3>
+                <h3 class="footer-main__nav-title">{footer.company.title}</h3>
                 <ul class="footer-main__nav-list">
-                    <li class="footer-main__nav-item">
-                        <a href="#" class="random-text">Home</a>
-                    </li>
-                    <li class="footer-main__nav-item">
-                        <a href="#" class="random-text">About us</a>
-                    </li>
-                    <li class="footer-main__nav-item">
-                        <a href="#" class="random-text">Services</a>
-                    </li>
-                    <li class="footer-main__nav-item">
-                        <a href="#" class="random-text">Locations</a>
-                    </li>
-                    <li class="footer-main__nav-item">
-                        <a href="#" class="random-text">Contact us</a>
-                    </li>
+                    {
+                        footer.company.items.map((item) => (
+                            <li class="footer-main__nav-item">
+                                <a href={`#${item}`} class="random-text">
+                                    {item}
+                                </a>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
             <div class="footer-main__quick-links">
                 <h3 class="quick-links__title">Quick links</h3>
                 <ul class="footer-main__nav-list">
-                    <li class="footer-main__nav-item">
-                        <a href="#" class="random-text fromRight"
-                            >Privacy policy</a
-                        >
-                    </li>
-                    <li class="footer-main__nav-item">
-                        <a href="#" class="">Terms & Conditions</a>
-                    </li>
-                    <li class="footer-main__nav-item">
-                        <a href="#" class="random-text">Documentation</a>
-                    </li>
-                    <li class="footer-main__nav-item">
-                        <a href="#" class="random-text">Support</a>
-                    </li>
+                    {
+                        footer.resources.items.map((item) => (
+                            <li class="footer-main__nav-item">
+                                <a href={`#${item}`} class="random-text">
+                                    {item}
+                                </a>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
             <div class="footer-main__contact">
-                <h3 class="footer-main__contact-title">Contact info</h3>
+                <h3 class="footer-main__contact-title">
+                    {footer.contact.title}
+                </h3>
                 <ul class="footer-main__contact-list">
                     <li class="footer-main__contact-item">
                         <a href="#">
                             <span class="icon">
                                 <Icon name="location-nav" />
                             </span>
-                            <span class="info"
-                                >12 Technical Rode, Mirpur, Dhaka</span
-                            >
+                            <span class="info">{footer.contact.location}</span>
                         </a>
                     </li>
                     <li class="footer-main__contact-item">
@@ -118,7 +107,7 @@ import { Image } from "astro:assets";
                             <span class="icon">
                                 <Icon name="email-open" />
                             </span>
-                            <span class="info">dev.jafarkhan@gmail.com</span>
+                            <span class="info">{footer.contact.email}</span>
                         </a>
                     </li>
                     <li class="footer-main__contact-item">
@@ -126,14 +115,16 @@ import { Image } from "astro:assets";
                             <span class="icon">
                                 <Icon name="telephone-icon" />
                             </span>
-                            <span class="info">(+88) 01834969563</span>
+                            <span class="info">{footer.contact.phone}</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="footer-copyright">
-            <div class="footer-copyright__text">© 2025. Built by Jaaro Web</div>
+            <div class="footer-copyright__text">
+                @ 2026 Uplift Contractor. All rights reserved.
+            </div>
         </div>
     </div>
 </footer>

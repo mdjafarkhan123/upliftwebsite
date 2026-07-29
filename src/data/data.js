@@ -28,7 +28,7 @@ import ProjectImg1 from "../assets/images/project-one.jpg";
 
 /* ============================ About section ============================ */
 export const hero = {
-    badge: "affordable . simple, all in one",
+    badge: "affordable . simple. all in one",
     title: "Website design, systems & marketing for contractors & home service pros",
     description:
         "Everything you need to <strong>book more jobs from Google and social media</strong> without spending <strong>thousands of dollars</strong> on paid ads, expensive websites and multiple tools.",
@@ -352,14 +352,22 @@ export const footer = {
 
     company: {
         title: "Navigation",
-        items: ["Home, about, services, projects, process, faq"],
+        items: ["Home", "about", "services", "projects", "process", "faq"],
     },
     resources: {
         title: "Resources",
-        items: ["Privacy policy, terms & conditions, documentation, support"],
+        items: [
+            "Privacy policy",
+            "terms & conditions",
+            "documentation",
+            "support",
+        ],
     },
     contact: {
         title: "Contact info",
-        items: ["Privacy policy, terms & conditions, documentation, support"],
+        location: "Savar, Dhaka, Bangladesh",
+        email: "info@upliftcontractor.com",
+        phone: "(+88)01834969563",
     },
+    
 };

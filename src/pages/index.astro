@@ -167,10 +167,11 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
             </div>
         </div>
     </section>
+
     <section id="services" class="services" aria-labelledby="services-heading">
         <div class="services__wrapper container">
             <div class="services__header flex-column flex-center-y">
-                <Badge title="Our service" icon="arrow-right" />
+                <Badge title="Our service" icon="briefcase-icon" />
                 <h2
                     id="services-heading"
                     class="services__heading"
@@ -199,7 +200,11 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
                                         </div>
                                     ))}
                                 </div>
-                                <Button title="Quick demo" icon="play-fill" />
+                                <Button
+                                    title="Quick demo"
+                                    icon="play-circle"
+                                    src="sprite"
+                                />
                             </div>
                         </div>
                     ))
@@ -211,7 +216,7 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
     <section id="projects" class="projects" aria-labelledby="projects-heading">
         <div class="projects__wrapper container">
             <div class="projects__intro flex-column flex-center-y">
-                <Badge title="Our works" />
+                <Badge title="Our works" icon="folder-open" />
                 <h2
                     id="projects-heading"
                     class="projects__heading"
@@ -237,7 +242,7 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
     >
         <div class="contractors__wrapper container">
             <div class="contractors__intro">
-                <Badge title={contractors.badge} />
+                <Badge title={contractors.badge} icon="worker-icon" />
                 <h2
                     id="contractors-heading"
                     class="contractors__heading"
@@ -294,6 +299,7 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
                             </li>
                         ))
                     }
+                    <li>More...</li>
                 </ul>
             </div>
         </div>
@@ -302,7 +308,7 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
     <section id="about" class="about" aria-labelledby="about-heading">
         <div class="about__wrapper container">
             <div class="about__intro">
-                <Badge title={about.badge} type="primary" />
+                <Badge title={about.badge} type="primary" icon="person-icon" />
                 <h2 id="about-heading" class="about__heading">
                     <span class="marked-text">{about.heading.marked}</span>{
                         about.heading.rest
@@ -362,7 +368,7 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
     <section id="reason" class="reason" aria-labelledby="reason-heading">
         <div class="reason__wrapper container">
             <div class="reason__intro flex-center flex-column">
-                <Badge title={reason.badge} />
+                <Badge title={reason.badge} icon="why-us" />
                 <h2
                     id="reason-heading"
                     class="reason__heading"
@@ -390,7 +396,7 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
     <section id="process" class="process" aria-labelledby="process-heading">
         <div class="process__wrapper container">
             <div class="process__intro flex-center flex-column">
-                <Badge title={process.badge} />
+                <Badge title={process.badge} icon="process-icon" />
                 <h2
                     id="process-heading"
                     class="process__heading"
@@ -421,7 +427,7 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
     <section id="faq" class="faq" aria-labelledby="faq-heading">
         <div class="faq__wrapper container">
             <div class="faq__intro flex-column flex-center">
-                <Badge title={faq.badge} />
+                <Badge title={faq.badge} icon="faq-icon" />
                 <h2
                     id="faq-heading"
                     class="faq__heading"

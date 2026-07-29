@@ -1,50 +1,68 @@
-/**
- * services-slider.js
- * Splide carousel for the services section.
- * Loaded when the services section approaches the viewport.
- */
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-import Splide from "@splidejs/splide";
+const LAPTOP_BREAKPOINT = "(min-width: 992px)";
+let destroyAnimations = () => {};
+let breakpointQuery;
+let breakpointListener;
 
-const CONFIG = {
-    SPLIDE: {
-        type: "loop",
-        perPage: 3,
-        gap: "2rem",
-        arrows: false,
-        pagination: false,
-        perMove: 1,
-    },
-    BREAKPOINTS: {
-        MOBILE: 640,
-        MOBILE_LG: 768,
-    },
-};
+function createAnimations() {
+    const cards = document.querySelectorAll(".services__item");
+    if (cards.length < 2) return () => {};
+
+    const lastCard = cards[cards.length - 1];
+    const triggers = [];
+
+    cards.forEach((card, index) => {
+        // Later cards should appear above earlier pinned cards.
+        gsap.set(card, { zIndex: index + 1 });
+
+        if (index === cards.length - 1) return;
+
+        const nextCard = cards[index + 1];
+
+        const pinTrigger = ScrollTrigger.create({
+            trigger: card,
+            start: "top 60px",
+            endTrigger: lastCard,
+            end: "top 100px",
+            pin: true,
+            pinSpacing: false,
+        });
+        triggers.push(pinTrigger);
+
+        const scaleTween = gsap.to(card, {
+            scale: 0.9,
+            ease: "none",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 100px",
+                endTrigger: nextCard,
+                end: "top 100px",
+                scrub: 1.4,
+            },
+        });
+        triggers.push(scaleTween.scrollTrigger);
+    });
+
+    return () => {
+        triggers.forEach((trigger) => trigger?.kill());
+        ScrollTrigger.refresh();
+    };
+}
 
 export function init() {
-    const splideEl = document.querySelector(".services .splide");
-    if (!splideEl) return;
+    destroyAnimations();
+    breakpointListener &&
+        breakpointQuery?.removeEventListener("change", breakpointListener);
 
-    const splide = new Splide(splideEl, {
-        ...CONFIG.SPLIDE,
-        breakpoints: {
-            [CONFIG.BREAKPOINTS.MOBILE]: { perPage: 1 },
-            [CONFIG.BREAKPOINTS.MOBILE_LG]: { perPage: 2 },
-        },
-    }).mount();
+    breakpointQuery = window.matchMedia(LAPTOP_BREAKPOINT);
+    breakpointListener = ({ matches }) => {
+        destroyAnimations();
+        destroyAnimations = matches ? createAnimations() : () => {};
+    };
 
-    // External prev/next controls (SliderController component)
-    const prevBtns = document.querySelectorAll(
-        ".services .slider-controls__btn--prev",
-    );
-    const nextBtns = document.querySelectorAll(
-        ".services .slider-controls__btn--next",
-    );
-
-    prevBtns.forEach((btn) =>
-        btn.addEventListener("click", () => splide.go("<")),
-    );
-    nextBtns.forEach((btn) =>
-        btn.addEventListener("click", () => splide.go(">")),
-    );
+    breakpointListener(breakpointQuery);
+    breakpointQuery.addEventListener("change", breakpointListener);
 }
