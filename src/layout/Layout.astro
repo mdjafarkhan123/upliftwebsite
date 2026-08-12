@@ -18,9 +18,9 @@ interface Props {
 
 // Extract props with highly optimized defaults based on business.md
 const {
-    title = "Contractor Turbo | High-Converting Websites & Automation for Contractors",
-    description = "Uplift Contractor offers Contractor Turbo: high-converting websites, CRM, AI chatbot, missed call text-back, review boosters, and automation tools built for local service contractors.",
-    keywords = "contractor website design, local SEO for contractors, contractor CRM, missed call text-back, contractor lead generation, home service marketing, Google Review booster, contractor automation",
+    title = "Website design and marketing for contractors and home service pros | Uplift Contractor",
+    description = "Uplift Contractor builds high-converting websites, automated lead follow-up, CRM & 5-star review systems for local contractors & home service pros. No contracts. Book a free call.",
+    keywords = "contractor website design, contractor marketing system, local SEO for contractors, contractor CRM, missed call text-back for contractors, contractor lead generation, home service business marketing, Google review automation, contractor automation tools, website for plumbers, HVAC marketing, roofing contractor website, contractor digital marketing, affordable contractor website",
     author = "Uplift Contractor",
     ogImage = "/og-image.jpg", // Default social sharing image (placed in the public folder)
     ogType = "website",
@@ -36,63 +36,34 @@ const baseDomain = "https://upliftcontractor.com";
 // Rich JSON-LD Structured Data Schema representing the business & UpliftContractor service catalog
 const schemaData = {
     "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "WebSite",
-            "@id": `${cleanCanonical}#website`,
-            "url": cleanCanonical,
-            "name": "Uplift Contractor",
-            "description": "High-converting websites and marketing automation systems for local contractors.",
-            "publisher": {
-                "@id": `${baseDomain}/#organization`
-            },
-            "inLanguage": "en-US"
-        },
-        {
-            "@type": "Organization",
-            "@id": `${baseDomain}/#organization`,
-            "name": "Uplift Contractor",
-            "url": baseDomain,
-            "logo": {
-                "@type": "ImageObject",
-                "url": `${baseDomain}/assets/images/logo.png`,
-                "caption": "Uplift Contractor Logo"
-            },
-            "sameAs": [
-                "https://facebook.com/upliftcontractor",
-                "https://instagram.com/upliftcontractor",
-                "https://linkedin.com/company/upliftcontractor"
-            ],
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+8801834969563",
-                "contactType": "customer support",
-                "email": "dev.jafarkhan@gmail.com",
-                "availableLanguage": "en"
-            }
-        },
-        {
-            "@type": "ProfessionalService",
-            "@id": `${baseDomain}/#service`,
-            "name": "Uplift Contractor",
-            "image": `${baseDomain}/assets/images/brandlogo.png`,
-            "priceRange": "$$",
-            "telephone": "+8801834969563",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "12 Technical Road, Mirpur",
-                "addressLocality": "Dhaka",
-                "addressCountry": "BD"
-            },
-            "description": "Grow your local contracting business with UpliftContractor. We build fast, mobile-first, high-converting websites and configure CRM systems, AI Chatbots, Missed Call Text-Back, Review Boosters, and Online schedulers.",
-            "areaServed": ["United States", "Canada", "United Kingdom", "Australia"],
-            "offers": {
-                "@type": "Offer",
-                "name": "UpliftContractor Core Package",
-                "description": "Comprehensive digital solution for contractors: Custom high-converting website, CRM lead pipeline, AI Chatbot widget, Missed Call Text-Back, Google Review booster, automated SMS/email follow-ups, and GBP optimization."
-            }
-        }
-    ]
+    "@type": "Organization",
+    name: "Uplift Contractor",
+    url: "https://upliftcontractor.com",
+    logo: "https://upliftcontractor.com/logo.png",
+    description:
+        "Uplift Contractor builds high-converting websites, CRM, automated lead follow-up, and 5-star review systems for local contractors and home service businesses.",
+    foundingDate: "2020",
+    founder: {
+        "@type": "Person",
+        name: "Jafar Khan",
+    },
+    contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+8801834969563",
+        contactType: "customer service",
+        email: "info@upliftcontractor.com",
+        availableLanguage: "English",
+    },
+    address: {
+        "@type": "PostalAddress",
+        addressLocality: "Savar",
+        addressRegion: "Dhaka",
+        addressCountry: "BD",
+    },
+    sameAs: [
+        "https://www.facebook.com/upliftcontractor",
+        "https://www.instagram.com/upliftcontractor",
+    ],
 };
 ---
 
@@ -105,7 +76,7 @@ const schemaData = {
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content={author} />
-        
+
         <!-- Primary SEO Meta Tags -->
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -165,7 +136,10 @@ const schemaData = {
         <style is:inline set:html={criticalCss}></style>
 
         <!-- Rich JSON-LD Structured Data / Schema Markup for Search Engines -->
-        <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(schemaData)}
+        />
     </head>
     <body>
         <Header />

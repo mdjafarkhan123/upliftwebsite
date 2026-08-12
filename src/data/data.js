@@ -28,10 +28,10 @@ import ProjectImg1 from "../assets/images/project-one.jpg";
 
 /* ============================ About section ============================ */
 export const hero = {
-    badge: "affordable . simple. all in one",
-    title: `Website design, systems & marketing for <span class="marked-text">contractors & home service pros</span>`,
+    badge: "affordable . simple . all in one",
+    title: `Website design & marketing systems for <span class="marked-text">contractors & home service pros</span>`,
     description:
-        "Nobody has miracle solutions. We will provide a <strong>simple yet extremely effective</strong> foundational marketing system to help you win <strong>without spending thousands upfront</strong> on a website and paid ads. But you need to commit to using it!",
+        "Nobody has miracle solutions. We will provide a <strong>simple yet extremely effective</strong> foundational marketing system to help you <strong>win without spending thousands upfront</strong> on a website and paid ads. But you need to commit to using it!",
     cta: `Book a call`,
 };
 
@@ -128,10 +128,10 @@ export const services = {
             description:
                 "Get a high converting premium designed website that builds trust & credibility instantly & turns leads into text conversations that go DIRECTLY to your phone.",
             items: [
-                "<strong>Get found online.</strong> If a customer googles your business and can't find you, that might be awkward... Don't worry, we won't let that happen.",
-                "<strong>Optimized For Local Google Searches</strong>. This should go without saying but we'll still say it. We make sure your business is found on Google.",
-                "<strong>Mobile Friendly.</strong> 87% of people visit websites on their phone. We'll make sure your business looks extra sexy on mobile.",
-                "<strong>Mobile Friendly.</strong> 87% of people visit websites on their phone. We'll make sure your business looks extra sexy on mobile.",
+                "<strong>Get found on Google.</strong> If customers are searching for your services and can't find you, that's a problem. Don't worry, we'll help make sure you're easier to find.",
+                "<strong>Showcase Your Best Reviews</strong> We all have one or two bad reviews... That doesn't mean your customers need to see them.",
+                "<strong>Never lose a website lead.</strong> Every website inquiry goes directly into your CRM, so you can track it, reply quickly, and follow up",
+                "<strong>Mobile Friendly & Super  Fast.</strong> 87% of people visit websites on their phones. We make sure your business looks extra sleek on mobile, and load speed? Always A+ fast",
             ],
         },
         {

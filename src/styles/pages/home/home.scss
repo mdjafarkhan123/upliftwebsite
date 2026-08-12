@@ -43,13 +43,20 @@
         gap: var(--space-sm);
     }
     &__reason-item {
+        text-transform: capitalize;
         font-weight: 600;
         line-height: 1;
         gap: var(--space-xsm);
     }
-    &__reason-icon .icon {
-        width: 32px;
-        fill: var(--color-primary);
+    &__reason-icon {
+        background-color: var(--color-primary-soft);
+        border-radius: var(--round-sm);
+        padding: var(--space-2xsm);
+
+        .icon {
+            width: 24px;
+            fill: var(--color-primary);
+        }
     }
 }
 
@@ -504,7 +511,7 @@
     .why {
         padding-bottom: 0;
         &__reason-icon .icon {
-            width: 40px;
+            width: 32px;
         }
     }
     .contractors {
