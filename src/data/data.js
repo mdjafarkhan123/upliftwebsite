@@ -31,7 +31,7 @@ export const hero = {
     badge: "affordable . simple . all in one",
     title: `Website design & marketing systems for <span class="marked-text">contractors & home service pros</span>`,
     description:
-        "Nobody has a miracle solution to all your problems, including us. We will provide a <strong>simple yet extremely effective</strong> marketing system to help you <strong>win more work</strong>. But you need to commit to using it!",
+        "Nobody has a miracle solution to all your problems, including us. We will provide a <strong>simple yet extremely effective foundational marketing system</strong> to help you <strong>win more work</strong>. But you need to commit to using it!",
     cta: `Book a call`,
 };
 
@@ -156,15 +156,28 @@ export const services = {
                 "<strong>Be available 24/7.</strong> Missed a call after hours? No worries, we’ll make sure everyone feels loved even while you’re getting your beauty sleep.",
             ],
         },
+
+        {
+            thumbnail: ProjectImg1,
+            title: "One-Click Marketing Campaigns",
+            description: `You know it, and we know it… Referrals and repeat customers are the best. Let’s get you both!`,
+            items: [
+                "<strong>Done for you.</strong> Again... let’s keep it simple. Activate our pre-built marketing campaigns with just one click.",
+                "<strong>Referral Campaigns.</strong> We know it and you know it... You do good work, and your customers love you. Let's remind them to tell their friends.",
+                "<strong>Return Customer Campaigns.</strong> Having loyal customers is key to a succesful business. We'll make sure your customers feel cared for with special offers.",
+                "<strong>Marketing Campaigns At Your Fingertips</strong> Just click a button and we'll take care of the rest. No need to hire a marketing team.",
+            ],
+        },
+
         {
             thumbnail: ProjectImg1,
             title: "Google Business Profile Management",
-            description: `People are already Googling for contractors in their area. If your profile looks abandoned, incomplete, or out of date, they may call someone else. We make sure yours looks ready for business.`,
+            description: `Your Google profile is usually the first thing homeowners see. We'll keep it updated, optimized, and looking like you actually care about your business`,
             items: [
-                "<strong>Get Found For What You Actually Do.</strong> We set up your services, categories, service areas, and business info properly. So Google has a much clearer picture of what you do and where you do it.",
-                "<strong>Look Like The Contractor Worth Calling.</strong> Homeowners compare before they call. Good photos, complete information, and a professional profile make choosing you a much easier decision.",
-                "<strong>Let Your Reviews Build The Trust.</strong> People want proof before they call. We make sure your best reviews and reputation are easy to see when homeowners are checking you out",
-                `<strong>We Keep It Fresh & You Keep Working.</strong> Wrong hours, old photos, and a profile nobody updates don't make a great first impression. We handle the ongoing upkeep `,
+                "<strong>Get Found For What You Actually Do.</strong> Customers are already searching for what you do. So we will make sure google has a much clearer picture of what you do and where you do it.",
+                "<strong>Stop Looking Like You Closed Down</strong> Old photos and outdated information...Customers see that and move on. We'll keep your profile looking like a real, active business.",
+                "<strong>Turn Views Into Phone Calls.</strong> Getting seen is nice. Getting called is better. We'll optimize your profile to make it easy for homeowners to choose you and get in touch.",
+                `<strong>We Handle It, You Just Do The Work.</strong> Services, photos, posts, business details... Yeah, we know you'd rather be on a job site. Leave the Google stuff to us. `,
             ],
         },
         {
