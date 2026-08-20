@@ -28,7 +28,7 @@ import ProjectImg1 from "../assets/images/project-one.jpg";
 
 /* ============================ About section ============================ */
 export const hero = {
-    badge: "affordable . simple . all in one",
+    badge: "affordable . simple . no contracts",
     title: `Website design & marketing systems for <span class="marked-text">contractors & home service pros</span>`,
     description:
         "Nobody has a miracle solution to all your problems, including us. We will provide a <strong>simple yet extremely effective foundational marketing system</strong> to help you <strong>win more work</strong>. But you need to commit to using it!",
