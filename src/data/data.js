@@ -1,4 +1,8 @@
-import ProjectImg1 from "../assets/images/project-one.jpg";
+import ProjectImg1 from "../assets/images/website1.webp";
+import ProjectImg2 from "../assets/images/website2.webp";
+import ProjectImg3 from "../assets/images/website3.webp";
+import ProjectImg4 from "../assets/images/website4.webp";
+import ProjectImg5 from "../assets/images/website5.webp";
 
 /**
  * data.js
@@ -123,7 +127,7 @@ export const services = {
     title: `Simple systems that <span class="marked-text">actually work</span>. No degrees required`,
     content: [
         {
-            thumbnail: ProjectImg1,
+            thumbnail: ProjectImg3,
             title: "Premium functional website",
             description:
                 "Get a high converting premium designed website that builds trust & credibility instantly & turns leads into text conversations that go DIRECTLY to your phone.",
@@ -207,11 +211,11 @@ export const services = {
 
 export const projects = {
     badge: "Our Works",
-    title: `<span class="marked-text">Recent websites</span> we've built for contractors`,
+    title: `Some of our <span class="marked-text">Projects</span>`,
     items: [
         {
             title: "Project one",
-            thumbnail: ProjectImg1,
+            thumbnail: ProjectImg3,
         },
         {
             title: "Project two",
@@ -219,15 +223,15 @@ export const projects = {
         },
         {
             title: "Project three",
-            thumbnail: ProjectImg1,
+            thumbnail: ProjectImg2,
         },
         {
             title: "Project four",
-            thumbnail: ProjectImg1,
+            thumbnail: ProjectImg4,
         },
         {
             title: "Project five",
-            thumbnail: ProjectImg1,
+            thumbnail: ProjectImg5,
         },
         {
             title: "Project six",
