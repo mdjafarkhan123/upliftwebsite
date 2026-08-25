@@ -3,6 +3,11 @@ import ProjectImg2 from "../assets/images/website2.webp";
 import ProjectImg3 from "../assets/images/website3.webp";
 import ProjectImg4 from "../assets/images/website4.webp";
 import ProjectImg5 from "../assets/images/website5.webp";
+import Service2 from "../assets/images/review-funnel.webp";
+import Service3 from "../assets/images/text-back.webp";
+import Service4 from "../assets/images/marketing.webp";
+import Service5 from "../assets/images/gbp.webp";
+import Service6 from "../assets/images/text-back.webp";
 
 /**
  * data.js
@@ -139,7 +144,7 @@ export const services = {
             ],
         },
         {
-            thumbnail: ProjectImg1,
+            thumbnail: Service2,
             title: "5-Star Magic Review Funnel",
             description: `"Sure I'll leave you a review", but the truth is people forget. We’ll 'gently' remind them for a few weeks until they remember.`,
             items: [
@@ -150,7 +155,7 @@ export const services = {
             ],
         },
         {
-            thumbnail: ProjectImg1,
+            thumbnail: Service3,
             title: "Missed call text back",
             description: `Everyone misses calls, but not everyone texts back. Be the one who does. Outshine your competition.`,
             items: [
@@ -162,7 +167,7 @@ export const services = {
         },
 
         {
-            thumbnail: ProjectImg1,
+            thumbnail: Service4,
             title: "One-Click Marketing Campaigns",
             description: `You know it, and we know it… Referrals and repeat customers are the best. Let’s get you both!`,
             items: [
@@ -174,7 +179,7 @@ export const services = {
         },
 
         {
-            thumbnail: ProjectImg1,
+            thumbnail: Service5,
             title: "Google Business Profile Management",
             description: `Your Google profile is usually the first thing homeowners see. We'll keep it updated, optimized, and looking like you actually care about your business`,
             items: [
@@ -185,7 +190,7 @@ export const services = {
             ],
         },
         {
-            thumbnail: ProjectImg1,
+            thumbnail: Service6,
             title: "Local SEO",
             description: `"Get me to the top of Google!" We'd love to promise that by Friday. Good SEO takes time but when it kicks in, you stop paying for every lead and start owning them.`,
             items: [
