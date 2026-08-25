@@ -182,15 +182,26 @@ export const services = {
         },
         {
             thumbnail: ProjectImg1,
-            title: "Simple Contractor CRM",
-            description: `Leads slipping through? Quotes, jobs, invoices and messages all over the place? Follow-ups still in your head and payments you have to chase? We bring it all together in one simple place`,
+            title: "Local SEO",
+            description: `"Get me to the top of Google!" We'd love to promise that by Friday. Good SEO takes time but when it kicks in, you stop paying for every lead and start owning them.`,
             items: [
-                "<strong> Know What Needs Your Attention.</strong> Who needs a call? What needs quoting? Which job is next? The important stuff stays right in front of you. No more running the business from memory",
-                "<strong> See the Full Story on Every Customer.</strong> Open any customer and see every message, quote, job, and payment connected. No more piecing things together across your phone, email, and notebook.",
-                "<strong>Follow-Ups That Happen Without You.</strong> Lead follow-ups, appointment reminders, payment nudges, and review requests, all automatic. Less admin, more done.",
-                "<strong>We Set It Up, You Run It.</strong> No tech headaches. We configure everything and walk you through it so you actually use it, not just pay for it.",
+                "<strong>Stop Paying For Every Single Lead.</strong>Google Ads stop the second you stop paying.  Local SEO keeps bringing in calls long after the work is done. That's the difference.",
+                `<strong>Show Up When it acually matters.</strong> "Plumber near me." "Roofer in [city]." That's what your next customer is typing right now. We make sure your website is what they find.`,
+                "<strong>Get Found In More Of The Areas You Serve.</strong> One generic page can only do so much. We build dedicated service and location pages so Google better understands what you do and where you do it.",
+                `<strong>Turn Google Searches Into Real Opportunities.</strong> Someone who Googled your exact trade in your exact city and clicked your website? They're ready to book. No ad budget. No cost per click. Just the phone ringing. `,
             ],
         },
+        // {
+        //     thumbnail: ProjectImg1,
+        //     title: "Simple Contractor CRM",
+        //     description: `Leads slipping through? Quotes, jobs, invoices and messages all over the place? Follow-ups still in your head and payments you have to chase? We bring it all together in one simple place`,
+        //     items: [
+        //         "<strong> Know What Needs Your Attention.</strong> Who needs a call? What needs quoting? Which job is next? The important stuff stays right in front of you. No more running the business from memory",
+        //         "<strong> See the Full Story on Every Customer.</strong> Open any customer and see every message, quote, job, and payment connected. No more piecing things together across your phone, email, and notebook.",
+        //         "<strong>Follow-Ups That Happen Without You.</strong> Lead follow-ups, appointment reminders, payment nudges, and review requests, all automatic. Less admin, more done.",
+        //         "<strong>We Set It Up, You Run It.</strong> No tech headaches. We configure everything and walk you through it so you actually use it, not just pay for it.",
+        //     ],
+        // },
     ],
 };
 
@@ -299,13 +310,11 @@ export const process = {
     steps: [
         {
             title: "15 minutes demo call",
-            description:
-                "A quick call to understand your business, services, and service area. We walk you through the system and confirm everything needed to get started.",
+            description: `It's actually a sales call, we just didn't want to scare you. But seriously... we'll answer all your questions, show you any features you have questions about, and show you live client accounts & results.`,
         },
         {
-            title: "We build your systems (10 - 14 days)",
-            description:
-                "We design your website, set up the lead systems, and configure everything to capture and follow up with every lead automatically.",
+            title: "We build your systems (7 - 10 days)",
+            description: `Fill out a basic onboarding form with your business details. After we have the correct information, we'll get to work on building your new website & marketing system.`,
         },
         {
             title: "Website & systems delivered",
@@ -320,36 +329,33 @@ export const faq = {
     title: "Got questions? We’ve the answers",
     content: [
         {
-            question: "Is there a long-term contract?",
-            answer: "No. There’s a one-time setup fee and a monthly subscription. You can cancel anytime. We keep it simple and let the system speak for itself.",
+            question: "What happen if I decide to cancel my membership?",
+            answer: "We'll be extremely sad to see you go, but after a good cry we'll bounce back. However, you will lose access to all the features we set up for you.",
         },
         {
-            question: "Is there a long-term contract?",
-            answer: "No. There’s a one-time setup fee and a monthly subscription. You can cancel anytime. We keep it simple and let the system speak for itself.",
+            question: "Can people find my website on Google?",
+            answer: "Yes, but in the right way. We build your site with proper on-page SEO, dedicated service pages, and location pages so Google understands exactly what you do and where you work. We also set up review automation, because Google reviews are one of the biggest factors in local rankings. This gives you a strong foundation to rank and convert the traffic you get.",
         },
         {
-            question: "Is there a long-term contract?",
-            answer: "No. There’s a one-time setup fee and a monthly subscription. You can cancel anytime. We keep it simple and let the system speak for itself.",
+            question:
+                "Why should I spend on a website when word of mouth is already pulling in business?",
+            answer: "We might be a bit biased, but here’s the deal: if each of your customers brings in about $500 a year, getting just 2-4 new customers from your website will pay off. We know you’ll see great value from your site. It will help you attract new customers, make it easier for existing customers to refer you, allow you to run ads if you want, and attract bigger clients who value professionalism.",
         },
         {
-            question: "Is there a long-term contract?",
-            answer: "No. There’s a one-time setup fee and a monthly subscription. You can cancel anytime. We keep it simple and let the system speak for itself.",
+            question: "Why is your pricing so cheap?",
+            answer: "All we care about is keeping you as a customer forever. We believe if we provide you with excellent service at an affordable price you’ll never want to leave us.",
         },
         {
-            question: "Is there a long-term contract?",
-            answer: "No. There’s a one-time setup fee and a monthly subscription. You can cancel anytime. We keep it simple and let the system speak for itself.",
-        },
-        {
-            question: "Is there a long-term contract?",
-            answer: "No. There’s a one-time setup fee and a monthly subscription. You can cancel anytime. We keep it simple and let the system speak for itself.",
+            question: "Do I need to change how I run my business?",
+            answer: "No. You keep using your phone like you always have. The system runs in the background and helps you follow up faster without extra work.",
         },
     ],
 };
 
 export const cta = {
-    title: "Let’s build a website and system that actually brings you jobs.",
+    title: "Let's build a website and system that actually brings you jobs.",
     description:
-        "In this quick strategy call, we will walk through how contractors and home service businesses set up their websites and systems to better capture and manage leads from Google & Social Media without wasting money on ads or expensive web design.",
+        "In this quick strategy call, we will show you everything we do to help you grow your business so you can implement it yourself or let us do it for you.",
 };
 
 export const footer = {
