@@ -91,33 +91,19 @@ export const about = {
     },
 
     // Main paragraph. Keep as a single template string.
-    description: `Working closely with contractors since 2020, we kept seeing
-  the same problems again and again. Even good contractors
-  were losing jobs and struggling with their business. It
-  wasn't because of a lack of effort, but because the right
-  fundamentals weren’t in place. They were spending
-  hard-earned money on Google Ads, Facebook Ads, and marketing
-  agencies, yet the result was always the same. They were
-  still missing phone calls, forgetting follow-ups, and
-  struggling to manage their incoming leads. They were
-  neglecting their website, Google profile, and social media
-  channels. It’s a broken system that most contractors aren't
-  even aware of. That’s why UpliftContractor was built. We
-  created a simple, affordable system that installs the exact
-  digital foundation your business needs to grow. You get a
-  premium, high-converting website with proper SEO, plus
-  dedicated service and location pages to rank high on Google.
-  We pair that with a smart system that captures every single
-  lead from phone calls, web forms, and chat messages. Missed
-  calls trigger an instant text-back so no opportunity is
-  lost. Your entire sales pipeline stays organized in one
-  simple dashboard, while 5-star reviews are generated
-  automatically to build trust and local visibility. It keeps
-  your entire digital and social media presence strong.
-  Everything works together cleanly behind the scenes, helping
-  you get more jobs without needing extra office staff,
-  complicated tools, or a huge budget.`,
+    description: `Even among good contractors, we keep seeing the same issues come up again and again while they try to grow. It's not because of a lack of effort. They're working hard. It's because the fundamental system isn't in place.
 
+One of the most important pieces is the Google Business Profile (GBP). When homeowners search for local trades near them, these contractors' profiles don't show up in the results, while their competitors with strong profile with good reviews do. They've set up GBP, but not the right way, and they're not maintaining it actively. Their reviews are growing slowly, like they're stuck.
+
+They're spending hard-earned money on ads, yet their conversion rate is poor because the leads who click through land on a website that sits there like a statue. Not a high-converting, functional website that captures leads and instantly turns them into text conversations that go directly to the contractor's phone.
+
+They're not running marketing campaigns to their past customers like promotions, discounts, referral offers etc. So they're leaving money on the table instead of getting the most out of every customer.
+
+Even with the leads they are already getting, they may forget to follow up, reply too slowly, or miss calls. Their leads, customers, jobs, quotes, invoices, and other important information are scattered across different tools and places. It's simply not an easy way to manage a business the way it should be managed.
+
+Uplift Contractor was built to fix exactly this, for contractors who don't want to learn tech, just want to focus on the business. We help contractors grow and expand in the most easiest & affordable way possible by setting up the foundational marketing system. A high-converting, functional website, GBP setup and ongoing management, an easy-to-use business management app with AI-powered features, including a 5-Star Review Funnel, Missed Call Text Back, automated follow-ups, one-click marketing campaigns, and one simple place to track and organize leads, customers, quotes, jobs, scheduling, payments, and more.
+
+The whole thing runs quietly in the background. No extra effort, no extra staff needed. And us? Our support team always has your back.`,
     // "Read more" link
     readMore: "Read more",
 };
