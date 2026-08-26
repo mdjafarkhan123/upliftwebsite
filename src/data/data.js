@@ -91,17 +91,17 @@ export const about = {
     },
 
     // Main paragraph. Keep as a single template string.
-    description: `Even among good contractors, we keep seeing the same issues come up again and again while they try to grow. It's not because of a lack of effort. They're working hard. It's because the fundamental system isn't in place.
+    description: `<span>Even among good contractors, we keep seeing the same issues come up again and again. It's not because of a lack of effort. They're working hard. It's because the fundamental system isn't in place.</span>
 
-One of the most important pieces is the Google Business Profile (GBP). When homeowners search for local trades near them, these contractors' profiles don't show up in the results, while their competitors with strong profile with good reviews do. They've set up GBP, but not the right way, and they're not maintaining it actively. Their reviews are growing slowly, like they're stuck.
+<span>One of the most important pieces is the Google Business Profile (GBP). When homeowners search for local trades near them, these contractors' profiles don't show up in the results, while their competitors with strong profile with good reviews do. They've set up GBP, but not the right way, and they're not maintaining it actively. Their reviews are growing slowly, like they're stuck.</span>
 
-They're spending hard-earned money on ads, yet their conversion rate is poor because the leads who click through land on a website that sits there like a statue. Not a high-converting, functional website that captures leads and instantly turns them into text conversations that go directly to the contractor's phone.
+<span>They're spending hard-earned money on ads, yet their conversion rate is poor because the leads who click through land on a website that sits there like a statue. Not a high-converting, functional website that captures leads and instantly turns them into text conversations that go directly to the contractor's phone.</span>
 
-They're not running marketing campaigns to their past customers like promotions, discounts, referral offers etc. So they're leaving money on the table instead of getting the most out of every customer.
+<span>They're not running marketing campaigns to their past customers like promotions, discounts, referral offers etc. So they're leaving money on the table instead of getting the most out of every customer.</span>
 
-Even with the leads they are already getting, they may forget to follow up, reply too slowly, or miss calls. Their leads, customers, jobs, quotes, invoices, and other important information are scattered across different tools and places. It's simply not an easy way to manage a business the way it should be managed.
+<span>Even with the leads they are already getting, they may forget to follow up, reply too slowly, or miss calls. Their leads, customers, jobs, quotes, invoices, and other important information are scattered across different tools and places. It's simply not an easy way to manage a business the way it should be managed. </span>
 
-Uplift Contractor was built to fix exactly this, for contractors who don't want to learn tech, just want to focus on the business. We help contractors grow and expand in the most easiest & affordable way possible by setting up the foundational marketing system. A high-converting, functional website, GBP setup and ongoing management, an easy-to-use business management app with AI-powered features, including a 5-Star Review Funnel, Missed Call Text Back, automated follow-ups, one-click marketing campaigns, and one simple place to track and organize leads, customers, quotes, jobs, scheduling, payments, and more.
+<span>Uplift Contractor was built to fix exactly this, for contractors who don't want to learn tech, just want to focus on the business. We help contractors grow and expand in the most easiest & affordable way possible by setting up the foundational marketing system. A high-converting, functional website, GBP setup and ongoing management, an easy-to-use business management app with AI-powered features, including a 5-Star Review Funnel, Missed Call Text Back, automated follow-ups, one-click marketing campaigns, and one simple place to track and organize leads, customers, quotes, jobs, scheduling, payments, and more.</span>
 
 The whole thing runs quietly in the background. No extra effort, no extra staff needed. And us? Our support team always has your back.`,
     // "Read more" link

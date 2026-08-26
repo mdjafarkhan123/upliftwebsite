@@ -333,9 +333,10 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
                 </div>
             </div>
             <div class="about__details flex-column">
-                <p class="about__description trunced-text">
-                    {about.description}
-                </p>
+                <p
+                    class="about__description trunced-text"
+                    set:html={about.description}
+                />
                 <a href="#!" class="read-more flex-center-y"
                     ><span class="read-more__text">{about.readMore}</span>
                     <span class="read-more__icon"

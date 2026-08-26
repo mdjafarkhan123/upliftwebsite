@@ -174,7 +174,12 @@
     &__description {
         position: relative;
         height: 100%;
+        font-weight: 500;
         overflow: hidden;
+        span {
+            display: inline-block;
+            margin-bottom: var(--space-2xsm);
+        }
     }
     .trunced-text {
         height: 180px;
