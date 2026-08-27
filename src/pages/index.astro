@@ -193,9 +193,10 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
                                 <h3 class="services__item-title">
                                     {item.title}
                                 </h3>
-                                <p class="services__item-benifit">
-                                    {item.description}
-                                </p>
+                                <p
+                                    class="services__item-benifit"
+                                    set:html={item.description}
+                                ></p>
                                 <div class="services__item-list flex-column">
                                     {item.items.map((subitem) => (
                                         <div class="services__item-subitem flex">

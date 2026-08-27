@@ -83,7 +83,7 @@ export const about = {
     badge: "About us",
 
     // Heading is split so the highlighted word can use .marked-text
-    title: "How it all started",
+    title: `Why <span class="marked-text">Uplift Contractor</span> Exists?`,
 
     // Author block (image is imported separately in index.astro, not here)
     author: {
@@ -176,34 +176,34 @@ export const services = {
                 `<strong>We Handle It, You Just Do The Work.</strong> Services, photos, posts, business details... Yeah, we know you'd rather be on a job site. Leave the Google stuff to us. `,
             ],
         },
-        {
-            thumbnail: Service6,
-            title: "Local SEO",
-            description: `"Get me to the top of Google!" We'd love to promise that by Friday. Good SEO takes time but when it kicks in, you stop paying for every lead and start owning them.`,
-            items: [
-                "<strong>Stop Paying For Every Single Lead.</strong>Google Ads stop the second you stop paying.  Local SEO keeps bringing in calls long after the work is done. That's the difference.",
-                `<strong>Show Up When it acually matters.</strong> "Plumber near me." "Roofer in [city]." That's what your next customer is typing right now. We make sure your website is what they find.`,
-                "<strong>Get Found In More Of The Areas You Serve.</strong> One generic page can only do so much. We build dedicated service and location pages so Google better understands what you do and where you do it.",
-                `<strong>Turn Google Searches Into Real Opportunities.</strong> Someone who Googled your exact trade in your exact city and clicked your website? They're ready to book. No ad budget. No cost per click. Just the phone ringing. `,
-            ],
-        },
         // {
-        //     thumbnail: ProjectImg1,
-        //     title: "Simple Contractor CRM",
-        //     description: `Leads slipping through? Quotes, jobs, invoices and messages all over the place? Follow-ups still in your head and payments you have to chase? We bring it all together in one simple place`,
+        //     thumbnail: Service6,
+        //     title: "Local SEO",
+        //     description: `"Get me to the top of Google!" We'd love to promise that by Friday. Good SEO takes time but when it kicks in, you stop paying for every lead and start owning them.`,
         //     items: [
-        //         "<strong> Know What Needs Your Attention.</strong> Who needs a call? What needs quoting? Which job is next? The important stuff stays right in front of you. No more running the business from memory",
-        //         "<strong> See the Full Story on Every Customer.</strong> Open any customer and see every message, quote, job, and payment connected. No more piecing things together across your phone, email, and notebook.",
-        //         "<strong>Follow-Ups That Happen Without You.</strong> Lead follow-ups, appointment reminders, payment nudges, and review requests, all automatic. Less admin, more done.",
-        //         "<strong>We Set It Up, You Run It.</strong> No tech headaches. We configure everything and walk you through it so you actually use it, not just pay for it.",
+        //         "<strong>Stop Paying For Every Single Lead.</strong>Google Ads stop the second you stop paying.  Local SEO keeps bringing in calls long after the work is done. That's the difference.",
+        //         `<strong>Show Up When it acually matters.</strong> "Plumber near me." "Roofer in [city]." That's what your next customer is typing right now. We make sure your website is what they find.`,
+        //         "<strong>Get Found In More Of The Areas You Serve.</strong> One generic page can only do so much. We build dedicated service and location pages so Google better understands what you do and where you do it.",
+        //         `<strong>Turn Google Searches Into Real Opportunities.</strong> Someone who Googled your exact trade in your exact city and clicked your website? They're ready to book. No ad budget. No cost per click. Just the phone ringing. `,
         //     ],
         // },
+        {
+            thumbnail: ProjectImg1,
+            title: "Contractor Business Management App",
+            description: `Leads slipping through? Quotes, jobs, invoices and messages all over the place? Follow-ups still in your head and payments you have to chase? We bring it all together in one simple place. <strong>Run your business on Autopilot More jobs. Less admin. Faster pay</strong>`,
+            items: [
+                "<strong> Know What Needs Your Attention.</strong> Who needs a call? What needs quoting? Which job is next? The important stuff stays right in front of you. No more running the business from memory",
+                "<strong> See the Full Story on Every Customer.</strong> Open any customer and see every message, quote, job, and payment connected. No more piecing things together across your phone, email, and notebook.",
+                "<strong>Follow-Ups That Happen Without You.</strong> Lead follow-ups, appointment reminders, payment nudges, and review requests, all automatic. Less admin, more done.",
+                "<strong>We Set It Up, You Run It.</strong> No tech headaches. We configure everything and walk you through it so you actually use it, not just pay for it.",
+            ],
+        },
     ],
 };
 
 export const projects = {
     badge: "Our Works",
-    title: `Some of our <span class="marked-text">Projects</span>`,
+    title: `Some of our Projects`,
     items: [
         {
             title: "Project one",
