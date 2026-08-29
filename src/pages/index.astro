@@ -27,10 +27,6 @@ import HeroBgWebp from "../assets/images/hero-bg.webp";
 import HeroBgMobileAvif from "../assets/images/hero-bg-mobile.avif";
 import HeroBgMobileWebp from "../assets/images/hero-bg-mobile.webp";
 import HeroBgMobile from "../assets/images/hero-bg-mobile.jpg";
-import CrmLgAvif from "../assets/images/crm-lg.avif";
-import CrmLgWebp from "../assets/images/crm-lg.webp";
-import CrmSmAvif from "../assets/images/crm-sm.avif";
-import CrmSmWebp from "../assets/images/crm-sm.webp";
 import GoogleIcon from "../assets/images/google.avif";
 import FbIcon from "../assets/images/facebook.avif";
 import ServiceBgSmAvif from "../assets/images/service-bg-sm.avif";
@@ -129,20 +125,18 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
                 <picture>
                     <source
                         media="(min-width: 768px)"
-                        srcset={CrmLgAvif.src}
+                        srcset={hero.heroImg.src}
                         type="image/avif"
                     />
                     <source
                         media="(min-width: 768px)"
-                        srcset={CrmLgWebp.src}
+                        srcset={hero.heroImg.src}
                         type="image/webp"
                     />
-
-                    <source srcset={CrmSmAvif.src} type="image/avif" />
-                    <source srcset={CrmSmWebp.src} type="image/webp" />
+                    <source srcset={hero.heroImg.src} type="image/webp" />
 
                     <img
-                        src={CrmSmWebp.src}
+                        src={hero.heroImgSm.src}
                         alt="Robert the lawyer"
                         loading="eager"
                         fetchpriority="high"
@@ -196,7 +190,7 @@ import ServiceBgWebp from "../assets/images/service-bg.webp";
                                 <p
                                     class="services__item-benifit"
                                     set:html={item.description}
-                                ></p>
+                                />
                                 <div class="services__item-list flex-column">
                                     {item.items.map((subitem) => (
                                         <div class="services__item-subitem flex">

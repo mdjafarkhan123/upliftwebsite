@@ -1,3 +1,5 @@
+import HeroImg from "../assets/images/Hero.webp";
+import HeroImgSm from "../assets/images/HeroSm.webp";
 import ProjectImg1 from "../assets/images/website1.webp";
 import ProjectImg2 from "../assets/images/website2.webp";
 import ProjectImg3 from "../assets/images/website3.webp";
@@ -8,7 +10,6 @@ import Service3 from "../assets/images/text-back.webp";
 import Service4 from "../assets/images/marketing.webp";
 import Service5 from "../assets/images/gbp.webp";
 import Service6 from "../assets/images/text-back.webp";
-import Icon from "../components/Svg.astro";
 
 /**
  * data.js
@@ -43,6 +44,8 @@ export const hero = {
     description:
         "Nobody has a miracle solution to all your problems, including us. We will provide a <strong>simple yet extremely effective foundational marketing system</strong> to help you <strong>win more work</strong>. But you need to commit to using it!",
     cta: `Book a call`,
+    heroImg: HeroImg,
+    heroImgSm: HeroImgSm,
 };
 
 export const reason = {
