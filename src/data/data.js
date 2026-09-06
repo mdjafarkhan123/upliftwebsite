@@ -136,7 +136,7 @@ export const services = {
         {
             thumbnail: Service2,
             title: "5-Star Magic Review Funnel",
-            description: `"Sure I'll leave you a review", but the truth is people forget. We’ll 'gently' remind them for a few weeks until they remember.`,
+            description: `Start Getting the Reviews You Deserve. Start Ranking Higher On Google. Start Getting Chosen Over Your Competition.`,
             items: [
                 "<strong>5-Star Reviews Only</strong> You can't make everyone happy, but our magic funnel sure can. Five stars, every time.",
                 `<strong>Automatic Follow-Up Reminders</strong>. "Sure I'll leave you a review", but the truth is people forget. We’ll 'gently' reminder them for a few weeks until they remember.`,
