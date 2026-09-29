@@ -1,0 +1,74 @@
+{
+  "src/pages/index.astro": {
+    "backup": "src/pages/index.astro.bak",
+    "sha256": "b13a9bbe6a880a169159d42764c333e8890ae1e49b53081d66f21178bd9f205c"
+  },
+  "src/layout/Layout.astro": {
+    "backup": "src/layout/Layout.astro.bak",
+    "sha256": "f7317b2a587904daf8414ae1a74c6120c3392bcc1cb9be24c9105bd295dda84a"
+  },
+  "src/components/Header.astro": {
+    "backup": "src/components/Header.astro.bak",
+    "sha256": "8338a324d488d78b24230b1af6af33bad1516f9fa5feda746ed51949ebd42e5e"
+  },
+  "src/components/Footer.astro": {
+    "backup": "src/components/Footer.astro.bak",
+    "sha256": "2a424de22dfdf7cb6efe5dfcba8b433d94a7e90c9851546e5db04e01786b8087"
+  },
+  "src/components/Button.astro": {
+    "backup": "src/components/Button.astro.bak",
+    "sha256": "089eae2a2c39fb42132cc4eb91bc672cc3da2a91b35eb81b41dae6fea189f5e3"
+  },
+  "src/components/Badge.astro": {
+    "backup": "src/components/Badge.astro.bak",
+    "sha256": "f3024edf0a67862f987b24242db958ef246c873cb808c55af022f65650a3ec6e"
+  },
+  "src/components/Accordion.astro": {
+    "backup": "src/components/Accordion.astro.bak",
+    "sha256": "cba493b95a5a047062449935696235754d6a82f7c88424cfdd912b3a547c3225"
+  },
+  "src/components/Svg.astro": {
+    "backup": "src/components/Svg.astro.bak",
+    "sha256": "308edf877153f6c7becd9d4c29fb46b991b42e928dd6571ed0da1d2848a85f02"
+  },
+  "src/styles/critical.css": {
+    "backup": "src/styles/critical.css.bak",
+    "sha256": "2633d86b1b5f1e0b155bd87ec2701b3bd8d1773c289086c97aab2610259b0051"
+  },
+  "src/styles/globals/base.scss": {
+    "backup": "src/styles/globals/base.scss.bak",
+    "sha256": "ad8293305025df6fe202f478ca9e4211fa289224103b878bdb04f5770122acc6"
+  },
+  "src/styles/pages/home/home.scss": {
+    "backup": "src/styles/pages/home/home.scss.bak",
+    "sha256": "3dc1ffb29e61a964147e1b8cce662fa3890bbfb50527e83dd93ad5f3c6d857c5"
+  },
+  "src/styles/pages/footer/footer.scss": {
+    "backup": "src/styles/pages/footer/footer.scss.bak",
+    "sha256": "db7f223bf8ae3c11a57084fed92d4e0673f6a6075a461269ded4f86b5c7ed97c"
+  },
+  "src/code/interaction.js": {
+    "backup": "src/code/interaction.js.bak",
+    "sha256": "6d8775cff465ef8bc59164a3c0d1bafa8592e93f33c510294ba9c18bbf08c8d0"
+  },
+  "src/code/modules/menu.js": {
+    "backup": "src/code/modules/menu.js.bak",
+    "sha256": "d4d8af41b78e3b65b7a335ec86830ae67066499e9a60aea6eb6618cca2c11767"
+  },
+  "src/code/modules/lazy.js": {
+    "backup": "src/code/modules/lazy.js.bak",
+    "sha256": "ecf55c5b85123c6c7c044963aabb91c4f6b341ce15cf07bb875c2d524c271b4d"
+  },
+  "astro.config.mjs": {
+    "backup": "astro.config.mjs.bak",
+    "sha256": "89e827ab5f7aa40306b22df597862511ef5048beec8f386e9658485d367b4e28"
+  },
+  "src/data/data.js": {
+    "backup": "src/data/data.js.bak",
+    "sha256": "e6f13ce55588126de1138598d8b88c9864961bf6cd875fa92115e830768f6864"
+  },
+  "src/styles/pages/legal/legal.scss": {
+    "backup": "src/styles/pages/legal/legal.scss.bak",
+    "sha256": "2b0885a6a51cc443801447ea07782c99a19f290f2599481c3b8a8eb09b5e5a15"
+  }
+}

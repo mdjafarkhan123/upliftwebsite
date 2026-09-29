@@ -1,0 +1,66 @@
+---
+import Brand from "./Brand.astro";
+import Icon from "../Svg.astro";
+const links = [
+  { label: "Our services", href: "#services" },
+  { label: "Our approach", href: "#about" },
+  { label: "The possibilities", href: "#projects" },
+  { label: "Good to know", href: "#faq" },
+];
+---
+
+<header class="garden-header wrap">
+  <Brand />
+  <nav class="desktop-nav" aria-label="Main navigation">
+    {links.map((link) => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+  </nav>
+  <div class="header-actions">
+    <a href="#quote" class="button button-small">
+      Let’s talk lawns <Icon name="arrow-right-up" size={18} />
+    </a>
+    <button
+      class="header__menu-toggler"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="mobile-navigation"
+      aria-expanded="false"
+      hidden
+    >
+      Menu <span aria-hidden="true">＋</span>
+    </button>
+  </div>
+  <dialog
+    class="mobile-menu"
+    id="mobile-navigation"
+    aria-labelledby="mobile-menu-title"
+  >
+    <div class="mobile-menu__top">
+      <Brand />
+      <button
+        class="mobile-menu__close"
+        type="button"
+        aria-label="Close navigation"
+        autofocus
+      >
+        <Icon name="plus-icon" />
+      </button>
+    </div>
+    <p class="eyebrow" id="mobile-menu-title">
+      A little closer to nature
+    </p>
+    <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+      {links.map((link, i) => (
+        <a href={link.href}>
+          <small>0{i + 1}</small>
+          {link.label}
+          <Icon name="arrow-right-up" />
+        </a>
+      ))}
+    </nav>
+    <a href="#quote" class="button button-lime">
+      Find your greener side <Icon name="arrow-right-up" />
+    </a>
+  </dialog>
+</header>

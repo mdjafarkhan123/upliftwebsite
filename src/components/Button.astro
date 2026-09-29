@@ -1,39 +1,25 @@
 ---
-type Prettify<T> = {
-    [K in keyof T]: T[K];
-} & {};
-
-type Props = Prettify<{
-    /** The text label displayed on the button. Default: "Get started" */
-    title?: string;
-    /** The visual style type of the button (e.g., "primary", "secondary"). Default: "primary" */
-    type?: string;
-    /** Optional HTML ID for the anchor element. */
-    id?: string;
-    src?: string;
-    icon?: string;
-    link?: string;
-}>;
-
 import Icon from "./Svg.astro";
+interface Props {
+    title: string;
+    link: string;
+    type?: "primary" | "small";
+    id?: string;
+    icon?: string;
+    src?: string;
+}
 const {
-    title = "Get started",
+    title,
+    link,
     type = "primary",
     id,
-    src = "abovethefold",
     icon = "arrow-button",
-    link = "#!",
+    src = "abovethefold",
 } = Astro.props;
 ---
 
-<a
-    id={id}
-    href={link}
-    class=`btn btn--${type} magnetic-button`
-    role="button"
-    aria-label={title}
->
-    <span class="btn__text text">{title}</span>
+<a id={id} href={link} class:list={["btn", { "btn--small": type === "small" }]}>
+    <span class="btn__text">{title}</span>
     <span class="btn__icon" aria-hidden="true">
         <Icon name={icon} src={src} />
     </span>

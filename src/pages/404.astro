@@ -1,0 +1,105 @@
+---
+import Layout from "../layout/Layout.astro";
+import Logo from "../components/Logo.astro";
+import Icon from "../components/Svg.astro";
+import errorStyle from "../styles/pages/error/error.scss?url";
+import { publicSite } from "../data/data.js";
+
+const bookingLink = publicSite.booking.url || publicSite.booking.fallbackUrl;
+---
+
+<Layout
+    title={`Page Not Found | ${publicSite.name}`}
+    description="The page you requested could not be found. Return to Uplift Contractor or explore our services."
+    canonicalUrl={`${publicSite.websiteUrl}/404`}
+    robots="noindex, follow"
+>
+    <section class="not-found" aria-labelledby="not-found-heading">
+        <div class="not-found__shell container">
+            <div class="not-found__content">
+                <p class="not-found__eyebrow">
+                    <span class="not-found__eyebrow-dot" aria-hidden="true"></span>
+                    404 · Page not found
+                </p>
+
+                <h1 id="not-found-heading">
+                    Looks like this page<br />
+                    <span>missed the blueprint.</span>
+                </h1>
+
+                <p class="not-found__intro">
+                    The link may be outdated, or the page may have moved. No
+                    problem—we’ll help you get back to solid ground.
+                </p>
+
+                <div class="not-found__actions" aria-label="Recovery options">
+                    <a class="not-found__primary" href="/">
+                        <span>Back to homepage</span>
+                        <span class="not-found__button-icon" aria-hidden="true">
+                            <Icon name="arrow-right" src="sprite" />
+                        </span>
+                    </a>
+                    <a class="not-found__secondary" href="/#services">
+                        Explore services
+                    </a>
+                </div>
+
+                <p class="not-found__support">
+                    Still need a hand?{" "}
+                    <a href={bookingLink}>Request a call</a>{" "}
+                    or{" "}
+                    <a href={`mailto:${publicSite.contact.email}`}>email us</a>.
+                </p>
+            </div>
+
+            <div class="not-found__visual" aria-hidden="true">
+                <div class="not-found__code">
+                    <span>4</span>
+                    <span class="not-found__zero">
+                        <Logo width="58" height="69" />
+                    </span>
+                    <span>4</span>
+                </div>
+
+                <div class="not-found__route">
+                    <span class="not-found__route-line"></span>
+                    <span class="not-found__route-point is-complete"></span>
+                    <span class="not-found__route-point is-missing"></span>
+                    <span class="not-found__route-point is-home"></span>
+                </div>
+
+                <div class="not-found__status">
+                    <span class="not-found__status-icon">
+                        <Icon name="alert-icon" src="sprite" />
+                    </span>
+                    <span>
+                        <strong>Route interrupted</strong>
+                        <small>A better path is ready.</small>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="not-found__shortcuts container" aria-label="Helpful destinations">
+            <a href="/#services">
+                <span>01</span>
+                Services
+                <Icon name="arrow-right-up" src="sprite" />
+            </a>
+            <a href="/#projects">
+                <span>02</span>
+                Our work
+                <Icon name="arrow-right-up" src="sprite" />
+            </a>
+            <a href="/#faq">
+                <span>03</span>
+                FAQs
+                <Icon name="arrow-right-up" src="sprite" />
+            </a>
+        </nav>
+    </section>
+
+    <Fragment slot="bottom-style">
+        <link rel="stylesheet" href={errorStyle} />
+    </Fragment>
+</Layout>

@@ -1,0 +1,57 @@
+---
+interface Props {
+    contentId: string;
+    moreLabel?: string;
+    lessLabel?: string;
+    className?: string;
+    contentClassName?: string;
+    contentHtml?: string;
+    collapsedLines?: number;
+}
+
+const {
+    contentId,
+    moreLabel = "Read more",
+    lessLabel = "Show less",
+    className,
+    contentClassName,
+    contentHtml,
+    collapsedLines = 4,
+} = Astro.props;
+const lineCount = Math.max(1, Math.floor(collapsedLines));
+---
+
+<div class:list={["read-more-group", className]}>
+    {contentHtml ? (
+        <div
+            id={contentId}
+            class:list={["read-more__content", contentClassName]}
+            style={`--read-more-lines: ${lineCount}`}
+            set:html={contentHtml}
+        />
+    ) : (
+        <div
+            id={contentId}
+            class:list={["read-more__content", contentClassName]}
+            style={`--read-more-lines: ${lineCount}`}
+        >
+            <slot />
+        </div>
+    )}
+    <button
+        class="read-more"
+        type="button"
+        data-read-more
+        data-read-more-label={moreLabel}
+        data-show-less-label={lessLabel}
+        aria-controls={contentId}
+        aria-expanded="false"
+    >
+        <span class="read-more__text">{moreLabel}</span>
+        <span class="read-more__icon" aria-hidden="true">
+            <svg viewBox="0 0 41 15" fill="currentColor">
+                <path d="M40.707 8.071a1 1 0 0 0 0-1.414L34.343.293a1 1 0 0 0-1.414 1.414l5.657 5.657-5.657 5.657a1 1 0 1 0 1.414 1.414l6.364-6.364ZM0 8.364h40v-2H0v2Z" />
+            </svg>
+        </span>
+    </button>
+</div>

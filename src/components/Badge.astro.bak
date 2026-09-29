@@ -1,0 +1,29 @@
+---
+import Icon from "./Svg.astro";
+type Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};
+
+type Props = Prettify<{
+    title?: string;
+    type?: string;
+    id?: string;
+    src?: string;
+    icon?: string;
+}>;
+
+const {
+    title = "About us",
+    type = "primary",
+    id,
+    src = "sprite",
+    icon = "arrow-right",
+} = Astro.props;
+---
+
+<span class=`badge badge--${type}` id={id}>
+    <span class="badge__icon-wrapper" aria-hidden="true">
+        <Icon src={src} name={icon} />
+    </span>
+    <span class="badge__text">{title}</span>
+</span>

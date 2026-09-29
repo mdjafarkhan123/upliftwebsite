@@ -1,0 +1,201 @@
+@use "/src/styles/utils" as *;
+
+// This stylesheet is loaded only on the public legal pages. It deliberately
+// overrides the homepage-only reveal rule without modifying critical.css.
+header,
+footer,
+section {
+    opacity: 1;
+    overflow: clip;
+}
+
+.legal-page {
+    position: relative;
+    padding-bottom: var(--space-fluid-xl);
+    background:
+        radial-gradient(circle at 5% 22%, rgb(5 190 104 / 7%), transparent 26rem),
+        linear-gradient(180deg, #f8fcfa 0, var(--color-background) 28rem);
+
+    &__hero {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        color: var(--color-white);
+        background: linear-gradient(120deg, #0d3d2b 0%, #175738 58%, #24724d 100%);
+        padding-block: clamp(5.6rem, 9vw, 11rem) clamp(4.8rem, 7vw, 8rem);
+
+        &::before,
+        &::after {
+            position: absolute;
+            width: 34rem;
+            aspect-ratio: 1;
+            border: 1px solid rgb(255 255 255 / 16%);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        &::before {
+            top: -19rem;
+            right: -9rem;
+            box-shadow: 0 0 0 6rem rgb(255 255 255 / 4%);
+        }
+
+        &::after {
+            bottom: -25rem;
+            left: -11rem;
+            box-shadow: 0 0 0 4rem rgb(5 190 104 / 18%);
+        }
+
+        .container {
+            position: relative;
+            max-width: 940px;
+        }
+
+        h1 {
+            max-width: 14ch;
+            color: var(--color-white);
+            font-size: clamp(4rem, 4.2vw, 6.4rem);
+            letter-spacing: -0.045em;
+        }
+    }
+
+    &__eyebrow {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        color: #d9ffea;
+        background: rgb(255 255 255 / 12%);
+        border: 1px solid rgb(255 255 255 / 18%);
+        border-radius: 100vmax;
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 0.11em;
+        padding: 0.75rem 1.1rem;
+        text-transform: uppercase;
+    }
+
+    &__intro {
+        max-width: 59ch;
+        color: rgb(255 255 255 / 85%);
+        font-size: clamp(1.8rem, 1.8vw, 2.15rem);
+        line-height: 1.6;
+    }
+
+    &__content {
+        max-width: 940px;
+        gap: var(--space-md);
+        margin-top: clamp(-3.2rem, -3.6vw, -4.8rem);
+        position: relative;
+        z-index: 1;
+    }
+
+    &__section {
+        display: grid;
+        gap: var(--space-xsm);
+        background: rgb(255 255 255 / 94%);
+        border: 1px solid rgb(23 87 56 / 11%);
+        border-radius: var(--round-lg);
+        box-shadow: 0 1.4rem 3.8rem rgb(19 74 37 / 7%);
+        padding: clamp(2.4rem, 4vw, 4.2rem);
+        scroll-margin-top: var(--space-xl);
+
+        &:hover {
+            border-color: rgb(5 190 104 / 31%);
+        }
+    }
+
+    h2 {
+        color: var(--color-secondary);
+        font-size: clamp(2.4rem, 2.8vw, 3.2rem);
+        letter-spacing: -0.03em;
+    }
+
+    h3 {
+        color: var(--color-tertiary);
+        font-size: var(--fs-lg);
+        margin-top: var(--space-2xsm);
+    }
+
+    p,
+    li {
+        max-width: 76ch;
+        line-height: 1.7;
+    }
+
+    strong {
+        color: var(--color-secondary);
+    }
+
+    ul {
+        display: grid;
+        gap: var(--space-xsm);
+        margin: 0;
+        padding: var(--space-xsm) 0 0 1.45em;
+
+        li::marker {
+            color: var(--color-primary);
+        }
+    }
+
+    a {
+        color: #176a46;
+        font-weight: 700;
+        text-decoration-color: rgb(5 190 104 / 55%);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.2em;
+
+        &:hover {
+            color: #0b4c30;
+            text-decoration-color: currentColor;
+        }
+    }
+
+    &__notice {
+        position: relative;
+        display: grid;
+        gap: var(--space-2xsm);
+        overflow: hidden;
+        color: #164b34;
+        background: linear-gradient(120deg, #e3f8ed 0%, #f7fdf9 100%);
+        border: 1px solid #b8e8cc;
+        border-radius: var(--round-md);
+        margin-top: var(--space-2xsm);
+        padding: var(--space-md) var(--space-lg);
+
+        &::before {
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 4px;
+            background: var(--color-primary);
+            content: "";
+        }
+    }
+}
+
+@include respond-to("tablet") {
+    .legal-page {
+        &__content {
+            gap: var(--space-lg);
+        }
+
+        &__section {
+            padding: clamp(3.2rem, 4vw, 4.8rem);
+        }
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .legal-page__section {
+        transition:
+            border-color 180ms ease,
+            box-shadow 180ms ease,
+            transform 180ms ease;
+
+        &:hover {
+            box-shadow: 0 1.8rem 4.4rem rgb(19 74 37 / 10%);
+            transform: translateY(-2px);
+        }
+    }
+}

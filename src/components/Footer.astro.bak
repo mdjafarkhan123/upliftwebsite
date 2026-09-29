@@ -1,0 +1,82 @@
+---
+import Logo from "./Logo.astro";
+import Icon from "./Svg.astro";
+import { footer } from "../data/data.js";
+---
+
+<footer id="footer" class="footer">
+    <div class="footer__wrapper container">
+        <div class="footer-main">
+            <div class="footer-main__introduction">
+                <a
+                    href="/"
+                    class="header__logo"
+                    aria-label="Uplift Contractor - Home"
+                >
+                    <Logo width="27" height="32" />
+                </a>
+                <p class="footer-main__description">
+                    {footer.intro.title}
+                </p>
+            </div>
+            <div class="footer-main__nav">
+                <h3 class="footer-main__nav-title">{footer.company.title}</h3>
+                <ul class="footer-main__nav-list">
+                    {
+                        footer.company.items.map((item) => (
+                            <li class="footer-main__nav-item">
+                                <a href={item.href} class="random-text">{item.label}</a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+            <div class="footer-main__quick-links">
+                <h3 class="quick-links__title">Quick links</h3>
+                <ul class="footer-main__nav-list">
+                    {
+                        footer.resources.items.map((item) => (
+                            <li class="footer-main__nav-item">
+                                <a href={item.href} class="random-text">{item.label}</a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+            <div class="footer-main__contact">
+                <h3 class="footer-main__contact-title">
+                    {footer.contact.title}
+                </h3>
+                <ul class="footer-main__contact-list">
+                    <li class="footer-main__contact-item">
+                        <span class="icon" aria-hidden="true">
+                            <Icon name="location-nav" />
+                        </span>
+                        <address class="info">{footer.contact.location}</address>
+                    </li>
+                    <li class="footer-main__contact-item">
+                        <a href={`mailto:${footer.contact.email}`}>
+                            <span class="icon">
+                                <Icon name="email-open" />
+                            </span>
+                            <span class="info">{footer.contact.email}</span>
+                        </a>
+                    </li>
+                    <li class="footer-main__contact-item">
+                        <a href={`tel:${footer.contact.phoneHref}`}>
+                            <span class="icon">
+                                <Icon name="telephone-icon" />
+                            </span>
+                            <span class="info">{footer.contact.phone}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="footer-copyright__text">
+                @ 2026 Uplift Contractor. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>

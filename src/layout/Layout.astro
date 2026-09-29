@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import utfFooterCss from "../styles/pages/footer/footer.scss?url";
 import baseStyle from "../styles/globals/base.scss?url";
 import criticalCss from "../styles/critical.css?raw";
+import { publicSite } from "../data/data.js";
 
 // Define TypeScript props for flexible page-level SEO configuration
 interface Props {
@@ -14,44 +15,44 @@ interface Props {
     ogImage?: string;
     ogType?: string;
     canonicalUrl?: string;
+    robots?: string;
 }
 
 // Extract props with highly optimized defaults based on business.md
 const {
     title = "Website design and marketing for contractors and home service pros | Uplift Contractor",
-    description = "Uplift Contractor builds high-converting websites, automated lead follow-up, CRM & 5-star review systems for local contractors & home service pros. No contracts. Book a free call.",
+    description = "Uplift Contractor provides websites, CRM tools, and marketing support for contractors and home service professionals.",
     keywords = "contractor website design, contractor marketing system, local SEO for contractors, contractor CRM, missed call text-back for contractors, contractor lead generation, home service business marketing, Google review automation, contractor automation tools, website for plumbers, HVAC marketing, roofing contractor website, contractor digital marketing, affordable contractor website",
     author = "Uplift Contractor",
-    ogImage = "/og-image.jpg", // Default social sharing image (placed in the public folder)
+    ogImage, // Emit image metadata only when a real sharing asset is supplied.
     ogType = "website",
     canonicalUrl,
+    robots = "index, follow",
 } = Astro.props;
 
 // Dynamically generate the current absolute URL for canonical tag
-const cleanCanonical = canonicalUrl || Astro.url.href;
+const cleanCanonical =
+    canonicalUrl || new URL(Astro.url.pathname, publicSite.websiteUrl).href;
 
 // Standard base domain for organization mapping
-const baseDomain = "https://upliftcontractor.com";
-
-// Rich JSON-LD Structured Data Schema representing the business & UpliftContractor service catalog
+// Structured data uses only public business facts that can be verified.
 const schemaData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Uplift Contractor",
-    url: "https://upliftcontractor.com",
-    logo: "https://upliftcontractor.com/logo.png",
+    name: publicSite.name,
+    url: publicSite.websiteUrl,
+    logo: `${publicSite.websiteUrl}/brand-logo.svg`,
     description:
-        "Uplift Contractor builds high-converting websites, CRM, automated lead follow-up & 5-star review systems for local contractors & home service pros.",
-    foundingDate: "2020",
+        "Uplift Contractor provides websites, CRM tools, and marketing support for contractors and home service professionals.",
     founder: {
         "@type": "Person",
-        name: "Jafar Khan",
+        name: publicSite.owner,
     },
     contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+8801834969563",
+        telephone: publicSite.contact.phone,
         contactType: "customer service",
-        email: "info@upliftcontractor.com",
+        email: publicSite.contact.email,
         availableLanguage: "English",
     },
     address: {
@@ -60,10 +61,6 @@ const schemaData = {
         addressRegion: "Dhaka",
         addressCountry: "BD",
     },
-    sameAs: [
-        "https://www.facebook.com/upliftcontractor",
-        "https://www.instagram.com/upliftcontractor",
-    ],
 };
 ---
 
@@ -74,7 +71,7 @@ const schemaData = {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={robots} />
         <meta name="author" content={author} />
 
         <!-- Primary SEO Meta Tags -->
@@ -88,15 +85,28 @@ const schemaData = {
         <meta property="og:url" content={cleanCanonical} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={ogImage} />
+        {ogImage && (
+            <meta
+                property="og:image"
+                content={new URL(ogImage, publicSite.websiteUrl).href}
+            />
+        )}
         <meta property="og:site_name" content="Uplift Contractor" />
 
         <!-- Twitter Card Meta Tags (Optimizes display on X/Twitter) -->
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:card"
+            content={ogImage ? "summary_large_image" : "summary"}
+        />
         <meta name="twitter:url" content={cleanCanonical} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImage} />
+        {ogImage && (
+            <meta
+                name="twitter:image"
+                content={new URL(ogImage, publicSite.websiteUrl).href}
+            />
+        )}
 
         <!-- Favicons & Touch Icons (Points to public/favicon.svg) -->
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -106,13 +116,6 @@ const schemaData = {
         <link
             rel="preload"
             href="/fonts/body-regular.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin
-        />
-        <link
-            rel="preload"
-            href="/fonts/body-500.woff2"
             as="font"
             type="font/woff2"
             crossorigin
@@ -142,8 +145,11 @@ const schemaData = {
         />
     </head>
     <body>
+        <a href="#main" class="skip-link">
+            Skip to content
+        </a>
         <Header />
-        <main>
+        <main id="main">
             <slot />
         </main>
         <Footer />

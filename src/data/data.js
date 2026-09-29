@@ -12,6 +12,34 @@ import Service5 from "../assets/images/gbp.webp";
 import Service6 from "../assets/images/text-back.webp";
 
 /**
+ * Public site settings
+ *
+ * Update verified public details here. Leave optional links blank until a real,
+ * public destination is available; blank social links are not rendered.
+ */
+export const publicSite = {
+    name: "Uplift Contractor",
+    owner: "Jafar Khan",
+    websiteUrl: "https://upliftcontractor.com",
+    location: "Savar, Dhaka, Bangladesh",
+    contact: {
+        email: "info@upliftcontractor.com",
+        phone: "+8801834969563",
+    },
+    booking: {
+        // Add the real public booking URL here after it has been confirmed.
+        url: "",
+        fallbackUrl:
+            "mailto:info@upliftcontractor.com?subject=Uplift%20Contractor%20call%20request",
+    },
+    social: {
+        facebook: "",
+        instagram: "",
+        linkedin: "",
+    },
+};
+
+/**
  * data.js
  * --------------------------------------------------------------------------
  * Central content store for the homepage.
@@ -46,6 +74,11 @@ export const hero = {
     cta: `Book a call`,
     heroImg: HeroImg,
     heroImgSm: HeroImgSm,
+};
+
+export const brandLogo = {
+    title: "Powered by trusted technology",
+    logos: ["openai", "twilio", "google", "aws", "hostinger"],
 };
 
 export const reason = {
@@ -359,29 +392,39 @@ export const cta = {
 
 export const footer = {
     intro: {
-        title: "High Converting Website, System & Marketing for Contractors ",
-        facebook: "#",
-        instagram: "#",
-        linkedin: "#",
+        title: "Website, CRM, and marketing support for contractors.",
     },
 
     company: {
         title: "Navigation",
-        items: ["Home", "about", "services", "projects", "process", "faq"],
+        items: [
+            { label: "Home", href: "/" },
+            { label: "About", href: "/#about" },
+            { label: "Services", href: "/#services" },
+            { label: "Platform", href: "/#projects" },
+            { label: "Process", href: "/#process" },
+            { label: "FAQs", href: "/#faq" },
+        ],
     },
     resources: {
-        title: "Resources",
         items: [
-            "Privacy policy",
-            "terms & conditions",
-            "documentation",
-            "support",
+            { label: "Privacy Policy", href: "/privacy" },
+            { label: "Terms & Conditions", href: "/terms" },
+            { label: "Contact", href: `mailto:${publicSite.contact.email}` },
         ],
     },
     contact: {
         title: "Contact info",
-        location: "Savar, Dhaka, Bangladesh",
-        email: "info@upliftcontractor.com",
-        phone: "(+88)01834969563",
+        location: publicSite.location,
+        email: publicSite.contact.email,
+        phone: publicSite.contact.phone,
+        phoneHref: publicSite.contact.phone,
     },
+};
+
+// Shared labels for the production mobile navigation.
+export const navigation = {
+    openLabel: "Open menu",
+    closeLabel: "Close menu",
+    menuLabel: "Menu",
 };

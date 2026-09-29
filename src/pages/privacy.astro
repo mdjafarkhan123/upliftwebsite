@@ -1,0 +1,92 @@
+---
+import Layout from "../layout/Layout.astro";
+import legalStyle from "../styles/pages/legal/legal.scss?url";
+import { publicSite } from "../data/data.js";
+---
+
+<Layout
+    title={`Privacy Policy | ${publicSite.name}`}
+    description={`Learn how ${publicSite.name} collects, uses, and protects information.`}
+    canonicalUrl={`${publicSite.websiteUrl}/privacy`}
+>
+    <article class="legal-page">
+        <header class="legal-page__hero">
+            <div class="container">
+                <p class="legal-page__eyebrow">Legal</p>
+                <h1>Privacy Policy</h1>
+                <p class="legal-page__intro">
+                    This policy explains how {publicSite.name} handles information
+                    connected with this website, our platform, and our services.
+                </p>
+            </div>
+        </header>
+
+        <div class="legal-page__content container">
+            <section class="legal-page__section" aria-labelledby="privacy-who-we-are">
+                <h2 id="privacy-who-we-are">Who we are</h2>
+                <p>
+                    {publicSite.name} is a contractor CRM and marketing platform
+                    operated by {publicSite.owner}. You can contact us at{" "}
+                    <a href={`mailto:${publicSite.contact.email}`}>{publicSite.contact.email}</a>{" "}
+                    or <a href={`tel:${publicSite.contact.phone}`}>{publicSite.contact.phone}</a>.
+                </p>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="privacy-information">
+                <h2 id="privacy-information">Information we collect</h2>
+                <p>Depending on how you use our services, we may collect:</p>
+                <ul>
+                    <li>Contact details, such as name, business name, email address, phone number, and message content that you provide.</li>
+                    <li>Account, form, CRM, customer, job, quote, invoice, and communication information entered into the platform by you or an authorized user.</li>
+                    <li>Payment-status information related to a transaction. Payment-card details are entered directly on Stripe’s secure payment page and are not stored by Uplift Contractor.</li>
+                    <li>Technical and security information needed to protect and operate the website and services, such as IP address, device/browser information, and security or spam-check records.</li>
+                </ul>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="privacy-use">
+                <h2 id="privacy-use">How we use information</h2>
+                <p>We use information to provide and support the platform; respond to requests; manage accounts, forms, communications, and payments; protect our services; meet legal obligations; and improve the reliability of our operations.</p>
+                <p>We do not use Google Analytics, advertising pixels, PostHog, Hotjar, or similar visitor-tracking tools on this website.</p>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="privacy-providers">
+                <h2 id="privacy-providers">Service providers</h2>
+                <p>We use service providers to operate our services. Depending on the feature used, these include:</p>
+                <ul>
+                    <li><strong>Supabase</strong> for accounts, forms, and customer information.</li>
+                    <li><strong>Cloudflare</strong> for website protection, spam checking, network delivery, and file storage.</li>
+                    <li><strong>Brevo</strong>, our current email delivery service, for platform emails and CRM email communications.</li>
+                    <li><strong>Stripe</strong> for online payments when that feature is used.</li>
+                    <li><strong>Mapbox</strong> for map and address features where needed.</li>
+                </ul>
+                <p>We may update our service providers as our services change and will update this policy before a new provider begins handling real visitor or customer information where that update is required.</p>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="privacy-sms">
+                <h2 id="privacy-sms">SMS privacy and choices</h2>
+                <div class="legal-page__notice">
+                    <p>Text messaging is not currently active for Uplift Contractor. If we activate the Uplift Contractor SMS Program, SMS consent will be optional and will not be a condition of purchase. We will not sell or share SMS consent or phone-number information with third parties or affiliates for their marketing or promotional purposes.</p>
+                </div>
+                <p>When the program is active, opted-in users may receive account, support, appointment, service, and promotional messages. Message frequency may vary, and message and data rates may apply. Users can reply STOP to opt out and HELP for help. See our <a href="/terms#sms-program">SMS Program Terms</a> for the complete program rules.</p>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="privacy-retention">
+                <h2 id="privacy-retention">Retention and security</h2>
+                <p>We retain information for as long as reasonably needed to provide the services, meet legal and operational requirements, resolve disputes, and enforce agreements. We use reasonable administrative, technical, and organizational safeguards designed to protect information. No method of transmission or storage is completely secure.</p>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="privacy-rights">
+                <h2 id="privacy-rights">Your choices and requests</h2>
+                <p>You may ask about access to, correction of, or deletion of personal information we hold about you, subject to applicable law and our legitimate operational needs. You may also withdraw an optional SMS consent at any time by replying STOP once SMS is active. To make a request, contact <a href={`mailto:${publicSite.contact.email}`}>{publicSite.contact.email}</a>.</p>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="privacy-changes">
+                <h2 id="privacy-changes">Changes to this policy</h2>
+                <p>We may update this policy when our data practices or services change. We will publish the updated version on this page.</p>
+            </section>
+        </div>
+    </article>
+    <Fragment slot="bottom-style">
+        <link rel="stylesheet" href={legalStyle} />
+    </Fragment>
+</Layout>

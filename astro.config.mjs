@@ -7,13 +7,14 @@ export default defineConfig({
     // IMPORTANT FOR SEO: Your production site URL is required for sitemap generation.
     // Replace "https://upliftcontractor.com" with your actual domain when you launch.
     site: "https://upliftcontractor.com",
-    
+
     // Enable sitemap auto-generation on build
     integrations: [
         sitemap({
-            // You can add options here if you want to exclude certain pages, e.g.:
-            // filter: (page) => page !== 'https://upliftcontractor.com/private-page'
-        })
+            // The design reference and error document are not search destinations.
+            filter: (page) =>
+                !/\/(indextwo|404)\/?$/.test(new URL(page).pathname),
+        }),
     ],
 
     vite: {

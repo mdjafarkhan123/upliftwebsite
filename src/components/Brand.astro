@@ -1,0 +1,14 @@
+---
+import Logo from "./Logo.astro";
+import { publicSite } from "../data/data.js";
+---
+
+<a class="brand" href="/" aria-label={`${publicSite.name} — Home`}>
+    <Logo width="30" height="36" />
+    <span class="brand__name">
+        {publicSite.name.split(" ")[0]}
+        <span class="brand__subtitle">
+            {publicSite.name.split(" ").slice(1).join(" ")}
+        </span>
+    </span>
+</a>

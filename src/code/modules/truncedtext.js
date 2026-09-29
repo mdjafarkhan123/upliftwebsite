@@ -1,15 +1,28 @@
 export function init() {
-    const readMoreBtn = document.querySelector(".about .read-more");
-    const textBlock = document.querySelector(".about .about__description");
-    const buttonText = readMoreBtn?.querySelector(".read-more__text");
+    const controls = document.querySelectorAll("[data-read-more]");
 
-    if (!readMoreBtn || !textBlock || !buttonText) return;
+    controls.forEach((control) => {
+        if (control.dataset.readMoreReady) return;
 
-    readMoreBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+        const contentId = control.getAttribute("aria-controls");
+        const content = contentId ? document.getElementById(contentId) : null;
+        const label = control.querySelector(".read-more__text");
 
-        const isTruncated = textBlock.classList.toggle("trunced-text");
+        if (!content || !label) return;
 
-        buttonText.textContent = isTruncated ? "Read more" : "Show less";
+        const moreLabel = control.dataset.readMoreLabel || "Read more";
+        const lessLabel = control.dataset.showLessLabel || "Show less";
+
+        content.classList.add("is-collapsed");
+        control.dataset.readMoreReady = "true";
+
+        control.addEventListener("click", () => {
+            const isExpanded = control.getAttribute("aria-expanded") === "true";
+            const nextExpanded = !isExpanded;
+
+            control.setAttribute("aria-expanded", String(nextExpanded));
+            content.classList.toggle("is-collapsed", !nextExpanded);
+            label.textContent = nextExpanded ? lessLabel : moreLabel;
+        });
     });
 }

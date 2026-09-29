@@ -1,55 +1,79 @@
 ---
+import Brand from "./Brand.astro";
 import Button from "./Button.astro";
-import Logo from "./Logo.astro";
+import Icon from "./Svg.astro";
+import { footer, hero, navigation, publicSite } from "../data/data.js";
+const bookingLink = publicSite.booking.url || publicSite.booking.fallbackUrl;
+const items = footer.company.items.filter((item) => item.href !== "/");
 ---
 
-<header id="header" class="header">
-    <div class="header__container container">
-        <nav class="header__nav" aria-label="Main navigation">
-            <a
-                href="/"
-                class="header__logo"
-                aria-label="Uplift Contractor - Home"
-            >
-                <Logo width="27" height="32" />
+<header id="header" class="header container">
+    <Brand />
+    <nav class="header__nav" aria-label="Main navigation">
+        {items.map((item) => (
+            <a class="header__link" href={item.href}>
+                {item.label}
             </a>
-            <ul class="header__menu" id="main-navigation">
-                <li class="header__menu-item">
-                    <a href="#about" class="header__menu-link">Home</a>
-                </li>
-                <li class="header__menu-item">
-                    <a href="#about" class="header__menu-link">About</a>
-                </li>
-                <li class="header__menu-item">
-                    <a href="#service" class="header__menu-link">Services</a>
-                </li>
-                <li class="header__menu-item">
-                    <a href="#testimonial" class="header__menu-link"
-                        >Testimonial</a
-                    >
-                </li>
-                <li class="header__menu-item">
-                    <a href="#testimonial" class="header__menu-link"
-                        >Locations</a
-                    >
-                </li>
-            </ul>
-            <Button
-                id="header__cta-desktop"
-                type="primary header__cta--desktop"
-                title="Login now"
-                link="https://app.upliftcontractor.com/"
-            />
-            <button
-                class="header__menu-toggler"
-                aria-label="Toggle menu"
-                aria-expanded="false"
-                aria-controls="main-navigation"
-            >
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-        </nav>
+        ))}
+    </nav>
+    <div class="header__actions">
+        <Button title={hero.cta} link={bookingLink} type="small" />
+        <button
+            class="header__menu-toggler"
+            type="button"
+            aria-label={navigation.openLabel}
+            aria-controls="mobile-navigation"
+            aria-expanded="false"
+            hidden
+        >
+            {navigation.menuLabel}
+        </button>
     </div>
+    <dialog
+        class="mobile-menu"
+        id="mobile-navigation"
+        aria-labelledby="mobile-menu-title"
+    >
+        <div class="mobile-menu__top">
+            <Brand />
+            <button
+                class="mobile-menu__close"
+                type="button"
+                aria-label={navigation.closeLabel}
+                autofocus
+            >
+                <span aria-hidden="true">
+                    <Icon name="plus-icon" />
+                </span>
+            </button>
+        </div>
+        <div class="mobile-menu__body">
+            <p class="mobile-menu__eyebrow" id="mobile-menu-title">
+                {footer.company.title}
+            </p>
+            <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+                {footer.company.items.map((item, i) => (
+                    <a class="mobile-menu__link" href={item.href}>
+                        <span class="mobile-menu__number" aria-hidden="true">
+                            0{i + 1}
+                        </span>
+                        <span>{item.label}</span>
+                        <span class="mobile-menu__arrow" aria-hidden="true">
+                            <Icon name="arrow-button" src="abovethefold" />
+                        </span>
+                    </a>
+                ))}
+            </nav>
+            <div class="mobile-menu__contact">
+                <p>{hero.badge}</p>
+                <Button title={hero.cta} link={bookingLink} />
+                <a href={`mailto:${publicSite.contact.email}`}>
+                    {publicSite.contact.email}
+                </a>
+                <a href={`tel:${publicSite.contact.phone}`}>
+                    {publicSite.contact.phone}
+                </a>
+            </div>
+        </div>
+    </dialog>
 </header>

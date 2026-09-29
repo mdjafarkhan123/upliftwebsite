@@ -1,0 +1,55 @@
+---
+import Button from "./Button.astro";
+import Logo from "./Logo.astro";
+---
+
+<header id="header" class="header">
+    <div class="header__container container">
+        <nav class="header__nav" aria-label="Main navigation">
+            <a
+                href="/"
+                class="header__logo"
+                aria-label="Uplift Contractor - Home"
+            >
+                <Logo width="27" height="32" />
+            </a>
+            <ul class="header__menu" id="main-navigation">
+                <li class="header__menu-item">
+                    <a href="/#hero" class="header__menu-link">Home</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="/#about" class="header__menu-link">About</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="/#services" class="header__menu-link">Services</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="/#projects" class="header__menu-link">Projects</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="/#process" class="header__menu-link">Process</a>
+                </li>
+            </ul>
+            <div class="header__actions">
+                <a href="https://app.upliftcontractor.com">Login</a>
+
+                <Button
+                    id="header__cta-desktop"
+                    type="primary header__cta--desktop"
+                    title="Book now"
+                    link="https://app.upliftcontractor.com"
+                />
+            </div>
+            <button
+                class="header__menu-toggler"
+                aria-label="Toggle menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </nav>
+    </div>
+</header>

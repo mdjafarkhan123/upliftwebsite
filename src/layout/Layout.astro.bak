@@ -1,0 +1,171 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import utfFooterCss from "../styles/pages/footer/footer.scss?url";
+import baseStyle from "../styles/globals/base.scss?url";
+import criticalCss from "../styles/critical.css?raw";
+import { publicSite } from "../data/data.js";
+
+// Define TypeScript props for flexible page-level SEO configuration
+interface Props {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    author?: string;
+    ogImage?: string;
+    ogType?: string;
+    canonicalUrl?: string;
+    robots?: string;
+}
+
+// Extract props with highly optimized defaults based on business.md
+const {
+    title = "Website design and marketing for contractors and home service pros | Uplift Contractor",
+    description = "Uplift Contractor provides websites, CRM tools, and marketing support for contractors and home service professionals.",
+    keywords = "contractor website design, contractor marketing system, local SEO for contractors, contractor CRM, missed call text-back for contractors, contractor lead generation, home service business marketing, Google review automation, contractor automation tools, website for plumbers, HVAC marketing, roofing contractor website, contractor digital marketing, affordable contractor website",
+    author = "Uplift Contractor",
+    ogImage = "/og-image.jpg", // Default social sharing image (placed in the public folder)
+    ogType = "website",
+    canonicalUrl,
+    robots = "index, follow",
+} = Astro.props;
+
+// Dynamically generate the current absolute URL for canonical tag
+const cleanCanonical = canonicalUrl || Astro.url.href;
+
+// Standard base domain for organization mapping
+// Structured data uses only public business facts that can be verified.
+const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: publicSite.name,
+    url: publicSite.websiteUrl,
+    logo: `${publicSite.websiteUrl}/brand-logo.svg`,
+    description:
+        "Uplift Contractor provides websites, CRM tools, and marketing support for contractors and home service professionals.",
+    founder: {
+        "@type": "Person",
+        name: "Jafar Khan",
+    },
+    contactPoint: {
+        "@type": "ContactPoint",
+        telephone: publicSite.contact.phone,
+        contactType: "customer service",
+        email: publicSite.contact.email,
+        availableLanguage: "English",
+    },
+    address: {
+        "@type": "PostalAddress",
+        addressLocality: "Savar",
+        addressRegion: "Dhaka",
+        addressCountry: "BD",
+    },
+};
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- SEO Technical Meta Tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="robots" content={robots} />
+        <meta name="author" content={author} />
+
+        <!-- Primary SEO Meta Tags -->
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <link rel="canonical" href={cleanCanonical} />
+
+        <!-- Open Graph / Facebook (Crucial for Social Media visibility & CTR) -->
+        <meta property="og:type" content={ogType} />
+        <meta property="og:url" content={cleanCanonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="Uplift Contractor" />
+
+        <!-- Twitter Card Meta Tags (Optimizes display on X/Twitter) -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={cleanCanonical} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+
+        <!-- Favicons & Touch Icons (Points to public/favicon.svg) -->
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+
+        <!-- Font Preloading (Improves Page Speed / Core Web Vitals which is a key Google ranking factor) -->
+        <link
+            rel="preload"
+            href="/fonts/body-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/body-500.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/body-600.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/body-700.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+
+        <!-- Inline Critical CSS for Page Load Speed Optimization -->
+        <style is:inline set:html={criticalCss}></style>
+
+        <!-- Rich JSON-LD Structured Data / Schema Markup for Search Engines -->
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(schemaData)}
+        />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+
+        <!-- Deferred Non-Critical CSS -->
+        <link
+            rel="stylesheet"
+            href={baseStyle}
+            media="print"
+            onload="this.media='all'"
+        />
+        <slot name="bottom-style" />
+        <link
+            rel="stylesheet"
+            href={utfFooterCss}
+            media="print"
+            onload="this.media='all'"
+        />
+
+        <!-- Fallback for users with JavaScript disabled -->
+        <noscript>
+            <link rel="stylesheet" href={baseStyle} />
+            <link rel="stylesheet" href={utfFooterCss} />
+        </noscript>
+
+        <!-- Scripts -->
+        <script src="../code/interaction.js"></script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+---
+import Layout from "../layout/Layout.astro";
+import legalStyle from "../styles/pages/legal/legal.scss?url";
+import { publicSite } from "../data/data.js";
+---
+
+<Layout
+    title={`Terms & Conditions | ${publicSite.name}`}
+    description={`Terms and conditions for ${publicSite.name}.`}
+    canonicalUrl={`${publicSite.websiteUrl}/terms`}
+>
+    <article class="legal-page">
+        <header class="legal-page__hero">
+            <div class="container">
+                <p class="legal-page__eyebrow">Legal</p>
+                <h1>Terms &amp; Conditions</h1>
+                <p class="legal-page__intro">These terms govern use of the Uplift Contractor website, platform, and related services.</p>
+            </div>
+        </header>
+
+        <div class="legal-page__content container">
+            <section class="legal-page__section" aria-labelledby="terms-services">
+                <h2 id="terms-services">Services and accounts</h2>
+                <p>{publicSite.name} provides website, CRM, marketing, communication, and related services for contractors and home service professionals. Service availability, features, fees, and any service-specific terms are described in the applicable order form, plan, or agreement.</p>
+                <p>You are responsible for providing accurate account information, protecting account access, and ensuring that authorized users act in accordance with these terms.</p>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="terms-responsibilities">
+                <h2 id="terms-responsibilities">Customer responsibilities and acceptable use</h2>
+                <p>You are responsible for the information, contacts, and communications you place in the platform and for having the permissions and legal basis required to use them. You must comply with applicable law, carrier rules, platform policies, and the terms of any connected third-party service.</p>
+                <p>You must not use the services to send unlawful, deceptive, abusive, infringing, fraudulent, or unsolicited communications; interfere with the services; attempt unauthorized access; or use the services in a way that harms others or violates applicable requirements.</p>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="terms-payment">
+                <h2 id="terms-payment">Payments and cancellation</h2>
+                <p>Where payment is required, fees, billing timing, and any renewal terms are presented in the applicable order form, plan, or agreement. Online payment-card details are entered on Stripe’s secure payment page.</p>
+                <p>To request cancellation or ask about the effective date of a cancellation, contact <a href={`mailto:${publicSite.contact.email}`}>{publicSite.contact.email}</a>. Any cancellation is subject to the applicable service agreement and any fees or obligations already due.</p>
+            </section>
+
+            <section id="sms-program" class="legal-page__section" aria-labelledby="terms-sms">
+                <h2 id="terms-sms">Uplift Contractor SMS Program</h2>
+                <div class="legal-page__notice">
+                    <p><strong>Current status:</strong> Uplift Contractor text messaging is not active yet. These rules apply if and when the Uplift Contractor SMS Program is activated.</p>
+                </div>
+                <p>By checking a separate, optional SMS permission checkbox where a phone number is collected, a user agrees to receive text messages from Uplift Contractor. Consent is not a condition of purchase or use of services.</p>
+                <ul>
+                    <li><strong>Message types:</strong> account, support, appointment, service, and promotional messages.</li>
+                    <li><strong>Frequency:</strong> message frequency may vary.</li>
+                    <li><strong>Cost:</strong> message and data rates may apply.</li>
+                    <li><strong>Opt out:</strong> reply STOP to opt out at any time.</li>
+                    <li><strong>Help:</strong> reply HELP for help, or contact <a href={`mailto:${publicSite.contact.email}`}>{publicSite.contact.email}</a> or <a href={`tel:${publicSite.contact.phone}`}>{publicSite.contact.phone}</a>.</li>
+                    <li><strong>Privacy:</strong> SMS consent and phone-number information are not sold or shared with third parties or affiliates for their marketing or promotional purposes.</li>
+                    <li><strong>Carrier notice:</strong> carriers are not liable for delayed or undelivered messages.</li>
+                </ul>
+                <p>When the program is active, a user may revoke consent by replying STOP. For information about how we handle data, see our <a href="/privacy">Privacy Policy</a>.</p>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="terms-third-party">
+                <h2 id="terms-third-party">Third-party services</h2>
+                <p>Some features use third-party services such as payment processing, email delivery, maps, hosting, security, and data storage. Their availability and terms may affect the related feature. See our <a href="/privacy">Privacy Policy</a> for the current service-provider information.</p>
+            </section>
+
+            <section class="legal-page__section" aria-labelledby="terms-changes">
+                <h2 id="terms-changes">Changes and contact</h2>
+                <p>We may update these terms as the services or applicable requirements change. We will publish the updated terms on this page. Questions about these terms can be sent to <a href={`mailto:${publicSite.contact.email}`}>{publicSite.contact.email}</a>.</p>
+            </section>
+        </div>
+    </article>
+    <Fragment slot="bottom-style">
+        <link rel="stylesheet" href={legalStyle} />
+    </Fragment>
+</Layout>
