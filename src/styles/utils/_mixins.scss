@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @mixin respond-to($device) {
     $breakpoints: (
         "mobile-lg": 480px,
@@ -7,11 +9,11 @@
         "desktop": 1200px,
     );
 
-    @if map-has-key($breakpoints, $device) {
-        @media (min-width: map-get($breakpoints, $device)) {
+    @if map.has-key($breakpoints, $device) {
+        @media (min-width: map.get($breakpoints, $device)) {
             @content;
         }
     } @else {
-        @warn "Unknown device '#{$device}'. Available options: #{map-keys($breakpoints)}";
+        @warn "Unknown device '#{$device}'. Available options: #{map.keys($breakpoints)}";
     }
 }

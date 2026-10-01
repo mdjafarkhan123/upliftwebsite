@@ -15,10 +15,10 @@ section {
     background:
         radial-gradient(
             circle at 5% 22%,
-            rgb(5 190 104 / 7%),
+            color-mix(in srgb, var(--color-brand-bright) 7%, transparent),
             transparent 26rem
         ),
-        linear-gradient(180deg, #f8fcfa 0, var(--color-background) 28rem);
+        linear-gradient(180deg, var(--surface-legal-tint) 0, var(--color-background) 28rem);
 
     &__hero {
         position: relative;
@@ -27,9 +27,9 @@ section {
         color: var(--color-white);
         background: linear-gradient(
             120deg,
-            #0d3d2b 0%,
-            #175738 58%,
-            #24724d 100%
+            var(--color-green-900) 0%,
+            var(--color-green-700) 58%,
+            var(--color-green-600) 100%
         );
         padding-block: clamp(5.6rem, 9vw, 11rem) clamp(4.8rem, 7vw, 8rem);
 
@@ -38,7 +38,7 @@ section {
             position: absolute;
             width: 34rem;
             aspect-ratio: 1;
-            border: 1px solid rgb(255 255 255 / 16%);
+            border: 1px solid color-mix(in srgb, var(--color-white) 16%, transparent);
             border-radius: 50%;
             content: "";
             pointer-events: none;
@@ -48,18 +48,20 @@ section {
         &::before {
             top: -19rem;
             right: -9rem;
-            box-shadow: 0 0 0 6rem rgb(255 255 255 / 4%);
+            box-shadow: 0 0 0 6rem color-mix(in srgb, var(--color-white) 4%, transparent);
         }
 
         &::after {
             bottom: -25rem;
             left: -11rem;
-            box-shadow: 0 0 0 4rem rgb(5 190 104 / 18%);
+            box-shadow: 0 0 0 4rem color-mix(in srgb, var(--color-brand-bright) 18%, transparent);
         }
 
         .container {
             position: relative;
+            display: grid;
             max-width: 940px;
+            gap: var(--space-md);
         }
 
         h1 {
@@ -74,9 +76,9 @@ section {
         display: inline-flex;
         align-items: center;
         width: fit-content;
-        color: #d9ffea;
-        background: rgb(255 255 255 / 12%);
-        border: 1px solid rgb(255 255 255 / 18%);
+        color: var(--color-inverse-accent);
+        background: color-mix(in srgb, var(--color-white) 12%, transparent);
+        border: 1px solid color-mix(in srgb, var(--color-white) 18%, transparent);
         border-radius: 100vmax;
         font-size: 1.25rem;
         font-weight: 700;
@@ -87,12 +89,13 @@ section {
 
     &__intro {
         max-width: 59ch;
-        color: rgb(255 255 255 / 85%);
+        color: color-mix(in srgb, var(--color-white) 85%, transparent);
         font-size: clamp(1.8rem, 1.8vw, 2.15rem);
         line-height: 1.6;
     }
 
     &__content {
+        display: grid;
         max-width: 940px;
         gap: var(--space-md);
         margin-top: clamp(-3.2rem, -3.6vw, -4.8rem);
@@ -103,15 +106,15 @@ section {
     &__section {
         display: grid;
         gap: var(--space-xsm);
-        background: rgb(255 255 255 / 94%);
-        border: 1px solid rgb(23 87 56 / 11%);
+        background: color-mix(in srgb, var(--color-white) 94%, transparent);
+        border: 1px solid color-mix(in srgb, var(--color-green-700) 11%, transparent);
         border-radius: var(--round-lg);
-        box-shadow: 0 1.4rem 3.8rem rgb(19 74 37 / 7%);
+        box-shadow: 0 1.4rem 3.8rem color-mix(in srgb, var(--color-green-shadow) 7%, transparent);
         padding: clamp(2.4rem, 4vw, 4.2rem);
         scroll-margin-top: var(--space-xl);
 
         &:hover {
-            border-color: rgb(5 190 104 / 31%);
+            border-color: color-mix(in srgb, var(--color-brand-bright) 31%, transparent);
         }
     }
 
@@ -149,14 +152,14 @@ section {
     }
 
     a {
-        color: #176a46;
+        color: var(--color-green-650);
         font-weight: 700;
-        text-decoration-color: rgb(5 190 104 / 55%);
+        text-decoration-color: color-mix(in srgb, var(--color-brand-bright) 55%, transparent);
         text-decoration-thickness: 1px;
         text-underline-offset: 0.2em;
 
         &:hover {
-            color: #0b4c30;
+            color: var(--color-green-950);
             text-decoration-color: currentColor;
         }
     }
@@ -166,9 +169,9 @@ section {
         display: grid;
         gap: var(--space-2xsm);
         overflow: hidden;
-        color: #164b34;
-        background: linear-gradient(120deg, #e3f8ed 0%, #f7fdf9 100%);
-        border: 1px solid #b8e8cc;
+        color: var(--color-green-750);
+        background: linear-gradient(120deg, var(--surface-legal-notice) 0%, var(--surface-legal-notice-end) 100%);
+        border: 1px solid var(--border-legal-notice);
         border-radius: var(--round-md);
         margin-top: var(--space-2xsm);
         padding: var(--space-md) var(--space-lg);
@@ -203,19 +206,8 @@ section {
             transform 180ms ease;
 
         &:hover {
-            box-shadow: 0 1.8rem 4.4rem rgb(19 74 37 / 10%);
+            box-shadow: 0 1.8rem 4.4rem color-mix(in srgb, var(--color-green-shadow) 10%, transparent);
             transform: translateY(-2px);
         }
-    }
-}
-
-// Preserve the existing legal-page spacing with the shared production base.
-.legal-page {
-    &__content {
-        display: grid;
-    }
-    &__hero .container {
-        display: grid;
-        gap: 20px;
     }
 }

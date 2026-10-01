@@ -7,6 +7,9 @@ import { initMobileMenu } from "./modules/menu.js";
 initMobileMenu();
 
 import("./modules/truncedtext.js").then((module) => module.init?.());
+if (document.querySelector(".system-strip")) {
+    import("./modules/logo-strip.js").then((module) => module.init?.());
+}
 
 const modules = {
     ".faq": () => import("./modules/accordion.js"),

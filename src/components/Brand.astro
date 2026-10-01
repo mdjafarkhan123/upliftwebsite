@@ -4,10 +4,14 @@ import { publicSite } from "../data/data.js";
 ---
 
 <a class="brand" href="/" aria-label={`${publicSite.name} — Home`}>
-    <Logo width="30" height="36" />
-    <span class="brand__name">
-        {publicSite.name.split(" ")[0]}
-        <span class="brand__subtitle">
+    <span class="brand__top">
+        <Logo width="30" height="36" />
+        <span class="brand__name-first">
+            {publicSite.name.split(" ")[0].slice(1)}
+        </span>
+    </span>
+    <span class="brand__bottom">
+        <span class="brand__name-last">
             {publicSite.name.split(" ").slice(1).join(" ")}
         </span>
     </span>

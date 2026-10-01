@@ -52,6 +52,28 @@
     --color-text-faint: #8d978b;
     --color-on-dark-line: #4a6756;
     --color-accent-muted: #bfdc6d;
+    --color-black: #000;
+    --color-brand-bright: #05be68;
+    --color-brand-bright-hover: #049f57;
+    --color-green-950: #0b4c30;
+    --color-green-900: #0d3d2b;
+    --color-green-850: #102f22;
+    --color-green-800: #123d29;
+    --color-green-750: #164b34;
+    --color-green-700: #175738;
+    --color-green-650: #176a46;
+    --color-green-600: #24724d;
+    --color-green-500: #234a36;
+    --color-green-shadow: #134a25;
+    --color-sage-500: #65776e;
+    --color-sage-400: #83a08f;
+    --color-sage-300: #89a797;
+    --color-page-text: #53635a;
+    --color-page-text-muted: #66756d;
+    --color-warning-dark: #8a5f00;
+    --color-warning-marker: #f5c451;
+    --color-warning-soft: #fff4d6;
+    --color-inverse-accent: #d9ffea;
     --fs-3xsm: 1rem;
     --fs-2xsm: 1.2rem;
     --fs-xsm: 1.4rem;
@@ -98,11 +120,22 @@
     --surface-project-two: #e9e7dc;
     --surface-project-three: #dce7e0;
     --surface-system: #e9eedf;
+    --surface-page-tint: #f7fcf9;
+    --surface-page-soft: #f1faf5;
+    --surface-page-hover: #effaf4;
+    --surface-legal-tint: #f8fcfa;
+    --surface-legal-notice: #e3f8ed;
+    --surface-legal-notice-end: #f7fdf9;
+    --border-legal-notice: #b8e8cc;
     --surface-node: rgb(255 255 255 / 93%);
     --border-system: #dbe2ce;
     --border-orbit: #c7d5b9;
     --pattern-dot: #b6c5ab;
     --shadow-card: 0 16px 35px rgb(36 75 50 / 12%);
+    --shadow-system-core: 0 16px 40px rgb(35 60 48 / 13%);
+    --shadow-system-node: 0 8px 25px rgb(40 61 48 / 3%);
+    --shadow-mobile-menu: -20px 0 70px rgb(16 40 29 / 19%);
+    --overlay-mobile-menu: rgb(13 35 25 / 50%);
     scroll-behavior: smooth;
     scroll-padding-top: var(--space-xl);
 }
@@ -185,7 +218,6 @@ p strong {
     color: var(--color-primary);
 }
 
-/* Mobile base (320–520px). Larger layouts are added below. */
 .container {
     max-width: 1260px;
     width: calc(100% - 36px);
@@ -204,22 +236,30 @@ p strong {
 }
 .brand {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: var(--space-xsm);
     font-weight: 700;
     font-size: var(--fs-xl);
     letter-spacing: -1px;
+    text-transform: uppercase;
     line-height: 1;
 }
-.brand__subtitle {
-    display: block;
-    margin-top: var(--space-2xsm);
-    font-size: var(--fs-xsm);
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.brand__top {
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    justify-content: center;
+    font-weight: bolder;
+}
+
+.brand__bottom {
+    font-size: var(--fs-2xsm);
+    letter-spacing: 3px;
 }
 .brand svg {
-    width: 25px;
+    width: 22px;
+    color: var(--color-primary);
 }
 .header__actions {
     display: flex;
@@ -428,7 +468,7 @@ p strong {
     border-radius: var(--round-lg);
     background: var(--ink);
     color: var(--lime);
-    box-shadow: 0 16px 40px rgb(35 60 48 / 13%);
+    box-shadow: var(--shadow-system-core);
     transform: translate(-50%, -50%);
 }
 .hero-system__core svg {
@@ -460,7 +500,7 @@ p strong {
     border: 1px solid var(--color-border-light);
     border-radius: var(--round-md);
     background: var(--surface-node);
-    box-shadow: 0 8px 25px rgb(40 61 48 / 3%);
+    box-shadow: var(--shadow-system-node);
     transition: transform 0.2s;
 }
 .hero-system__node > span:last-child {
@@ -564,7 +604,7 @@ p strong {
     border-radius: var(--round-lg);
     background: var(--paper);
     color: var(--ink);
-    box-shadow: -20px 0 70px rgb(16 40 29 / 19%);
+    box-shadow: var(--shadow-mobile-menu);
 }
 .mobile-menu:not([open]) {
     display: none;
@@ -575,7 +615,7 @@ p strong {
     animation: menu-enter 220ms ease-out;
 }
 .mobile-menu::backdrop {
-    background: rgb(13 35 25 / 50%);
+    background: var(--overlay-mobile-menu);
     backdrop-filter: blur(6px);
 }
 .mobile-menu__top {
@@ -691,6 +731,7 @@ p strong {
     }
 }
 
+
 /* Desktop: restores the published desktop composition. */
 @media (min-width: 992px) {
     .header {
@@ -770,6 +811,7 @@ p strong {
     :root {
         scroll-behavior: auto;
     }
+    /* Override component-level motion regardless of selector specificity. */
     *,
     *::before,
     *::after {

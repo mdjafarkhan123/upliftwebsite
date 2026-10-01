@@ -10,6 +10,11 @@ import Service3 from "../assets/images/text-back.webp";
 import Service4 from "../assets/images/marketing.webp";
 import Service5 from "../assets/images/gbp.webp";
 import Service6 from "../assets/images/text-back.webp";
+import OpenAiLogo from "../assets/images/technology-used/openai.png";
+import GoogleLogo from "../assets/images/technology-used/google.png";
+import AwsLogo from "../assets/images/technology-used/aws.png";
+import CloudflareLogo from "../assets/images/technology-used/cloudflare.png";
+import FacebookLogo from "../assets/images/technology-used/facebook.png";
 
 /**
  * Public site settings
@@ -78,7 +83,13 @@ export const hero = {
 
 export const brandLogo = {
     title: "Powered by trusted technology",
-    logos: ["openai", "twilio", "google", "aws", "hostinger"],
+    logos: [
+        { name: "OpenAI", image: OpenAiLogo },
+        { name: "Google", image: GoogleLogo },
+        { name: "AWS", image: AwsLogo },
+        { name: "Cloudflare", image: CloudflareLogo },
+        { name: "Facebook", image: FacebookLogo },
+    ],
 };
 
 export const reason = {

@@ -142,18 +142,27 @@ const serviceIcons = [
     <section
         id="why"
         class="system-strip container"
-        aria-label={brandLogo.title}
+        aria-labelledby="technology-heading"
     >
-        <p class="system-strip__label">{brandLogo.title}</p>
-        <div class="system-strip__marks" aria-hidden="true">
+        <h2 id="technology-heading" class="system-strip__label">
+            {brandLogo.title}
+        </h2>
+        <ul class="system-strip__marks">
             {
-                brandLogo.logos.map((mark) => (
-                    <span class="system-strip__mark">
-                        <Icon name={mark} src={mark} size={28} />
-                    </span>
+                brandLogo.logos.map((logo, index) => (
+                    <li
+                        class="system-strip__mark"
+                        style={`--logo-index: ${index}`}
+                    >
+                        <Image
+                            src={logo.image}
+                            alt={logo.name}
+                            loading="eager"
+                        />
+                    </li>
                 ))
             }
-        </div>
+        </ul>
     </section>
 
     <section
@@ -283,7 +292,9 @@ const serviceIcons = [
                 {
                     contractors.contractors
                         .slice(0, 18)
-                        .map((item) => <span>{item}</span>)
+                        .map((item) => (
+                            <span class="contractors__item">{item}</span>
+                        ))
                 }
             </div>
             <ReadMore
@@ -295,7 +306,9 @@ const serviceIcons = [
                 {
                     contractors.contractors
                         .slice(18)
-                        .map((item) => <span>{item}</span>)
+                        .map((item) => (
+                            <span class="contractors__item">{item}</span>
+                        ))
                 }
             </ReadMore>
         </div>
@@ -353,9 +366,11 @@ const serviceIcons = [
             </div>
             <div class="reason__grid">
                 {
-                    reason.content.map((item, i) => (
-                        <article>
-                            <span class="reason__number">0{i + 1}</span>
+                    reason.content.map((item) => (
+                        <article class="reason__item">
+                            <span class="reason__icon" aria-hidden="true">
+                                <Icon name={item.icon} src="sprite" size={26} />
+                            </span>
                             <h3>{item.title}</h3>
                             <p>{item.description}</p>
                         </article>

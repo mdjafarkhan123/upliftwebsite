@@ -3,7 +3,7 @@ summary {
     -webkit-tap-highlight-color: transparent;
 }
 summary:focus-visible {
-    outline: 3px solid #779b25;
+    outline: 3px solid var(--color-hover);
     outline-offset: 6px;
 }
 details {
@@ -54,4 +54,33 @@ details li {
 }
 summary {
     min-height: 44px;
+}
+/* Shared progressive-disclosure control. */
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xsm);
+    margin-top: var(--space-lg);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-primary);
+    cursor: pointer;
+    font: 600 var(--fs-sm) / 1.3 var(--font-body);
+    transition: color var(--transition);
+
+    &:hover { color: var(--color-hover); }
+    &:focus-visible {
+        outline: var(--line-thickness) solid var(--color-hover);
+        outline-offset: var(--space-2xsm);
+    }
+    &__icon { display: inline-flex; width: var(--space-3xl); color: currentColor; }
+    &__icon svg { width: 100%; height: auto; }
+    &__content { margin-top: var(--space-sm); }
+    &__content.is-collapsed {
+        position: relative;
+        max-height: calc(var(--read-more-lines) * 1.8em);
+        overflow: hidden;
+        mask-image: linear-gradient(to bottom, black calc(100% - 80px), transparent 100%);
+    }
 }
