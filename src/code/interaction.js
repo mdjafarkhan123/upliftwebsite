@@ -1,10 +1,12 @@
 /**
  * Shared interaction entry point.
- * Navigation and Read More controls are immediate; FAQ behavior loads as its
+ * Navigation and sticky header behavior are immediate; FAQ behavior loads as its
  * section approaches the viewport.
  */
 import { initMobileMenu } from "./modules/menu.js";
+import { initStickyHeader } from "./modules/sticky-header.js";
 initMobileMenu();
+initStickyHeader();
 
 import("./modules/truncedtext.js").then((module) => module.init?.());
 if (document.querySelector(".system-strip")) {
