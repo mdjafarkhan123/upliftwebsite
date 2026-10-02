@@ -240,10 +240,13 @@ p strong {
     padding-inline: max(18px, calc((100% - 1260px) / 2));
     border-bottom: 1px solid var(--line);
     background: var(--paper);
-    transition: min-height var(--transition), padding-block var(--transition), box-shadow var(--transition);
+    transition:
+        min-height var(--transition),
+        padding-block var(--transition),
+        box-shadow var(--transition);
 }
 .header--compact {
-    min-height: 66px;
+    min-height: 56px;
     padding-block: var(--space-2xsm);
     box-shadow: 0 8px 24px rgb(16 40 29 / 8%);
 }
@@ -266,17 +269,17 @@ p strong {
 .brand__top {
     display: flex;
     align-items: center;
-    font-size: 36px;
+    font-size: 30px;
     justify-content: center;
     font-weight: bolder;
 }
 
 .brand__bottom {
-    font-size: var(--fs-2xsm);
-    letter-spacing: 3px;
+    font-size: var(--fs-3xsm);
+    letter-spacing: 2px;
 }
 .brand svg {
-    width: 22px;
+    width: 18px;
     color: var(--color-primary);
 }
 .header__actions {
@@ -749,6 +752,18 @@ p strong {
     h1 {
         letter-spacing: -3px;
     }
+    .brand__top {
+        font-size: 36px;
+    }
+
+    .brand__bottom {
+        font-size: var(--fs-2xsm);
+        letter-spacing: 3px;
+    }
+    .brand svg {
+        width: 22px;
+    }
+
     .header {
         flex-wrap: nowrap;
         gap: var(--space-lg);
