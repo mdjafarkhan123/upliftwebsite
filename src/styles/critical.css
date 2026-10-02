@@ -194,7 +194,7 @@ h1 {
     /* text-transform: capitalize; */
     font-weight: 600;
     font-size: var(--fs-fluid-xl);
-    letter-spacing: -3px;
+    letter-spacing: -1.5px;
     line-height: 1;
 }
 h2 {
@@ -317,7 +317,7 @@ p strong {
     gap: var(--space-xl);
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--round-sm);
-    background: var(--ink);
+    background: var(--color-secondary);
     color: var(--white);
     font-size: var(--fs-sm);
     font-weight: 600;
@@ -571,12 +571,7 @@ p strong {
 .contractors .badge {
     justify-content: center;
 }
-.cta p:not(.badge) {
-    max-width: 570px;
-    margin: var(--space-lg) 0 var(--space-xl);
-    color: var(--color-tertiary);
-    font-size: var(--fs-xsm);
-}
+
 .skip-link {
     position: absolute;
     top: -100px;
@@ -731,9 +726,11 @@ p strong {
     }
 }
 
-
 /* Desktop: restores the published desktop composition. */
 @media (min-width: 992px) {
+    h1 {
+        letter-spacing: -3px;
+    }
     .header {
         flex-wrap: nowrap;
         gap: var(--space-lg);

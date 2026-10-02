@@ -298,7 +298,7 @@
 }
 
 .reason {
-    background: var(--ink);
+    background: var(--color-secondary);
     color: var(--color-background);
     &__grid {
         display: grid;
@@ -399,12 +399,18 @@
         align-items: center;
         justify-content: space-between;
         padding: var(--space-lg) 27px;
+        &-logo {
+            color: var(--color-primary);
+        }
     }
     &__caption strong {
         font-size: 1.9rem;
     }
     &__caption span {
         display: block;
+        text-transform: capitalize;
+        font-weight: 500;
+        letter-spacing: 0.5px;
         margin-top: 6px;
         color: var(--muted);
         font-size: var(--fs-2xsm);
@@ -535,6 +541,12 @@
     &__decoration .icon {
         width: 200px;
         height: 200px;
+    }
+    & p:not(.badge) {
+        max-width: 570px;
+        margin: var(--space-lg) 0 var(--space-xl);
+        color: var(--color-tertiary);
+        font-size: var(--fs-base);
     }
     > h2,
     > p,

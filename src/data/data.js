@@ -79,6 +79,7 @@ export const hero = {
     cta: `Book a call`,
     heroImg: HeroImg,
     heroImgSm: HeroImgSm,
+    heroFooter: `No fluff. We just say what we exactly do`,
 };
 
 export const brandLogo = {
@@ -403,7 +404,7 @@ export const cta = {
 
 export const footer = {
     intro: {
-        title: "Website, CRM, and marketing support for contractors.",
+        title: `Website design & marketing systems for contractors & home service pros`,
     },
 
     company: {
