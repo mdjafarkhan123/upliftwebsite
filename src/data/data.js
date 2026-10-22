@@ -136,7 +136,7 @@ export const about = {
     // Author block (image is imported separately in index.astro, not here)
     author: {
         name: "Jafar khan",
-        role: "CEO of UpliftContractor",
+        role: "Founder",
     },
 
     // Main paragraph. Keep as a single template string.
