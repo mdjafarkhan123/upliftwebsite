@@ -1,0 +1,39 @@
+---
+import Layout from "../layout/Layout.astro";
+import legalStyle from "../styles/pages/legal/legal.scss?url";
+import { publicSite, legalPages } from "../data/data.js";
+
+const page = legalPages.data_deletion;
+---
+
+<Layout
+    title={`${page.title} | ${publicSite.name}`}
+    description={page.description}
+    canonicalUrl={`${publicSite.websiteUrl}${page.path}`}
+>
+    <article class="legal-page">
+        <header class="legal-page__hero">
+            <div class="container">
+                <p class="legal-page__eyebrow">{page.eyebrow}</p>
+                <h1>{page.title}</h1>
+                <p class="legal-page__intro">{page.description}</p>
+            </div>
+        </header>
+
+        <div class="legal-page__content container">
+            {page.sections.map((section) => (
+                <section
+                    id={section.anchor}
+                    class="legal-page__section"
+                    aria-labelledby={section.id}
+                >
+                    <h2 id={section.id}>{section.title}</h2>
+                    <Fragment set:html={section.body} />
+                </section>
+            ))}
+        </div>
+    </article>
+    <Fragment slot="bottom-style">
+        <link rel="stylesheet" href={legalStyle} />
+    </Fragment>
+</Layout>

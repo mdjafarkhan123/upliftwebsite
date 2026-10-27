@@ -422,6 +422,7 @@ export const footer = {
         items: [
             { label: "Privacy Policy", href: "/privacy" },
             { label: "Terms & Conditions", href: "/terms" },
+            { label: "Data deletion", href: "/data-deletion" },
             { label: "Contact", href: `mailto:${publicSite.contact.email}` },
         ],
     },
@@ -439,4 +440,133 @@ export const navigation = {
     openLabel: "Open menu",
     closeLabel: "Close menu",
     menuLabel: "Menu",
+};
+
+// Public legal copy, approved source: docs/legal-pages-update.md.
+export const legalPages = {
+    "privacy": {
+        "title": "Privacy Policy",
+        "description": "What we collect, why we need it, and what you can ask us to do with it.",
+        "eyebrow": "Legal · Last updated 23 October 2026",
+        "path": "/privacy",
+        "sections": [
+            {
+                "id": "privacy-who-we-are",
+                "title": "Who we are",
+                "body": "<p>Uplift Contractor is a CRM and marketing platform for contractors, run by Jafar Khan from Savar, Dhaka. If you have a question about your information, email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> or call <a href=\"tel:+8801834969563\">+8801834969563</a>.</p>\n<p>Contractors use our platform to keep in touch with their own customers. When they do, the contractor decides what to keep about those customers. We store it for them and use it only to run the service they signed up for.</p>"
+            },
+            {
+                "id": "privacy-what-we-collect",
+                "title": "What we collect",
+                "body": "<ul><li><strong>What you tell us.</strong> Your name, business name, email, phone number and anything you write to us.</li><li><strong>What you put in the platform.</strong> Your customers, jobs, quotes, invoices, forms and messages, entered by you or your team.</li><li><strong>Facebook Messenger messages,</strong> if your business connects a Facebook Page. The details are below.</li><li><strong>Payment status.</strong> We know whether a payment went through. Card numbers are typed on Stripe's page and never reach us.</li><li><strong>Security basics.</strong> IP address, browser and device type, and spam-check results, so we can keep the site and your account safe.</li></ul>"
+            },
+            {
+                "id": "privacy-how-we-use-it",
+                "title": "How we use it",
+                "body": "<p>To run the platform, answer your questions, manage accounts and payments, deliver your messages, keep the service secure, and meet our legal duties.</p>\n<p>We don't sell anyone's information. This website has no Google Analytics, ad pixels, Hotjar or similar tracking.</p>"
+            },
+            {
+                "id": "privacy-facebook-messenger",
+                "title": "Facebook Messenger",
+                "body": "<p>A contractor can connect their business's Facebook Page so their team can read and answer Messenger chats in the same inbox as their texts and emails.</p>\n<p><strong>When a Page is connected,</strong> Facebook gives us the Page's name and ID, the permissions the contractor approved, and a key that lets us send and receive messages for that Page. We keep the key encrypted.</p>\n<p><strong>When someone messages that Page,</strong> we receive the message, the time it was sent, a note of any photo or file attached, and an ID number Facebook creates for that person on that Page only. We also see whether the contractor's replies were delivered and read. We receive the person's name and profile photo only if Facebook allows it; until then they appear as \"Facebook user\".</p>\n<p><strong>We use this only</strong> to show the contractor their conversations, send the replies their team writes, and keep the connection working. People write every reply. We don't use Messenger data for ads, we don't sell it, and we follow Meta's Platform Terms.</p>\n<p><strong>When a contractor disconnects the Page,</strong> new messages stop coming in and we erase the key at once. Earlier conversations stay in the contractor's records, like their other customer notes, until the contractor asks us to delete them. The contractor can also remove our access from Facebook: Settings → Business Integrations → Uplift Contractor → Remove.</p>\n<p>To have your Messenger messages deleted, see our <a href=\"/data-deletion\">Data deletion</a> page.</p>"
+            },
+            {
+                "id": "privacy-who-helps-us-run-the-service",
+                "title": "Who helps us run the service",
+                "body": "<ul><li>Supabase stores accounts, forms and customer records.</li><li>Cloudflare protects the website, checks for spam, delivers pages and stores files.</li><li>Brevo and Amazon SES send and receive email.</li><li>Twilio sends and receives text messages for contractors.</li><li>Meta carries Facebook Messenger messages for contractors who connect a Page.</li><li>Stripe handles online payments.</li><li>Mapbox powers maps and address lookups.</li></ul>\n<p>If we add a company that will handle real customer information, we update this list first.</p>"
+            },
+            {
+                "id": "privacy-text-messages-from-uplift-contractor",
+                "title": "Text messages from Uplift Contractor",
+                "body": "<div class=\"legal-page__notice\"><p>We don't send our own text messages yet. If we start the Uplift Contractor SMS Program, joining will be optional and never required to buy from us. We will not sell or share SMS consent or phone numbers with third parties or affiliates for their marketing.</p></div>\n<p>Once it runs, people who opt in may get account, support, appointment, service and promotional messages. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Full rules are in the SMS Program section of our <a href=\"/terms#sms-program\">Terms</a>.</p>"
+            },
+            {
+                "id": "privacy-how-long-we-keep-it-and-how-we-protect-it",
+                "title": "How long we keep it, and how we protect it",
+                "body": "<p>We keep information while we need it to run the service, follow the law, settle disputes and enforce our agreements. We use access controls and encryption, and keys for connected accounts such as Facebook Pages are always stored encrypted. No system is perfectly secure, but we work to keep yours safe.</p>"
+            },
+            {
+                "id": "privacy-your-choices",
+                "title": "Your choices",
+                "body": "<p>You can ask to see, correct or delete the information we hold about you. Email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> and we will answer within 30 days. Some records, such as invoices, may need to be kept for legal reasons; if so, we tell you which and why.</p>\n<p>For Facebook Messenger messages, follow the steps on our <a href=\"/data-deletion\">Data deletion</a> page.</p>"
+            },
+            {
+                "id": "privacy-changes",
+                "title": "Changes",
+                "body": "<p>When our practices change, we update this page and the date at the top.</p>"
+            }
+        ]
+    },
+    "terms": {
+        "title": "Terms & Conditions",
+        "description": "The rules for using the Uplift Contractor website, platform and services.",
+        "eyebrow": "Legal · Last updated 23 October 2026",
+        "path": "/terms",
+        "sections": [
+            {
+                "id": "terms-our-services-and-your-account",
+                "title": "Our services and your account",
+                "body": "<p>We build websites and provide a CRM, marketing and messaging tools for contractors and home service businesses. What you get, and what it costs, is set out in your order form, plan or agreement.</p>\n<p>Keep your account details accurate and your login private. You are responsible for what people on your team do in your account.</p>"
+            },
+            {
+                "id": "terms-using-the-platform-fairly",
+                "title": "Using the platform fairly",
+                "body": "<p>You're responsible for the contacts, information and messages you put in the platform, and for having permission to use them. Follow the law, phone carrier rules, and the rules of any service you connect.</p>\n<p>Don't use the platform to send unlawful, misleading, abusive, fraudulent or unwanted messages, to break into anything, to disrupt the service, or to harm anyone.</p>"
+            },
+            {
+                "id": "terms-facebook-messenger",
+                "title": "Facebook Messenger",
+                "body": "<p>By connecting a Facebook Page, you confirm you're allowed to manage it and agree to follow Meta's Terms, Messenger Platform Policy and Community Standards. Facebook lets a business reply only within 24 hours of the customer's last message, so the platform blocks later replies. Don't send promotions outside that window. You can disconnect the Page whenever you like. Our <a href=\"/privacy\">Privacy Policy</a> explains how we handle Messenger messages.</p>"
+            },
+            {
+                "id": "terms-payments-and-cancelling",
+                "title": "Payments and cancelling",
+                "body": "<p>Prices, billing dates and renewals are in your order form, plan or agreement. Cards are paid on Stripe's secure page.</p>\n<p>To cancel, or to check when a cancellation takes effect, email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a>. Cancelling doesn't remove fees already owed under your agreement.</p>"
+            },
+            {
+                "id": "terms-uplift-contractor-sms-program",
+                "title": "Uplift Contractor SMS Program",
+                "body": "<div class=\"legal-page__notice\"><p>Not active yet. These rules apply once we start it.</p></div>\n<p>By ticking a separate, optional SMS box where you enter your phone number, you agree to receive text messages from Uplift Contractor. You never have to agree in order to buy from us or use our services.</p>\n<ul><li>Message types: account, support, appointment, service and promotional messages.</li><li>Frequency: message frequency varies.</li><li>Cost: message and data rates may apply.</li><li>Opt out: reply STOP at any time.</li><li>Help: reply HELP, or contact <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> or <a href=\"tel:+8801834969563\">+8801834969563</a>.</li><li>Privacy: SMS consent and phone numbers are not sold or shared with third parties or affiliates for their marketing.</li><li>Carriers are not liable for delayed or undelivered messages.</li></ul>\n<p>See our <a href=\"/privacy\">Privacy Policy</a> for how we handle your data.</p>",
+                "anchor": "sms-program"
+            },
+            {
+                "id": "terms-other-companies-services",
+                "title": "Other companies' services",
+                "body": "<p>Some features rely on other companies for payments, email, text messages, Facebook Messenger, maps, hosting, security and storage. Their service and terms can affect those features. Our <a href=\"/privacy\">Privacy Policy</a> lists who they are.</p>"
+            },
+            {
+                "id": "terms-changes-and-questions",
+                "title": "Changes and questions",
+                "body": "<p>When these terms change, we update this page and the date at the top. Questions: <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a>.</p>"
+            }
+        ]
+    },
+    "data_deletion": {
+        "title": "Data deletion",
+        "description": "How to ask us to delete your information, including messages you sent a business on Facebook Messenger.",
+        "eyebrow": "Legal · Last updated 23 October 2026",
+        "path": "/data-deletion",
+        "sections": [
+            {
+                "id": "data-deletion-you-messaged-a-business-on-facebook",
+                "title": "You messaged a business on Facebook",
+                "body": "<p>If that business uses Uplift Contractor, your messages are stored in its inbox with us. To have them deleted:</p>\n<ol><li>Email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> with the subject \"Delete my data\".</li><li>Tell us which Facebook Page you messaged, the name on your Facebook account, and roughly when.</li><li>We delete your messages and the Facebook ID linked to them, email you to confirm, and let the business know.</li></ol>\n<p>You can also ask the business itself, and it will pass your request to us.</p>"
+            },
+            {
+                "id": "data-deletion-your-business-connected-a-facebook-page",
+                "title": "Your business connected a Facebook Page",
+                "body": "<ol><li>In Uplift Contractor, open Settings → Communications → Messenger and press Disconnect. Messages stop and we erase the Page's key at once.</li><li>To remove us from Facebook as well: Facebook Settings → Business Integrations → Uplift Contractor → Remove.</li><li>To delete conversations already in your inbox, email us from your account's address and we'll do it.</li></ol>"
+            },
+            {
+                "id": "data-deletion-anything-else",
+                "title": "Anything else",
+                "body": "<p>To delete any other information we hold about you, email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a>.</p>"
+            },
+            {
+                "id": "data-deletion-what-happens-next",
+                "title": "What happens next",
+                "body": "<ul><li>We reply within 3 business days and finish within 30 days.</li><li>We may ask you to prove it's you, so no one else can delete your information.</li><li>We keep a short note that your request was made and completed, plus anything the law says we must keep.</li></ul>\n<p>Questions? <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> · <a href=\"tel:+8801834969563\">+8801834969563</a></p>"
+            }
+        ]
+    }
 };
