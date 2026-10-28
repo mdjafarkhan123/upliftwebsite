@@ -447,7 +447,7 @@ export const legalPages = {
     "privacy": {
         "title": "Privacy Policy",
         "description": "What we collect, why we need it, and what you can ask us to do with it.",
-        "eyebrow": "Legal · Last updated 23 October 2026",
+        "eyebrow": "Legal · Last updated 28 October 2026",
         "path": "/privacy",
         "sections": [
             {
@@ -468,7 +468,7 @@ export const legalPages = {
             {
                 "id": "privacy-facebook-messenger",
                 "title": "Facebook Messenger",
-                "body": "<p>A contractor can connect their business's Facebook Page so their team can read and answer Messenger chats in the same inbox as their texts and emails.</p>\n<p><strong>When a Page is connected,</strong> Facebook gives us the Page's name and ID, the permissions the contractor approved, and a key that lets us send and receive messages for that Page. We keep the key encrypted.</p>\n<p><strong>When someone messages that Page,</strong> we receive the message, the time it was sent, a note of any photo or file attached, and an ID number Facebook creates for that person on that Page only. We also see whether the contractor's replies were delivered and read. We receive the person's name and profile photo only if Facebook allows it; until then they appear as \"Facebook user\".</p>\n<p><strong>We use this only</strong> to show the contractor their conversations, send the replies their team writes, and keep the connection working. People write every reply. We don't use Messenger data for ads, we don't sell it, and we follow Meta's Platform Terms.</p>\n<p><strong>When a contractor disconnects the Page,</strong> new messages stop coming in and we erase the key at once. Earlier conversations stay in the contractor's records, like their other customer notes, until the contractor asks us to delete them. The contractor can also remove our access from Facebook: Settings → Business Integrations → Uplift Contractor → Remove.</p>\n<p>To have your Messenger messages deleted, see our <a href=\"/data-deletion\">Data deletion</a> page.</p>"
+                "body": "<p>A contractor can connect their business's Facebook Page so their team can read and answer Messenger chats in the same inbox as their texts and emails.</p>\n<p><strong>When a Page is connected,</strong> Facebook gives us the Page's name and ID, the permissions the contractor approved, and a key that lets us send and receive messages for that Page. We keep the key encrypted.</p>\n<p><strong>When someone messages that Page,</strong> we receive the message, the time it was sent, a note of any photo or file attached, and an ID number Facebook creates for that person on that Page only. We also see whether the contractor's replies were delivered and read. We receive the person's name and profile photo only if Facebook allows it; until then they appear as \"Facebook user\".</p>\n<p><strong>We use this only</strong> to show the contractor their conversations, send the replies their team writes, and keep the connection working. People write every reply. We don't use Messenger data for ads, we don't sell it, and we follow Meta's Platform Terms.</p>\n<p><strong>When a contractor disconnects the Page,</strong> new messages stop coming in and we erase the key at once. Earlier conversations stay in the contractor's records, like their other customer notes, until the contractor deletes them. The contractor can also remove our access from Facebook: Settings → Business Integrations → Uplift Contractor → Remove.</p>\n<p>To have your Messenger messages deleted, see our <a href=\"/data-deletion\">Data deletion</a> page.</p>"
             },
             {
                 "id": "privacy-who-helps-us-run-the-service",
@@ -488,7 +488,7 @@ export const legalPages = {
             {
                 "id": "privacy-your-choices",
                 "title": "Your choices",
-                "body": "<p>You can ask to see, correct or delete the information we hold about you. Email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> and we will answer within 30 days. Some records, such as invoices, may need to be kept for legal reasons; if so, we tell you which and why.</p>\n<p>For Facebook Messenger messages, follow the steps on our <a href=\"/data-deletion\">Data deletion</a> page.</p>"
+                "body": "<p>If you're a customer of a contractor who uses our platform, ask that contractor first. They can give you a copy of your information or delete it, right in the platform.</p>\n<p>You can also ask us to see, correct or delete the information we hold about you. Email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> and we will answer within 30 days. Some records, such as invoices, may need to be kept for legal reasons; if so, we tell you which and why.</p>\n<p>Our <a href=\"/data-deletion\">Data deletion</a> page has the steps, including for Facebook Messenger messages.</p>"
             },
             {
                 "id": "privacy-changes",
@@ -543,29 +543,34 @@ export const legalPages = {
     },
     "data_deletion": {
         "title": "Data deletion",
-        "description": "How to ask us to delete your information, including messages you sent a business on Facebook Messenger.",
-        "eyebrow": "Legal · Last updated 23 October 2026",
+        "description": "How to get a copy of your information or have it deleted, whether you're a customer of a business that uses Uplift Contractor, someone who messaged a business on Facebook, or a business on our platform.",
+        "eyebrow": "Legal · Last updated 28 October 2026",
         "path": "/data-deletion",
         "sections": [
             {
-                "id": "data-deletion-you-messaged-a-business-on-facebook",
-                "title": "You messaged a business on Facebook",
-                "body": "<p>If that business uses Uplift Contractor, your messages are stored in its inbox with us. To have them deleted:</p>\n<ol><li>Email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> with the subject \"Delete my data\".</li><li>Tell us which Facebook Page you messaged, the name on your Facebook account, and roughly when.</li><li>We delete your messages and the Facebook ID linked to them, email you to confirm, and let the business know.</li></ol>\n<p>You can also ask the business itself, and it will pass your request to us.</p>"
+                "id": "data-deletion-youre-a-customer-of-a-business-that-uses-uplift-contractor",
+                "title": "You're a customer of a business that uses Uplift Contractor",
+                "body": "<p>Contractors use our platform to keep records of their own customers, and the contractor decides what happens to those records. So the quickest way is to ask the business you dealt with. In Uplift Contractor it can:</p>\n<ul><li>send you a copy of everything it holds about you, including your messages and files;</li><li>delete your information permanently.</li></ul>\n<p>A few things stay after a delete:</p>\n<ul><li><strong>Invoices and payments,</strong> because tax law says businesses must keep them.</li><li><strong>Your \"don't contact me\" choice.</strong> If you asked the business to stop texting or emailing you, we keep a scrambled code of your phone number or email, with no name, so no one texts or emails you again by mistake.</li></ul>\n<p>If you can't reach the business, or it doesn't answer, email us. We pass your request to the business, or act on it ourselves if the business has closed or doesn't reply.</p>"
             },
             {
-                "id": "data-deletion-your-business-connected-a-facebook-page",
-                "title": "Your business connected a Facebook Page",
-                "body": "<ol><li>In Uplift Contractor, open Settings → Communications → Messenger and press Disconnect. Messages stop and we erase the Page's key at once.</li><li>To remove us from Facebook as well: Facebook Settings → Business Integrations → Uplift Contractor → Remove.</li><li>To delete conversations already in your inbox, email us from your account's address and we'll do it.</li></ol>"
+                "id": "data-deletion-you-messaged-a-business-on-facebook",
+                "title": "You messaged a business on Facebook",
+                "body": "<p>If that business uses Uplift Contractor, your messages are stored in its inbox with us. To have them deleted:</p>\n<ol><li>Email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> with the subject \"Delete my data\".</li><li>Tell us which Facebook Page you messaged, the name on your Facebook account, and roughly when.</li><li>We delete your messages and the Facebook ID linked to them, email you to confirm, and let the business know.</li></ol>\n<p>You can also ask the business itself. It can delete your conversation from its inbox straight away.</p>"
+            },
+            {
+                "id": "data-deletion-your-business-uses-uplift-contractor",
+                "title": "Your business uses Uplift Contractor",
+                "body": "<p>Owners and admins can do all of this themselves. Other team members can if you give them permission in Team access.</p>\n<ul><li><strong>Delete a customer.</strong> On the customer's page, open the <strong>⋯</strong> menu and choose <strong>Delete client</strong>. For 30 days you can bring them back from <strong>Recently Deleted</strong>, with everything as it was. After that they are deleted for good.</li><li><strong>Delete a customer at once,</strong> when they asked you to. In the same box, press <strong>They asked us to delete their information</strong> and type the customer's name to confirm. This can't be undone, and you get a receipt to send them.</li><li><strong>Delete a conversation.</strong> In the inbox, open the conversation's <strong>⋯</strong> menu and choose <strong>Delete conversation</strong>. It's gone for your whole team and can't be undone. The customer keeps their own copy on their phone, in their email or on Facebook.</li><li><strong>Give a customer a copy.</strong> On the customer's page, open the <strong>⋯</strong> menu and choose <strong>Download client data</strong>.</li><li><strong>Download everything.</strong> Settings → Data &amp; privacy → <strong>Export all business data</strong> (owner only). We email you a link when the package is ready.</li><li><strong>Disconnect your Facebook Page.</strong> Settings → Communications → Messenger → <strong>Disconnect</strong>. Messages stop and we erase the Page's key at once. To remove us from Facebook as well: Facebook Settings → Business Integrations → Uplift Contractor → Remove.</li></ul>\n<p>Invoices and payments stay after any delete, because tax law says you must keep them.</p>"
             },
             {
                 "id": "data-deletion-anything-else",
                 "title": "Anything else",
-                "body": "<p>To delete any other information we hold about you, email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a>.</p>"
+                "body": "<p>To get a copy of, or delete, any other information we hold about you, email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a>.</p>"
             },
             {
                 "id": "data-deletion-what-happens-next",
                 "title": "What happens next",
-                "body": "<ul><li>We reply within 3 business days and finish within 30 days.</li><li>We may ask you to prove it's you, so no one else can delete your information.</li><li>We keep a short note that your request was made and completed, plus anything the law says we must keep.</li></ul>\n<p>Questions? <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> · <a href=\"tel:+8801834969563\">+8801834969563</a></p>"
+                "body": "<ul><li>We reply within 3 business days and finish within 30 days.</li><li>We may ask you to prove it's you, so no one else can see or delete your information.</li><li>If your request is about a business's customer records, we pass it to that business and tell you we've done so.</li><li>We keep a short note that your request was made and completed, plus anything the law says we must keep.</li></ul>\n<p>Questions? <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> · <a href=\"tel:+8801834969563\">+8801834969563</a></p>"
             }
         ]
     }
