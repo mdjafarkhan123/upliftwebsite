@@ -26,7 +26,14 @@ best on a phone, such as swipeable cards or an accordion instead of a wide grid 
 already works, it simply stacks. Both widths come from one page, so no section shows different content on phones.
 (Jafar, 2026-11-16)
 
-The site moves like an Awwwards site, built with GSAP. (Jafar, 2026-11-17)
+**Motion.** The site moves like an Awwwards site, built with GSAP. (Jafar, 2026-11-17) It is polished, not a
+showpiece: each animation ends within a second and never stops anyone reading. Headings reveal line by line, cards
+rise in and buttons respond to the cursor. Four signature moments: the hero phone plays missed call → automatic text →
+new lead → review request on a loop; on desktop the services section stays pinned while scrolling moves through
+the six services (phones keep the accordion); a line draws through the three How it works steps as you scroll; the
+green highlight sweeps in behind heading words. Smooth scrolling on desktop only; phones keep normal touch
+scrolling. (Jafar, 2026-11-17) With reduced motion turned on, or with scripts off, everything shows still and in
+full.
 
 **Checks:** a contractor opens the homepage on a phone or a laptop → it reads as a premium agency → nothing looks
 copied from a reference.
