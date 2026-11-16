@@ -17,7 +17,7 @@
 
 ## Next
 
-Waiting for Jafar. Questions asked (2026-11-16): approve the board or name changes; footer contact;
+Claim released 2026-11-16 at session end; the next session takes it over. Waiting for Jafar. Questions asked (2026-11-16): approve the board or name changes; footer contact;
 commit `design.pen`? On approval: record it, mark part 6 done in `ROADMAP.md`, delete this note, point `NOW.md` at part 7.
 
 ## Notes
