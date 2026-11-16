@@ -2,7 +2,7 @@
 
 **Campaign:** website-redesign · **Reads:** the core in `docs/plans/website-redesign/plan.md`, then all topics
 **Stage:** Design
-**Code:** branch `website-redesign`, main folder (no worktree) · **Claim:** sixth session (2026-11-16), applying Jafar's changes
+**Code:** branch `website-redesign`, main folder (no worktree) · **Claim:** none — the sixth session released it on 2026-11-16
 **Done when:** Jafar has approved the page
 **Read next:** `docs/redesign/copy-current.md`; in `design.pen` the board "Uplift design system" (`LF2UJ`) and the
 frames "Concept 1 · Outcome system — Desktop/Mobile"; the reference board `design reference/README.md` and its
@@ -22,11 +22,11 @@ guess". All 20 captures were reviewed; the page was rebuilt in the design system
   "Homepage — Hidden until real (desktop)" (`bbhSJ`, x 2030) holds client logos and testimonials. Checked by
   render and layout check (only intended bleeds clip)
 - [x] Shown to Jafar on 2026-11-16. **Paused by him** ("pause here… I'll send you a list of changes")
-- [ ] Apply Jafar's list of changes to "Homepage — Desktop" ← **in progress**; he sends it in batches
-  - [x] Batches 1–3 done (meeting notes): new tokens `color-green-950`, `color-on-dark-border` (add to
-    `critical.css` in part 9); service points use variables; "View all projects" (`YJvSf`, destination
-    asked); Button/Secondary has an arrow circle. Service text 15 px off-scale (asked). Problem cards: variant E (Phosphor filled icons, soft tile), also on Pricing rows
-- [ ] Frame "Homepage — Mobile" (390, theme device=mobile, at x 1540, y 6000), then show Jafar again
+- [x] Jafar's changes applied and the desktop page approved ("ok all approved", 2026-11-16; meeting notes).
+  New tokens `color-green-950`, `color-on-dark-border`, `color-green-900` go into `critical.css` in part 9.
+  Projects grid `ylEsP` with "Show more projects" loading in place; pop-up state frame `Ksg3E`
+- [ ] Frame "Homepage — Mobile" ← **next** (390, theme device=mobile, at x 1540, y 6000), from the approved
+  desktop page, then show Jafar. Still unanswered: service point text 15 px (off the type scale) or `fs-base`?
 
 Photos: four Pencil stand-ins in `design/images/` plus two Unsplash fills. Problem section: about intro and the
 four ⚠️ paragraphs; About: the ✅ paragraphs, byline and four "Why choose us" reasons.
