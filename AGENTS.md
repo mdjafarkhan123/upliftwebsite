@@ -2,6 +2,10 @@
 
 These conventions apply throughout this Astro project. Preserve the existing structure when adding or changing features. Prefer explicit, maintainable code.
 
+## Campaigns
+
+**Campaigns.** Load `campaign-memory` to guide multi-session work from planning through design, building, checking and handover, including `read memory and continue`. It keeps the current position in `Memory/`. Clear single-session tasks take its short path.
+
 ## Before editing
 
 - Read the files you will change and their existing callers or imports.

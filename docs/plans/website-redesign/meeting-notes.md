@@ -1,0 +1,19 @@
+# Website redesign — meeting notes
+
+History of what Jafar said, so the plan can be checked against it. The plan is the agreement; agents that design
+or build read the plan, not these notes. At most 3,000 words; continue in `meeting-notes-2.md`.
+
+## Jafar's first message
+
+> Claude. Today I have built my website. First of all, I might design in the pencil file, maybe, as far as I remember. Okay, but I don't like the design of my website. My site is, you can read my site, marketing site, so you know what I provide. Maybe it's basically a marketing agency type my business is. So but right, my site doesn't feel like doesn't fit with my business. Okay, you know, in the real world, the top designer, the way they design the marketing site in Dribbble or other way. So my site design, or UX, is not a realistic. We need to revamp. We need to create a whole new concept, maybe. Okay, whole new design concept based on real world, which should be modern. Okay, which looks better, beautiful website. You know, also in the founder page, the about page, I have my photos. I don't want to have my photos at all. Also, we don't have any testimonial section right now as well. Also the client logo section as well. So there's a lot of things missing, though I don't have any testimonials right now and client's logo right now, but we have that design. We have a complete designed website. Okay, so while we're building, we might skip those part like testimonials, the client's logo, but later we will need, when we will get real clients, testimonials and the logos. Okay, so what I want, that I want a completely new design based on research. Okay, no fancy brand of design, a real proven research based design which looks very great to the client, so they can. Okay, so that's the thing. Now, what is your plan? How like do you research and how you would like to start the design? What is your step?
+
+## Answers
+
+- 2026-11-16 · Do we need a new design system? · Jafar: "maybe we will need to crate a new design system as well firsdt in pencil after you make a plan about youre research etc.. right?" · Decided: yes, a new design system in Pencil, made after the research and after Jafar picks a concept
+- 2026-11-16 · Is the order right: research, concepts, design system, full pages, build? · Jafar: "Yeah, it's a great plan." · Decided: follow that order
+- 2026-11-16 · What is the research for, and how is it delivered? · Jafar: "The research is for you just to know that which type of website, which type of design systems really works for this website" and "one short summary, yes, okay" · Decided: research guides the design decisions; Jafar gets one short summary
+- 2026-11-16 · Where does visual inspiration come from? · Jafar: "you also need some design inspiration from the real world, like from maybe Framer website, maybe Dribbble design, maybe real marketing website design, which looks good" · Decided: research includes Framer, Dribbble and real marketing sites
+- 2026-11-16 · Can Jobber and Housecall Pro be references? · Jafar: "dont research jobber or hcp site" … "those are crm site" · Decided: no CRM software sites as references
+- 2026-11-16 · Which competitor shows the structure? · Jafar: "you can 'https://stonesystems.io/' take a lokk at this not for design for the structure" … "yes stone system is the same business..like mine" · Decided: Stone Systems is the structure reference, not the design reference
+- 2026-11-16 · What happens to the current copy? · Jafar: "don't delete my copy, okay? You can make a draft file and you can preserve the copy … Some writings I took from there and modified, so that's not a copy" · Decided: current copy saved word for word in `docs/redesign/copy-current.md`; new copy is drafted separately; Jafar chooses line by line
+- 2026-11-16 · How is the work tracked? · Jafar: "I think we need to create a campaign first" · Decided: the work runs as the `website-redesign` campaign
