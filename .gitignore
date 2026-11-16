@@ -5,3 +5,6 @@ dist/
 .env
 .env.*
 !.env.example
+
+# Private design references (other designers' work, local only)
+design reference/

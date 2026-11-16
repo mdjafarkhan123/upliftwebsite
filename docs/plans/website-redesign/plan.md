@@ -1,6 +1,6 @@
 # Website redesign
 
-Draft from the kickoff on 16 November 2026. Jafar has not approved the core yet. Lines marked with his name are things he
+Draft from the kickoff and meeting on 16 November 2026. Jafar has not approved the core yet. Lines marked with his name are things he
 has already said; lines marked "Proposed:" wait for the meeting.
 
 ## Core
@@ -16,38 +16,41 @@ done-for-you offers such as Stone Systems.
 **What success means:** Proposed: a visitor understands in seconds what Uplift does, trusts it even before Uplift has
 client reviews, and books a call.
 
-**Rules for every part:**
+**Rules for every part** (Jafar, 2026-11-16, except lines marked Proposed):
 
-- Uplift has no testimonials or client logos yet. Design both sections now, but show them only once real ones exist.
-  (Jafar, 2026-11-16) Proposed: never show invented clients, reviews, numbers or results anywhere.
-- No photos of Jafar anywhere on the site, including the about content. (Jafar, 2026-11-16)
-- Keep Jafar's current copy. It is saved in `docs/redesign/copy-current.md`. New copy goes in a separate draft, and Jafar
-  chooses line by line what to keep. `src/data/data.js` changes only in the build. (Jafar, 2026-11-16)
-- Stone Systems (same business) is a reference for structure only. Design inspiration comes from marketing agencies,
-  done-for-you services, Framer and Dribbble, never from CRM software sites such as Jobber or Housecall Pro.
-  (Jafar, 2026-11-16)
-- Design happens in Pencil (`design.pen`) in this order: concepts, then a new design system from the chosen concept,
-  then full pages, then the build. (Jafar, 2026-11-16)
+- No testimonials or client logos exist yet: design both sections, show them only once real ones exist. Proposed:
+  never show invented clients, reviews, numbers or results anywhere.
+- No photos of Jafar anywhere, including the about content.
+- Keep Jafar's copy, saved in `docs/redesign/copy-current.md`. New copy goes in a separate draft; Jafar chooses line by
+  line. `src/data/data.js` changes only in the build.
+- Copy is confident and plain-spoken, with light humour and no swearing, and names no country. Proposed: spelling as
+  in the current copy (US style).
+- Stone Systems (same business) guides structure only. Design references come only from marketing-agency,
+  done-for-you, SaaS and premium business-service sites (Framer, Dribbble): never CRM software sites such as Jobber,
+  nor home-service or trade sites. Every pick is beautiful, premium and modern; the board is in `design reference/`.
+- Keep the logo and the green identity, tuned to one bright green accent on white with near-black or deep-green bands.
+- Design in Pencil (`design.pen`) in this order: concepts, a new design system from the chosen concept, full pages,
+  then the build.
+- The homepage shows one real monthly price and setup fee; "Book a call" opens a booking page; sample work is shown,
+  each item labelled as a sample, never as a client; the current review wording ("5-Star Reviews Only…") stays.
 
-**Edges:** Proposed: the homepage with all its sections, including the about content; the shared header and footer; and
-a check that the /app, legal and 404 pages still look right with the new design system. **Not doing:** Proposed: new
-legal or /app wording, and any page beyond the homepage unless Jafar adds it in the meeting.
+**Edges:** The homepage with all its sections, including the about content; the shared header and footer; a check that
+/app, legal and 404 still look right with the new design system. **Not doing:** any other page; Proposed: no new legal or
+/app wording. (Jafar, 2026-11-16)
 
 ## Topics
 
 Written after the meeting. The research and its recommended page structure are in
 [research-2026-11-16.md](../../redesign/research-2026-11-16.md).
 
+**Concepts (Jafar, 2026-11-16):** two concepts, each a hero plus 2 key sections at desktop and mobile width.
+1 "Outcome system": Overtake's layout and confident tone, AdScale's phone hero showing missed call → auto text →
+review request → new lead, Herb's green-hub feel; light with dark statement bands. 2 "Calm premium": Waymark's serif
+headlines, green buttons and white space. Number-heavy proof from the references becomes honest proof (what's
+included, timelines, no contract, real app screens).
+
 ## Still open for the whole campaign
 
-- Price: show a real monthly price and setup fee on the site? If yes, what are they? — blocks the pricing section
-- Brand: keep the current logo and green, or are new colours open? — blocks the concepts
-- Market: US, Canada, or both? — affects wording, spelling and imagery
-- Voice: keep the cheeky "no bullsh*t" tone, or more straightforward? — blocks the new copy
-- Pages: homepage only, or also separate Services, Pricing or About pages? — sets the edges
-- Sample work: may the site show example trade websites clearly labelled as samples, such as the lawn-care concept? —
-  blocks the sample-work section
-- Booking: "Book a call" opens an email because `publicSite.booking.url` is empty. Will Jafar set up a booking page? —
-  shapes the main call to action
-- Review wording: Google's review policy forbids asking only happy customers for reviews. Rewrite lines such as "5-Star
-  Reviews Only… Five stars, every time"? — blocks the services copy
+- Price numbers: Jafar sends the monthly price and setup fee. Needed before the full pages; concepts may show a
+  clearly marked placeholder.
+- Booking link: Jafar adds the booking page URL before launch.
