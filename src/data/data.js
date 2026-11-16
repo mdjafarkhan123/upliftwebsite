@@ -15,6 +15,7 @@ import GoogleLogo from "../assets/images/technology-used/google.png";
 import AwsLogo from "../assets/images/technology-used/aws.png";
 import CloudflareLogo from "../assets/images/technology-used/cloudflare.png";
 import FacebookLogo from "../assets/images/technology-used/facebook.png";
+import AppDownloadQr from "../assets/images/app/download-qr.png";
 
 /**
  * Public site settings
@@ -423,6 +424,7 @@ export const footer = {
             { label: "Privacy Policy", href: "/privacy" },
             { label: "Terms & Conditions", href: "/terms" },
             { label: "Data deletion", href: "/data-deletion" },
+            { label: "Get the app", href: "/app" },
             { label: "Contact", href: `mailto:${publicSite.contact.email}` },
         ],
     },
@@ -574,4 +576,62 @@ export const legalPages = {
             }
         ]
     }
+};
+
+// "Download the app" page at /app. Approved design: design.pen, 16 November 2026.
+// Master copy of the install steps: CRM project, docs/plans/android-phone-app/getting-the-app.md.
+// If the step wording changes here, update that master copy too.
+export const appDownload = {
+    path: "/app",
+    metaTitle: "Download the Uplift app for Android",
+    metaDescription:
+        "Download the Uplift Contractor app for Android and follow three short steps to install it. Sign in with your Uplift account.",
+    eyebrow: "Uplift for Android",
+    title: "Get the Uplift app",
+    lead: "This is the Uplift app for Android phones. Sign in with your Uplift account, the same one you use on the computer.",
+    download: {
+        label: "Download the app",
+        url: "https://app.upliftcontractor.com/api/phone-app/download",
+        requirement: "For Android 7.0 and newer",
+    },
+    iphone: "On an iPhone? The app is Android only for now.",
+    qr: {
+        heading: "On a computer?",
+        image: AppDownloadQr,
+        alt: "QR code that opens the Uplift app download",
+        caption: "Scan with your Android phone's camera",
+        note: "It opens the same download on your phone.",
+    },
+    guide: {
+        title: "How to install",
+        intro: "The app isn't on Google Play yet, so Android asks a few extra questions the first time. Here's what to tap, in the order you'll see it.",
+        tapsLabel: "What to tap",
+        steps: [
+            {
+                title: "Chrome may say “File might be harmful”",
+                body: "Tap <strong>Download anyway</strong>. The file is safe. Chrome says this for every app that isn't from Google Play.",
+                taps: ["Download anyway"],
+            },
+            {
+                title: "Allow installs from this source",
+                body: "Open the downloaded file. The first time, Android says your phone isn't allowed to install apps from this source. Tap <strong>Settings</strong>, turn on <strong>Allow from this source</strong>, then go back and tap <strong>Install</strong>.",
+                taps: ["Settings", "Allow from this source", "Install"],
+            },
+            {
+                tag: "Samsung phones only",
+                title: "If Auto Blocker blocks the app",
+                body: "Open <strong>Settings › Security and privacy › Auto Blocker</strong>, turn it off, and install again. You can turn it back on afterwards.",
+                taps: ["Auto Blocker: Off", "Install"],
+            },
+        ],
+    },
+    after: {
+        title: "After installing",
+        body: "Open Uplift and sign in with the same email and password you use on the computer. From then on the app updates itself, so you never need this page again.",
+    },
+    help: {
+        lead: "Need help? Contact Uplift support at",
+        joiner: "or",
+        tail: ", and we'll set it up for you.",
+    },
 };

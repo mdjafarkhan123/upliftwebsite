@@ -1,0 +1,145 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layout/Layout.astro";
+import Button from "../components/Button.astro";
+import Icon from "../components/Svg.astro";
+import appStyle from "../styles/pages/app/app.scss?url";
+import { publicSite, appDownload } from "../data/data.js";
+
+const page = appDownload;
+---
+
+<Layout
+    title={`${page.metaTitle} | ${publicSite.name}`}
+    description={page.metaDescription}
+    canonicalUrl={`${publicSite.websiteUrl}${page.path}`}
+>
+    <section id="get-app" class="app-hero" aria-labelledby="get-app-heading">
+        <div class="app-hero__wrapper container">
+            <div class="app-hero__intro">
+                <p class="app-hero__eyebrow">
+                    <Icon name="smartphone-line" src="abovethefold" size={16} aria-hidden="true" />
+                    {page.eyebrow}
+                </p>
+                <h1 id="get-app-heading">{page.title}</h1>
+                <p class="app-hero__lead">{page.lead}</p>
+                <div class="app-hero__download">
+                    <Button
+                        id="app-download"
+                        title={page.download.label}
+                        link={page.download.url}
+                        icon="download-line"
+                        src="abovethefold"
+                    />
+                    <p class="app-hero__requirement">
+                        {page.download.requirement}
+                    </p>
+                </div>
+                <p class="app-hero__iphone">
+                    <Icon name="info-line" src="abovethefold" size={18} aria-hidden="true" />
+                    {page.iphone}
+                </p>
+            </div>
+            <aside class="app-hero__qr" aria-labelledby="app-qr-heading">
+                <h2 id="app-qr-heading" class="app-hero__qr-heading">
+                    {page.qr.heading}
+                </h2>
+                <Image
+                    class="app-hero__qr-code"
+                    src={page.qr.image}
+                    alt={page.qr.alt}
+                    width={198}
+                    height={198}
+                    widths={[198, 396]}
+                    sizes="198px"
+                    format="png"
+                    loading="eager"
+                />
+                <p class="app-hero__qr-caption">{page.qr.caption}</p>
+                <p class="app-hero__qr-note">{page.qr.note}</p>
+            </aside>
+        </div>
+    </section>
+
+    <section
+        id="install-guide"
+        class="app-guide"
+        aria-labelledby="install-guide-heading"
+    >
+        <div class="app-guide__wrapper container">
+            <div class="app-guide__head">
+                <h2 id="install-guide-heading">{page.guide.title}</h2>
+                <p>{page.guide.intro}</p>
+            </div>
+            <ol class="app-guide__steps">
+                {page.guide.steps.map((step, index) => (
+                    <li class="app-guide__step">
+                        <div class="app-guide__step-top">
+                            <span class="app-guide__number" aria-hidden="true">
+                                {index + 1}
+                            </span>
+                            {step.tag && (
+                                <span class="app-guide__tag">{step.tag}</span>
+                            )}
+                        </div>
+                        <h3>{step.title}</h3>
+                        <p set:html={step.body} />
+                        <div class="app-guide__taps">
+                            <p class="app-guide__taps-label">
+                                {page.guide.tapsLabel}
+                            </p>
+                            <ol class="app-guide__tap-list">
+                                {step.taps.map((tap, tapIndex) => (
+                                    <li class="app-guide__tap">
+                                        {tapIndex > 0 && (
+                                            <Icon
+                                                name="chevron-right"
+                                                size={14}
+                                                className="app-guide__then"
+                                                aria-hidden="true"
+                                            />
+                                        )}
+                                        <span class="app-guide__chip">{tap}</span>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
+                    </li>
+                ))}
+            </ol>
+        </div>
+    </section>
+
+    <section id="after-install" class="app-after" aria-labelledby="after-install-heading">
+        <div class="app-after__wrapper container">
+            <div class="app-after__card">
+                <span class="app-after__icon" aria-hidden="true">
+                    <Icon name="check-circle-line" size={28} />
+                </span>
+                <div class="app-after__text">
+                    <h2 id="after-install-heading">{page.after.title}</h2>
+                    <p>{page.after.body}</p>
+                </div>
+            </div>
+            <p class="app-after__help">
+                <Icon name="help-line" size={18} aria-hidden="true" />
+                <span>
+                    {page.help.lead}{" "}
+                    <a href={`mailto:${publicSite.contact.email}`}>
+                        {publicSite.contact.email}
+                    </a>{" "}
+                    {page.help.joiner}{" "}
+                    <a href={`tel:${publicSite.contact.phone}`}>
+                        {publicSite.contact.phone}
+                    </a>{page.help.tail}
+                </span>
+            </p>
+        </div>
+    </section>
+
+    <Fragment slot="bottom-style">
+        <!-- Loaded directly, like the legal pages: this sheet styles the
+             above-the-fold hero, which is not part of the shared critical CSS. -->
+        <link rel="stylesheet" href={appStyle} />
+    </Fragment>
+</Layout>
