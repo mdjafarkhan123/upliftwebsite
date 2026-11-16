@@ -81,7 +81,8 @@ research and the current page:
 1. Header: logo, the links Services · How it works · Pricing · FAQ, and "Book a call"; on phones, a menu and a
    sticky "Book a call" bar at the bottom of the screen. (Jafar, 2026-11-16) On phones, the header's "Book a call"
    hides when the hero's button scrolls away and the bar appears; the bar hides again when the closing call to
-   action comes into view. (Jafar asked for the most user-friendly option, 2026-11-17)
+   action comes into view. (Jafar asked for the most user-friendly option, 2026-11-17) Proposed: "Log in" by
+   "Book a call"; phones: in the menu.
 2. Hero: the current H1 and its description, word for word (Jafar, 2026-11-16), "Book a call", and a short line
    such as "No contract · Live in 7–10 days".
 3. Client logos, hidden until real. Proposed: until then, the current "Powered by trusted technology" strip, kept small.
@@ -98,7 +99,8 @@ research and the current page:
 12. FAQ.
 13. Final call to action, then the footer. The footer links to the homepage sections, including Sample work and
     About, the app and the legal pages. Its only contact detail is info@upliftcontractor.com, so it names no
-    country. (Jafar, 2026-11-16)
+    country. (Jafar, 2026-11-16) Proposed: an app
+    card linking to /app.
 
 **Checks:**
 
