@@ -62,6 +62,11 @@ highlight, green buttons and all green on the deep-green bands, always with near
 dark cards use deep green #0B3D26 (`--color-dark`), not near-black; headings and body text stay near-black. The logo
 shield is #037741 with a near-black name. (Jafar, 2026-11-16)
 
+On phones, the page keeps the desktop's content and section order, but each section takes the layout that works
+best on a phone, such as swipeable cards or an accordion instead of a wide grid or tabs. Where the desktop layout
+already works, it simply stacks. Both widths come from one page, so no section shows different content on phones.
+(Jafar, 2026-11-16)
+
 **Checks:** a contractor opens the homepage on a phone or a laptop → it reads as a premium agency → nothing looks
 copied from a reference.
 
@@ -74,7 +79,9 @@ the about content, and "Book a call" opening a booking page. The order and the o
 research and the current page:
 
 1. Header: logo, the links Services · How it works · Pricing · FAQ, and "Book a call"; on phones, a menu and a
-   sticky "Book a call" bar at the bottom of the screen. (Jafar, 2026-11-16)
+   sticky "Book a call" bar at the bottom of the screen. (Jafar, 2026-11-16) On phones, the header's "Book a call"
+   hides when the hero's button scrolls away and the bar appears; the bar hides again when the closing call to
+   action comes into view. (Jafar asked for the most user-friendly option, 2026-11-17)
 2. Hero: the current H1 and its description, word for word (Jafar, 2026-11-16), "Book a call", and a short line
    such as "No contract · Live in 7–10 days".
 3. Client logos, hidden until real. Proposed: until then, the current "Powered by trusted technology" strip, kept small.

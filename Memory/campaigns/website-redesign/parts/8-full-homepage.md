@@ -2,43 +2,40 @@
 
 **Campaign:** website-redesign · **Reads:** the core in `docs/plans/website-redesign/plan.md`, then all topics
 **Stage:** Design
-**Code:** branch `website-redesign`, main folder (no worktree) · **Claim:** none — the sixth session released it on 2026-11-16
+**Code:** branch `website-redesign`, main folder (no worktree) · **Claim:** none — the seventh session released it on 2026-11-17
 **Done when:** Jafar has approved the page
-**Read next:** `docs/redesign/copy-current.md`; in `design.pen` the board "Uplift design system" (`LF2UJ`) and the
-frames "Concept 1 · Outcome system — Desktop/Mobile"; the reference board `design reference/README.md` and its
-captures (Overtake, AdScale and Herb first)
-
-## Restart (2026-11-16)
-
-Jafar deleted the first half-built page and asked for a design based on every reference capture, "not from your
-guess". All 20 captures were reviewed; the page was rebuilt in the design system, borrowing:
-
-- **Overtake:** inset panels, pill eyebrows, numbered service tabs, large work cards, deep-green closing panel.
-- **AdScale:** phone notifications; cards with a small product screen. **Herb:** green highlight on key words.
+**Read next:** `docs/redesign/copy-current.md`; in `design.pen` the board "Uplift design system" (`LF2UJ`); the
+reference board `design reference/README.md` (Overtake, AdScale and Herb first)
 
 ## Steps
 
-- [x] Frame "Homepage — Desktop" (`t4ww9`, x 0, y 6000), all 13 sections from design-system instances; frame
-  "Homepage — Hidden until real (desktop)" (`bbhSJ`, x 2030) holds client logos and testimonials. Checked by
-  render and layout check (only intended bleeds clip)
-- [x] Shown to Jafar on 2026-11-16. **Paused by him** ("pause here… I'll send you a list of changes")
-- [x] Jafar's changes applied and the desktop page approved ("ok all approved", 2026-11-16; meeting notes).
-  New tokens `color-green-950`, `color-on-dark-border`, `color-green-900` go into `critical.css` in part 9.
-  Projects grid `ylEsP` with "Show more projects" loading in place; pop-up state frame `Ksg3E`
-- [ ] Frame "Homepage — Mobile" ← **next** (390, theme device=mobile, at x 1540, y 6000), from the approved
-  desktop page, then show Jafar. Still unanswered: service point text 15 px (off the type scale) or `fs-base`?
+- [x] Desktop page `t4ww9` (x 0, y 6000) approved by Jafar on 2026-11-16. Logos and testimonials wait in `bbhSJ`;
+  project pop-up in `Ksg3E`.
+  New tokens `color-green-950`, `color-on-dark-border`, `color-green-900` go into `critical.css` in part 9
+- [x] Frame "Homepage — Mobile" (`LGKcx`, x 1540, y 6000, theme mobile), copied from the desktop page and
+  adapted section by section (plan § How the site looks, phone rule). Frame "Homepage — Mobile states" (`giW6j`,
+  x 9923, y 7160): scrolled page with sticky bar, menu open, project pop-up at phone width. Checked by export
+- [x] Summarised for Jafar in chat on 2026-11-16; he answered only the header question (plan § The homepage, item 1;
+  state 1 in `giW6j` shows it), then paused
+- [ ] **Next:** run `git diff --stat design.pen`. At the pause Pencil had not written the mobile work to disk (file
+  last saved 2026-11-16 22:27). If `LGKcx` and `giW6j` are in Pencil, ask Jafar to save, then commit `design.pen`.
+  Then show Jafar the mobile page with the list below and wait for his verdict or changes
 
-Photos: four Pencil stand-ins in `design/images/` plus two Unsplash fills. Problem section: about intro and the
-four ⚠️ paragraphs; About: the ✅ paragraphs, byline and four "Why choose us" reasons.
+Phone layouts that differ from desktop, to point out at the review: services tabs become an accordion (detail and
+phone inside the open item; its repeated title hidden); 3 projects, then "Show more projects"; previews scaled
+like screenshots, no hover overlay; step pills above titles; price card between heading and facts; Why choose us as
+four rows in one card; logo strip scrolls sideways; headings wrap onto extra lines. Service points use `fs-base` on
+both pages, so the desktop detail card grew to 660 px. Notification card titles and details now wrap. Still 15 px,
+not asked about: trade chips and the About byline name (map to a token in part 9).
 
 ## Notes
 
-- The current copy is used word for word (Jafar, 2026-11-16). Two lines break approved rules; raise them at the
-  review: "No bullsh*t" (no swearing) and "show you live client accounts & results" (no clients yet; in step 1).
-- New small labels, not from the current copy, for Jafar to check at the review: hero assurances and status
-  card; problem card titles; "Six systems, one team"; the sample-work heading, lead, names and "Built in" lists;
-  the step pills (step 2's "(7 - 10 days)" moved into its pill) and the photo chip; the pricing text (from the
-  approved concept). The hero's "No fluff. We just say what we exactly do" line is replaced by the assurances.
-- About's "Read more" is left out: there is no about page to open (the current nav uses `/#about`).
-- Pencil stores 0 for variables in `width`/`height`; its checker falsely flags Brand/Header as clipped. `TakeScreenshot`
-  returns 400 px images; export a PNG at scale 1 to the scratchpad to inspect detail.
+- Current copy word for word (Jafar, 2026-11-16). Two lines break approved rules and were not raised yet:
+  "No bullsh*t" (no swearing) and "show you live client accounts & results" (no clients yet).
+- New small labels not from the current copy (hero assurances and status card, problem card titles, sample-work
+  texts, step pills, photo chip, pricing text) were on the approved desktop page; the mobile page reuses them.
+- About's "Read more" is left out: there is no about page to open.
+- Photos: four Pencil stand-ins in `design/images/` plus two Unsplash fills.
+- Pencil: `execute` globals do not persist between calls; copied frames get new ids, so find nodes by name. The
+  checker falsely flags Brand/Header and intended bleeds as clipped. `TakeScreenshot` is 400 px; export a PNG at
+  scale 1 to the scratchpad to inspect detail.

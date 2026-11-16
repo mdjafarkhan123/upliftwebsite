@@ -5,8 +5,9 @@
 **Plan:** Core approved by Jafar word by word on 2026-11-16. Parts 5–9 are in `ROADMAP.md`, in the order he agreed.
 **Stage:** Design
 
-**Current:** 8 Full homepage design — the desktop page is approved (2026-11-16). Next: build the mobile page.
-Unclaimed; see `parts/8-full-homepage.md`.
+**Current:** 8 Full homepage design — desktop approved; mobile page and phone states built (2026-11-16), waiting
+for Jafar's review. Unclaimed. First make sure `design.pen` holds the mobile work and is committed; see
+`parts/8-full-homepage.md`.
 
 **Next part:** 9 Astro build, after part 8. Part 7 Copy draft waits until Jafar asks for new copy (2026-11-16).
 
