@@ -18,21 +18,20 @@
 ## Next
 
 Waiting for Jafar. Questions asked (2026-11-16): approve the board or name changes; footer contact;
-core wording (see Notes); commit `design.pen`? On approval: record it, mark part 6 done in `ROADMAP.md`, delete this note, point `NOW.md` at part 7.
+commit `design.pen`? On approval: record it, mark part 6 done in `ROADMAP.md`, delete this note, point `NOW.md` at part 7.
 
 ## Notes
 
 - Jafar (2026-11-16, meeting notes): dark bands use a deep shade of the brand green: `--color-dark` #0B3D26
   (white 12.3:1, `--color-text-white` #A9C4B4 6.6:1); raised #114A2F; lines #1D5A3B. Ink stays #0C1A13.
-- Jafar (2026-11-16): brand colour `--color-primary` #037741 (white on it 5.7:1; on deep green only 2.2:1). So:
-  hover #025F34, `--color-green-700` = primary, soft #E2F0E7, new `--color-inverse-accent` #4ADE8B for green on deep
-  green, Button/Accent is white on deep green, highlight text white, Button/Primary arrow white.
-- Waiting for his yes: core line "tuned to one bright green accent on white" → "the brand green #037741 on white
-  with deep-green bands; a light tint of it only on deep green". Both colour decisions then go into the topic
-  "How the site looks".
+- Jafar (2026-11-16): two shades of one green (hue 152). `--color-primary` #037741: logo on light, green text,
+  links, checks on light (5.7:1 on white); hover #025F34; `--color-green-700` = primary; soft #E2F0E7.
+  `--color-brand-bright` #1ED27E (hover #19B36B): highlight, Button/Accent, arrow circle, badge dots, and all green
+  on deep green (6.2:1), always with ink text on it. Core unchanged. Both go into the topic "How the site looks"
+  on approval.
 - The 19 old variables (`primary`, `page-bg`, …) serve the /app frames and the old `Site header`/`Site footer`
   components; leave them. New variables use the exact CSS names. New tokens: `font-heading`, `fs-fluid-display`,
-  `round-full`, `color-error-soft`, `color-primary-soft-dark`, `color-inverse-accent` (existing name, new value). Changed values: radius 16/24/32 (was 20/30/40),
+  `round-full`, `color-error-soft`, `color-primary-soft-dark`; `color-brand-bright(-hover)` reuse existing names. Changed values: radius 16/24/32 (was 20/30/40),
   `space-fluid-2xl` 120/72.
 - Proposed, for Jafar to confirm: header links Services · How it works · Pricing · FAQ; footer links add Sample
   work and About; sticky mobile Book a call bar; brand shield in #037741 with an ink name.
