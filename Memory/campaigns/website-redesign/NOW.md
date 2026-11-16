@@ -5,8 +5,11 @@
 **Plan:** Core approved by Jafar word by word on 2026-11-16. Parts 5–9 are in `ROADMAP.md`, in the order he agreed.
 **Stage:** Design
 
-**In progress:** 6 Design system — board built in `design.pen`, waiting for Jafar's review; see `parts/6-design-system.md`
+**In progress:** 8 Full homepage design — claimed 2026-11-16; see `parts/8-full-homepage.md`. Jafar approved the
+design system (part 6) the same day and asked to design the full page now with the current copy, "$XXX" and Sample
+app screens.
 
-**Next part:** 7 Copy draft, once Jafar approves part 6 (it can also run beside the review).
+**Next part:** 9 Astro build, after part 8. Part 7 Copy draft waits until Jafar asks for new copy (2026-11-16).
 
-**Blockers:** none for design. Jafar's price numbers and real Uplift app screenshots are needed before part 8; the booking link before launch.
+**Blockers:** none for design. Jafar's price numbers and real Uplift app screenshots are needed before part 9; the
+booking link before launch.

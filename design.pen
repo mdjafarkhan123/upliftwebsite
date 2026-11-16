@@ -1,0 +1,2488 @@
+{
+  "version": "2.21",
+  "children": [
+    {
+      "type": "frame",
+      "id": "QqYfP",
+      "x": 0,
+      "y": -300,
+      "name": "Site header",
+      "reusable": true,
+      "width": 1440,
+      "fill": "$page-bg",
+      "stroke": "$border-light",
+      "strokeWidth": {
+        "bottom": 1
+      },
+      "padding": [
+        20,
+        90
+      ],
+      "justifyContent": "space_between",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "pc7sZ",
+          "name": "Logo",
+          "width": 116,
+          "height": 52,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "design/brand-logo.png",
+            "mode": "contain"
+          }
+        },
+        {
+          "type": "frame",
+          "id": "lui3j",
+          "name": "Nav",
+          "gap": 32,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "PChMD",
+              "name": "About",
+              "fill": "$secondary",
+              "content": "About",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "wtfRt",
+              "name": "Services",
+              "fill": "$secondary",
+              "content": "Services",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "E4yyK",
+              "name": "Platform",
+              "fill": "$secondary",
+              "content": "Platform",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "Wiu2A",
+              "name": "Process",
+              "fill": "$secondary",
+              "content": "Process",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "Pvcoi",
+              "name": "FAQs",
+              "fill": "$secondary",
+              "content": "FAQs",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Hh5b3",
+          "name": "Book a call",
+          "fill": "$secondary",
+          "cornerRadius": 8,
+          "padding": [
+            11,
+            14
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "r4gIjU",
+              "name": "Label",
+              "fill": "$white",
+              "content": "Book a call",
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "600",
+              "letterSpacing": -0.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "jpgV0",
+      "x": 0,
+      "y": -1000,
+      "name": "Site footer",
+      "reusable": true,
+      "width": 1440,
+      "fill": "$page-bg",
+      "layout": "vertical",
+      "gap": 56,
+      "padding": [
+        64,
+        90,
+        32,
+        90
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "yZcdI",
+          "name": "Columns",
+          "width": "fill_container",
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "G3dYW2",
+              "name": "Brand",
+              "width": 260,
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xEOrt",
+                  "name": "Logo",
+                  "width": 116,
+                  "height": 52,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "design/brand-logo.png",
+                    "mode": "contain"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "N6W2J",
+                  "name": "Tagline",
+                  "fill": "$text-subtle",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Website design & marketing systems for contractors & home service pros",
+                  "lineHeight": 1.6,
+                  "fontFamily": "$font-body",
+                  "fontSize": 17,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NqsXu",
+              "name": "Contact info",
+              "width": 220,
+              "layout": "vertical",
+              "gap": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tLUP5",
+                  "name": "Heading",
+                  "fill": "$secondary",
+                  "content": "CONTACT INFO",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.6
+                },
+                {
+                  "type": "frame",
+                  "id": "xX0Dm",
+                  "name": "Links",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    10,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zUr43",
+                      "name": "info@upliftcontractor.com",
+                      "fill": "$page-text",
+                      "content": "info@upliftcontractor.com",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "g6po7",
+                      "name": "+8801834969563",
+                      "fill": "$page-text",
+                      "content": "+8801834969563",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "mBJaQ",
+                      "name": "Savar, Dhaka, Bangladesh",
+                      "fill": "$page-text",
+                      "content": "Savar, Dhaka, Bangladesh",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Cavko",
+              "name": "Navigation",
+              "width": 220,
+              "layout": "vertical",
+              "gap": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Ti6Q1",
+                  "name": "Heading",
+                  "fill": "$secondary",
+                  "content": "NAVIGATION",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.6
+                },
+                {
+                  "type": "frame",
+                  "id": "j5lnB2",
+                  "name": "Links",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    10,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "R6VaDK",
+                      "name": "Home",
+                      "fill": "$page-text",
+                      "content": "Home",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "vFK9K",
+                      "name": "About",
+                      "fill": "$page-text",
+                      "content": "About",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "r2B4cI",
+                      "name": "Services",
+                      "fill": "$page-text",
+                      "content": "Services",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "KMYFR",
+                      "name": "Platform",
+                      "fill": "$page-text",
+                      "content": "Platform",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "MJWf3",
+                      "name": "Process",
+                      "fill": "$page-text",
+                      "content": "Process",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "mUdzA",
+                      "name": "FAQs",
+                      "fill": "$page-text",
+                      "content": "FAQs",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hMiwk",
+          "name": "Bottom bar",
+          "width": "fill_container",
+          "stroke": "$border",
+          "strokeWidth": {
+            "top": 1
+          },
+          "padding": [
+            24,
+            0,
+            0,
+            0
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "XsjaZ",
+              "name": "Copyright",
+              "fill": "$text-subtle",
+              "content": "© 2026 Uplift Contractor",
+              "fontFamily": "$font-body",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "FN0cD",
+              "name": "Legal links",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "txXdq",
+                  "name": "Privacy Policy",
+                  "fill": "$text-subtle",
+                  "content": "Privacy Policy",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "GrkZE",
+                  "name": "Terms & Conditions",
+                  "fill": "$text-subtle",
+                  "content": "Terms & Conditions",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "G8ZJ3",
+                  "name": "Data deletion",
+                  "fill": "$text-subtle",
+                  "content": "Data deletion",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "oWIje",
+                  "name": "Contact",
+                  "fill": "$text-subtle",
+                  "content": "Contact",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "h4cfe",
+      "x": 1640,
+      "y": -1000,
+      "name": "Download the app — Desktop",
+      "clip": true,
+      "width": 1440,
+      "fill": "$page-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "i87R1",
+          "type": "ref",
+          "ref": "QqYfP",
+          "name": "Site header",
+          "width": "fill_container"
+        },
+        {
+          "type": "frame",
+          "id": "V0cYxU",
+          "name": "Hero",
+          "width": "fill_container",
+          "gap": 80,
+          "padding": [
+            72,
+            90,
+            88,
+            90
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "GLJLK",
+              "name": "Intro",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "rBzai",
+                  "name": "Eyebrow",
+                  "fill": "$primary-soft",
+                  "cornerRadius": 999,
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "gap": 8,
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "MQkJo",
+                      "name": "Android icon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "smartphone",
+                      "library": "lucide",
+                      "fill": "$primary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wMcbw",
+                      "name": "Eyebrow label",
+                      "fill": "$secondary",
+                      "content": "Uplift for Android",
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "600",
+                      "letterSpacing": 0.3
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "JvOMj",
+                  "name": "H1",
+                  "fill": "$secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Get the Uplift app",
+                  "lineHeight": 1.05,
+                  "fontFamily": "$font-body",
+                  "fontSize": 64,
+                  "fontWeight": "700",
+                  "letterSpacing": -1.5
+                },
+                {
+                  "type": "text",
+                  "id": "qZOSc",
+                  "name": "Lead",
+                  "fill": "$page-text",
+                  "textGrowth": "fixed-width",
+                  "width": 560,
+                  "content": "This is the Uplift app for Android phones. Sign in with your Uplift account, the same one you use on the computer.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "$font-body",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "uDDKQ",
+                  "name": "Download row",
+                  "gap": 20,
+                  "padding": [
+                    8,
+                    0,
+                    0,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "PfTTT",
+                      "name": "Download button",
+                      "fill": "$secondary",
+                      "cornerRadius": 8,
+                      "gap": 10,
+                      "padding": [
+                        16,
+                        26
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "f0iDo",
+                          "name": "Download icon",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "download",
+                          "library": "lucide",
+                          "fill": "$white"
+                        },
+                        {
+                          "type": "text",
+                          "id": "gOwiM",
+                          "name": "Label",
+                          "fill": "$white",
+                          "content": "Download the app",
+                          "fontFamily": "$font-body",
+                          "fontSize": 17,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZRqat",
+                      "name": "Requirement",
+                      "fill": "$text-subtle",
+                      "content": "For Android 7.0 and newer",
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HG2Ki",
+                  "name": "iPhone note",
+                  "gap": 10,
+                  "padding": [
+                    16,
+                    0,
+                    0,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "UU1Xy",
+                      "name": "Info icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "info",
+                      "library": "lucide",
+                      "fill": "$text-subtle"
+                    },
+                    {
+                      "type": "text",
+                      "id": "rvRyb",
+                      "name": "Text",
+                      "fill": "$page-text",
+                      "content": "On an iPhone? The app is Android only for now.",
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VLwjq",
+              "name": "QR card",
+              "width": 400,
+              "fill": "$white",
+              "cornerRadius": 16,
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 24,
+              "padding": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "v1T7r1",
+                  "name": "QR heading",
+                  "fill": "$secondary",
+                  "content": "On a computer?",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "npeWq",
+                  "name": "QR code",
+                  "width": 216,
+                  "height": 216,
+                  "fill": "$white",
+                  "cornerRadius": 8,
+                  "stroke": "$border-light",
+                  "strokeWidth": 1,
+                  "padding": 16,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "apXEl",
+                      "name": "QR modules",
+                      "geometry": "M0 0h7v1h-7z m9 0h1v1h-1z m2 0h1v1h-1z m3 0h2v1h-2z m3 0h1v1h-1z m2 0h1v1h-1z m4 0h1v1h-1z m3 0h7v1h-7z m-26 1h1v1h-1z m6 0h1v1h-1z m3 0h1v1h-1z m3 0h1v1h-1z m3 0h2v1h-2z m3 0h1v1h-1z m3 0h4v1h-4z m5 0h1v1h-1z m6 0h1v1h-1z m-32 1h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m3 0h2v1h-2z m3 0h1v1h-1z m2 0h2v1h-2z m3 0h1v1h-1z m2 0h2v1h-2z m3 0h2v1h-2z m4 0h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m-32 1h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m3 0h1v1h-1z m2 0h3v1h-3z m7 0h1v1h-1z m4 0h3v1h-3z m4 0h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m-32 1h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m5 0h1v1h-1z m2 0h1v1h-1z m3 0h1v1h-1z m2 0h1v1h-1z m4 0h2v1h-2z m4 0h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m-32 1h1v1h-1z m6 0h1v1h-1z m2 0h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m4 0h4v1h-4z m6 0h1v1h-1z m2 0h1v1h-1z m6 0h1v1h-1z m-32 1h7v1h-7z m8 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h7v1h-7z m-17 1h1v1h-1z m2 0h2v1h-2z m3 0h1v1h-1z m3 0h1v1h-1z m3 0h4v1h-4z m-20 1h1v1h-1z m3 0h1v1h-1z m2 0h2v1h-2z m3 0h2v1h-2z m3 0h1v1h-1z m2 0h4v1h-4z m6 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m-27 1h3v1h-3z m7 0h1v1h-1z m3 0h1v1h-1z m7 0h2v1h-2z m3 0h2v1h-2z m4 0h4v1h-4z m7 0h2v1h-2z m-31 1h3v1h-3z m4 0h1v1h-1z m2 0h1v1h-1z m3 0h4v1h-4z m9 0h2v1h-2z m6 0h2v1h-2z m3 0h2v1h-2z m3 0h1v1h-1z m2 0h1v1h-1z m-31 1h1v1h-1z m2 0h3v1h-3z m4 0h3v1h-3z m7 0h1v1h-1z m4 0h1v1h-1z m3 0h1v1h-1z m2 0h4v1h-4z m5 0h2v1h-2z m-28 1h2v1h-2z m3 0h1v1h-1z m3 0h2v1h-2z m3 0h1v1h-1z m2 0h1v1h-1z m6 0h1v1h-1z m2 0h8v1h-8z m10 0h1v1h-1z m2 0h1v1h-1z m-31 1h3v1h-3z m5 0h1v1h-1z m3 0h1v1h-1z m2 0h1v1h-1z m3 0h1v1h-1z m2 0h3v1h-3z m4 0h2v1h-2z m3 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h2v1h-2z m3 0h2v1h-2z m-31 1h1v1h-1z m3 0h4v1h-4z m5 0h1v1h-1z m2 0h1v1h-1z m3 0h2v1h-2z m5 0h1v1h-1z m5 0h1v1h-1z m2 0h2v1h-2z m3 0h1v1h-1z m2 0h2v1h-2z m-30 1h2v1h-2z m3 0h3v1h-3z m5 0h1v1h-1z m2 0h2v1h-2z m4 0h2v1h-2z m3 0h1v1h-1z m3 0h2v1h-2z m3 0h2v1h-2z m3 0h2v1h-2z m5 0h1v1h-1z m-31 1h3v1h-3z m5 0h2v1h-2z m4 0h1v1h-1z m3 0h3v1h-3z m4 0h2v1h-2z m4 0h5v1h-5z m6 0h1v1h-1z m2 0h2v1h-2z m3 0h1v1h-1z m-31 1h1v1h-1z m3 0h1v1h-1z m2 0h1v1h-1z m2 0h2v1h-2z m4 0h3v1h-3z m5 0h1v1h-1z m7 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m-31 1h1v1h-1z m3 0h2v1h-2z m3 0h2v1h-2z m5 0h2v1h-2z m10 0h1v1h-1z m3 0h2v1h-2z m6 0h1v1h-1z m2 0h1v1h-1z m-32 1h1v1h-1z m4 0h2v1h-2z m3 0h1v1h-1z m5 0h1v1h-1z m2 0h1v1h-1z m3 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h3v1h-3z m6 0h1v1h-1z m-30 1h4v1h-4z m5 0h1v1h-1z m2 0h1v1h-1z m2 0h2v1h-2z m3 0h1v1h-1z m2 0h4v1h-4z m6 0h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m4 0h2v1h-2z m-30 1h1v1h-1z m8 0h2v1h-2z m3 0h2v1h-2z m3 0h3v1h-3z m5 0h1v1h-1z m5 0h2v1h-2z m4 0h1v1h-1z m2 0h2v1h-2z m-31 1h3v1h-3z m4 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h4v1h-4z m5 0h1v1h-1z m3 0h2v1h-2z m7 0h4v1h-4z m5 0h1v1h-1z m2 0h1v1h-1z m-31 1h3v1h-3z m7 0h2v1h-2z m3 0h4v1h-4z m5 0h1v1h-1z m2 0h1v1h-1z m3 0h2v1h-2z m3 0h1v1h-1z m2 0h1v1h-1z m2 0h2v1h-2z m-28 1h1v1h-1z m3 0h2v1h-2z m3 0h1v1h-1z m2 0h1v1h-1z m3 0h3v1h-3z m4 0h3v1h-3z m5 0h2v1h-2z m4 0h5v1h-5z m7 0h2v1h-2z m-23 1h2v1h-2z m5 0h1v1h-1z m6 0h4v1h-4z m5 0h1v1h-1z m4 0h2v1h-2z m4 0h1v1h-1z m-32 1h7v1h-7z m12 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m8 0h1v1h-1z m2 0h1v1h-1z m2 0h4v1h-4z m-28 1h1v1h-1z m6 0h1v1h-1z m2 0h2v1h-2z m4 0h1v1h-1z m3 0h2v1h-2z m4 0h3v1h-3z m5 0h1v1h-1z m4 0h1v1h-1z m4 0h1v1h-1z m-32 1h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m4 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m3 0h1v1h-1z m2 0h2v1h-2z m3 0h6v1h-6z m-24 1h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m2 0h2v1h-2z m6 0h2v1h-2z m7 0h1v1h-1z m5 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m-30 1h1v1h-1z m2 0h3v1h-3z m4 0h1v1h-1z m3 0h1v1h-1z m2 0h1v1h-1z m2 0h1v1h-1z m4 0h2v1h-2z m4 0h1v1h-1z m3 0h2v1h-2z m4 0h3v1h-3z m4 0h1v1h-1z m-32 1h1v1h-1z m6 0h1v1h-1z m4 0h1v1h-1z m2 0h1v1h-1z m3 0h12v1h-12z m14 0h1v1h-1z m-29 1h7v1h-7z m8 0h3v1h-3z m6 0h1v1h-1z m5 0h3v1h-3z m5 0h1v1h-1z m2 0h1v1h-1z m2 0h2v1h-2z m3 0h1v1h-1z",
+                      "viewBox": [
+                        0,
+                        0,
+                        33,
+                        33
+                      ],
+                      "fill": "$green-900",
+                      "width": 184,
+                      "height": 184
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "iG7Gn",
+                  "name": "QR caption",
+                  "fill": "$secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Scan with your Android phone's camera",
+                  "textAlign": "center",
+                  "fontFamily": "$font-body",
+                  "fontSize": 17,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "pe8QD",
+                  "name": "QR note",
+                  "fill": "$text-subtle",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "It opens the same download on your phone.",
+                  "textAlign": "center",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ig8Nu",
+          "name": "Install guide",
+          "width": "fill_container",
+          "fill": "$white",
+          "stroke": "$border-light",
+          "strokeWidth": {
+            "top": 1,
+            "bottom": 1
+          },
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            88,
+            90
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "wBmqD",
+              "name": "Heading group",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "s5n876",
+                  "name": "H2",
+                  "fill": "$secondary",
+                  "content": "How to install",
+                  "fontFamily": "$font-body",
+                  "fontSize": 40,
+                  "fontWeight": "700",
+                  "letterSpacing": -0.8
+                },
+                {
+                  "type": "text",
+                  "id": "s9eiVV",
+                  "name": "Intro",
+                  "fill": "$page-text",
+                  "textGrowth": "fixed-width",
+                  "width": 640,
+                  "content": "The app isn't on Google Play yet, so Android asks a few extra questions the first time. Here's what to tap, in the order you'll see it.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "w3AQKJ",
+              "name": "Steps",
+              "width": "fill_container",
+              "height": 370,
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "tEpuU",
+                  "name": "Step 1",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$page-bg",
+                  "cornerRadius": 14,
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "WCjh6",
+                      "name": "Top",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "NfLsX",
+                          "name": "Number",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "$secondary",
+                          "cornerRadius": 999,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "cECAy",
+                              "name": "Digit",
+                              "fill": "$white",
+                              "content": "1",
+                              "fontFamily": "$font-body",
+                              "fontSize": 17,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "k1Abg",
+                      "name": "Title",
+                      "fill": "$secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Chrome may say “File might be harmful”",
+                      "lineHeight": 1.3,
+                      "fontFamily": "$font-body",
+                      "fontSize": 21,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "sI4eP",
+                      "name": "Body",
+                      "fill": "$page-text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Tap Download anyway. The file is safe. Chrome says this for every app that isn't from Google Play.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kkqPy",
+                      "name": "What to tap",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": [
+                        8,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "c4w9b",
+                          "name": "Label",
+                          "fill": "$text-subtle",
+                          "content": "WHAT TO TAP",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "sR30F",
+                          "name": "Taps",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "hbIig",
+                              "name": "Tap: Download anyway",
+                              "fill": "$white",
+                              "cornerRadius": 6,
+                              "stroke": "$border-primary",
+                              "strokeWidth": 1,
+                              "padding": [
+                                7,
+                                12
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "fP71Q",
+                                  "name": "Tap label",
+                                  "fill": "$green-650",
+                                  "content": "Download anyway",
+                                  "fontFamily": "$font-body",
+                                  "fontSize": 13,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DbYAm",
+                  "name": "Step 2",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$page-bg",
+                  "cornerRadius": 14,
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "sQU6a",
+                      "name": "Top",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "WArEp",
+                          "name": "Number",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "$secondary",
+                          "cornerRadius": 999,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "NplZw",
+                              "name": "Digit",
+                              "fill": "$white",
+                              "content": "2",
+                              "fontFamily": "$font-body",
+                              "fontSize": 17,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "q2Q6kK",
+                      "name": "Title",
+                      "fill": "$secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Allow installs from this source",
+                      "lineHeight": 1.3,
+                      "fontFamily": "$font-body",
+                      "fontSize": 21,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "unsSa",
+                      "name": "Body",
+                      "fill": "$page-text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Open the downloaded file. The first time, Android says your phone isn't allowed to install apps from this source. Tap Settings, turn on Allow from this source, then go back and tap Install.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "tphRV",
+                      "name": "What to tap",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": [
+                        8,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "hxYBC",
+                          "name": "Label",
+                          "fill": "$text-subtle",
+                          "content": "WHAT TO TAP",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "zaAhz",
+                          "name": "Taps",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "bWsnJ",
+                              "name": "Tap: Settings",
+                              "fill": "$white",
+                              "cornerRadius": 6,
+                              "stroke": "$border-primary",
+                              "strokeWidth": 1,
+                              "padding": [
+                                7,
+                                12
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "RMs5s",
+                                  "name": "Tap label",
+                                  "fill": "$green-650",
+                                  "content": "Settings",
+                                  "fontFamily": "$font-body",
+                                  "fontSize": 13,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "B1M8bG",
+                              "name": "Then",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "chevron-right",
+                              "library": "lucide",
+                              "fill": "$text-subtle"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "hlXWf",
+                              "name": "Tap: Allow from this source",
+                              "fill": "$white",
+                              "cornerRadius": 6,
+                              "stroke": "$border-primary",
+                              "strokeWidth": 1,
+                              "padding": [
+                                7,
+                                12
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "seuoj",
+                                  "name": "Tap label",
+                                  "fill": "$green-650",
+                                  "content": "Allow from this source",
+                                  "fontFamily": "$font-body",
+                                  "fontSize": 13,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "PPl3p",
+                              "name": "Then",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "chevron-right",
+                              "library": "lucide",
+                              "fill": "$text-subtle"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "KodJH",
+                              "name": "Tap: Install",
+                              "fill": "$white",
+                              "cornerRadius": 6,
+                              "stroke": "$border-primary",
+                              "strokeWidth": 1,
+                              "padding": [
+                                7,
+                                12
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "a1b7AX",
+                                  "name": "Tap label",
+                                  "fill": "$green-650",
+                                  "content": "Install",
+                                  "fontFamily": "$font-body",
+                                  "fontSize": 13,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bLRJL",
+                  "name": "Step 3",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$page-bg",
+                  "cornerRadius": 14,
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "UGvRQ",
+                      "name": "Top",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "ns8Ql",
+                          "name": "Number",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "$secondary",
+                          "cornerRadius": 999,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "o5hZs",
+                              "name": "Digit",
+                              "fill": "$white",
+                              "content": "3",
+                              "fontFamily": "$font-body",
+                              "fontSize": 17,
+                              "fontWeight": "700"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "rS8cl",
+                          "name": "Samsung tag",
+                          "fill": "$warning-soft",
+                          "cornerRadius": 999,
+                          "padding": [
+                            5,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "VPsrn",
+                              "name": "Tag label",
+                              "fill": "$warning-dark",
+                              "content": "Samsung phones only",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "wM6hV",
+                      "name": "Title",
+                      "fill": "$secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "If Auto Blocker blocks the app",
+                      "lineHeight": 1.3,
+                      "fontFamily": "$font-body",
+                      "fontSize": 21,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "kve4u",
+                      "name": "Body",
+                      "fill": "$page-text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Open Settings › Security and privacy › Auto Blocker, turn it off, and install again. You can turn it back on afterwards.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font-body",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "J7yYGC",
+                      "name": "What to tap",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 10,
+                      "padding": [
+                        8,
+                        0,
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qBzZJ",
+                          "name": "Label",
+                          "fill": "$text-subtle",
+                          "content": "WHAT TO TAP",
+                          "fontFamily": "$font-body",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Rp3aC",
+                          "name": "Taps",
+                          "gap": 8,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "yeZhi",
+                              "name": "Tap: Auto Blocker: Off",
+                              "fill": "$white",
+                              "cornerRadius": 6,
+                              "stroke": "$border-primary",
+                              "strokeWidth": 1,
+                              "padding": [
+                                7,
+                                12
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "V6YPgT",
+                                  "name": "Tap label",
+                                  "fill": "$green-650",
+                                  "content": "Auto Blocker: Off",
+                                  "fontFamily": "$font-body",
+                                  "fontSize": 13,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "icon",
+                              "id": "Z7ThoR",
+                              "name": "Then",
+                              "width": 14,
+                              "height": 14,
+                              "icon": "chevron-right",
+                              "library": "lucide",
+                              "fill": "$text-subtle"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "vSigk",
+                              "name": "Tap: Install",
+                              "fill": "$white",
+                              "cornerRadius": 6,
+                              "stroke": "$border-primary",
+                              "strokeWidth": 1,
+                              "padding": [
+                                7,
+                                12
+                              ],
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "xarNW",
+                                  "name": "Tap label",
+                                  "fill": "$green-650",
+                                  "content": "Install",
+                                  "fontFamily": "$font-body",
+                                  "fontSize": 13,
+                                  "fontWeight": "600"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "r1OKk",
+          "name": "After installing + help",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            72,
+            90,
+            88,
+            90
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "G0lbEn",
+              "name": "After installing",
+              "width": "fill_container",
+              "fill": "$green-900",
+              "cornerRadius": 16,
+              "gap": 28,
+              "padding": [
+                36,
+                40
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "l4LQgS",
+                  "name": "Icon wrap",
+                  "width": 56,
+                  "height": 56,
+                  "fill": "$green-650",
+                  "cornerRadius": 999,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "QkFhF",
+                      "name": "Check icon",
+                      "width": 28,
+                      "height": 28,
+                      "icon": "circle-check",
+                      "library": "lucide",
+                      "fill": "$inverse-accent"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YEVSx",
+                  "name": "Text",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "rFbMK",
+                      "name": "H2",
+                      "fill": "$white",
+                      "content": "After installing",
+                      "fontFamily": "$font-body",
+                      "fontSize": 24,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ell4s",
+                      "name": "Body",
+                      "fill": "$text-white",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Open Uplift and sign in with the same email and password you use on the computer. From then on the app updates itself, so you never need this page again.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "$font-body",
+                      "fontSize": 17,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dxRE4",
+              "name": "Need help",
+              "gap": 10,
+              "padding": [
+                8,
+                4
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "EGHXc",
+                  "name": "Help icon",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "life-buoy",
+                  "library": "lucide",
+                  "fill": "$primary"
+                },
+                {
+                  "type": "text",
+                  "id": "IjVAL",
+                  "name": "Text",
+                  "fill": "$page-text",
+                  "content": "Need help? Contact Uplift support at info@upliftcontractor.com or +8801834969563, and we'll set it up for you.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "r24eeT",
+          "type": "ref",
+          "ref": "jpgV0",
+          "name": "Site footer",
+          "width": "fill_container"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "fexmC",
+      "x": 3240,
+      "y": -1000,
+      "name": "Download the app — Mobile",
+      "clip": true,
+      "width": 390,
+      "fill": "$page-bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "H2FQi",
+          "name": "Mobile header",
+          "width": "fill_container",
+          "stroke": "$border-light",
+          "strokeWidth": {
+            "bottom": 1
+          },
+          "padding": [
+            14,
+            16
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "UDRn2",
+              "name": "Logo",
+              "width": 92,
+              "height": 41,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "design/brand-logo.png",
+                "mode": "contain"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "GswsT",
+              "name": "Menu button",
+              "width": 44,
+              "height": 44,
+              "cornerRadius": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "H7ZKo",
+                  "name": "Menu icon",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "menu",
+                  "library": "lucide",
+                  "fill": "$secondary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hvzDj",
+          "name": "Hero",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 18,
+          "padding": [
+            36,
+            16,
+            40,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "zWx7E",
+              "name": "Eyebrow",
+              "fill": "$primary-soft",
+              "cornerRadius": 999,
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "gap": 8,
+              "padding": [
+                6,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "g9Qbuh",
+                  "name": "Android icon",
+                  "width": 14,
+                  "height": 14,
+                  "icon": "smartphone",
+                  "library": "lucide",
+                  "fill": "$primary"
+                },
+                {
+                  "type": "text",
+                  "id": "h6twn",
+                  "name": "Eyebrow label",
+                  "fill": "$secondary",
+                  "content": "Uplift for Android",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "NMrhy",
+              "name": "H1",
+              "fill": "$secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Get the Uplift app",
+              "lineHeight": 1.1,
+              "fontFamily": "$font-body",
+              "fontSize": 38,
+              "fontWeight": "700",
+              "letterSpacing": -0.8
+            },
+            {
+              "type": "text",
+              "id": "R2dyk",
+              "name": "Lead",
+              "fill": "$page-text",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "This is the Uplift app for Android phones. Sign in with your Uplift account, the same one you use on the computer.",
+              "lineHeight": 1.5,
+              "fontFamily": "$font-body",
+              "fontSize": 17,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "xBP2r",
+              "name": "Download group",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                6,
+                0,
+                0,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "qp99X",
+                  "name": "Download button",
+                  "width": "fill_container",
+                  "fill": "$secondary",
+                  "cornerRadius": 10,
+                  "gap": 10,
+                  "padding": [
+                    17,
+                    20
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "h2JZKF",
+                      "name": "Download icon",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "download",
+                      "library": "lucide",
+                      "fill": "$white"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s1pQjb",
+                      "name": "Label",
+                      "fill": "$white",
+                      "content": "Download the app",
+                      "fontFamily": "$font-body",
+                      "fontSize": 17,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "fk5sH",
+                  "name": "Requirement",
+                  "fill": "$text-subtle",
+                  "content": "For Android 7.0 and newer",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "s2nwF",
+              "name": "iPhone note",
+              "width": "fill_container",
+              "fill": "$offwhite",
+              "cornerRadius": 10,
+              "gap": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "m9soly",
+                  "name": "Info icon",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "info",
+                  "library": "lucide",
+                  "fill": "$text-subtle"
+                },
+                {
+                  "type": "text",
+                  "id": "Eiqw1",
+                  "name": "Text",
+                  "fill": "$page-text",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "On an iPhone? The app is Android only for now.",
+                  "lineHeight": 1.4,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qrpKJ",
+          "name": "Install guide",
+          "width": "fill_container",
+          "fill": "$white",
+          "stroke": "$border-light",
+          "strokeWidth": {
+            "top": 1,
+            "bottom": 1
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            44,
+            16
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "VuHOD",
+              "name": "H2",
+              "fill": "$secondary",
+              "content": "How to install",
+              "fontFamily": "$font-body",
+              "fontSize": 28,
+              "fontWeight": "700",
+              "letterSpacing": -0.5
+            },
+            {
+              "type": "text",
+              "id": "rAlWT",
+              "name": "Intro",
+              "fill": "$page-text",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "The app isn't on Google Play yet, so Android asks a few extra questions the first time. Here's what to tap, in the order you'll see it.",
+              "lineHeight": 1.5,
+              "fontFamily": "$font-body",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "cxpJ9",
+              "name": "Step 1",
+              "width": "fill_container",
+              "fill": "$page-bg",
+              "cornerRadius": 12,
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Y60JJ3",
+                  "name": "Top",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "qGkoL",
+                      "name": "Number",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "$secondary",
+                      "cornerRadius": 999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qMAfa",
+                          "name": "Digit",
+                          "fill": "$white",
+                          "content": "1",
+                          "fontFamily": "$font-body",
+                          "fontSize": 15,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "P6Pgdt",
+                  "name": "Title",
+                  "fill": "$secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Chrome may say “File might be harmful”",
+                  "lineHeight": 1.3,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "yu3Oi",
+                  "name": "Body",
+                  "fill": "$page-text",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Tap Download anyway. The file is safe. Chrome says this for every app that isn't from Google Play.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "VdomM",
+                  "name": "What to tap",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    4,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "OLuzm",
+                      "name": "Label",
+                      "fill": "$text-subtle",
+                      "content": "WHAT TO TAP",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vvoAZ",
+                      "name": "Taps",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "JVK3s",
+                          "name": "Tap: Download anyway",
+                          "fill": "$white",
+                          "cornerRadius": 6,
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "padding": [
+                            6,
+                            9
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "s0wgtU",
+                              "name": "Tap label",
+                              "fill": "$green-650",
+                              "content": "Download anyway",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "I390F",
+              "name": "Step 2",
+              "width": "fill_container",
+              "fill": "$page-bg",
+              "cornerRadius": 12,
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "p3YMD0",
+                  "name": "Top",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lcHiO",
+                      "name": "Number",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "$secondary",
+                      "cornerRadius": 999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "p8SwIZ",
+                          "name": "Digit",
+                          "fill": "$white",
+                          "content": "2",
+                          "fontFamily": "$font-body",
+                          "fontSize": 15,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "UVU6T",
+                  "name": "Title",
+                  "fill": "$secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Allow installs from this source",
+                  "lineHeight": 1.3,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "xqXCJ",
+                  "name": "Body",
+                  "fill": "$page-text",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Open the downloaded file. The first time, Android says your phone isn't allowed to install apps from this source. Tap Settings, turn on Allow from this source, then go back and tap Install.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "QzuV4",
+                  "name": "What to tap",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    4,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zM8aT",
+                      "name": "Label",
+                      "fill": "$text-subtle",
+                      "content": "WHAT TO TAP",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "D9jfXk",
+                      "name": "Taps",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "YaS6O",
+                          "name": "Tap: Settings",
+                          "fill": "$white",
+                          "cornerRadius": 6,
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "padding": [
+                            6,
+                            9
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jCOAv",
+                              "name": "Tap label",
+                              "fill": "$green-650",
+                              "content": "Settings",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon",
+                          "id": "ixhpO",
+                          "name": "Then",
+                          "width": 12,
+                          "height": 12,
+                          "icon": "chevron-right",
+                          "library": "lucide",
+                          "fill": "$text-subtle"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "wgqcw",
+                          "name": "Tap: Allow from this source",
+                          "fill": "$white",
+                          "cornerRadius": 6,
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "padding": [
+                            6,
+                            9
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "k4PsG",
+                              "name": "Tap label",
+                              "fill": "$green-650",
+                              "content": "Allow from this source",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon",
+                          "id": "i9Y0Sw",
+                          "name": "Then",
+                          "width": 12,
+                          "height": 12,
+                          "icon": "chevron-right",
+                          "library": "lucide",
+                          "fill": "$text-subtle"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ygAiO",
+                          "name": "Tap: Install",
+                          "fill": "$white",
+                          "cornerRadius": 6,
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "padding": [
+                            6,
+                            9
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "IngGv",
+                              "name": "Tap label",
+                              "fill": "$green-650",
+                              "content": "Install",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AxD2s",
+              "name": "Step 3",
+              "width": "fill_container",
+              "fill": "$page-bg",
+              "cornerRadius": 12,
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "nhkLT",
+                  "name": "Top",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "x5AL3",
+                      "name": "Number",
+                      "width": 32,
+                      "height": 32,
+                      "fill": "$secondary",
+                      "cornerRadius": 999,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lZn7l",
+                          "name": "Digit",
+                          "fill": "$white",
+                          "content": "3",
+                          "fontFamily": "$font-body",
+                          "fontSize": 15,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "uwgR9",
+                      "name": "Samsung tag",
+                      "fill": "$warning-soft",
+                      "cornerRadius": 999,
+                      "padding": [
+                        4,
+                        9
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "r1x8Xo",
+                          "name": "Tag label",
+                          "fill": "$warning-dark",
+                          "content": "Samsung phones only",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "v5OeGo",
+                  "name": "Title",
+                  "fill": "$secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "If Auto Blocker blocks the app",
+                  "lineHeight": 1.3,
+                  "fontFamily": "$font-body",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "N5wxt6",
+                  "name": "Body",
+                  "fill": "$page-text",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Open Settings › Security and privacy › Auto Blocker, turn it off, and install again. You can turn it back on afterwards.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "YK8jO",
+                  "name": "What to tap",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    4,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "E0cdYl",
+                      "name": "Label",
+                      "fill": "$text-subtle",
+                      "content": "WHAT TO TAP",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xvSzT",
+                      "name": "Taps",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "k7iIJ3",
+                          "name": "Tap: Auto Blocker: Off",
+                          "fill": "$white",
+                          "cornerRadius": 6,
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "padding": [
+                            6,
+                            9
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "w1j52c",
+                              "name": "Tap label",
+                              "fill": "$green-650",
+                              "content": "Auto Blocker: Off",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "icon",
+                          "id": "zr9Q7",
+                          "name": "Then",
+                          "width": 12,
+                          "height": 12,
+                          "icon": "chevron-right",
+                          "library": "lucide",
+                          "fill": "$text-subtle"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "TH9SO",
+                          "name": "Tap: Install",
+                          "fill": "$white",
+                          "cornerRadius": 6,
+                          "stroke": "$border-primary",
+                          "strokeWidth": 1,
+                          "padding": [
+                            6,
+                            9
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "i024iW",
+                              "name": "Tap label",
+                              "fill": "$green-650",
+                              "content": "Install",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "E1GW4H",
+          "name": "After installing + help",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            40,
+            16,
+            48,
+            16
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "L8SdR",
+              "name": "After installing",
+              "width": "fill_container",
+              "fill": "$green-900",
+              "cornerRadius": 14,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "cArbC",
+                  "name": "Heading row",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "XmRkL",
+                      "name": "Check icon",
+                      "width": 22,
+                      "height": 22,
+                      "icon": "circle-check",
+                      "library": "lucide",
+                      "fill": "$inverse-accent"
+                    },
+                    {
+                      "type": "text",
+                      "id": "KDCir",
+                      "name": "H2",
+                      "fill": "$white",
+                      "content": "After installing",
+                      "fontFamily": "$font-body",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "FIOZa",
+                  "name": "Body",
+                  "fill": "$text-white",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Open Uplift and sign in with the same email and password you use on the computer. From then on the app updates itself, so you never need this page again.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Bid9r",
+              "name": "Need help",
+              "width": "fill_container",
+              "gap": 10,
+              "padding": 4,
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "Ux1rO",
+                  "name": "Help icon",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "life-buoy",
+                  "library": "lucide",
+                  "fill": "$primary"
+                },
+                {
+                  "type": "text",
+                  "id": "PsoTG",
+                  "name": "Text",
+                  "fill": "$page-text",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Need help? Contact Uplift support at info@upliftcontractor.com or +8801834969563, and we'll set it up for you.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GLvT5",
+          "name": "Mobile footer (shortened)",
+          "width": "fill_container",
+          "stroke": "$border-light",
+          "strokeWidth": {
+            "top": 1
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            28,
+            16
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "obJro",
+              "name": "Links",
+              "fill": "$text-subtle",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Privacy Policy · Terms & Conditions · Data deletion · Get the app",
+              "lineHeight": 1.6,
+              "fontFamily": "$font-body",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "WQVbK",
+              "name": "Copyright",
+              "fill": "$text-subtle",
+              "content": "© 2026 Uplift Contractor",
+              "fontFamily": "$font-body",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "page-bg": {
+      "type": "color",
+      "value": "#f7f8f2"
+    },
+    "white": {
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "offwhite": {
+      "type": "color",
+      "value": "#eef1e7"
+    },
+    "secondary": {
+      "type": "color",
+      "value": "#004201"
+    },
+    "primary": {
+      "type": "color",
+      "value": "#009102"
+    },
+    "green-650": {
+      "type": "color",
+      "value": "#176a46"
+    },
+    "green-900": {
+      "type": "color",
+      "value": "#0d3d2b"
+    },
+    "green-600": {
+      "type": "color",
+      "value": "#24724d"
+    },
+    "inverse-accent": {
+      "type": "color",
+      "value": "#d9ffea"
+    },
+    "text-white": {
+      "type": "color",
+      "value": "#c0cec2"
+    },
+    "page-text": {
+      "type": "color",
+      "value": "#53635a"
+    },
+    "text-subtle": {
+      "type": "color",
+      "value": "#7c8978"
+    },
+    "border": {
+      "type": "color",
+      "value": "#dce2d7"
+    },
+    "border-light": {
+      "type": "color",
+      "value": "#e6ebe0"
+    },
+    "primary-soft": {
+      "type": "color",
+      "value": "#edf2e6"
+    },
+    "font-body": {
+      "type": "string",
+      "value": "Inter"
+    },
+    "border-primary": {
+      "type": "color",
+      "value": "#c7d5b9"
+    },
+    "warning-soft": {
+      "type": "color",
+      "value": "#fff4d6"
+    },
+    "warning-dark": {
+      "type": "color",
+      "value": "#8a5f00"
+    }
+  },
+  "fileToken": "242e1a8b-4481-4382-a6d9-c897475094fe"
+}

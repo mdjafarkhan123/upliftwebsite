@@ -55,6 +55,13 @@ photo of a tradesperson; Herb's green-hub feel; light panels with a dark service
 It is in `design.pen` as "Concept 1 · Outcome system" (desktop 1440 px, mobile 390 px) and is the base for the design
 system. Jafar rejected the serif "Calm premium" direction (Waymark-like) after seeing its hero. (Jafar, 2026-11-16)
 
+Jafar approved the design system, the board "Uplift design system" in `design.pen`, on 2026-11-16. Every screen is
+built from its variables and components. Its colours are two shades of one green: #037741 (`--color-primary`) for
+the logo and for green text, links and checks on white, and the bright shade #1ED27E (`--color-brand-bright`) for the
+highlight, green buttons and all green on the deep-green bands, always with near-black text on it. Dark bands and
+dark cards use deep green #0B3D26 (`--color-dark`), not near-black; headings and body text stay near-black. The logo
+shield is #037741 with a near-black name. (Jafar, 2026-11-16)
+
 **Checks:** a contractor opens the homepage on a phone or a laptop → it reads as a premium agency → nothing looks
 copied from a reference.
 
@@ -66,7 +73,8 @@ copied from a reference.
 the about content, and "Book a call" opening a booking page. The order and the other sections are Proposed, from the
 research and the current page:
 
-1. Header: logo, links, "Book a call". Proposed: a sticky "Book a call" button on mobile.
+1. Header: logo, the links Services · How it works · Pricing · FAQ, and "Book a call"; on phones, a menu and a
+   sticky "Book a call" bar at the bottom of the screen. (Jafar, 2026-11-16)
 2. Hero: the current H1 and its description, word for word (Jafar, 2026-11-16), "Book a call", and a short line
    such as "No contract · Live in 7–10 days".
 3. Client logos, hidden until real. Proposed: until then, the current "Powered by trusted technology" strip, kept small.
@@ -81,7 +89,9 @@ research and the current page:
     and the current "Why choose us" reasons join it.
 11. Trades served, compact (the current list has 61 trades).
 12. FAQ.
-13. Final call to action, then the footer.
+13. Final call to action, then the footer. The footer links to the homepage sections, including Sample work and
+    About, the app and the legal pages. Its only contact detail is info@upliftcontractor.com, so it names no
+    country. (Jafar, 2026-11-16)
 
 **Checks:**
 
@@ -102,13 +112,15 @@ clients' Google profiles was explained. (Jafar, 2026-11-16)
 
 **Checks:** any sample site or screen with made-up data → it carries a visible "Sample" label.
 
-**Still open:** real screenshots of the Uplift app from Jafar — needed before the full pages. Concepts may draw the app
-screens in Pencil with demo data.
+**Still open:** real screenshots of the Uplift app from Jafar. Until they arrive, the designs draw the app screens in
+Pencil with demo data and a "Sample" label; the real screenshots replace them in `design.pen` before the build.
+(Jafar, 2026-11-16)
 
 ### Seeing the price and booking a call
 
-**What happens:** The pricing section shows one real monthly price and one setup fee. (Jafar, 2026-11-16) Proposed:
-concepts show "$XXX" where the numbers go, so no one mistakes it for a real price. Every "Book a call" button opens a
+**What happens:** The pricing section shows one real monthly price and one setup fee. (Jafar, 2026-11-16) Until Jafar
+sends the numbers, designs show "$XXX" where they go, so no one mistakes it for a real price, and the real numbers
+replace it in `design.pen` before the build. (Jafar, 2026-11-16) Every "Book a call" button opens a
 booking page; Jafar adds its link before launch. (Jafar, 2026-11-16)
 
 **Checks:** a visitor clicks any "Book a call" → the booking page opens.
@@ -117,6 +129,6 @@ booking page; Jafar adds its link before launch. (Jafar, 2026-11-16)
 
 ## Still open for the whole campaign
 
-- Price numbers: Jafar sends the monthly price and setup fee. Needed before the full pages.
+- Price numbers: Jafar sends the monthly price and setup fee. Needed before the build.
 - Booking link: Jafar adds the booking page URL before launch.
-- App screenshots: Jafar sends real screens from the Uplift app. Needed before the full pages.
+- App screenshots: Jafar sends real screens from the Uplift app. Needed before the build.
