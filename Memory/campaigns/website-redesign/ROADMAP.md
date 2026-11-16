@@ -1,20 +1,16 @@
 # Website redesign — roadmap
 
-**Plan:** `docs/plans/website-redesign/plan.md` — planning; core is a draft, nothing approved yet
+**Plan:** `docs/plans/website-redesign/plan.md` — core approved 2026-11-16; topic lines marked Proposed are confirmed at
+the design reviews. Parts follow the order Jafar agreed on 2026-11-16 (meeting notes).
 
 | Part | Reads | Delivers | Waits for | Done when | State |
 | --- | --- | --- | --- | --- | --- |
-| 1 Homework | — | research summary with recommendations | — | every researchable question answered | Done 2026-11-16 — proof: [research](../../../docs/redesign/research-2026-11-16.md) |
-| 1b Reference board | research, generic-keyword rule in agent memory | 10–12 references as full-length screenshots in `design reference/` (git-ignored) with a README: link, designer, what to borrow | 1 | Jafar has seen the board and named favourites | Done 2026-11-16 — Jafar chose the two concepts in `plan.md` § Topics; board in `design reference/README.md` (git-ignored) |
-| 2 Meeting | `plan.md`, research | Jafar's answers in the meeting notes | 1 | no first-version question in `plan.md` § Still open | Done 2026-11-16 — proof: [meeting notes](../../../docs/plans/website-redesign/meeting-notes.md); only Jafar's price numbers and booking link remain |
-| 3 Write the plan | meeting notes, research | the plan: core and topics | 2 | fresh reviewer finds no gap; Jafar approved the core word by word | Not started |
-| 4 Cut into parts | `plan.md` | build parts in this roadmap | 3 | every requirement has a part; Jafar approved the order | Not started |
+| 1–4 Planning | — | research, reference board, meeting, plan, parts | — | — | Done 2026-11-16 — proof: [plan](../../../docs/plans/website-redesign/plan.md), [meeting notes](../../../docs/plans/website-redesign/meeting-notes.md), [research](../../../docs/redesign/research-2026-11-16.md); a fresh reviewer's 13 findings were fixed before approval |
+| 5 Concepts | core; topics "How the site looks", "Trusting Uplift before it has reviews", "Seeing the price and booking a call"; `design reference/README.md` | two concepts in `design.pen`: hero, The system and Pricing, each at 1440 px and 390 px, with "$XXX" for the price and "Sample" on demo data | 1–4 | Jafar has named one concept, or what to change | Next |
+| 6 Design system | core; "How the site looks"; the chosen concept | a new design system in `design.pen`: variables named after the `src/styles/critical.css` tokens, type scale, and components for header, footer, buttons, cards, the Sample label, the price card and the FAQ | 5 | Jafar has approved it | Not started |
+| 7 Copy draft | core; all topics; `docs/redesign/copy-current.md` | a new file, copy-new-draft.md, in `docs/redesign/`, section by section next to the current copy, with no Stone Systems wording | 1–4 (can run beside 5–6) | Jafar has chosen every line | Not started |
+| 8 Full homepage design | core; all topics | the full homepage, header and footer in `design.pen` at both widths, from the design system and the chosen copy | 6, 7; Jafar's price numbers and app screenshots | Jafar has approved the page | Not started |
+| 9 Astro build and checks | core; all topics; the approved design | the homepage, header and footer in Astro; `src/data/data.js` updated; the old project images removed | 8; booking link before launch | build passes; checked at mobile and desktop widths and by keyboard; content is there with scripts off; testimonials and logos are absent until real; every "Book a call" opens the booking page; /app, legal and 404 look right | Not started |
 
-Proposed parts for step 4, in the order Jafar agreed on 2026-11-16 (see the meeting notes):
-
-1. Concepts: the two concepts in `plan.md` § Topics, in `design.pen` (hero and 2 key sections, desktop and mobile). Jafar picks one.
-2. Design system in `design.pen`, built from the chosen concept.
-3. Full page designs from the design system, with the new copy drafted in a new file, copy-new-draft.md, next to the preserved copy in docs/redesign.
-4. Astro build and checks.
-
-Already done outside the parts: Jafar's current homepage copy is preserved word for word in [copy-current.md](../../../docs/redesign/copy-current.md) (2026-11-16).
+Already done outside the parts: Jafar's current homepage copy is preserved word for word in
+[copy-current.md](../../../docs/redesign/copy-current.md) (2026-11-16).
