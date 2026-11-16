@@ -2,7 +2,7 @@
 
 **Campaign:** website-redesign · **Reads:** the core in `docs/plans/website-redesign/plan.md`, then all topics
 **Stage:** Design
-**Code:** branch `website-redesign`, main folder (no worktree) · **Claim:** eighth session, 2026-11-17 (header Log in, app download, mobile review)
+**Code:** branch `website-redesign`, main folder (no worktree) · **Claim:** none — done 2026-11-17
 **Done when:** Jafar has approved the page
 **Read next:** `docs/redesign/copy-current.md`; in `design.pen` the board "Uplift design system" (`LF2UJ`); the
 reference board `design reference/README.md` (Overtake, AdScale and Herb first)

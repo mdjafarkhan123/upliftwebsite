@@ -1,11 +1,14 @@
 # 9 — Astro build and checks
 
 **Campaign:** website-redesign · **Reads:** the core in `docs/plans/website-redesign/plan.md`, then all topics
-**Stage:** Not started — waits for part 8, and for the real prices and app screenshots in `design.pen`
+**Stage:** Build — started 2026-11-17 · **Claim:** eighth session, 2026-11-17
 **Code:** branch `website-redesign`, main folder
 **Done when:** the roadmap's done-check for part 9
 
 ## Notes
+
+- Inputs (Jafar, 2026-11-17): "$XXX" prices and Sample app screens until he sends real ones; project cards use
+  `website1–5.webp`; header "Log in" opens `https://app.upliftcontractor.com`; footer app card opens `/app`.
 
 Carried from part 6 (design system, approved 2026-11-16), for turning `design.pen` into `src/styles/critical.css`:
 
