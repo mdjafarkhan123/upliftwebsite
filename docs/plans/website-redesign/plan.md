@@ -49,17 +49,11 @@ never CRM software sites such as Jobber, nor home-service or trade sites. Stone 
 guides structure only. Every reference is beautiful, premium and modern; the board is `design reference/README.md`
 (git-ignored). (Jafar, 2026-11-16)
 
-Two concepts are designed, each a hero plus 2 key sections at desktop and mobile width, and Jafar picks one. (Jafar,
-2026-11-16)
-
-1. **"Outcome system":** Overtake's layout and confident tone; AdScale's phone hero showing the system at work
-   (missed call → automatic text → review request → new lead); Herb's green-hub feel.
-2. **"Calm premium":** Waymark's serif headlines, green buttons and lots of white space. Proposed: the hero visual is
-   the Uplift app on a phone in a soft green panel, and contractors' problems appear as chat bubbles, as Waymark does.
-
-The 2 key sections are "The system" and "Pricing". (Jafar, 2026-11-16) Proposed: widths are 1440 px and 390 px.
-Concepts use the current copy, minus lines that break the core (such as "No bullsh\*t"), until the new copy draft
-exists.
+Jafar chose Concept 1, **"Outcome system"** (Jafar, 2026-11-16): Overtake's layout and confident tone; AdScale's
+phone notifications showing the system at work (missed call → automatic text → new lead → review request) over a stock
+photo of a tradesperson; Herb's green-hub feel; light panels with a dark services band and one bright green accent.
+It is in `design.pen` as "Concept 1 · Outcome system" (desktop 1440 px, mobile 390 px) and is the base for the design
+system. Jafar rejected the serif "Calm premium" direction (Waymark-like) after seeing its hero. (Jafar, 2026-11-16)
 
 **Checks:** a contractor opens the homepage on a phone or a laptop → it reads as a premium agency → nothing looks
 copied from a reference.
@@ -73,10 +67,12 @@ the about content, and "Book a call" opening a booking page. The order and the o
 research and the current page:
 
 1. Header: logo, links, "Book a call". Proposed: a sticky "Book a call" button on mobile.
-2. Hero: what Uplift does in one line, "Book a call", and a short line such as "No contract · Live in 7–10 days".
+2. Hero: the current H1 and its description, word for word (Jafar, 2026-11-16), "Book a call", and a short line
+   such as "No contract · Live in 7–10 days".
 3. Client logos, hidden until real. Proposed: until then, the current "Powered by trusted technology" strip, kept small.
 4. The problem: where contractors lose jobs, drawn from the four problems in the current about content.
-5. The system: the six current services, each with a screen from the Uplift app or a short demo.
+5. The system: the six current services, each with its current name, description and points, word for word
+   (Jafar, 2026-11-16), and a screen from the Uplift app or a short demo.
 6. Sample work, replacing "Project one…six": see the next topic.
 7. How it works: three steps with timings (call, 7–10 day build, launch).
 8. Pricing: see **Seeing the price and booking a call**.
