@@ -5,9 +5,8 @@
 **Plan:** Core approved by Jafar word by word on 2026-11-16. Parts 5–9 are in `ROADMAP.md`, in the order he agreed.
 **Stage:** Design
 
-**In progress:** 8 Full homepage design — claimed 2026-11-16; see `parts/8-full-homepage.md`. Jafar approved the
-design system (part 6) the same day and asked to design the full page now with the current copy, "$XXX" and Sample
-app screens.
+**In progress:** 8 Full homepage design — claimed 2026-11-16, **paused by Jafar mid-build**; see
+`parts/8-full-homepage.md`. Don't continue designing until he says so.
 
 **Next part:** 9 Astro build, after part 8. Part 7 Copy draft waits until Jafar asks for new copy (2026-11-16).
 
