@@ -31,7 +31,8 @@ showpiece: each animation ends within a second and never stops anyone reading. H
 rise in and buttons respond to the cursor. Three signature moments: the hero phone plays missed call → automatic text →
 new lead → review request on a loop; a line draws through the three How it works steps as you scroll; the
 green highlight sweeps in behind heading words. The services section has no scroll-linked or sticky effect: only
-a chosen tab's content settles in. (Jafar, 2026-11-17) Smooth scrolling on desktop only; phones keep normal touch
+a chosen tab's content settles in. (Jafar, 2026-11-17) The problem statement fills word by word from faded to full
+colour as you scroll, and fades back when scrolling up; colour only, never weight. (Jafar, 2026-11-17) Smooth scrolling on desktop only; phones keep normal touch
 scrolling. (Jafar, 2026-11-17) With reduced motion turned on, or with scripts off, everything shows still and in
 full.
 
