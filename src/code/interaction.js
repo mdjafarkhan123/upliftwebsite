@@ -1,13 +1,15 @@
 /**
  * Shared interaction entry point.
- * Navigation, sticky header, and every module that changes section height load
+ * Navigation, sticky header, the header's current-section link, and every module that changes section height load
  * at once. Motion loads after the services tabs, unless the visitor asks for
  * reduced motion.
  */
 import { initMobileMenu } from "./modules/menu.js";
 import { initStickyHeader } from "./modules/sticky-header.js";
+import { initNavSpy } from "./modules/nav-spy.js";
 initMobileMenu();
 initStickyHeader();
+initNavSpy();
 
 // These change section height, so they load early: a late load would shift the page
 // under anyone jumping to a later section from the menu.
