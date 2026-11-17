@@ -19,9 +19,9 @@ Design PNGs: Pencil `Export` of the sections of `t4ww9` / `LGKcx`, scale 1. Each
     404 is `noindex` and out of the sitemap. Fixed: duplicate logo `id`, unnamed phone logo strip (focusable scroller)
   - [x] "Book a call": Jafar set `publicSite.booking.url` (2026-11-17); every button on all pages opens it (200)
   - [ ] Legal pages and 404 still use the old look (bright gradients, grid, square buttons); /app is close.
-    Restyle to the homepage panels and Button waits for Jafar's yes
+    Restyle to the homepage panels and Button: Jafar wants it in a later session (2026-11-17), after the copy
 
-**Next:** step 9 — Jafar's yes on restyling legal/404. Motion checked headless at 1440/390, reduced motion and scripts off (trades wrap, all visible).
+**Next:** step 9 — restyle legal/404 in a later session (Jafar, 2026-11-17); part 7 Copy goes first. Motion checked headless at 1440/390, reduced motion and scripts off (trades wrap, all visible).
 `services-tabs.js` loads at once: lazy loading collapsed ~3300 px under menu jumps. Headless shots: wait ~1.5 s after
 load (deferred `home.scss` transitions) before judging.
 
