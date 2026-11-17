@@ -75,51 +75,29 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                         fetchpriority="high"
                         format="webp"
                     />
-                    <div class="hero__feed-wrap">
-                        <p class="sample-label">
-                            <Icon name="lu-flask-conical" src="abovethefold" aria-hidden="true" />
-                            {hero.sampleLabel}
-                        </p>
-                        <ul class="hero__feed" aria-label={hero.feedLabel}>
-                            {hero.feed.map((item) => (
-                                <li class="notification">
-                                    <span class="notification__tile" aria-hidden="true">
-                                        <Icon name={item.icon} src="abovethefold" />
-                                    </span>
-                                    <span class="notification__text">
-                                        <span class="notification__title">{item.title}</span>
-                                        <span>{item.detail}</span>
-                                    </span>
-                                    <span class="notification__time">{item.time}</span>
-                                </li>
-                            ))}
-                        </ul>
+                    <div class="hero__you">
+                        <p class="hero__tag">{hero.you.tag}</p>
+                        <p class="hero__you-title">{hero.you.title}</p>
+                        <p class="hero__you-text">{hero.you.text}</p>
                     </div>
                 </div>
-                <div class="status-card">
-                    <div>
-                        <h2 class="status-card__title">{hero.status.title}</h2>
-                        <ul class="status-card__rows">
-                            {hero.status.rows.map((row) => (
-                                <li class="status-card__row">
-                                    {row.label}
-                                    <span class="status-pill">{row.status}</span>
-                                </li>
-                            ))}
-                        </ul>
+                <div class="hero__us">
+                    <div class="hero__us-head">
+                        <p class="hero__tag hero__tag--bright">{hero.us.tag}</p>
+                        <h2 class="hero__us-title">{hero.us.title}</h2>
                     </div>
-                    <div>
-                        <p class="status-card__number">
-                            <span class="status-card__value">{hero.status.value}</span>
-                            {hero.status.unit}
-                        </p>
-                        <ol class="status-card__days" aria-hidden="true">
-                            {Array.from({ length: 10 }, (_, i) => (
-                                <li class:list={{ "is-done": i < hero.status.doneDays }} />
-                            ))}
-                        </ol>
-                        <p class="status-card__caption">{hero.status.caption}</p>
-                    </div>
+                    <ul class="hero__checklist">
+                        {hero.us.items.map((item) => (
+                            <li class="hero__check">
+                                <Icon name="lu-circle-check" src="abovethefold" aria-hidden="true" />
+                                <span class="hero__check-text">
+                                    <span class="hero__check-name">{item.name}</span>
+                                    {item.benefit}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                    <p class="hero__us-close" set:html={hero.us.closing} />
                 </div>
             </div>
         </div>

@@ -76,15 +76,13 @@ export const publicSite = {
 /* ============================ About section ============================ */
 export const hero = {
     badge: "Affordable · Simple · No contracts",
-    // The H1 is the current heading word for word; the parts let the page add
-    // the icon pill and the two highlights (approved design, 2026-11-16).
     title: {
         start: "Website design &",
         middle: "marketing systems for",
         highlights: ["contractors &", "home service pros"],
     },
     description:
-        "Nobody has a miracle solution to all your problems, including us. We will provide a <strong>simple yet extremely effective foundational marketing system</strong> to help you <strong>win more work</strong>. But you need to commit to using it!",
+        "No need to rely on word of mouth or door-to-door. We will provide a <strong>simple yet extremely effective foundational marketing system</strong> to help you <strong>win more work</strong>. But you need to commit to using it!",
     cta: `Book a call`,
     secondaryCta: { label: "See what's included", href: "#pricing" },
     assurances: ["No contract", "Live in 7–10 days", "We handle the tech"],
@@ -92,49 +90,28 @@ export const hero = {
         image: HeroPhoto,
         alt: "A roofing contractor checking a phone outside a house",
     },
-    // Made-up demo notifications; always shown with the Sample label.
-    sampleLabel: "Sample",
-    feedLabel: "Sample notifications from the Uplift system",
-    feed: [
-        {
-            icon: "lu-phone-missed",
-            title: "Missed call",
-            detail: "(555) 014-2290 · 10:42 AM",
-            time: "10:42",
-        },
-        {
-            icon: "lu-message-square-text",
-            title: "Text sent automatically",
-            detail: "“Sorry we missed you! How can we help?”",
-            time: "10:42",
-        },
-        {
-            icon: "lu-user-plus",
-            title: "New lead in your app",
-            detail: "Dana R. · roof leak, wants a quote",
-            time: "10:55",
-        },
-        {
-            icon: "lu-star",
-            title: "Review request sent",
-            detail: "Mike T. · job marked done",
-            time: "Fri",
-        },
-    ],
-    status: {
-        title: "Running while you work",
-        rows: [
-            { label: "Missed-call text back", status: "On" },
-            { label: "Review requests", status: "On" },
-            { label: "Follow-ups", status: "On" },
-            { label: "Google profile", status: "Managed" },
-            { label: "Website", status: "Live" },
+    // "You vs. us" (Jafar chose it, 2026-11-17): on the photo, what the contractor does;
+    // in the dark card, everything Uplift does, one line per service in the services section.
+    you: {
+        tag: "You",
+        title: "Do great work.",
+        text: "Answer the leads we send you, then do the job.",
+    },
+    us: {
+        tag: "Us",
+        title: "Everything that brings the work in",
+        items: [
+            { name: "Google profile, managed", benefit: "Photos, posts and details kept fresh" },
+            { name: "Website with quote button & chat", benefit: "Every new lead texts you" },
+            {
+                name: "Missed-call text back & follow-ups",
+                benefit: "Leads get a reply, even when you're busy",
+            },
+            { name: "Business app", benefit: "Leads, quotes, jobs and invoices in one place" },
+            { name: "5-star review funnel", benefit: "More reviews, higher on Google" },
+            { name: "One-click campaigns", benefit: "Referrals and repeat customers" },
         ],
-        value: "7–10",
-        unit: "days to build",
-        doneDays: 7,
-        caption:
-            "From your first call to a live system. Then it runs in the background, no extra staff.",
+        closing: "Set up for you, then <strong>run for you every month.</strong>",
     },
 };
 

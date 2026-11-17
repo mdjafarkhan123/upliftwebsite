@@ -661,7 +661,7 @@ p strong {
     line-height: 1.6;
 }
 .hero__description strong {
-    font-weight: 500;
+    font-weight: 800;
 }
 .hero__actions {
     display: flex;
@@ -707,148 +707,108 @@ p strong {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 35%, rgb(12 26 19 / 45%));
+    /* Darker at the foot, so the white "You" text on the photo stays readable. */
+    background: linear-gradient(180deg, transparent 40%, rgb(12 26 19 / 72%));
 }
-.hero__feed-wrap {
+/* "You" on the photo and "Us" in the dark card (Jafar chose "You vs. us", 2026-11-17). */
+.hero__tag {
+    width: fit-content;
+    padding: 4px 12px;
+    border-radius: var(--round-full);
+    background: var(--color-white);
+    color: var(--color-secondary);
+    font-size: var(--fs-2xsm);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.hero__tag--bright {
+    background: var(--color-brand-bright);
+}
+.hero__you {
     position: relative;
     z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-width: 390px;
+    gap: var(--space-2xsm);
+    max-width: 340px;
+    color: var(--color-white);
 }
-.hero__feed {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-width: 390px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.notification {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xsm);
-    padding: 12px 16px 12px 12px;
-    border-radius: var(--round-md);
-    background: var(--surface-node);
-    box-shadow: var(--shadow-notification);
-    color: var(--color-text-dark);
-    font-size: var(--fs-2xsm);
-}
-.notification__tile {
-    display: grid;
-    place-items: center;
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-    border-radius: var(--round-sm);
-    background: var(--color-green-900);
-    color: var(--color-brand-bright);
-}
-.notification__tile .icon {
-    width: 18px;
-    height: 18px;
-}
-.notification__text {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 2px;
-}
-.notification__title {
-    color: var(--color-secondary);
-    font-size: var(--fs-sm);
+.hero__you-title {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: var(--fs-fluid-md);
     font-weight: 600;
+    letter-spacing: var(--tracking-heading);
+    line-height: 1.1;
 }
-.notification__time {
-    color: var(--color-text-subtle);
-    font-size: var(--fs-3xsm);
+.hero__you-text {
+    font-size: var(--fs-sm);
 }
-.status-card {
+.hero__us {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: var(--space-xl);
+    gap: var(--space-md);
     padding: var(--space-md);
     border-radius: var(--round-xl);
     background: var(--color-dark);
     color: var(--color-text-white);
 }
-.status-card__title {
+.hero__us-head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xsm);
+}
+.hero__us-title {
     color: var(--color-white);
     font-family: var(--font-body);
-    font-size: var(--fs-base);
+    font-size: var(--fs-md);
     font-weight: 600;
     letter-spacing: 0;
 }
-.status-card__rows {
-    margin: 10px 0 0;
+.hero__checklist {
+    margin: 0;
     padding: 0;
     list-style: none;
 }
-.status-card__row {
+.hero__check {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-block: 13px;
+    align-items: flex-start;
+    gap: var(--space-xsm);
+    padding-block: 10px;
     border-bottom: 1px solid var(--color-on-dark-line);
-    font-size: var(--fs-sm);
 }
-.status-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 10px;
-    border-radius: var(--round-full);
-    background: var(--color-primary-soft-dark);
+.hero__check:last-child {
+    border-bottom: 0;
+}
+.hero__check .icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 1px;
     color: var(--color-brand-bright);
-    font-size: var(--fs-3xsm);
+}
+.hero__check-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    font-size: var(--fs-xsm);
+    line-height: 1.4;
+}
+.hero__check-name {
+    color: var(--color-white);
+    font-size: var(--fs-sm);
     font-weight: 600;
 }
-.status-pill::before {
-    content: "";
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: currentColor;
-}
-.status-card__number {
-    display: flex;
-    align-items: flex-end;
-    gap: 10px;
+.hero__us-close {
+    margin-top: auto;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-on-dark-line);
     font-size: var(--fs-sm);
 }
-.status-card__value {
+.hero__us-close strong {
     color: var(--color-white);
-    font-family: var(--font-heading);
-    font-size: var(--fs-fluid-display);
     font-weight: 600;
-    letter-spacing: calc(-0.033em + var(--tracking-heading));
-    line-height: 1;
-}
-.status-card__days {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 6px;
-    margin: 14px 0;
-    padding: 0;
-    list-style: none;
-}
-.status-card__days li {
-    height: 26px;
-    border-radius: 6px;
-    background: var(--color-green-850);
-}
-.status-card__days li.is-done {
-    background: var(--color-brand-bright);
-}
-.status-card__caption {
-    font-size: var(--fs-xsm);
-    line-height: 1.5;
 }
 
 /* 480px */
@@ -908,7 +868,10 @@ p strong {
     .hero__photo-img {
         object-position: center 30%;
     }
-    .status-card {
+    .hero__you-text {
+        font-size: var(--fs-base);
+    }
+    .hero__us {
         padding: var(--space-xl);
     }
 }
@@ -992,12 +955,15 @@ p strong {
         grid-template-columns: 920fr 472fr;
         gap: var(--space-sm);
     }
+    .hero__us {
+        padding-block: var(--space-lg);
+    }
 }
 
-/* Motion (motion.js): only the hero feed and status card wait for their entrance. The hero
-   text and photo never wait, so the page's largest paint needs no script (Jafar, 2026-11-17). */
-.motion:not(.motion-ready) .hero__feed-wrap,
-.motion:not(.motion-ready) .status-card {
+/* Motion (motion.js): only the hero's "You" text and "Us" checklist wait for their entrance. The
+   hero text and photo never wait, so the page's largest paint needs no script (Jafar, 2026-11-17). */
+.motion:not(.motion-ready) .hero__you,
+.motion:not(.motion-ready) .hero__check {
     opacity: 0;
 }
 

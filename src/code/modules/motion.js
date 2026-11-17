@@ -8,7 +8,7 @@
  * - The problem statement fills word by word from faded to full colour as you scroll.
  * - Cards and supporting text rise in as they reach the viewport.
  * - Buttons follow the cursor slightly (fine pointers only).
- * - Hero: the sample feed plays missed call → text → lead → review on a loop.
+ * - Hero: the "You" text and the "Us" checklist come in once.
  * - Services: each newly chosen service settles in (no pinning; Jafar, 2026-11-17).
  * - How it works: a line draws through the steps as you scroll.
  * - Marquees: the service strip and the trade rows scroll sideways forever.
@@ -246,38 +246,16 @@ function initHero() {
     const hero = document.querySelector(".hero");
     if (!hero) return;
     // The hero text has no entrance: it paints at once, without waiting for this
-    // module (Jafar, 2026-11-17). Only the feed and status card come in.
-    const status = hero.querySelector(".status-card");
-    const feedWrap = hero.querySelector(".hero__feed-wrap");
-    const notes = gsap.utils.toArray(".hero__feed .notification", hero);
+    // module (Jafar, 2026-11-17). Only the "You" text and the "Us" checklist come in,
+    // once; the check icons move with their rows, never on their own (no icon motion).
+    const you = hero.querySelector(".hero__you");
+    const checks = gsap.utils.toArray(".hero__check", hero);
 
     const intro = gsap.timeline({ defaults: { ease: EASE } });
-    if (status) intro.from(status, { opacity: 0, y: 40, duration: 0.9 }, 0);
-    if (feedWrap) intro.from(feedWrap, { opacity: 0, x: -24, duration: 0.8 }, 0.1);
-    if (status) {
-        const days = status.querySelectorAll(".status-card__days .is-done");
-        intro.from(days, { scaleY: 0.2, opacity: 0, duration: 0.4, stagger: 0.05, transformOrigin: "50% 100%" }, 0.3);
-    }
-    // The feed and status card were held back by critical.css until this timeline existed.
+    if (you) intro.from(you, { opacity: 0, y: 16, duration: 0.7 }, 0);
+    if (checks.length) intro.from(checks, { opacity: 0, x: -12, duration: 0.5, stagger: 0.1 }, 0.15);
+    // Both were held back by critical.css until this timeline existed.
     document.documentElement.classList.add("motion-ready");
-
-    if (notes.length < 2) return;
-    // Missed call → automatic text → new lead → review request, on a loop.
-    const loop = gsap.timeline({ repeat: -1, repeatDelay: 0.4, paused: true });
-    loop.set(notes, { opacity: 0, y: 14, scale: 0.97 });
-    notes.forEach((note, i) => {
-        loop.to(note, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, i === 0 ? 0.2 : ">+0.55");
-    });
-    loop.to(notes, { opacity: 0, y: -10, duration: 0.4, ease: "power2.in", stagger: 0.05 }, ">+2.4");
-    intro.call(() => loop.play(), null, 0.6);
-
-    // Run the loop only while the hero is on screen.
-    ScrollTrigger.create({
-        trigger: hero,
-        start: "top bottom",
-        end: "bottom top",
-        onToggle: (self) => (self.isActive && intro.progress() === 1 ? loop.play() : loop.pause()),
-    });
 }
 
 /* Services: a chosen service settles in ----------------------------------- */
