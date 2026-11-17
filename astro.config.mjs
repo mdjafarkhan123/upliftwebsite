@@ -13,7 +13,7 @@ export default defineConfig({
         sitemap({
             // The design reference and error document are not search destinations.
             filter: (page) =>
-                !/\/(indextwo|404)\/?$/.test(new URL(page).pathname),
+                !/\/404\/?$/.test(new URL(page).pathname),
         }),
     ],
 

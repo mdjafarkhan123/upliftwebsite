@@ -242,8 +242,9 @@
         color: var(--color-text-white);
     }
 
-    /* Sample phone: cropped at the bottom of the panel. */
+    /* Sample phone: cropped at the bottom of the panel. Desktop only (Jafar, 2026-11-17). */
     &__phone-wrap {
+        display: none;
         position: relative;
         width: 284px;
         max-width: 100%;
@@ -555,6 +556,7 @@
         }
 
         &__phone-wrap {
+            display: block;
             position: absolute;
             top: 44px;
             right: 40px;

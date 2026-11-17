@@ -444,10 +444,6 @@ export const projects = {
             title: "Project five",
             thumbnail: ProjectImg5,
         },
-        {
-            title: "Project six",
-            thumbnail: ProjectImg1,
-        },
     ],
 };
 

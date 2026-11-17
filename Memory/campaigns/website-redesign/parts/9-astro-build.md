@@ -23,13 +23,12 @@ Design PNGs: Pencil `Export` of the sections of `t4ww9` / `LGKcx`, scale 1. Each
 `services-tabs.js` loads at once: lazy loading collapsed ~3300 px under menu jumps. Headless shots: wait ~1.5 s after
 load (deferred `home.scss` transitions) before judging.
 
-**Open for Jafar:** Project six repeats `website1.webp` (his "ok" was unclear: drop it or send a 6th image?); approve
-or drop the five unapproved Sample phone screens in The system (`services[].sample`); Trades rows clip without motion
-(add "See all trades"?); About icon labels. "show you live client accounts & results" waits for part 7 copy.
-Settled: Projects intro "Websites we've designed and built."; category/live URL appear when he sends them.
+**Decided (Jafar, 2026-11-17):** Project six dropped; The system's Sample phone shows on desktop only (he will
+replace the screens later); `indextwo.astro` deleted. Trades keep the design's multi-row infinite scroll in step 8;
+mobile the same; no "load more"; with reduced motion, wrap the rows so every trade shows. About icon labels kept.
+"show you live client accounts & results" waits for part 7 copy.
 
-Agents (Jafar, 2026-11-17): give each `CLAUDE.md`, the plan, this note and its section PNGs. `src/pages/indextwo.astro` (old draft) now shows
-`[object Object]` for its heading: ask Jafar whether to delete it.
+Agents (Jafar, 2026-11-17): give each `CLAUDE.md`, the plan, this note and its section PNGs.
 
 ## Notes
 
