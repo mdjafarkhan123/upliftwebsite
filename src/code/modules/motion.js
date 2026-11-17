@@ -6,6 +6,7 @@
  * - Smooth scrolling on desktop only (Lenis); phones keep native touch scrolling.
  * - Headings reveal line by line; the green highlight sweeps in behind marked words.
  * - The problem statement fills word by word from faded to full colour as you scroll.
+ * - Checks draw themselves as they appear; filled icons in tiles pop in with a spring.
  * - Cards and supporting text rise in as they reach the viewport.
  * - Buttons follow the cursor slightly (fine pointers only).
  * - Hero: the sample feed plays missed call → text → lead → review on a loop.
@@ -20,9 +21,10 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import Lenis from "lenis";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
 
 const DESKTOP = "(min-width: 992px)";
 const FINE_POINTER = "(hover: hover) and (pointer: fine)";
@@ -152,6 +154,37 @@ function initHeadings() {
     });
 }
 
+/* Icons ------------------------------------------------------------------------ */
+
+/** Draws the strokes of every inline icon marked data-draw inside scope (checks). */
+function drawIcons(scope, delay = 0) {
+    const shapes = scope.querySelectorAll("svg[data-draw] :is(path, circle)");
+    if (!shapes.length) return null;
+    return gsap.fromTo(
+        shapes,
+        { drawSVG: "0%" },
+        { drawSVG: "100%", duration: 0.5, ease: "power2.out", stagger: 0.07, delay, clearProps: "strokeDasharray,strokeDashoffset" },
+    );
+}
+
+const POP_ICONS = ".problem__tile .icon, .pricing__perk-icon .icon, .reason__icon .icon, .about__system .icon";
+
+/** Filled icons in tiles spring up as their card rises in. */
+function popIcons(scope, delay = 0.2) {
+    const icons = scope.matches(POP_ICONS) ? [scope] : scope.querySelectorAll(POP_ICONS);
+    if (!icons.length) return;
+    gsap.from(icons, {
+        scale: 0.3,
+        rotate: -20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "back.out(2.5)",
+        stagger: 0.06,
+        delay,
+        clearProps: "transform,opacity",
+    });
+}
+
 /* Cards and supporting text ------------------------------------------------- */
 
 const RISE = [
@@ -185,7 +218,7 @@ function initRise() {
     ScrollTrigger.batch(items, {
         start: REVEAL_START,
         once: true,
-        onEnter: (batch) =>
+        onEnter: (batch) => {
             gsap.to(batch, {
                 opacity: 1,
                 y: 0,
@@ -194,7 +227,12 @@ function initRise() {
                 stagger: 0.08,
                 overwrite: true,
                 clearProps: "transform,opacity",
-            }),
+            });
+            batch.forEach((item, i) => {
+                drawIcons(item, 0.3 + i * 0.08);
+                popIcons(item, 0.2 + i * 0.08);
+            });
+        },
     });
 }
 
@@ -252,6 +290,9 @@ function initHero() {
     if (others.length > 1) {
         intro.from(others.slice(1), { opacity: 0, y: 24, duration: 0.8, stagger: 0.1 }, 0.45);
     }
+    const assurances = panel.querySelector(":scope > .assurances");
+    const drawn = assurances && drawIcons(assurances);
+    if (drawn) intro.add(drawn, 0.9);
     if (status) intro.from(status, { opacity: 0, y: 40, duration: 0.9 }, 0.6);
     if (feedWrap) intro.from(feedWrap, { opacity: 0, x: -24, duration: 0.8 }, 0.7);
     if (status) {
@@ -295,6 +336,17 @@ function initServices() {
             { opacity: 0, y: 18 },
             { opacity: 1, y: 0, duration: 0.5, ease: EASE, stagger: 0.04, overwrite: true, clearProps: "transform,opacity" },
         );
+        drawIcons(item, 0.2);
+    });
+    // The first service's checks draw when the section comes into view.
+    ScrollTrigger.create({
+        trigger: content,
+        start: "top 70%",
+        once: true,
+        onEnter: () => {
+            const item = items.find((entry) => !entry.hidden && entry.querySelector(".services__panel:not([hidden])"));
+            if (item) drawIcons(item);
+        },
     });
 }
 

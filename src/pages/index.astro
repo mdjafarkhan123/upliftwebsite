@@ -57,7 +57,7 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
             <ul class="assurances">
                 {hero.assurances.map((item) => (
                     <li>
-                        <Icon name="lu-circle-check" src="abovethefold" aria-hidden="true" />
+                        <Icon name="lu-circle-check" src="abovethefold" aria-hidden="true" inline data-draw="" />
                         {item}
                     </li>
                 ))}
@@ -215,8 +215,7 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                                             <span class="services__number">{pad(i)}</span>
                                             <span class="services__name">{service.title}</span>
                                             <span class="services__toggle" aria-hidden="true">
-                                                <Icon name="lu-plus" src="abovethefold" className="services__plus" />
-                                                <Icon name="lu-minus" className="services__minus" />
+                                                <Icon name="lu-plus" src="abovethefold" inline />
                                             </span>
                                         </button>
                                         <span class="services__item-title">{service.title}</span>
@@ -228,7 +227,7 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                                                 {service.items.map(splitPoint).map((point) => (
                                                     <li class="services__point">
                                                         <span class="services__check" aria-hidden="true">
-                                                            <Icon name="lu-check" />
+                                                            <Icon name="lu-check" inline data-draw="" />
                                                         </span>
                                                         <span>
                                                             <strong class="services__point-title">{point.title}</strong>
@@ -529,7 +528,7 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                     {pricing.plan.features.map((feature) => (
                         <li>
                             <span class="pricing__check" aria-hidden="true">
-                                <Icon name="lu-check" src="sprite" />
+                                <Icon name="lu-check" src="sprite" inline data-draw="" />
                             </span>
                             {feature}
                         </li>
@@ -646,7 +645,7 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                         number={i}
                         showIndex={false}
                         icon="lu-plus"
-                        openIcon="lu-minus"
+                        inlineIcon
                     />
                 ))}
             </div>
@@ -663,7 +662,7 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                 <ul class="assurances cta__assurances">
                     {cta.assurances.map((item) => (
                         <li>
-                            <Icon name="lu-circle-check" src="sprite" aria-hidden="true" />
+                            <Icon name="lu-circle-check" src="sprite" aria-hidden="true" inline data-draw="" />
                             {item}
                         </li>
                     ))}

@@ -12,6 +12,8 @@ interface Props {
     openIcon?: string;
     /** Sprite that holds the icons. */
     iconSrc?: string;
+    /** Put the icon's shapes in the page so CSS can animate them (plus → minus). */
+    inlineIcon?: boolean;
 }
 const {
     question,
@@ -21,6 +23,7 @@ const {
     icon = "plus-icon",
     openIcon,
     iconSrc = "sprite",
+    inlineIcon = false,
 } = Astro.props;
 ---
 
@@ -44,7 +47,7 @@ const {
                         <Icon name={openIcon} src={iconSrc} className="faq__icon-open" />
                     </>
                 ) : (
-                    <Icon name={icon} src={iconSrc} />
+                    <Icon name={icon} src={iconSrc} inline={inlineIcon} />
                 )}
             </span>
         </button>

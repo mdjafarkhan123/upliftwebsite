@@ -61,6 +61,14 @@
         .icon {
             width: 22px;
             height: 22px;
+            transition: transform 0.4s var(--ease-out);
+        }
+    }
+
+    // The icon tilts while the pointer rests on its item.
+    @media (hover: hover) {
+        &__item:hover &__icon .icon {
+            transform: rotate(-10deg) scale(1.1);
         }
     }
 

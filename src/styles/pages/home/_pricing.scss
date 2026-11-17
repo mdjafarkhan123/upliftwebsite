@@ -167,6 +167,14 @@
         .icon {
             width: 20px;
             height: 20px;
+            transition: transform 0.4s var(--ease-out);
+        }
+    }
+
+    // The icon tilts while the pointer rests on its perk.
+    @media (hover: hover) {
+        &__perk:hover &__perk-icon .icon {
+            transform: rotate(-10deg) scale(1.1);
         }
     }
 
