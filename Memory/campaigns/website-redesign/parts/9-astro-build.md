@@ -1,7 +1,7 @@
 # 9 — Astro build and checks
 
 **Campaign:** website-redesign · **Reads:** the core in `docs/plans/website-redesign/plan.md`, then all topics
-**Stage:** Build — started 2026-11-17 · **Claim:** none — released 2026-11-17 at a safe point
+**Stage:** Build — started 2026-11-17 · **Claim:** none — released 2026-11-17 after step 8
 **Code:** branch `website-redesign`, main folder
 **Done when:** the roadmap's done-check for part 9
 
@@ -16,10 +16,11 @@ Design PNGs: Pencil `Export` of the sections of `t4ww9` / `LGKcx`, scale 1. Each
 - [x] 5 Projects: Jafar's `website1–5.webp` with the current titles, no "Sample" label; pop-up; "Show more"
 - [x] 6 How it works and Pricing ($XXX)
 - [x] 7 About, Why choose us, Trades, FAQ, final call to action; old homepage code removed
-- [ ] 8 Motion (plan topic how-the-site-looks.md § Motion), in `src/code/modules`
+- [x] 8 Motion: `motion.js` (GSAP, ScrollTrigger, SplitText, Lenis on desktop with a fine pointer), loaded by
+  `interaction.js` after `services-tabs.js` unless reduced motion; `<html class="motion">` from Layout holds the hero text
 - [ ] 9 Checks from the roadmap's done-check; /app, legal and 404 against the new tokens
 
-**Next:** step 8 Motion, then step 9. Steps 4–7 built by four agents, reviewed at 1440/390, committed 2026-11-17.
+**Next:** step 9. Motion checked headless at 1440/390, reduced motion and scripts off (trades wrap, all visible).
 `services-tabs.js` loads at once: lazy loading collapsed ~3300 px under menu jumps. Headless shots: wait ~1.5 s after
 load (deferred `home.scss` transitions) before judging.
 

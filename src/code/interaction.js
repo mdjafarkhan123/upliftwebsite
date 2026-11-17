@@ -1,7 +1,8 @@
 /**
  * Shared interaction entry point.
  * Navigation and sticky header behavior are immediate; FAQ behavior loads as its
- * section approaches the viewport.
+ * section approaches the viewport. Motion loads at once, after the services tabs,
+ * unless the visitor asks for reduced motion.
  */
 import { initMobileMenu } from "./modules/menu.js";
 import { initStickyHeader } from "./modules/sticky-header.js";
@@ -14,11 +15,25 @@ if (document.querySelector(".projects")) {
     import("./modules/projects.js").then((module) => module.init?.());
 }
 const servicesContent = document.querySelector(".services__content");
-if (servicesContent) {
-    import("./modules/services-tabs.js").then((module) => {
-        module.init?.();
-        servicesContent.classList.add("is-enhanced");
-    });
+const servicesReady = servicesContent
+    ? import("./modules/services-tabs.js").then((module) => {
+          module.init?.();
+          servicesContent.classList.add("is-enhanced");
+      })
+    : Promise.resolve();
+
+// critical.css holds the hero text back while <html> has the "motion" class
+// (set in Layout.astro); motion.js releases it, and so does any failure here.
+const reveal = () => document.documentElement.classList.add("motion-ready");
+if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+    servicesReady
+        .catch(() => {})
+        .then(() => import("./modules/motion.js"))
+        .then((module) => module.init?.())
+        .catch((error) => console.error("Motion unavailable:", error))
+        .finally(reveal);
+} else {
+    reveal();
 }
 
 const modules = {

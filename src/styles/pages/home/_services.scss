@@ -398,16 +398,28 @@
         }
     }
 
-    /* Bright strip of service names under the dark panel (motion comes later). */
+    /* Bright strip of service names under the dark panel. motion.js loops the
+       track; still, it shows centred. The end padding equals the gap, so half
+       the track is exactly one loop. */
     &__marquee {
         display: flex;
-        align-items: center;
         justify-content: center;
-        gap: var(--space-md);
         padding-block: var(--space-sm);
         overflow: hidden;
         color: var(--color-secondary);
         white-space: nowrap;
+
+        &.is-looping {
+            justify-content: flex-start;
+        }
+    }
+
+    &__marquee-track {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        gap: var(--space-md);
+        padding-right: var(--space-md);
     }
 
     &__marquee-item {
@@ -438,8 +450,12 @@
         }
 
         &__marquee {
-            gap: 28px;
             padding-block: 22px;
+        }
+
+        &__marquee-track {
+            gap: 28px;
+            padding-right: 28px;
         }
 
         &__marquee-item {

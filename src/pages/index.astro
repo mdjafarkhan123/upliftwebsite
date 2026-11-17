@@ -280,14 +280,16 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                 </div>
             </div>
             <div class="services__marquee" aria-hidden="true">
-                {[0, 1].map(() =>
-                    services.content.map((service) => (
-                        <>
-                            <span class="services__marquee-item">{service.title}</span>
-                            <Icon name="lu-asterisk" size={20} className="services__marquee-mark" />
-                        </>
-                    )),
-                )}
+                <div class="services__marquee-track">
+                    {[0, 1].map(() =>
+                        services.content.map((service) => (
+                            <>
+                                <span class="services__marquee-item">{service.title}</span>
+                                <Icon name="lu-asterisk" size={20} className="services__marquee-mark" />
+                            </>
+                        )),
+                    )}
+                </div>
             </div>
         </div>
     </section>

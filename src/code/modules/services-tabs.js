@@ -1,8 +1,9 @@
 /**
  * services-tabs.js
  * The system section: tabs on desktop, an accordion on phones.
- * Without this script every service shows in full. Loaded when the section
- * approaches the viewport; does nothing when the section is absent.
+ * Without this script every service shows in full. Loads at once (interaction.js);
+ * does nothing when the section is absent. Each change fires "services:change"
+ * on the root, and `root.servicesTabs` lets motion.js select a service.
  */
 
 const DESKTOP = "(min-width: 992px)";
@@ -63,12 +64,24 @@ export function init() {
         else showAccordion();
     }
 
-    function selectTab(index, focus) {
+    // source: "user" for a click or key, "scroll" when motion.js moves the pinned section.
+    function selectTab(index, focus, source = "user") {
         active = (index + tabs.length) % tabs.length;
         open = active;
         showTabs();
         if (focus) tabs[active].focus();
+        root.dispatchEvent(
+            new CustomEvent("services:change", { detail: { index: active, source } }),
+        );
     }
+
+    // Lets motion.js drive the tabs while the section is pinned.
+    root.servicesTabs = {
+        get active() {
+            return active;
+        },
+        select: (index) => selectTab(index, false, "scroll"),
+    };
 
     tabs.forEach((tab, i) => {
         tab.addEventListener("click", () => selectTab(i, false));

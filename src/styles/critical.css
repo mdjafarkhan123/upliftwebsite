@@ -228,7 +228,8 @@ p strong {
     display: inline;
     padding: 0 0.18em 0.04em;
     border-radius: var(--round-md);
-    background: var(--color-brand-bright);
+    /* An image, so motion.js can sweep it in with background-size. */
+    background: linear-gradient(var(--color-brand-bright), var(--color-brand-bright)) no-repeat 0 0 / 100% 100%;
     color: var(--color-secondary);
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
@@ -977,6 +978,13 @@ p strong {
         grid-template-columns: 920fr 472fr;
         gap: var(--space-sm);
     }
+}
+
+/* Motion (motion.js): the hero text waits for its entrance. The photo never waits. */
+.motion:not(.motion-ready) .hero__panel > :not(.hero__visual),
+.motion:not(.motion-ready) .hero__feed-wrap,
+.motion:not(.motion-ready) .status-card {
+    opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

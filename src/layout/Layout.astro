@@ -130,6 +130,16 @@ const schemaData = {
 
         <!-- Inline Critical CSS for Page Load Speed Optimization -->
         <style is:inline set:html={criticalCss}></style>
+        <!-- Motion: hold the hero text for its entrance (critical.css). interaction.js
+             releases it; the timer releases it if scripts fail. -->
+        <script is:inline>
+            if (matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+                document.documentElement.classList.add("motion");
+                setTimeout(function () {
+                    document.documentElement.classList.add("motion-ready");
+                }, 3000);
+            }
+        </script>
 
         <!-- Rich JSON-LD Structured Data / Schema Markup for Search Engines -->
         <script
