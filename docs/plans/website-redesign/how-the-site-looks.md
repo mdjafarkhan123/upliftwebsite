@@ -30,9 +30,14 @@ already works, it simply stacks. Both widths come from one page, so no section s
 
 **Motion.** The site moves like an Awwwards site, built with GSAP. (Jafar, 2026-11-17) It is polished, not a
 showpiece: each animation ends within a second and never stops anyone reading. Headings reveal line by line, except the hero's: the hero text shows at once, with no entrance, so the page paints fast (Jafar, 2026-11-17). Cards
-rise in and buttons respond to the cursor. Under the hero text, "You vs. us": the photo says what the contractor
-does and a dark card lists everything Uplift does, one line per service; the "You" text and the checklist come in
-once. (Jafar chose it over a looping sample feed, 2026-11-17, because every block must mean something.) Two
+rise in and buttons respond to the cursor. Under the hero text, "You vs. us": the photo names what the contractor
+deserves and a dark card answers with Uplift's system, one line per service; the "You" text and the checklist come
+in once. (Jafar chose it over a looping sample feed, 2026-11-17, because every block must mean something.) Then,
+like an ad, the "You" sentence's three worries (paying thousands, learning tech, losing leads) take turns as its
+ending, in its own type with only green and bold marking them, and each one's answer gets the green highlight in
+the card. Bars time each worry; its pause button, a mouse over the text or
+scrolling away stops it. It is the hero's one loop. (Jafar's idea, 2026-11-17; he gave leave to break earlier
+motion agreements for a better result.) Two
 signature moments: a line draws through the three How it works steps as you scroll; the
 green highlight sweeps in behind heading words. The services section has no scroll-linked or sticky effect: only
 a chosen tab's content settles in. (Jafar, 2026-11-17) The problem statement fills word by word from faded to full

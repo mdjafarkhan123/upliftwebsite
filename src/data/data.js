@@ -90,44 +90,60 @@ export const hero = {
         image: HeroPhoto,
         alt: "A roofing contractor checking a phone outside a house",
     },
-    // "You vs. us" (Jafar chose it, 2026-11-17): on the photo, what the contractor does;
-    // in the dark card, everything Uplift does, one line per service in the services section.
+    // "You vs. us" (Jafar chose it, 2026-11-17): on the photo, the contractor's wish;
+    // in the dark card, Uplift's system as the answer. Lines chosen by Jafar, 2026-11-17
+    // (docs/redesign/copy-new-draft.md § Hero — You vs. us).
     you: {
         tag: "You",
-        title: "Do great work.",
-        text: "Answer the leads we send you, then do the job.",
+        title: "You're good at what you do.",
+        // The full sentence: shown still with reduced motion or scripts off, and always
+        // read by screen readers and search engines.
+        text: "You deserve a system that helps you get jobs from Google, without paying thousands, learning tech, or losing leads while you're on the job.",
+        // With motion, `lead` stays and each worry takes its turn after it, like an ad
+        // (motion.js initHero). `answer` lights the matching words in the "Us" card.
+        lead: "You deserve a system that helps you get jobs from Google,",
+        worries: [
+            { text: "without paying thousands.", answer: "price" },
+            { text: "without learning tech.", answer: "setup" },
+            { text: "without losing leads while you're on the job.", answer: "leads" },
+        ],
+        pauseLabel: "Pause the changing text",
+        playLabel: "Play the changing text",
     },
     us: {
         tag: "Us",
-        title: "Everything that brings the work in",
+        // Keep the price in step with pricing.plan.price. Each `data-answer` span
+        // lights up while its worry shows in the "You" text.
+        title: `One system, <span class="hero__answer" data-answer="setup">done for you</span>, for <span class="hero__answer" data-answer="price">$100 a month</span>.`,
         items: [
             {
-                name: "Google profile, managed",
-                benefit: "Photos, posts and details kept fresh",
+                name: "Get found on Google",
+                benefit: "Your Google profile set up right and kept up to date",
             },
             {
-                name: "Website with quote button & chat",
-                benefit: "Every new lead texts you",
+                name: "More 5-star reviews",
+                benefit: "Automatic review requests, filtered for 5 stars",
             },
             {
-                name: "Missed-call text back & follow-ups",
-                benefit: "Leads get a reply, even when you're busy",
+                name: "Automated website",
+                benefit: "Built to rank, and it turns leads into text conversations on your phone",
             },
             {
-                name: "Business app",
-                benefit: "Leads, quotes, jobs and invoices in one place",
+                name: "No lead goes cold",
+                benefit: "Missed calls get a text back, and slow replies get a follow-up",
+                answer: "leads",
             },
             {
-                name: "5-star review funnel",
-                benefit: "More reviews, higher on Google",
+                name: "Repeat jobs and referrals",
+                benefit: "One click sends your past customers an offer, so they hire you again and tell their friends",
             },
             {
-                name: "One-click campaigns",
-                benefit: "Referrals and repeat customers",
+                name: "Your whole business in one app",
+                benefit: "Leads, quotes, jobs, invoices and payments",
             },
         ],
         closing:
-            "Set up for you, then <strong>run for you every month.</strong>",
+            "We set it all up and <strong>run it every month.</strong> Setup is a one-time fee.",
     },
 };
 

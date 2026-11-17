@@ -76,22 +76,56 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                         format="webp"
                     />
                     <div class="hero__you">
-                        <p class="hero__tag">{hero.you.tag}</p>
+                        <div class="hero__you-head">
+                            <p class="hero__tag">{hero.you.tag}</p>
+                            <!-- The worries' progress and pause: shown by motion.js once they rotate. -->
+                            <div class="hero__story" hidden>
+                                <span class="hero__story-bars" aria-hidden="true">
+                                    {hero.you.worries.map(() => <span class="hero__story-bar" />)}
+                                </span>
+                                <button
+                                    type="button"
+                                    class="hero__story-toggle"
+                                    aria-label={hero.you.pauseLabel}
+                                    data-pause-label={hero.you.pauseLabel}
+                                    data-play-label={hero.you.playLabel}
+                                >
+                                    <Icon name="lu-pause" src="abovethefold" className="hero__story-pause" aria-hidden="true" />
+                                    <Icon name="lu-play" src="abovethefold" className="hero__story-play" aria-hidden="true" />
+                                </button>
+                            </div>
+                        </div>
                         <p class="hero__you-title">{hero.you.title}</p>
-                        <p class="hero__you-text">{hero.you.text}</p>
+                        <p class="hero__you-text">
+                            <span class="hero__you-full">{hero.you.text}</span>
+                            <!-- The same sentence, as the lead and one worry at a time (motion only). -->
+                            <span class="hero__rotator" aria-hidden="true">
+                                <span class="hero__rotator-lead">{hero.you.lead}</span>
+                                <span class="hero__worries">
+                                    {hero.you.worries.map((worry) => (
+                                        <span class="hero__worry" data-answer={worry.answer}>{worry.text}</span>
+                                    ))}
+                                </span>
+                            </span>
+                        </p>
                     </div>
                 </div>
                 <div class="hero__us">
                     <div class="hero__us-head">
                         <p class="hero__tag hero__tag--bright">{hero.us.tag}</p>
-                        <h2 class="hero__us-title">{hero.us.title}</h2>
+                        <h2 class="hero__us-title" set:html={hero.us.title} />
                     </div>
                     <ul class="hero__checklist">
                         {hero.us.items.map((item) => (
                             <li class="hero__check">
                                 <Icon name="lu-circle-check" src="abovethefold" aria-hidden="true" />
                                 <span class="hero__check-text">
-                                    <span class="hero__check-name">{item.name}</span>
+                                    <span
+                                        class:list={["hero__check-name", item.answer && "hero__answer"]}
+                                        data-answer={item.answer}
+                                    >
+                                        {item.name}
+                                    </span>
                                     {item.benefit}
                                 </span>
                             </li>

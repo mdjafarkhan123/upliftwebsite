@@ -80,6 +80,7 @@
     --space-fluid-lg: clamp(3.2rem, 2.606rem + 1.524vw, 4.8rem);
     --space-fluid-xl: clamp(3.6rem, 2.263rem + 3.429vw, 7.2rem);
     --space-fluid-2xl: clamp(7.2rem, 5.417rem + 4.571vw, 12rem);
+    --round-xs: 6px;
     --round-sm: 8px;
     --round-md: 12px;
     --round-lg: 16px;
@@ -743,7 +744,102 @@ p strong {
     line-height: 1.1;
 }
 .hero__you-text {
-    font-size: var(--fs-sm);
+    font-size: var(--fs-base);
+}
+/* The tag, with the worries' progress bars and pause button on its right. Both are
+   hidden until motion.js starts the worries; with reduced motion or scripts off the
+   full sentence shows still. */
+.hero__you-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xsm);
+}
+.hero__story {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xsm);
+}
+.hero__story[hidden] {
+    display: none;
+}
+.hero__story-bars {
+    display: flex;
+    gap: var(--space-3xsm);
+}
+.hero__story-bar {
+    position: relative;
+    width: 24px;
+    height: 3px;
+    overflow: hidden;
+    border-radius: var(--round-full);
+    background: rgb(255 255 255 / 30%);
+}
+/* motion.js fills the bar over its worry's time by setting --fill from 0 to 1. */
+.hero__story-bar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-white);
+    transform: scaleX(var(--fill, 0));
+    transform-origin: left;
+}
+.hero__story-toggle {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--round-full);
+    background: rgb(255 255 255 / 18%);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: background var(--transition);
+}
+.hero__story-toggle:hover {
+    background: rgb(255 255 255 / 30%);
+}
+.hero__story-toggle:focus-visible {
+    outline: 2px solid var(--color-brand-bright);
+    outline-offset: 2px;
+}
+.hero__story-toggle .icon {
+    width: 14px;
+    height: 14px;
+}
+.hero__story-play,
+.hero__story-toggle[data-paused] .hero__story-pause {
+    display: none;
+}
+.hero__story-toggle[data-paused] .hero__story-play {
+    display: block;
+}
+/* With motion, the sentence shows as its lead plus one worry at a time, like an ad. */
+.hero__rotator {
+    display: none;
+}
+.hero__you--rotating .hero__rotator {
+    display: block;
+}
+.hero__rotator-lead {
+    display: block;
+    text-wrap: balance;
+}
+/* The worries share one grid cell, so the block keeps the tallest one's height and
+   nothing moves when they change; the cell clips them as they slide through. They keep
+   the sentence's own type, so they read as its ending (Jafar, 2026-11-17). */
+.hero__worries {
+    display: grid;
+    overflow: hidden;
+}
+.hero__worry {
+    grid-area: 1 / 1;
+    color: var(--color-brand-bright);
+    font-weight: 600;
+}
+.hero__worry + .hero__worry {
+    visibility: hidden;
 }
 .hero__us {
     display: flex;
@@ -799,6 +895,27 @@ p strong {
     color: var(--color-white);
     font-size: var(--fs-sm);
     font-weight: 600;
+}
+/* A worry's answer in the "Us" card: the green highlight sweeps in behind it while
+   that worry shows (motion.js adds .is-lit). The margin cancels the padding, so the text
+   never moves, and the box stays clear of the words around it. */
+.hero__answer {
+    margin-inline: -0.1em;
+    padding: 0 0.1em 0.04em;
+    border-radius: var(--round-xs);
+    background: linear-gradient(var(--color-brand-bright), var(--color-brand-bright)) no-repeat 0 0 / 0% 100%;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    transition:
+        background-size 0.6s ease,
+        color 0.6s ease;
+}
+.hero__answer.is-lit {
+    background-size: 100% 100%;
+    color: var(--color-secondary);
+}
+.hero__check-name.hero__answer {
+    width: fit-content;
 }
 .hero__us-close {
     margin-top: auto;
@@ -868,8 +985,12 @@ p strong {
     .hero__photo-img {
         object-position: center 30%;
     }
+    /* Wider on the big photo, so the worries read like an ad. */
+    .hero__you {
+        max-width: 420px;
+    }
     .hero__you-text {
-        font-size: var(--fs-base);
+        font-size: var(--fs-md);
     }
     .hero__us {
         padding: var(--space-xl);

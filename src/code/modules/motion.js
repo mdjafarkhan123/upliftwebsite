@@ -8,14 +8,17 @@
  * - The problem statement fills word by word from faded to full colour as you scroll.
  * - Cards and supporting text rise in as they reach the viewport.
  * - Buttons follow the cursor slightly (fine pointers only).
- * - Hero: the "You" text and the "Us" checklist come in once.
+ * - Hero: the "You" text and the "Us" checklist come in once. Then, like an ad, the "You"
+ *   text's worries take turns and light their answers in the "Us" card; its button, a
+ *   mouse over the text, or scrolling away stops them.
  * - Services: each newly chosen service settles in (no pinning; Jafar, 2026-11-17).
  * - How it works: a line draws through the steps as you scroll.
  * - Marquees: the service strip and the trade rows scroll sideways forever.
  *
  * Loaded only when reduced motion is off (interaction.js). Every part checks for its
  * elements, so the module is safe on pages without them. Content is only faded with
- * opacity, never hidden, so assistive technology always reads all of it.
+ * opacity, never hidden, so assistive technology always reads all of it. (The hero
+ * worries are a visual copy of a sentence screen readers keep in full.)
  */
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -250,12 +253,105 @@ function initHero() {
     // once; the check icons move with their rows, never on their own (no icon motion).
     const you = hero.querySelector(".hero__you");
     const checks = gsap.utils.toArray(".hero__check", hero);
+    // The worries take over the "You" text while it is still held back, so the
+    // switch from the full sentence is never seen.
+    if (you) initWorries(hero, you);
 
     const intro = gsap.timeline({ defaults: { ease: EASE } });
     if (you) intro.from(you, { opacity: 0, y: 16, duration: 0.7 }, 0);
     if (checks.length) intro.from(checks, { opacity: 0, x: -12, duration: 0.5, stagger: 0.1 }, 0.15);
     // Both were held back by critical.css until this timeline existed.
     document.documentElement.classList.add("motion-ready");
+}
+
+/**
+ * The hero's worries, like an ad (Jafar, 2026-11-17). After the lead, "without paying
+ * thousands", "without learning tech" and "without losing leads…" take turns, and each
+ * one's answer in the "Us" card gets the green highlight. A bar times each worry. The
+ * pause button or a mouse over the text stops the turns, and they only run while the
+ * text is on screen. Screen readers keep the full sentence, which is only hidden visually.
+ */
+function initWorries(hero, you) {
+    const worries = gsap.utils.toArray(".hero__worry", you);
+    const bars = gsap.utils.toArray(".hero__story-bar", you);
+    const story = you.querySelector(".hero__story");
+    const toggle = you.querySelector(".hero__story-toggle");
+    const full = you.querySelector(".hero__you-full");
+    if (worries.length < 2 || bars.length !== worries.length || !story || !toggle || !full) return;
+
+    full.classList.add("visually-hidden");
+    you.classList.add("hero__you--rotating");
+    story.hidden = false;
+
+    // Longer worries stay up longer: from about 3.6 s to 4.6 s for the longest.
+    const hold = (worry) => 2.6 + worry.textContent.trim().length * 0.045;
+    let current = 0;
+    let timer = null;
+    let onScreen = false;
+    let hovered = false;
+    let paused = false;
+    const running = () => onScreen && !hovered && !paused && !document.hidden;
+    const sync = () => timer && (running() ? timer.resume() : timer.pause());
+
+    const light = (index) => {
+        hero.querySelectorAll(".hero__answer.is-lit").forEach((answer) => answer.classList.remove("is-lit"));
+        const key = worries[index].dataset.answer;
+        hero.querySelectorAll(`.hero__answer[data-answer="${key}"]`).forEach((answer) =>
+            answer.classList.add("is-lit"),
+        );
+    };
+
+    // The bar's fill is the worry's clock: when it is full, the next worry comes in.
+    const show = (index) => {
+        bars.forEach((bar, i) => gsap.set(bar, { "--fill": i < index ? 1 : 0 }));
+        timer = gsap.fromTo(
+            bars[index],
+            { "--fill": 0 },
+            {
+                "--fill": 1,
+                duration: hold(worries[index]),
+                ease: "none",
+                paused: !running(),
+                onComplete: () => turn((index + 1) % worries.length),
+            },
+        );
+        gsap.delayedCall(0.25, light, [index]);
+    };
+
+    const turn = (index) => {
+        gsap.to(worries[current], { yPercent: -100, autoAlpha: 0, duration: 0.5, ease: "power2.in" });
+        gsap.fromTo(
+            worries[index],
+            { yPercent: 100, autoAlpha: 0 },
+            { yPercent: 0, autoAlpha: 1, duration: 0.7, ease: EASE, delay: 0.3 },
+        );
+        current = index;
+        show(index);
+    };
+
+    gsap.set(worries, { yPercent: 100, autoAlpha: 0 });
+    gsap.set(worries[0], { yPercent: 0, autoAlpha: 1 });
+    show(0);
+
+    toggle.addEventListener("click", () => {
+        paused = !paused;
+        toggle.toggleAttribute("data-paused", paused);
+        toggle.setAttribute("aria-label", paused ? toggle.dataset.playLabel : toggle.dataset.pauseLabel);
+        sync();
+    });
+    const hover = (state) => (event) => {
+        if (event.pointerType !== "mouse") return;
+        hovered = state;
+        sync();
+    };
+    you.addEventListener("pointerenter", hover(true));
+    you.addEventListener("pointerleave", hover(false));
+    document.addEventListener("visibilitychange", sync);
+    const watch = (self) => {
+        onScreen = self.isActive;
+        sync();
+    };
+    ScrollTrigger.create({ trigger: you, start: "top bottom", end: "bottom top", onToggle: watch, onRefresh: watch });
 }
 
 /* Services: a chosen service settles in ----------------------------------- */
