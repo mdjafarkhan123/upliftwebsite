@@ -15,6 +15,7 @@ import GoogleLogo from "../assets/images/technology-used/google.png";
 import AwsLogo from "../assets/images/technology-used/aws.png";
 import CloudflareLogo from "../assets/images/technology-used/cloudflare.png";
 import FacebookLogo from "../assets/images/technology-used/facebook.png";
+import HeroPhoto from "../assets/images/home/hero-contractor.png";
 import AppDownloadQr from "../assets/images/app/download-qr.png";
 
 /**
@@ -73,14 +74,46 @@ export const publicSite = {
 
 /* ============================ About section ============================ */
 export const hero = {
-    badge: "affordable . simple . no contracts",
-    title: `Website design & marketing systems for <span class="marked-text">contractors & home service pros</span>`,
+    badge: "Affordable · Simple · No contracts",
+    // The H1 is the current heading word for word; the parts let the page add
+    // the icon pill and the two highlights (approved design, 2026-11-16).
+    title: {
+        start: "Website design &",
+        middle: "marketing systems for",
+        highlights: ["contractors &", "home service pros"],
+    },
     description:
         "Nobody has a miracle solution to all your problems, including us. We will provide a <strong>simple yet extremely effective foundational marketing system</strong> to help you <strong>win more work</strong>. But you need to commit to using it!",
     cta: `Book a call`,
-    heroImg: HeroImg,
-    heroImgSm: HeroImgSm,
-    heroFooter: `No fluff. We just say what we exactly do`,
+    secondaryCta: { label: "See what's included", href: "#pricing" },
+    assurances: ["No contract", "Live in 7–10 days", "We handle the tech"],
+    photo: {
+        image: HeroPhoto,
+        alt: "A roofing contractor checking a phone outside a house",
+    },
+    // Made-up demo notifications; always shown with the Sample label.
+    sampleLabel: "Sample",
+    feedLabel: "Sample notifications from the Uplift system",
+    feed: [
+        { icon: "lu-phone-missed", title: "Missed call", detail: "(555) 014-2290 · 10:42 AM", time: "10:42" },
+        { icon: "lu-message-square-text", title: "Text sent automatically", detail: "“Sorry we missed you! How can we help?”", time: "10:42" },
+        { icon: "lu-user-plus", title: "New lead in your app", detail: "Dana R. · roof leak, wants a quote", time: "10:55" },
+        { icon: "lu-star", title: "Review request sent", detail: "Mike T. · job marked done", time: "Fri" },
+    ],
+    status: {
+        title: "Running while you work",
+        rows: [
+            { label: "Missed-call text back", status: "On" },
+            { label: "Review requests", status: "On" },
+            { label: "Follow-ups", status: "On" },
+            { label: "Google profile", status: "Managed" },
+            { label: "Website", status: "Live" },
+        ],
+        value: "7–10",
+        unit: "days to build",
+        doneDays: 7,
+        caption: "From your first call to a live system. Then it runs in the background, no extra staff.",
+    },
 };
 
 export const brandLogo = {
@@ -407,41 +440,58 @@ export const footer = {
     intro: {
         title: `Website design & marketing systems for contractors & home service pros`,
     },
-
+    // Footer column of homepage sections.
     company: {
         title: "Navigation",
         items: [
-            { label: "Home", href: "/" },
-            { label: "About", href: "/#about" },
             { label: "Services", href: "/#services" },
-            { label: "Platform", href: "/#projects" },
-            { label: "Process", href: "/#process" },
-            { label: "FAQs", href: "/#faq" },
+            { label: "Projects", href: "/#projects" },
+            { label: "How it works", href: "/#process" },
+            { label: "Pricing", href: "/#pricing" },
+            { label: "About", href: "/#about" },
+            { label: "FAQ", href: "/#faq" },
         ],
     },
     resources: {
+        title: "Resources",
         items: [
             { label: "Privacy Policy", href: "/privacy" },
             { label: "Terms & Conditions", href: "/terms" },
             { label: "Data deletion", href: "/data-deletion" },
-            { label: "Get the app", href: "/app" },
-            { label: "Contact", href: `mailto:${publicSite.contact.email}` },
         ],
     },
     contact: {
-        title: "Contact info",
-        location: publicSite.location,
+        title: "Contact",
         email: publicSite.contact.email,
-        phone: publicSite.contact.phone,
-        phoneHref: publicSite.contact.phone,
     },
+    // Card that sends Uplift clients and crews to the /app download page.
+    app: {
+        title: "Uplift app",
+        note: "For Android 7.0 and newer",
+        cta: "Download the app",
+        href: "/app",
+    },
+    backToTop: "Back to top",
 };
 
-// Shared labels for the production mobile navigation.
+// Shared labels for the header, the phone menu and the phone "Book a call" bar.
 export const navigation = {
     openLabel: "Open menu",
     closeLabel: "Close menu",
     menuLabel: "Menu",
+    mainLabel: "Main navigation",
+    mobileLabel: "Mobile navigation",
+    // Header links (desktop); the phone menu uses footer.company.items.
+    items: [
+        { label: "Services", href: "/#services" },
+        { label: "How it works", href: "/#process" },
+        { label: "Pricing", href: "/#pricing" },
+        { label: "FAQ", href: "/#faq" },
+    ],
+    // Sign-in to the Uplift app for existing clients (Jafar, 2026-11-17).
+    login: { label: "Log in", href: "https://app.upliftcontractor.com" },
+    getApp: { label: "Get the app", href: "/app" },
+    assurances: ["No contract", "Live in 7–10 days"],
 };
 
 // Public legal copy, approved source: docs/legal-pages-update.md.

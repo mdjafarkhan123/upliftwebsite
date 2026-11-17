@@ -3,22 +3,38 @@ import Icon from "./Svg.astro";
 interface Props {
     title: string;
     link: string;
-    type?: "primary" | "small";
+    type?: "primary" | "secondary" | "accent" | "small";
+    block?: boolean;
     id?: string;
     icon?: string;
     src?: string;
+    class?: string;
+    /** Extra attributes for the link, such as data hooks for scripts. */
+    [key: `data-${string}`]: string | undefined;
 }
 const {
     title,
     link,
     type = "primary",
+    block = false,
     id,
-    icon = "arrow-right-up",
+    icon = "lu-arrow-up-right",
     src = "abovethefold",
+    class: className,
+    ...attrs
 } = Astro.props;
 ---
 
-<a id={id} href={link} class:list={["btn", { "btn--small": type === "small" }]}>
+<a
+    id={id}
+    href={link}
+    class:list={[
+        "btn",
+        { [`btn--${type}`]: type !== "primary", "btn--block": block },
+        className,
+    ]}
+    {...attrs}
+>
     <span class="btn__text">{title}</span>
     <span class="btn__icon" aria-hidden="true">
         <Icon name={icon} src={src} />

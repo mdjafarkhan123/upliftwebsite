@@ -1,39 +1,74 @@
 ---
 import Brand from "./Brand.astro";
-import { footer, publicSite } from "../data/data.js";
+import Button from "./Button.astro";
+import Icon from "./Svg.astro";
+import { footer, hero, publicSite } from "../data/data.js";
+const bookingLink = publicSite.booking.url || publicSite.booking.fallbackUrl;
 ---
 
-<footer id="footer" class="container footer">
-    <div class="footer__main">
-        <div>
-            <Brand />
-            <p>{footer.intro.title}</p>
-        </div>
-        <div>
-            <p class="badge">{footer.contact.title}</p>
-            <a href={`mailto:${publicSite.contact.email}`}>
-                {publicSite.contact.email}
-            </a>
-            <a href={`tel:${publicSite.contact.phone}`}>
-                {publicSite.contact.phone}
-            </a>
-            <span>{publicSite.location}</span>
-        </div>
-        <div>
-            <p class="badge">{footer.company.title}</p>
-            {footer.company.items.map((item) => (
-                <a href={item.href}>{item.label}</a>
-            ))}
-        </div>
-    </div>
-    <div class="footer__bottom">
-        <span>
-            © {new Date().getFullYear()} {publicSite.name}
-        </span>
-        <div>
-            {footer.resources.items.map((item) => (
-                <a href={item.href}>{item.label}</a>
-            ))}
+<footer id="footer" class="footer">
+    <div class="footer__panel panel">
+        <div class="footer__wrapper container">
+            <div class="footer__top">
+                <div class="footer__intro">
+                    <Brand />
+                    <p class="footer__title">{footer.intro.title}</p>
+                    <Button title={hero.cta} link={bookingLink} class="footer__book" />
+                </div>
+                <nav class="footer__column" aria-labelledby="footer-nav-heading">
+                    <p id="footer-nav-heading" class="footer__heading">
+                        {footer.company.title}
+                    </p>
+                    <ul class="footer__links">
+                        {footer.company.items.map((item) => (
+                            <li><a href={item.href}>{item.label}</a></li>
+                        ))}
+                    </ul>
+                </nav>
+                <nav class="footer__column" aria-labelledby="footer-resources-heading">
+                    <p id="footer-resources-heading" class="footer__heading">
+                        {footer.resources.title}
+                    </p>
+                    <ul class="footer__links">
+                        {footer.resources.items.map((item) => (
+                            <li><a href={item.href}>{item.label}</a></li>
+                        ))}
+                    </ul>
+                </nav>
+                <div class="footer__column footer__contact">
+                    <p class="footer__heading">{footer.contact.title}</p>
+                    <a class="footer__email" href={`mailto:${footer.contact.email}`}>
+                        <Icon name="lu-mail" aria-hidden="true" />
+                        {footer.contact.email}
+                    </a>
+                    <div class="footer__app">
+                        <div class="footer__app-top">
+                            <span class="footer__app-tile" aria-hidden="true">
+                                <Icon name="lu-smartphone" />
+                            </span>
+                            <div>
+                                <p class="footer__app-title">{footer.app.title}</p>
+                                <p class="footer__app-note">{footer.app.note}</p>
+                            </div>
+                        </div>
+                        <Button
+                            title={footer.app.cta}
+                            link={footer.app.href}
+                            type="secondary"
+                            icon="lu-download"
+                            src="sprite"
+                            class="footer__app-button"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span>© {new Date().getFullYear()} {publicSite.name}</span>
+                <a class="footer__top-link" href="#main">
+                    {footer.backToTop}
+                    <Icon name="lu-arrow-up" aria-hidden="true" />
+                </a>
+            </div>
         </div>
     </div>
 </footer>

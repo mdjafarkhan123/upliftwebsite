@@ -4,35 +4,46 @@ import Button from "./Button.astro";
 import Icon from "./Svg.astro";
 import { footer, hero, navigation, publicSite } from "../data/data.js";
 const bookingLink = publicSite.booking.url || publicSite.booking.fallbackUrl;
-const items = footer.company.items.filter((item) => item.href !== "/");
 ---
 
-<header id="header" class="header container">
-    <Brand />
-    <nav class="header__nav" aria-label="Main navigation">
-        {items.map((item) => (
-            <a class="header__link" href={item.href}>
-                {item.label}
+<header id="header" class="header">
+    <div class="header__inner container">
+        <div class="header__brand">
+            <Brand />
+        </div>
+        <nav class="header__nav" aria-label={navigation.mainLabel}>
+            {navigation.items.map((item) => (
+                <a class="header__link" href={item.href}>
+                    {item.label}
+                </a>
+            ))}
+        </nav>
+        <div class="header__actions">
+            <a class="header__login" href={navigation.login.href}>
+                {navigation.login.label}
             </a>
-        ))}
-    </nav>
-    <div class="header__actions">
-        <Button title={hero.cta} link={bookingLink} type="small" />
-        <button
-            class="header__menu-toggler"
-            type="button"
-            aria-label={navigation.openLabel}
-            aria-controls="mobile-navigation"
-            aria-expanded="false"
-            hidden
-        >
-            {navigation.menuLabel}
-        </button>
+            <Button
+                title={hero.cta}
+                link={bookingLink}
+                type="small"
+                class="header__book"
+            />
+            <button
+                class="header__menu-toggler"
+                type="button"
+                aria-label={navigation.openLabel}
+                aria-controls="mobile-navigation"
+                aria-expanded="false"
+                hidden
+            >
+                <Icon name="lu-menu" src="abovethefold" />
+            </button>
+        </div>
     </div>
     <dialog
         class="mobile-menu"
         id="mobile-navigation"
-        aria-labelledby="mobile-menu-title"
+        aria-label={navigation.mobileLabel}
     >
         <div class="mobile-menu__top">
             <Brand />
@@ -42,38 +53,45 @@ const items = footer.company.items.filter((item) => item.href !== "/");
                 aria-label={navigation.closeLabel}
                 autofocus
             >
-                <span aria-hidden="true">
-                    <Icon name="plus-icon" />
-                </span>
+                <Icon name="lu-x" src="abovethefold" />
             </button>
         </div>
-        <div class="mobile-menu__body">
-            <p class="mobile-menu__eyebrow" id="mobile-menu-title">
-                {footer.company.title}
-            </p>
-            <nav class="mobile-menu__nav" aria-label="Mobile navigation">
-                {footer.company.items.map((item, i) => (
-                    <a class="mobile-menu__link" href={item.href}>
-                        <span class="mobile-menu__number" aria-hidden="true">
-                            0{i + 1}
-                        </span>
-                        <span>{item.label}</span>
-                        <span class="mobile-menu__arrow" aria-hidden="true">
-                            <Icon name="arrow-button" src="abovethefold" />
-                        </span>
-                    </a>
-                ))}
-            </nav>
-            <div class="mobile-menu__contact">
-                <p>{hero.badge}</p>
-                <Button title={hero.cta} link={bookingLink} />
-                <a href={`mailto:${publicSite.contact.email}`}>
-                    {publicSite.contact.email}
+        <nav class="mobile-menu__nav" aria-label={navigation.mobileLabel}>
+            {footer.company.items.map((item) => (
+                <a class="mobile-menu__link" href={item.href}>
+                    <span>{item.label}</span>
+                    <Icon name="lu-arrow-right" src="abovethefold" aria-hidden="true" />
                 </a>
-                <a href={`tel:${publicSite.contact.phone}`}>
-                    {publicSite.contact.phone}
-                </a>
+            ))}
+        </nav>
+        <div class="mobile-menu__bottom">
+            <div class="mobile-menu__client">
+                <Button
+                    title={navigation.login.label}
+                    link={navigation.login.href}
+                    type="secondary"
+                    icon="lu-log-in"
+                />
+                <Button
+                    title={navigation.getApp.label}
+                    link={navigation.getApp.href}
+                    type="secondary"
+                    icon="lu-download"
+                    src="sprite"
+                />
             </div>
+            <Button title={hero.cta} link={bookingLink} block />
+            <ul class="assurances">
+                {navigation.assurances.map((item) => (
+                    <li>
+                        <Icon name="lu-circle-check" src="abovethefold" aria-hidden="true" />
+                        {item}
+                    </li>
+                ))}
+            </ul>
         </div>
     </dialog>
 </header>
+<div class="cta-bar" data-cta-bar>
+    <Button title={hero.cta} link={bookingLink} block />
+</div>

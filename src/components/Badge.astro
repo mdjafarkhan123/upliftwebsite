@@ -3,11 +3,12 @@ interface Props {
     title: string;
     number?: string;
     dot?: boolean;
+    tone?: "light" | "soft" | "dark";
 }
-const { title, number, dot = false } = Astro.props;
+const { title, number, dot = true, tone = "light" } = Astro.props;
 ---
 
-<p class="badge">
+<p class:list={["badge", { [`badge--${tone}`]: tone !== "light" }]}>
     {dot && <span class="status-dot" aria-hidden="true"></span>}
     {number && <span aria-hidden="true">{number} /</span>}
     {title}

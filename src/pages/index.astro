@@ -1,440 +1,129 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layout/Layout.astro";
-import Logo from "../components/Logo.astro";
 import Icon from "../components/Svg.astro";
 import Button from "../components/Button.astro";
 import Badge from "../components/Badge.astro";
-import Accordion from "../components/Accordion.astro";
-import ReadMore from "../components/ReadMore.astro";
-import Jafar from "../assets/images/jafar.jpg";
-import ContractorPhoto from "../assets/images/indextwo-contractor.png";
 import homeStyle from "../styles/pages/home/home.scss?url";
-import {
-    publicSite,
-    footer,
-    hero,
-    brandLogo,
-    services,
-    projects,
-    contractors,
-    about,
-    reason,
-    process,
-    faq,
-} from "../data/data.js";
-import { cta } from "../data/data.js";
+import { publicSite, hero, brandLogo } from "../data/data.js";
 const bookingLink = publicSite.booking.url || publicSite.booking.fallbackUrl;
-// Use only artwork already in the two public SVG sprites.
-const heroIcons = [
-    "xp-icon",
-    "star-icon",
-    "phone-fill",
-    "shining-fill",
-    "arrow-button",
-    "xp-icon",
-];
-const serviceIcons = [
-    { name: "briefcase-icon", src: "sprite" },
-    { name: "star-icon", src: "abovethefold" },
-    { name: "phone-ringing", src: "sprite" },
-    { name: "email-sending", src: "sprite" },
-    { name: "location-icon", src: "sprite" },
-    { name: "folder-open", src: "sprite" },
-];
 ---
 
 <Layout>
-    <section id="hero" class="hero container" aria-labelledby="hero-heading">
-        <div class="hero__content">
-            <Badge title={hero.badge} dot />
-            <h1 id="hero-heading" set:html={hero.title} />
-            <div class="hero__description" set:html={hero.description} />
+    <section id="hero" class="hero" aria-labelledby="hero-heading">
+        <div class="hero__panel panel">
+            <Badge title={hero.badge} />
+            <h1 id="hero-heading">
+                <span class="hero__line">{hero.title.start}</span>{" "}
+                <span class="hero__pill" aria-hidden="true">
+                    <span class="hero__pill-globe">
+                        <Icon name="lu-globe" src="abovethefold" />
+                    </span>
+                    <Icon name="lu-plus" src="abovethefold" className="hero__pill-plus" />
+                    <Icon name="lu-trending-up" src="abovethefold" className="hero__pill-growth" />
+                </span>{" "}
+                <span class="hero__line">{hero.title.middle}</span>{" "}
+                {hero.title.highlights.map((words) => (
+                    <>
+                        <span class="marked-text">{words}</span>{" "}
+                    </>
+                ))}
+            </h1>
+            <p class="hero__description" set:html={hero.description} />
             <div class="hero__actions">
-                <Button title={hero.cta} link={bookingLink} />
-                <a class="hero__link" href="#services">
-                    {services.badge}
-                    <Icon
-                        name="arrow-button"
-                        src="abovethefold"
-                        className="hero__link-icon"
-                    />
-                </a>
+                <Button title={hero.cta} link={bookingLink} data-hero-book="" />
+                <Button
+                    title={hero.secondaryCta.label}
+                    link={hero.secondaryCta.href}
+                    type="secondary"
+                />
             </div>
-        </div>
-        <div class="hero-system" aria-label={footer.intro.title}>
-            <div class="hero-system__header">
-                <span>{publicSite.name}</span>
-                <button
-                    class="hero-system__motion"
-                    type="button"
-                    aria-label="Pause diagram animation"
-                    aria-pressed="false"
-                    hidden
-                >
-                    <span class="hero-system__motion-symbol" aria-hidden="true"
-                        >Ⅱ</span
-                    >
-                </button>
-            </div>
-            <svg class="hero-system__connections" aria-hidden="true">
-                {
-                    services.content.map((_, i) => (
-                        <g>
-                            <line
-                                class="hero-system__connection"
-                                data-node={i}
-                            />
-                            <defs>
-                                <linearGradient
-                                    id={`hero-pulse-${i}`}
-                                    gradientUnits="userSpaceOnUse"
-                                >
-                                    <stop
-                                        offset="0"
-                                        stop-color="var(--color-primary)"
-                                        stop-opacity="0"
-                                    />
-                                    <stop
-                                        offset="0.6"
-                                        stop-color="var(--color-primary)"
-                                        stop-opacity="0.50"
-                                    />
-                                    <stop
-                                        offset="1"
-                                        stop-color="var(--color-primary)"
-                                    />
-                                </linearGradient>
-                            </defs>
-                            <line
-                                class="hero-system__signal"
-                                stroke={`url(#hero-pulse-${i})`}
-                            />
-                            <g class="hero-system__sparks" />
-                        </g>
-                    ))
-                }
-            </svg>
-            <div class="hero-system__core">
-                <Logo width="52" height="62" />
-                <span>Growth System</span>
-            </div>
-            {
-                services.content.map((service, i) => (
-                    <a
-                        class={`hero-system__node hero-system__node--${i}`}
-                        href={`#service-${i}`}
-                        style={`--node-index: ${i}`}
-                    >
-                        <span class="hero-system__icon" aria-hidden="true">
-                            <Icon name={heroIcons[i]} src="abovethefold" />
-                        </span>
-                        <span>{service.title}</span>
-                    </a>
-                ))
-            }
-            <div class="hero-system__footer">
-                <span class="status-dot"></span>
-                {hero.heroFooter}
-            </div>
-        </div>
-    </section>
-    <section
-        id="why"
-        class="system-strip container"
-        aria-labelledby="technology-heading"
-    >
-        <h2 id="technology-heading" class="system-strip__label">
-            {brandLogo.title}
-        </h2>
-        <ul class="system-strip__marks">
-            {
-                brandLogo.logos.map((logo, index) => (
-                    <li
-                        class="system-strip__mark"
-                        style={`--logo-index: ${index}`}
-                    >
-                        <Image
-                            src={logo.image}
-                            alt={logo.name}
-                            loading="eager"
-                        />
+            <ul class="assurances">
+                {hero.assurances.map((item) => (
+                    <li>
+                        <Icon name="lu-circle-check" src="abovethefold" aria-hidden="true" />
+                        {item}
                     </li>
-                ))
-            }
-        </ul>
+                ))}
+            </ul>
+            <div class="hero__visual">
+                <div class="hero__photo">
+                    <Image
+                        class="hero__photo-img"
+                        src={hero.photo.image}
+                        alt={hero.photo.alt}
+                        widths={[480, 920, 1400]}
+                        sizes="(min-width: 1200px) 920px, 100vw"
+                        loading="eager"
+                        fetchpriority="high"
+                        format="webp"
+                    />
+                    <div class="hero__feed-wrap">
+                        <p class="sample-label">
+                            <Icon name="lu-flask-conical" src="abovethefold" aria-hidden="true" />
+                            {hero.sampleLabel}
+                        </p>
+                        <ul class="hero__feed" aria-label={hero.feedLabel}>
+                            {hero.feed.map((item) => (
+                                <li class="notification">
+                                    <span class="notification__tile" aria-hidden="true">
+                                        <Icon name={item.icon} src="abovethefold" />
+                                    </span>
+                                    <span class="notification__text">
+                                        <span class="notification__title">{item.title}</span>
+                                        <span>{item.detail}</span>
+                                    </span>
+                                    <span class="notification__time">{item.time}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+                <div class="status-card">
+                    <div>
+                        <h2 class="status-card__title">{hero.status.title}</h2>
+                        <ul class="status-card__rows">
+                            {hero.status.rows.map((row) => (
+                                <li class="status-card__row">
+                                    {row.label}
+                                    <span class="status-pill">{row.status}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="status-card__number">
+                            <span class="status-card__value">{hero.status.value}</span>
+                            {hero.status.unit}
+                        </p>
+                        <ol class="status-card__days" aria-hidden="true">
+                            {Array.from({ length: 10 }, (_, i) => (
+                                <li class:list={{ "is-done": i < hero.status.doneDays }} />
+                            ))}
+                        </ol>
+                        <p class="status-card__caption">{hero.status.caption}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section
-        id="services"
-        class="services section container"
-        aria-labelledby="services-heading"
-    >
-        <div class="section__heading">
-            <Badge number="01" title={services.badge} />
-            <h2 id="services-heading" set:html={services.title} />
-        </div>
-        <div class="services__grid">
-            {
-                services.content.map((service, i) => (
-                    <article
-                        id={`service-${i}`}
-                        class:list={[
-                            "services__item",
-                            { "services__item--featured": i === 0 },
-                        ]}
-                    >
-                        <div class="services__content">
-                            <div class="services__meta">
-                                <span class="services__icon" aria-hidden="true">
-                                    <Icon
-                                        name={serviceIcons[i].name}
-                                        src={serviceIcons[i].src}
-                                    />
-                                </span>
-                                <span class="services__index">0{i + 1}</span>
-                            </div>
-                            <h3>{service.title}</h3>
-                            <p set:html={service.description} />
-                            <ReadMore
-                                contentId={`service-more-${i}`}
-                                moreLabel={about.readMore}
-                                contentClassName="services__more"
-                                collapsedLines={3}
-                            >
-                                <ul>
-                                    {service.items.map((item) => (
-                                        <li set:html={item} />
-                                    ))}
-                                </ul>
-                            </ReadMore>
-                        </div>
-                        {i === 0 && (
-                            <div class="services__preview">
-                                <div class="services__browser">
-                                    <i />
-                                    <i />
-                                    <i />
-                                    <span>{publicSite.name}</span>
-                                </div>
-                                <Image
-                                    src={service.thumbnail}
-                                    alt="Contractor website design preview"
-                                    width={760}
-                                    widths={[380, 760]}
-                                    sizes="(max-width: 520px) 85vw, 380px"
-                                    loading="lazy"
-                                />
-                            </div>
-                        )}
-                    </article>
-                ))
-            }
+    <section id="technology" class="technology" aria-labelledby="technology-heading">
+        <div class="technology__wrapper container">
+            <h2 id="technology-heading" class="technology__label">
+                {brandLogo.title}
+            </h2>
+            <ul class="technology__logos">
+                {brandLogo.logos.map((logo) => (
+                    <li>
+                        <Image src={logo.image} alt={logo.name} height={28} loading="lazy" />
+                    </li>
+                ))}
+            </ul>
         </div>
     </section>
-    <section
-        id="projects"
-        class="section container projects"
-        aria-labelledby="projects-heading"
-    >
-        <div class="section__heading">
-            <Badge number="02" title={projects.badge} />
-            <h2 id="projects-heading">{projects.title}</h2>
-        </div>
-        <div class="projects__grid">
-            {
-                projects.items.map((project, i) => (
-                    <figure class="projects__item">
-                        <div class="projects__image">
-                            <div class="projects__browser" aria-hidden="true">
-                                <i />
-                                <i />
-                                <i />
-                            </div>
-                            <Image
-                                src={project.thumbnail}
-                                alt={project.title}
-                                width={900}
-                                widths={[450, 900]}
-                                sizes="(max-width: 520px) 90vw, 45vw"
-                                loading="lazy"
-                            />
-                        </div>
-                        <figcaption>
-                            <span>{project.title}</span>
-                            <span class="projects__index">0{i + 1}</span>
-                        </figcaption>
-                    </figure>
-                ))
-            }
-        </div>
-    </section>
-    <section
-        id="contractors"
-        class="contractors"
-        aria-labelledby="contractors-heading"
-    >
-        <div class="container section">
-            <div class="contractors__photo">
-                <Image
-                    src={ContractorPhoto}
-                    alt=""
-                    width={1400}
-                    widths={[480, 800, 1400]}
-                    sizes="(max-width: 800px) 95vw, 1240px"
-                    format="webp"
-                    loading="lazy"
-                />
-            </div>
-            <Badge number="03" title={contractors.badge} />
-            <h2 id="contractors-heading" set:html={contractors.title} />
-            <div class="contractors__list">
-                {
-                    contractors.contractors
-                        .slice(0, 18)
-                        .map((item) => (
-                            <span class="contractors__item">{item}</span>
-                        ))
-                }
-            </div>
-            <ReadMore
-                contentId="contractors-more"
-                moreLabel="View more"
-                className="contractors__more"
-                contentClassName="contractors__list"
-            >
-                {
-                    contractors.contractors
-                        .slice(18)
-                        .map((item) => (
-                            <span class="contractors__item">{item}</span>
-                        ))
-                }
-            </ReadMore>
-        </div>
-    </section>
-    <section
-        id="about"
-        class="section container about"
-        aria-labelledby="about-heading"
-    >
-        <div class="about__founder">
-            <div class="about__portrait">
-                <Image
-                    src={Jafar}
-                    alt={publicSite.owner}
-                    width={650}
-                    widths={[350, 650]}
-                    sizes="(max-width: 520px) 90vw, 470px"
-                    loading="lazy"
-                />
-            </div>
-            <div class="about__caption">
-                <div>
-                    <strong>{about.author.name}</strong>
-                    <span>{about.author.role}</span>
-                </div>
-                <div class="about__caption-logo">
-                    <Logo width="30" height="36" />
-                </div>
-            </div>
-        </div>
-        <div class="about__content">
-            <Badge number="04" title={about.badge} />
-            <h2 id="about-heading" set:html={about.title} />
-            <div
-                class="about__intro"
-                set:html={about.description.slice(
-                    0,
-                    about.description.indexOf("\n\n"),
-                )}
-            />
-            <ReadMore
-                contentId="about-more"
-                moreLabel={about.readMore}
-                contentClassName="about__full"
-                collapsedLines={5}
-                contentHtml={about.description.slice(
-                    about.description.indexOf("\n\n"),
-                )}
-            />
-        </div>
-    </section>
-    <section id="reason" class="reason" aria-labelledby="reason-heading">
-        <div class="container section">
-            <div class="section__heading">
-                <Badge number="05" title={reason.badge} />
-                <h2 id="reason-heading" set:html={reason.title} />
-            </div>
-            <div class="reason__grid">
-                {
-                    reason.content.map((item) => (
-                        <article class="reason__item">
-                            <span class="reason__icon" aria-hidden="true">
-                                <Icon name={item.icon} src="sprite" size={26} />
-                            </span>
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
-                        </article>
-                    ))
-                }
-            </div>
-        </div>
-    </section>
-    <section
-        id="process"
-        class="section container process"
-        aria-labelledby="process-heading"
-    >
-        <div>
-            <Badge number="06" title={process.badge} />
-            <h2 id="process-heading">{process.title}</h2>
-            <Button title={hero.cta} link={bookingLink} />
-        </div>
-        <div class="process__steps">
-            {
-                process.steps.map((step, i) => (
-                    <article>
-                        <span class="process__number">0{i + 1}</span>
-                        <div>
-                            <h3>{step.title}</h3>
-                            <p>{step.description}</p>
-                        </div>
-                    </article>
-                ))
-            }
-        </div>
-    </section>
-    <section
-        id="faq"
-        class="section container faq"
-        aria-labelledby="faq-heading"
-    >
-        <div>
-            <Badge number="07" title={faq.badge} />
-            <h2 id="faq-heading">{faq.title}</h2>
-        </div>
-        <div class="faq__list">
-            {
-                faq.content.map((item, i) => (
-                    <Accordion
-                        question={item.question}
-                        answer={item.answer}
-                        number={i}
-                    />
-                ))
-            }
-        </div>
-    </section>
-    <section id="cta" class="cta container" aria-labelledby="cta-heading">
-        <div class="cta__decoration" aria-hidden="true">
-            <Icon name="arrow-right-up" size={300} />
-        </div>
-        <Badge title={publicSite.name} />
-        <h2 id="cta-heading">{cta.title}</h2>
-        <p>{cta.description}</p>
-        <Button title={hero.cta} link={bookingLink} />
-    </section>
+
+    <!-- SECTIONS: problem, services, projects, process, pricing, about, reason, contractors, faq, cta -->
 
     <Fragment slot="bottom-style">
         <link
@@ -445,18 +134,6 @@ const serviceIcons = [
         />
         <noscript>
             <link rel="stylesheet" href={homeStyle} />
-            <style>
-                .read-more {
-                    display: none;
-                }
-                .services__more[hidden],
-                .about__full[hidden] {
-                    display: block;
-                }
-                .contractors__list[hidden] {
-                    display: flex;
-                }
-            </style>
         </noscript>
     </Fragment>
 </Layout>

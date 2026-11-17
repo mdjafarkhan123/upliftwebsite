@@ -2,85 +2,216 @@
 
 /* Shared footer, loaded separately by Layout.astro. Mobile styles are the base. */
 .footer {
-    padding-block: 75px 25px;
-    .brand {
-        align-items: flex-start;
+    padding: var(--space-fluid-2xl) 0 8px;
+
+    &__panel {
+        padding-block: 48px 24px;
     }
-    &__main {
+
+    &__top {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 33px;
-        padding-bottom: 35px;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 16px;
     }
 
-    &__main > div > p:not(.badge) {
-        max-width: 240px;
-        margin-top: var(--space-md);
-        color: var(--muted);
+    &__intro {
+        display: flex;
+        grid-column: 1 / -1;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
     }
 
-    &__main > div > a:not(.brand),
-    &__main > div > span {
-        display: block;
-        margin-bottom: var(--space-xsm);
-        color: var(--muted);
-        font-size: 1.3rem;
+    &__title {
+        max-width: 340px;
+        color: var(--color-heading-dark);
+        font-family: var(--font-heading);
+        font-size: var(--fs-lg);
+        font-weight: 500;
+        letter-spacing: -0.015em;
+        line-height: 1.35;
     }
 
-    &__main .badge {
-        margin-bottom: 22px;
+    &__book {
+        width: 100%;
+        min-height: 52px;
+
+        .btn__icon {
+            width: 40px;
+            height: 40px;
+        }
     }
 
-    &__main > div:last-child {
-        display: none;
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    &__contact {
+        grid-column: 1 / -1;
+    }
+
+    &__heading {
+        color: var(--color-text-subtle);
+        font-size: var(--fs-xsm);
+        font-weight: 600;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xsm);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        a {
+            color: var(--color-secondary);
+            transition: color var(--transition);
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    &__email {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--color-secondary);
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            color: var(--color-primary);
+        }
+
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+
+    &__app {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+        padding: var(--space-sm);
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--round-lg);
+        background: var(--color-white);
+    }
+
+    &__app-top {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xsm);
+    }
+
+    &__app-tile {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: var(--round-md);
+        background: var(--color-primary-soft);
+        color: var(--color-primary);
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__app-title {
+        color: var(--color-heading-dark);
+        font-family: var(--font-heading);
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    &__app-note {
+        color: var(--color-text-subtle);
+        font-size: var(--fs-xsm);
+        line-height: 1.4;
+    }
+
+    &__app-button {
+        width: 100%;
     }
 
     &__bottom {
         display: flex;
-        flex-direction: column;
-        gap: 17px;
-        padding-top: 25px;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        font-size: var(--fs-3xsm);
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-sm);
+        margin-top: 40px;
+        padding-top: var(--space-md);
+        border-top: 1px solid var(--color-border);
+        color: var(--color-text-dark);
+        font-size: var(--fs-xsm);
     }
 
-    &__bottom > div {
-        display: flex;
-        gap: 19px;
-    }
-}
+    &__top-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--color-secondary);
+        font-weight: 600;
 
-@include respond-to("mobile-xl") {
-    .footer {
-        &__main {
-            grid-template-columns: 1.3fr 1fr;
-            gap: 35px;
-            padding-bottom: 60px;
+        .icon {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    @include respond-to("tablet") {
+        padding-bottom: 16px;
+
+        &__panel {
+            padding-block: 72px 28px;
+        }
+
+        &__book {
+            width: auto;
+            min-height: 42px;
+
+            .btn__icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    @include respond-to("laptop") {
+        &__top {
+            grid-template-columns: minmax(0, 1fr) 170px 190px 260px;
+            gap: 48px;
+        }
+
+        &__intro,
+        &__contact {
+            grid-column: auto;
+        }
+
+        &__intro {
+            gap: var(--space-lg);
         }
 
         &__bottom {
-            flex-direction: row;
-            justify-content: space-between;
-            gap: 25px;
-            font-size: 1.1rem;
-        }
-
-        &__bottom > div {
-            gap: 25px;
+            margin-top: 64px;
+            padding-top: var(--space-lg);
         }
     }
 }
 
-@include respond-to("laptop") {
-    .footer {
-        &__main {
-            grid-template-columns: 1.8fr 1.2fr 0.7fr;
-            gap: 50px;
-        }
+/* Phones: leave room under the footer for the fixed "Book a call" bar. */
+body:has([data-hero-book]) .footer {
+    padding-bottom: 96px;
 
-        &__main > div:last-child {
-            display: block;
-        }
+    @include respond-to("laptop") {
+        padding-bottom: 16px;
     }
 }
