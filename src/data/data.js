@@ -96,10 +96,30 @@ export const hero = {
     sampleLabel: "Sample",
     feedLabel: "Sample notifications from the Uplift system",
     feed: [
-        { icon: "lu-phone-missed", title: "Missed call", detail: "(555) 014-2290 · 10:42 AM", time: "10:42" },
-        { icon: "lu-message-square-text", title: "Text sent automatically", detail: "“Sorry we missed you! How can we help?”", time: "10:42" },
-        { icon: "lu-user-plus", title: "New lead in your app", detail: "Dana R. · roof leak, wants a quote", time: "10:55" },
-        { icon: "lu-star", title: "Review request sent", detail: "Mike T. · job marked done", time: "Fri" },
+        {
+            icon: "lu-phone-missed",
+            title: "Missed call",
+            detail: "(555) 014-2290 · 10:42 AM",
+            time: "10:42",
+        },
+        {
+            icon: "lu-message-square-text",
+            title: "Text sent automatically",
+            detail: "“Sorry we missed you! How can we help?”",
+            time: "10:42",
+        },
+        {
+            icon: "lu-user-plus",
+            title: "New lead in your app",
+            detail: "Dana R. · roof leak, wants a quote",
+            time: "10:55",
+        },
+        {
+            icon: "lu-star",
+            title: "Review request sent",
+            detail: "Mike T. · job marked done",
+            time: "Fri",
+        },
     ],
     status: {
         title: "Running while you work",
@@ -113,7 +133,8 @@ export const hero = {
         value: "7–10",
         unit: "days to build",
         doneDays: 7,
-        caption: "From your first call to a live system. Then it runs in the background, no extra staff.",
+        caption:
+            "From your first call to a live system. Then it runs in the background, no extra staff.",
     },
 };
 
@@ -217,7 +238,8 @@ export const about = {
     // below keeps the full original text for the old draft page.
     lead: "Uplift Contractor was built to fix exactly this, for contractors who don't want to learn tech, just want to focus on the business.",
     body: "We help contractors grow and expand in the most easiest & affordable way possible by setting up the foundational marketing system. A high-converting, functional website, GBP setup and ongoing management, an easy-to-use business management app with AI-powered features, including a 5-Star Review Funnel, Missed Call Text Back, automated follow-ups, one-click marketing campaigns, and one simple place to track and organize leads, customers, quotes, jobs, scheduling, payments, and more.",
-    closing: "The whole thing runs quietly in the background. No extra effort, no extra staff needed. And behind it all, we handle the tech, keep everything running, and help whenever you need us.",
+    closing:
+        "The whole thing runs quietly in the background. No extra effort, no extra staff needed. And behind it all, we handle the tech, keep everything running, and help whenever you need us.",
     // Icon row: `icon` names a symbol in public/sprite.svg; `label` is read by screen readers.
     systemLabel: "What the system includes",
     system: [
@@ -279,13 +301,34 @@ export const services = {
                 "<strong>Mobile Friendly & Super  Fast.</strong> 87% of people visit websites on their phones. We make sure your business looks extra sleek on mobile, and load speed? Always A+ fast",
             ],
             sample: {
-                contact: { initials: "MK", name: "Mark K.", meta: "Website enquiry · gutters" },
+                contact: {
+                    initials: "MK",
+                    name: "Mark K.",
+                    meta: "Website enquiry · gutters",
+                },
                 messages: [
-                    { type: "note", icon: "lu-globe", text: "New website enquiry · 8:15 AM" },
-                    { type: "in", text: "Hi, my gutters are overflowing. Can someone check them next week?" },
-                    { type: "out", text: "Hi Mark, thanks for reaching out to Pine Ridge Roofing! Does Tuesday at 10 work?" },
-                    { type: "in", text: "Tuesday works. Thanks for the quick reply!" },
-                    { type: "note", icon: "lu-user-plus", text: "Saved as a new lead" },
+                    {
+                        type: "note",
+                        icon: "lu-globe",
+                        text: "New website enquiry · 8:15 AM",
+                    },
+                    {
+                        type: "in",
+                        text: "Hi, my gutters are overflowing. Can someone check them next week?",
+                    },
+                    {
+                        type: "out",
+                        text: "Hi Mark, thanks for reaching out to Pine Ridge Roofing! Does Tuesday at 10 work?",
+                    },
+                    {
+                        type: "in",
+                        text: "Tuesday works. Thanks for the quick reply!",
+                    },
+                    {
+                        type: "note",
+                        icon: "lu-user-plus",
+                        text: "Saved as a new lead",
+                    },
                 ],
             },
         },
@@ -300,12 +343,30 @@ export const services = {
                 "<strong>Stop worrying about bad reviews.</strong> Unsure if you should ask for a review? We’ll take the guesswork out by guiding your customer to leave a 5-star review!",
             ],
             sample: {
-                contact: { initials: "MT", name: "Mike T.", meta: "Job done · roof repair" },
+                contact: {
+                    initials: "MT",
+                    name: "Mike T.",
+                    meta: "Job done · roof repair",
+                },
                 messages: [
-                    { type: "note", icon: "lu-circle-check", text: "Job marked done · 4:30 PM" },
-                    { type: "out", text: "Thanks for choosing Pine Ridge Roofing, Mike! How did we do? Leave us a quick review here." },
-                    { type: "in", text: "Great crew, done in one day. Just left you 5 stars!" },
-                    { type: "note", icon: "lu-star", text: "New 5-star review" },
+                    {
+                        type: "note",
+                        icon: "lu-circle-check",
+                        text: "Job marked done · 4:30 PM",
+                    },
+                    {
+                        type: "out",
+                        text: "Thanks for choosing Pine Ridge Roofing, Mike! How did we do? Leave us a quick review here.",
+                    },
+                    {
+                        type: "in",
+                        text: "Great crew, done in one day. Just left you 5 stars!",
+                    },
+                    {
+                        type: "note",
+                        icon: "lu-star",
+                        text: "New 5-star review",
+                    },
                 ],
             },
         },
@@ -320,13 +381,34 @@ export const services = {
                 "<strong>Be available 24/7.</strong> Missed a call after hours? No worries, we’ll make sure everyone feels loved even while you’re getting your beauty sleep.",
             ],
             sample: {
-                contact: { initials: "DR", name: "Dana R.", meta: "New lead · roofing" },
+                contact: {
+                    initials: "DR",
+                    name: "Dana R.",
+                    meta: "New lead · roofing",
+                },
                 messages: [
-                    { type: "alert", icon: "lu-phone-missed", text: "Missed call · 10:42 AM" },
-                    { type: "out", text: "Hi, this is Pine Ridge Roofing. Sorry we missed your call! What can we help with?" },
-                    { type: "in", text: "Leak over the garage after the storm. Can someone look this week?" },
-                    { type: "out", text: "Yes! Does Thursday at 9 work? I'll send the address form." },
-                    { type: "note", icon: "lu-user-plus", text: "Saved as a new lead" },
+                    {
+                        type: "alert",
+                        icon: "lu-phone-missed",
+                        text: "Missed call · 10:42 AM",
+                    },
+                    {
+                        type: "out",
+                        text: "Hi, this is Pine Ridge Roofing. Sorry we missed your call! What can we help with?",
+                    },
+                    {
+                        type: "in",
+                        text: "Leak over the garage after the storm. Can someone look this week?",
+                    },
+                    {
+                        type: "out",
+                        text: "Yes! Does Thursday at 9 work? I'll send the address form.",
+                    },
+                    {
+                        type: "note",
+                        icon: "lu-user-plus",
+                        text: "Saved as a new lead",
+                    },
                 ],
             },
         },
@@ -342,12 +424,30 @@ export const services = {
                 "<strong>Marketing Campaigns At Your Fingertips</strong> Just click a button and we'll take care of the rest. No need to hire a marketing team.",
             ],
             sample: {
-                contact: { initials: "SL", name: "Sarah L.", meta: "Past customer · siding" },
+                contact: {
+                    initials: "SL",
+                    name: "Sarah L.",
+                    meta: "Past customer · siding",
+                },
                 messages: [
-                    { type: "note", icon: "lu-message-square-text", text: "Spring campaign sent · 9:00 AM" },
-                    { type: "out", text: "Hi Sarah, it's Pine Ridge Roofing. Past customers get a free roof check this spring. Want a spot?" },
-                    { type: "in", text: "Yes please! My neighbour wants one too." },
-                    { type: "note", icon: "lu-user-plus", text: "2 bookings from this campaign" },
+                    {
+                        type: "note",
+                        icon: "lu-message-square-text",
+                        text: "Spring campaign sent · 9:00 AM",
+                    },
+                    {
+                        type: "out",
+                        text: "Hi Sarah, it's Pine Ridge Roofing. Past customers get a free roof check this spring. Want a spot?",
+                    },
+                    {
+                        type: "in",
+                        text: "Yes please! My neighbour wants one too.",
+                    },
+                    {
+                        type: "note",
+                        icon: "lu-user-plus",
+                        text: "2 bookings from this campaign",
+                    },
                 ],
             },
         },
@@ -363,12 +463,30 @@ export const services = {
                 `<strong>We Handle It, You Just Do The Work.</strong> Services, photos, posts, business details... Yeah, we know you'd rather be on a job site. Leave the Google stuff to us. `,
             ],
             sample: {
-                contact: { initials: "JP", name: "Jen P.", meta: "Found you on Google" },
+                contact: {
+                    initials: "JP",
+                    name: "Jen P.",
+                    meta: "Found you on Google",
+                },
                 messages: [
-                    { type: "note", icon: "lu-star", text: "Profile updated · new photos" },
-                    { type: "in", text: "Hi, saw your photos on Google. Do you install metal roofs?" },
-                    { type: "out", text: "We do! Want a free quote this week? Friday morning is open." },
-                    { type: "note", icon: "lu-user-plus", text: "Saved as a new lead" },
+                    {
+                        type: "note",
+                        icon: "lu-star",
+                        text: "Profile updated · new photos",
+                    },
+                    {
+                        type: "in",
+                        text: "Hi, saw your photos on Google. Do you install metal roofs?",
+                    },
+                    {
+                        type: "out",
+                        text: "We do! Want a free quote this week? Friday morning is open.",
+                    },
+                    {
+                        type: "note",
+                        icon: "lu-user-plus",
+                        text: "Saved as a new lead",
+                    },
                 ],
             },
         },
@@ -394,13 +512,32 @@ export const services = {
                 "<strong>We Set It Up, You Run It.</strong> No tech headaches. We configure everything and walk you through it so you actually use it, not just pay for it.",
             ],
             sample: {
-                contact: { initials: "JB", name: "Jake B.", meta: "Customer · roof replacement" },
+                contact: {
+                    initials: "JB",
+                    name: "Jake B.",
+                    meta: "Customer · roof replacement",
+                },
                 messages: [
-                    { type: "note", icon: "lu-circle-check", text: "Quote accepted · 9:05 AM" },
-                    { type: "out", text: "Thanks Jake! You're booked for Monday at 8. We'll text you a reminder the day before." },
-                    { type: "note", icon: "lu-message-square-text", text: "Reminder sent · Sun 6 PM" },
+                    {
+                        type: "note",
+                        icon: "lu-circle-check",
+                        text: "Quote accepted · 9:05 AM",
+                    },
+                    {
+                        type: "out",
+                        text: "Thanks Jake! You're booked for Monday at 8. We'll text you a reminder the day before.",
+                    },
+                    {
+                        type: "note",
+                        icon: "lu-message-square-text",
+                        text: "Reminder sent · Sun 6 PM",
+                    },
                     { type: "in", text: "Got it, see you tomorrow!" },
-                    { type: "note", icon: "lu-circle-check", text: "Invoice paid" },
+                    {
+                        type: "note",
+                        icon: "lu-circle-check",
+                        text: "Invoice paid",
+                    },
                 ],
             },
         },
@@ -408,10 +545,9 @@ export const services = {
 };
 
 export const projects = {
-    badge: "Sample work",
-    title: "What your new website could look like",
-    description:
-        "Websites we've designed and built.",
+    badge: "Our works",
+    title: "Explore our featured projects",
+    description: "Websites we've designed and built.",
     viewLabel: "View project",
     imageAlt: "Website design for",
     showMore: "Show more projects",
@@ -554,14 +690,26 @@ export const pricing = {
     description:
         "No tiers to compare and no surprise add-ons. You pay one setup fee and one monthly price. You stay because it works, not because a contract says so.",
     perks: [
-        { icon: "ph-file-x", title: "No contract", description: "Cancel any month. No lock-in." },
-        { icon: "ph-clock", title: "Live in 7–10 days", description: "From your first call to a working system." },
-        { icon: "ph-wrench", title: "We handle the tech", description: "Setup, updates and help when you need it." },
+        {
+            icon: "ph-file-x",
+            title: "No contract",
+            description: "Cancel any month. No lock-in.",
+        },
+        {
+            icon: "ph-clock",
+            title: "Live in 7–10 days",
+            description: "From your first call to a working system.",
+        },
+        {
+            icon: "ph-wrench",
+            title: "We handle the tech",
+            description: "Setup, updates and help when you need it.",
+        },
     ],
     plan: {
         name: "The Uplift system",
         tag: "Monthly · no contract",
-        price: "$XXX",
+        price: "$100",
         period: "/month",
         setup: "+ $XXX one-time setup",
         featuresTitle: "Everything in the system",
@@ -677,136 +825,139 @@ export const navigation = {
 
 // Public legal copy, approved source: docs/legal-pages-update.md.
 export const legalPages = {
-    "privacy": {
-        "title": "Privacy Policy",
-        "description": "What we collect, why we need it, and what you can ask us to do with it.",
-        "eyebrow": "Legal · Last updated 28 October 2026",
-        "path": "/privacy",
-        "sections": [
+    privacy: {
+        title: "Privacy Policy",
+        description:
+            "What we collect, why we need it, and what you can ask us to do with it.",
+        eyebrow: "Legal · Last updated 28 October 2026",
+        path: "/privacy",
+        sections: [
             {
-                "id": "privacy-who-we-are",
-                "title": "Who we are",
-                "body": "<p>Uplift Contractor is a CRM and marketing platform for contractors, run by Jafar Khan from Savar, Dhaka. If you have a question about your information, email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> or call <a href=\"tel:+8801834969563\">+8801834969563</a>.</p>\n<p>Contractors use our platform to keep in touch with their own customers. When they do, the contractor decides what to keep about those customers. We store it for them and use it only to run the service they signed up for.</p>"
+                id: "privacy-who-we-are",
+                title: "Who we are",
+                body: '<p>Uplift Contractor is a CRM and marketing platform for contractors, run by Jafar Khan from Savar, Dhaka. If you have a question about your information, email <a href="mailto:info@upliftcontractor.com">info@upliftcontractor.com</a> or call <a href="tel:+8801834969563">+8801834969563</a>.</p>\n<p>Contractors use our platform to keep in touch with their own customers. When they do, the contractor decides what to keep about those customers. We store it for them and use it only to run the service they signed up for.</p>',
             },
             {
-                "id": "privacy-what-we-collect",
-                "title": "What we collect",
-                "body": "<ul><li><strong>What you tell us.</strong> Your name, business name, email, phone number and anything you write to us.</li><li><strong>What you put in the platform.</strong> Your customers, jobs, quotes, invoices, forms and messages, entered by you or your team.</li><li><strong>Facebook Messenger messages,</strong> if your business connects a Facebook Page. The details are below.</li><li><strong>Payment status.</strong> We know whether a payment went through. Card numbers are typed on Stripe's page and never reach us.</li><li><strong>Security basics.</strong> IP address, browser and device type, and spam-check results, so we can keep the site and your account safe.</li></ul>"
+                id: "privacy-what-we-collect",
+                title: "What we collect",
+                body: "<ul><li><strong>What you tell us.</strong> Your name, business name, email, phone number and anything you write to us.</li><li><strong>What you put in the platform.</strong> Your customers, jobs, quotes, invoices, forms and messages, entered by you or your team.</li><li><strong>Facebook Messenger messages,</strong> if your business connects a Facebook Page. The details are below.</li><li><strong>Payment status.</strong> We know whether a payment went through. Card numbers are typed on Stripe's page and never reach us.</li><li><strong>Security basics.</strong> IP address, browser and device type, and spam-check results, so we can keep the site and your account safe.</li></ul>",
             },
             {
-                "id": "privacy-how-we-use-it",
-                "title": "How we use it",
-                "body": "<p>To run the platform, answer your questions, manage accounts and payments, deliver your messages, keep the service secure, and meet our legal duties.</p>\n<p>We don't sell anyone's information. This website has no Google Analytics, ad pixels, Hotjar or similar tracking.</p>"
+                id: "privacy-how-we-use-it",
+                title: "How we use it",
+                body: "<p>To run the platform, answer your questions, manage accounts and payments, deliver your messages, keep the service secure, and meet our legal duties.</p>\n<p>We don't sell anyone's information. This website has no Google Analytics, ad pixels, Hotjar or similar tracking.</p>",
             },
             {
-                "id": "privacy-facebook-messenger",
-                "title": "Facebook Messenger",
-                "body": "<p>A contractor can connect their business's Facebook Page so their team can read and answer Messenger chats in the same inbox as their texts and emails.</p>\n<p><strong>When a Page is connected,</strong> Facebook gives us the Page's name and ID, the permissions the contractor approved, and a key that lets us send and receive messages for that Page. We keep the key encrypted.</p>\n<p><strong>When someone messages that Page,</strong> we receive the message, the time it was sent, a note of any photo or file attached, and an ID number Facebook creates for that person on that Page only. We also see whether the contractor's replies were delivered and read. We receive the person's name and profile photo only if Facebook allows it; until then they appear as \"Facebook user\".</p>\n<p><strong>We use this only</strong> to show the contractor their conversations, send the replies their team writes, and keep the connection working. People write every reply. We don't use Messenger data for ads, we don't sell it, and we follow Meta's Platform Terms.</p>\n<p><strong>When a contractor disconnects the Page,</strong> new messages stop coming in and we erase the key at once. Earlier conversations stay in the contractor's records, like their other customer notes, until the contractor deletes them. The contractor can also remove our access from Facebook: Settings → Business Integrations → Uplift Contractor → Remove.</p>\n<p>To have your Messenger messages deleted, see our <a href=\"/data-deletion\">Data deletion</a> page.</p>"
+                id: "privacy-facebook-messenger",
+                title: "Facebook Messenger",
+                body: "<p>A contractor can connect their business's Facebook Page so their team can read and answer Messenger chats in the same inbox as their texts and emails.</p>\n<p><strong>When a Page is connected,</strong> Facebook gives us the Page's name and ID, the permissions the contractor approved, and a key that lets us send and receive messages for that Page. We keep the key encrypted.</p>\n<p><strong>When someone messages that Page,</strong> we receive the message, the time it was sent, a note of any photo or file attached, and an ID number Facebook creates for that person on that Page only. We also see whether the contractor's replies were delivered and read. We receive the person's name and profile photo only if Facebook allows it; until then they appear as \"Facebook user\".</p>\n<p><strong>We use this only</strong> to show the contractor their conversations, send the replies their team writes, and keep the connection working. People write every reply. We don't use Messenger data for ads, we don't sell it, and we follow Meta's Platform Terms.</p>\n<p><strong>When a contractor disconnects the Page,</strong> new messages stop coming in and we erase the key at once. Earlier conversations stay in the contractor's records, like their other customer notes, until the contractor deletes them. The contractor can also remove our access from Facebook: Settings → Business Integrations → Uplift Contractor → Remove.</p>\n<p>To have your Messenger messages deleted, see our <a href=\"/data-deletion\">Data deletion</a> page.</p>",
             },
             {
-                "id": "privacy-who-helps-us-run-the-service",
-                "title": "Who helps us run the service",
-                "body": "<ul><li>Supabase stores accounts, forms and customer records.</li><li>Cloudflare protects the website, checks for spam, delivers pages and stores files.</li><li>Brevo and Amazon SES send and receive email.</li><li>Twilio sends and receives text messages for contractors.</li><li>Meta carries Facebook Messenger messages for contractors who connect a Page.</li><li>Stripe handles online payments.</li><li>Mapbox powers maps and address lookups.</li></ul>\n<p>If we add a company that will handle real customer information, we update this list first.</p>"
+                id: "privacy-who-helps-us-run-the-service",
+                title: "Who helps us run the service",
+                body: "<ul><li>Supabase stores accounts, forms and customer records.</li><li>Cloudflare protects the website, checks for spam, delivers pages and stores files.</li><li>Brevo and Amazon SES send and receive email.</li><li>Twilio sends and receives text messages for contractors.</li><li>Meta carries Facebook Messenger messages for contractors who connect a Page.</li><li>Stripe handles online payments.</li><li>Mapbox powers maps and address lookups.</li></ul>\n<p>If we add a company that will handle real customer information, we update this list first.</p>",
             },
             {
-                "id": "privacy-text-messages-from-uplift-contractor",
-                "title": "Text messages from Uplift Contractor",
-                "body": "<div class=\"legal-page__notice\"><p>We don't send our own text messages yet. If we start the Uplift Contractor SMS Program, joining will be optional and never required to buy from us. We will not sell or share SMS consent or phone numbers with third parties or affiliates for their marketing.</p></div>\n<p>Once it runs, people who opt in may get account, support, appointment, service and promotional messages. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Full rules are in the SMS Program section of our <a href=\"/terms#sms-program\">Terms</a>.</p>"
+                id: "privacy-text-messages-from-uplift-contractor",
+                title: "Text messages from Uplift Contractor",
+                body: '<div class="legal-page__notice"><p>We don\'t send our own text messages yet. If we start the Uplift Contractor SMS Program, joining will be optional and never required to buy from us. We will not sell or share SMS consent or phone numbers with third parties or affiliates for their marketing.</p></div>\n<p>Once it runs, people who opt in may get account, support, appointment, service and promotional messages. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Full rules are in the SMS Program section of our <a href="/terms#sms-program">Terms</a>.</p>',
             },
             {
-                "id": "privacy-how-long-we-keep-it-and-how-we-protect-it",
-                "title": "How long we keep it, and how we protect it",
-                "body": "<p>We keep information while we need it to run the service, follow the law, settle disputes and enforce our agreements. We use access controls and encryption, and keys for connected accounts such as Facebook Pages are always stored encrypted. No system is perfectly secure, but we work to keep yours safe.</p>"
+                id: "privacy-how-long-we-keep-it-and-how-we-protect-it",
+                title: "How long we keep it, and how we protect it",
+                body: "<p>We keep information while we need it to run the service, follow the law, settle disputes and enforce our agreements. We use access controls and encryption, and keys for connected accounts such as Facebook Pages are always stored encrypted. No system is perfectly secure, but we work to keep yours safe.</p>",
             },
             {
-                "id": "privacy-your-choices",
-                "title": "Your choices",
-                "body": "<p>If you're a customer of a contractor who uses our platform, ask that contractor first. They can give you a copy of your information or delete it, right in the platform.</p>\n<p>You can also ask us to see, correct or delete the information we hold about you. Email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> and we will answer within 30 days. Some records, such as invoices, may need to be kept for legal reasons; if so, we tell you which and why.</p>\n<p>Our <a href=\"/data-deletion\">Data deletion</a> page has the steps, including for Facebook Messenger messages.</p>"
+                id: "privacy-your-choices",
+                title: "Your choices",
+                body: '<p>If you\'re a customer of a contractor who uses our platform, ask that contractor first. They can give you a copy of your information or delete it, right in the platform.</p>\n<p>You can also ask us to see, correct or delete the information we hold about you. Email <a href="mailto:info@upliftcontractor.com">info@upliftcontractor.com</a> and we will answer within 30 days. Some records, such as invoices, may need to be kept for legal reasons; if so, we tell you which and why.</p>\n<p>Our <a href="/data-deletion">Data deletion</a> page has the steps, including for Facebook Messenger messages.</p>',
             },
             {
-                "id": "privacy-changes",
-                "title": "Changes",
-                "body": "<p>When our practices change, we update this page and the date at the top.</p>"
-            }
-        ]
+                id: "privacy-changes",
+                title: "Changes",
+                body: "<p>When our practices change, we update this page and the date at the top.</p>",
+            },
+        ],
     },
-    "terms": {
-        "title": "Terms & Conditions",
-        "description": "The rules for using the Uplift Contractor website, platform and services.",
-        "eyebrow": "Legal · Last updated 23 October 2026",
-        "path": "/terms",
-        "sections": [
+    terms: {
+        title: "Terms & Conditions",
+        description:
+            "The rules for using the Uplift Contractor website, platform and services.",
+        eyebrow: "Legal · Last updated 23 October 2026",
+        path: "/terms",
+        sections: [
             {
-                "id": "terms-our-services-and-your-account",
-                "title": "Our services and your account",
-                "body": "<p>We build websites and provide a CRM, marketing and messaging tools for contractors and home service businesses. What you get, and what it costs, is set out in your order form, plan or agreement.</p>\n<p>Keep your account details accurate and your login private. You are responsible for what people on your team do in your account.</p>"
+                id: "terms-our-services-and-your-account",
+                title: "Our services and your account",
+                body: "<p>We build websites and provide a CRM, marketing and messaging tools for contractors and home service businesses. What you get, and what it costs, is set out in your order form, plan or agreement.</p>\n<p>Keep your account details accurate and your login private. You are responsible for what people on your team do in your account.</p>",
             },
             {
-                "id": "terms-using-the-platform-fairly",
-                "title": "Using the platform fairly",
-                "body": "<p>You're responsible for the contacts, information and messages you put in the platform, and for having permission to use them. Follow the law, phone carrier rules, and the rules of any service you connect.</p>\n<p>Don't use the platform to send unlawful, misleading, abusive, fraudulent or unwanted messages, to break into anything, to disrupt the service, or to harm anyone.</p>"
+                id: "terms-using-the-platform-fairly",
+                title: "Using the platform fairly",
+                body: "<p>You're responsible for the contacts, information and messages you put in the platform, and for having permission to use them. Follow the law, phone carrier rules, and the rules of any service you connect.</p>\n<p>Don't use the platform to send unlawful, misleading, abusive, fraudulent or unwanted messages, to break into anything, to disrupt the service, or to harm anyone.</p>",
             },
             {
-                "id": "terms-facebook-messenger",
-                "title": "Facebook Messenger",
-                "body": "<p>By connecting a Facebook Page, you confirm you're allowed to manage it and agree to follow Meta's Terms, Messenger Platform Policy and Community Standards. Facebook lets a business reply only within 24 hours of the customer's last message, so the platform blocks later replies. Don't send promotions outside that window. You can disconnect the Page whenever you like. Our <a href=\"/privacy\">Privacy Policy</a> explains how we handle Messenger messages.</p>"
+                id: "terms-facebook-messenger",
+                title: "Facebook Messenger",
+                body: "<p>By connecting a Facebook Page, you confirm you're allowed to manage it and agree to follow Meta's Terms, Messenger Platform Policy and Community Standards. Facebook lets a business reply only within 24 hours of the customer's last message, so the platform blocks later replies. Don't send promotions outside that window. You can disconnect the Page whenever you like. Our <a href=\"/privacy\">Privacy Policy</a> explains how we handle Messenger messages.</p>",
             },
             {
-                "id": "terms-payments-and-cancelling",
-                "title": "Payments and cancelling",
-                "body": "<p>Prices, billing dates and renewals are in your order form, plan or agreement. Cards are paid on Stripe's secure page.</p>\n<p>To cancel, or to check when a cancellation takes effect, email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a>. Cancelling doesn't remove fees already owed under your agreement.</p>"
+                id: "terms-payments-and-cancelling",
+                title: "Payments and cancelling",
+                body: "<p>Prices, billing dates and renewals are in your order form, plan or agreement. Cards are paid on Stripe's secure page.</p>\n<p>To cancel, or to check when a cancellation takes effect, email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a>. Cancelling doesn't remove fees already owed under your agreement.</p>",
             },
             {
-                "id": "terms-uplift-contractor-sms-program",
-                "title": "Uplift Contractor SMS Program",
-                "body": "<div class=\"legal-page__notice\"><p>Not active yet. These rules apply once we start it.</p></div>\n<p>By ticking a separate, optional SMS box where you enter your phone number, you agree to receive text messages from Uplift Contractor. You never have to agree in order to buy from us or use our services.</p>\n<ul><li>Message types: account, support, appointment, service and promotional messages.</li><li>Frequency: message frequency varies.</li><li>Cost: message and data rates may apply.</li><li>Opt out: reply STOP at any time.</li><li>Help: reply HELP, or contact <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> or <a href=\"tel:+8801834969563\">+8801834969563</a>.</li><li>Privacy: SMS consent and phone numbers are not sold or shared with third parties or affiliates for their marketing.</li><li>Carriers are not liable for delayed or undelivered messages.</li></ul>\n<p>See our <a href=\"/privacy\">Privacy Policy</a> for how we handle your data.</p>",
-                "anchor": "sms-program"
+                id: "terms-uplift-contractor-sms-program",
+                title: "Uplift Contractor SMS Program",
+                body: '<div class="legal-page__notice"><p>Not active yet. These rules apply once we start it.</p></div>\n<p>By ticking a separate, optional SMS box where you enter your phone number, you agree to receive text messages from Uplift Contractor. You never have to agree in order to buy from us or use our services.</p>\n<ul><li>Message types: account, support, appointment, service and promotional messages.</li><li>Frequency: message frequency varies.</li><li>Cost: message and data rates may apply.</li><li>Opt out: reply STOP at any time.</li><li>Help: reply HELP, or contact <a href="mailto:info@upliftcontractor.com">info@upliftcontractor.com</a> or <a href="tel:+8801834969563">+8801834969563</a>.</li><li>Privacy: SMS consent and phone numbers are not sold or shared with third parties or affiliates for their marketing.</li><li>Carriers are not liable for delayed or undelivered messages.</li></ul>\n<p>See our <a href="/privacy">Privacy Policy</a> for how we handle your data.</p>',
+                anchor: "sms-program",
             },
             {
-                "id": "terms-other-companies-services",
-                "title": "Other companies' services",
-                "body": "<p>Some features rely on other companies for payments, email, text messages, Facebook Messenger, maps, hosting, security and storage. Their service and terms can affect those features. Our <a href=\"/privacy\">Privacy Policy</a> lists who they are.</p>"
+                id: "terms-other-companies-services",
+                title: "Other companies' services",
+                body: '<p>Some features rely on other companies for payments, email, text messages, Facebook Messenger, maps, hosting, security and storage. Their service and terms can affect those features. Our <a href="/privacy">Privacy Policy</a> lists who they are.</p>',
             },
             {
-                "id": "terms-changes-and-questions",
-                "title": "Changes and questions",
-                "body": "<p>When these terms change, we update this page and the date at the top. Questions: <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a>.</p>"
-            }
-        ]
+                id: "terms-changes-and-questions",
+                title: "Changes and questions",
+                body: '<p>When these terms change, we update this page and the date at the top. Questions: <a href="mailto:info@upliftcontractor.com">info@upliftcontractor.com</a>.</p>',
+            },
+        ],
     },
-    "data_deletion": {
-        "title": "Data deletion",
-        "description": "How to get a copy of your information or have it deleted, whether you're a customer of a business that uses Uplift Contractor, someone who messaged a business on Facebook, or a business on our platform.",
-        "eyebrow": "Legal · Last updated 28 October 2026",
-        "path": "/data-deletion",
-        "sections": [
+    data_deletion: {
+        title: "Data deletion",
+        description:
+            "How to get a copy of your information or have it deleted, whether you're a customer of a business that uses Uplift Contractor, someone who messaged a business on Facebook, or a business on our platform.",
+        eyebrow: "Legal · Last updated 28 October 2026",
+        path: "/data-deletion",
+        sections: [
             {
-                "id": "data-deletion-youre-a-customer-of-a-business-that-uses-uplift-contractor",
-                "title": "You're a customer of a business that uses Uplift Contractor",
-                "body": "<p>Contractors use our platform to keep records of their own customers, and the contractor decides what happens to those records. So the quickest way is to ask the business you dealt with. In Uplift Contractor it can:</p>\n<ul><li>send you a copy of everything it holds about you, including your messages and files;</li><li>delete your information permanently.</li></ul>\n<p>A few things stay after a delete:</p>\n<ul><li><strong>Invoices and payments,</strong> because tax law says businesses must keep them.</li><li><strong>Your \"don't contact me\" choice.</strong> If you asked the business to stop texting or emailing you, we keep a scrambled code of your phone number or email, with no name, so no one texts or emails you again by mistake.</li></ul>\n<p>If you can't reach the business, or it doesn't answer, email us. We pass your request to the business, or act on it ourselves if the business has closed or doesn't reply.</p>"
+                id: "data-deletion-youre-a-customer-of-a-business-that-uses-uplift-contractor",
+                title: "You're a customer of a business that uses Uplift Contractor",
+                body: "<p>Contractors use our platform to keep records of their own customers, and the contractor decides what happens to those records. So the quickest way is to ask the business you dealt with. In Uplift Contractor it can:</p>\n<ul><li>send you a copy of everything it holds about you, including your messages and files;</li><li>delete your information permanently.</li></ul>\n<p>A few things stay after a delete:</p>\n<ul><li><strong>Invoices and payments,</strong> because tax law says businesses must keep them.</li><li><strong>Your \"don't contact me\" choice.</strong> If you asked the business to stop texting or emailing you, we keep a scrambled code of your phone number or email, with no name, so no one texts or emails you again by mistake.</li></ul>\n<p>If you can't reach the business, or it doesn't answer, email us. We pass your request to the business, or act on it ourselves if the business has closed or doesn't reply.</p>",
             },
             {
-                "id": "data-deletion-you-messaged-a-business-on-facebook",
-                "title": "You messaged a business on Facebook",
-                "body": "<p>If that business uses Uplift Contractor, your messages are stored in its inbox with us. To have them deleted:</p>\n<ol><li>Email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> with the subject \"Delete my data\".</li><li>Tell us which Facebook Page you messaged, the name on your Facebook account, and roughly when.</li><li>We delete your messages and the Facebook ID linked to them, email you to confirm, and let the business know.</li></ol>\n<p>You can also ask the business itself. It can delete your conversation from its inbox straight away.</p>"
+                id: "data-deletion-you-messaged-a-business-on-facebook",
+                title: "You messaged a business on Facebook",
+                body: '<p>If that business uses Uplift Contractor, your messages are stored in its inbox with us. To have them deleted:</p>\n<ol><li>Email <a href="mailto:info@upliftcontractor.com">info@upliftcontractor.com</a> with the subject "Delete my data".</li><li>Tell us which Facebook Page you messaged, the name on your Facebook account, and roughly when.</li><li>We delete your messages and the Facebook ID linked to them, email you to confirm, and let the business know.</li></ol>\n<p>You can also ask the business itself. It can delete your conversation from its inbox straight away.</p>',
             },
             {
-                "id": "data-deletion-your-business-uses-uplift-contractor",
-                "title": "Your business uses Uplift Contractor",
-                "body": "<p>Owners and admins can do all of this themselves. Other team members can if you give them permission in Team access.</p>\n<ul><li><strong>Delete a customer.</strong> On the customer's page, open the <strong>⋯</strong> menu and choose <strong>Delete client</strong>. For 30 days you can bring them back from <strong>Recently Deleted</strong>, with everything as it was. After that they are deleted for good.</li><li><strong>Delete a customer at once,</strong> when they asked you to. In the same box, press <strong>They asked us to delete their information</strong> and type the customer's name to confirm. This can't be undone, and you get a receipt to send them.</li><li><strong>Delete a conversation.</strong> In the inbox, open the conversation's <strong>⋯</strong> menu and choose <strong>Delete conversation</strong>. It's gone for your whole team and can't be undone. The customer keeps their own copy on their phone, in their email or on Facebook.</li><li><strong>Give a customer a copy.</strong> On the customer's page, open the <strong>⋯</strong> menu and choose <strong>Download client data</strong>.</li><li><strong>Download everything.</strong> Settings → Data &amp; privacy → <strong>Export all business data</strong> (owner only). We email you a link when the package is ready.</li><li><strong>Disconnect your Facebook Page.</strong> Settings → Communications → Messenger → <strong>Disconnect</strong>. Messages stop and we erase the Page's key at once. To remove us from Facebook as well: Facebook Settings → Business Integrations → Uplift Contractor → Remove.</li></ul>\n<p>Invoices and payments stay after any delete, because tax law says you must keep them.</p>"
+                id: "data-deletion-your-business-uses-uplift-contractor",
+                title: "Your business uses Uplift Contractor",
+                body: "<p>Owners and admins can do all of this themselves. Other team members can if you give them permission in Team access.</p>\n<ul><li><strong>Delete a customer.</strong> On the customer's page, open the <strong>⋯</strong> menu and choose <strong>Delete client</strong>. For 30 days you can bring them back from <strong>Recently Deleted</strong>, with everything as it was. After that they are deleted for good.</li><li><strong>Delete a customer at once,</strong> when they asked you to. In the same box, press <strong>They asked us to delete their information</strong> and type the customer's name to confirm. This can't be undone, and you get a receipt to send them.</li><li><strong>Delete a conversation.</strong> In the inbox, open the conversation's <strong>⋯</strong> menu and choose <strong>Delete conversation</strong>. It's gone for your whole team and can't be undone. The customer keeps their own copy on their phone, in their email or on Facebook.</li><li><strong>Give a customer a copy.</strong> On the customer's page, open the <strong>⋯</strong> menu and choose <strong>Download client data</strong>.</li><li><strong>Download everything.</strong> Settings → Data &amp; privacy → <strong>Export all business data</strong> (owner only). We email you a link when the package is ready.</li><li><strong>Disconnect your Facebook Page.</strong> Settings → Communications → Messenger → <strong>Disconnect</strong>. Messages stop and we erase the Page's key at once. To remove us from Facebook as well: Facebook Settings → Business Integrations → Uplift Contractor → Remove.</li></ul>\n<p>Invoices and payments stay after any delete, because tax law says you must keep them.</p>",
             },
             {
-                "id": "data-deletion-anything-else",
-                "title": "Anything else",
-                "body": "<p>To get a copy of, or delete, any other information we hold about you, email <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a>.</p>"
+                id: "data-deletion-anything-else",
+                title: "Anything else",
+                body: '<p>To get a copy of, or delete, any other information we hold about you, email <a href="mailto:info@upliftcontractor.com">info@upliftcontractor.com</a>.</p>',
             },
             {
-                "id": "data-deletion-what-happens-next",
-                "title": "What happens next",
-                "body": "<ul><li>We reply within 3 business days and finish within 30 days.</li><li>We may ask you to prove it's you, so no one else can see or delete your information.</li><li>If your request is about a business's customer records, we pass it to that business and tell you we've done so.</li><li>We keep a short note that your request was made and completed, plus anything the law says we must keep.</li></ul>\n<p>Questions? <a href=\"mailto:info@upliftcontractor.com\">info@upliftcontractor.com</a> · <a href=\"tel:+8801834969563\">+8801834969563</a></p>"
-            }
-        ]
-    }
+                id: "data-deletion-what-happens-next",
+                title: "What happens next",
+                body: '<ul><li>We reply within 3 business days and finish within 30 days.</li><li>We may ask you to prove it\'s you, so no one else can see or delete your information.</li><li>If your request is about a business\'s customer records, we pass it to that business and tell you we\'ve done so.</li><li>We keep a short note that your request was made and completed, plus anything the law says we must keep.</li></ul>\n<p>Questions? <a href="mailto:info@upliftcontractor.com">info@upliftcontractor.com</a> · <a href="tel:+8801834969563">+8801834969563</a></p>',
+            },
+        ],
+    },
 };
 
 // "Download the app" page at /app. Approved design: design.pen, 16 November 2026.
