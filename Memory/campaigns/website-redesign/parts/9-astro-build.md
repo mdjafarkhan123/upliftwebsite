@@ -17,11 +17,11 @@ Design PNGs: Pencil `Export` of the sections of `t4ww9` / `LGKcx`, scale 1. Each
     no sideways scroll, no console errors; homepage complete with scripts off; every reveal shows when reached;
     keyboard: visible focus everywhere, phone menu opens with Enter, closes with Esc and returns focus;
     404 is `noindex` and out of the sitemap. Fixed: duplicate logo `id`, unnamed phone logo strip (focusable scroller)
-  - [ ] "Book a call" opens the booking page: all 8 still open the email fallback (`publicSite.booking.url` empty)
+  - [x] "Book a call": Jafar set `publicSite.booking.url` (2026-11-17); every button on all pages opens it (200)
   - [ ] Legal pages and 404 still use the old look (bright gradients, grid, square buttons); /app is close.
     Restyle to the homepage panels and Button waits for Jafar's yes
 
-**Next:** step 9 — Jafar's yes on restyling legal/404, then the booking link. Motion checked headless at 1440/390, reduced motion and scripts off (trades wrap, all visible).
+**Next:** step 9 — Jafar's yes on restyling legal/404. Motion checked headless at 1440/390, reduced motion and scripts off (trades wrap, all visible).
 `services-tabs.js` loads at once: lazy loading collapsed ~3300 px under menu jumps. Headless shots: wait ~1.5 s after
 load (deferred `home.scss` transitions) before judging.
 

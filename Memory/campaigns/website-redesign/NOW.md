@@ -12,4 +12,4 @@ Sample app screens, and step 9 checks not yet done.
 Jafar's yes — [note](parts/9-astro-build.md). Parts 10 Speed and 11 Hero ("You vs. us") are committed, unpushed,
 waiting for Jafar's push and PageSpeed numbers — [10](parts/10-speed.md), [11](parts/11-hero-meaning.md). Part 7 Copy draft waits until Jafar asks for new copy (2026-11-16).
 
-**Blockers:** Jafar's price numbers, real app screenshots and the booking link: still missing on the live site.
+**Blockers:** Jafar's price numbers and real app screenshots: still missing on the live site (booking link set 2026-11-17, unpushed).

@@ -36,7 +36,7 @@ export const publicSite = {
     },
     booking: {
         // Add the real public booking URL here after it has been confirmed.
-        url: "",
+        url: "https://app.upliftcontractor.com/book/discovery-call",
         fallbackUrl:
             "mailto:info@upliftcontractor.com?subject=Uplift%20Contractor%20call%20request",
     },
@@ -101,17 +101,33 @@ export const hero = {
         tag: "Us",
         title: "Everything that brings the work in",
         items: [
-            { name: "Google profile, managed", benefit: "Photos, posts and details kept fresh" },
-            { name: "Website with quote button & chat", benefit: "Every new lead texts you" },
+            {
+                name: "Google profile, managed",
+                benefit: "Photos, posts and details kept fresh",
+            },
+            {
+                name: "Website with quote button & chat",
+                benefit: "Every new lead texts you",
+            },
             {
                 name: "Missed-call text back & follow-ups",
                 benefit: "Leads get a reply, even when you're busy",
             },
-            { name: "Business app", benefit: "Leads, quotes, jobs and invoices in one place" },
-            { name: "5-star review funnel", benefit: "More reviews, higher on Google" },
-            { name: "One-click campaigns", benefit: "Referrals and repeat customers" },
+            {
+                name: "Business app",
+                benefit: "Leads, quotes, jobs and invoices in one place",
+            },
+            {
+                name: "5-star review funnel",
+                benefit: "More reviews, higher on Google",
+            },
+            {
+                name: "One-click campaigns",
+                benefit: "Referrals and repeat customers",
+            },
         ],
-        closing: "Set up for you, then <strong>run for you every month.</strong>",
+        closing:
+            "Set up for you, then <strong>run for you every month.</strong>",
     },
 };
 

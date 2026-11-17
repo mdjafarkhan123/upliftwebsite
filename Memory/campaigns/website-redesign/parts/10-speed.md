@@ -46,3 +46,5 @@ desktop 100). If mobile is 99, the next lever is the hero photo (30 KB before fi
 - Don't clean up unused files unless they harm (Jafar, 2026-11-17); a full list was shown and declined.
 - Measure: `CHROME_PATH=~/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome npx -y lighthouse@12 <url>
   --only-categories=performance` (add `--preset=desktop`); local runs vary a few points.
+
+Dev fix: dynamic `import("lenis")` needs `optimizeDeps.include: ["lenis"]` (`astro.config.mjs`) in `astro dev`.

@@ -19,6 +19,11 @@ export default defineConfig({
 
     vite: {
         plugins: [yaml()],
+        // Lenis is imported dynamically (desktop only), so the dev server would find it
+        // late and serve a stale copy ("504 Outdated Optimize Dep"). Pre-bundle it up front.
+        optimizeDeps: {
+            include: ["lenis"],
+        },
         build: {
             cssCodeSplit: true,
         },
