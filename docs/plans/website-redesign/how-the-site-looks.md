@@ -32,9 +32,7 @@ rise in and buttons respond to the cursor. Three signature moments: the hero pho
 new lead → review request on a loop; a line draws through the three How it works steps as you scroll; the
 green highlight sweeps in behind heading words. The services section has no scroll-linked or sticky effect: only
 a chosen tab's content settles in. (Jafar, 2026-11-17) The problem statement fills word by word from faded to full
-colour as you scroll, and fades back when scrolling up; colour only, never weight. (Jafar, 2026-11-17) Icons: checks
-draw themselves as they appear; filled icons in tiles pop in with a spring and tilt on hover; accordion plus
-turns into a minus. Other icons stay still. (Jafar, 2026-11-17) Smooth scrolling on desktop only; phones keep normal touch
+colour as you scroll, and fades back when scrolling up; colour only, never weight. (Jafar, 2026-11-17) Smooth scrolling on desktop only; phones keep normal touch
 scrolling. (Jafar, 2026-11-17) With reduced motion turned on, or with scripts off, everything shows still and in
 full.
 

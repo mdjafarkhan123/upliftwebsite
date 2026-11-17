@@ -114,11 +114,8 @@
         }
     }
 
-    // The plus becomes a minus when its service opens (phone accordion).
-    &__toggle path:last-child {
-        transform-box: fill-box;
-        transform-origin: center;
-        transition: transform 0.35s var(--ease-out);
+    &__minus {
+        display: none !important;
     }
 
     &__item-title {
@@ -163,8 +160,12 @@
                 color: var(--color-brand-bright);
             }
 
-            .services__toggle path:last-child {
-                transform: rotate(90deg);
+            .services__plus {
+                display: none !important;
+            }
+
+            .services__minus {
+                display: block !important;
             }
         }
     }

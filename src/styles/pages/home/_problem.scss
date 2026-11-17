@@ -66,14 +66,6 @@
         .icon {
             width: 24px;
             height: 24px;
-            transition: transform 0.4s var(--ease-out);
-        }
-    }
-
-    // The icon tilts while the pointer rests on its card.
-    @media (hover: hover) {
-        &__card:hover &__tile .icon {
-            transform: rotate(-10deg) scale(1.1);
         }
     }
 

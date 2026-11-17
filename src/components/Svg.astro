@@ -1,6 +1,4 @@
 ---
-import fs from "node:fs";
-import path from "node:path";
 import type { HTMLAttributes } from "astro/types";
 
 type Prettify<T> = {
@@ -9,19 +7,13 @@ type Prettify<T> = {
 
 type Props = Prettify<
     HTMLAttributes<"svg"> & {
-        /** Width in pixels. Default: 24 */
+        /** The text label displayed on the button. Default: "Get started" */
         size?: number;
-        /** The symbol ID in the sprite. */
+        /** The visual style type of the button (e.g., "primary", "secondary"). Default: "primary" */
         name?: string;
-        /** The sprite: "sprite" or "abovethefold". */
+        /** Optional HTML ID for the anchor element. */
         src?: string;
         className?: string;
-        /**
-         * Copy the symbol's shapes into the page at build time instead of <use>.
-         * Only for icons that scripts or CSS animate (drawn checks, plus → minus);
-         * the sprite stays the single source.
-         */
-        inline?: boolean;
     }
 >;
 
@@ -30,46 +22,16 @@ const {
     name = "icon",
     src = "sprite",
     className = "svg-icon",
-    inline = false,
     ...attrs
 }: Props = Astro.props;
-
-// Inline icons: the symbol's attributes (viewBox, stroke…) and inner shapes.
-let symbol: { attrs: Record<string, string>; body: string } | null = null;
-if (inline) {
-    const file = fs.readFileSync(path.join(process.cwd(), "public", `${src}.svg`), "utf8");
-    const match = file.match(
-        new RegExp(`<symbol\\b(?=[^>]*\\bid="${name}")([^>]*)>([\\s\\S]*?)</symbol>`),
-    );
-    if (!match) throw new Error(`Svg.astro: symbol "${name}" not found in public/${src}.svg`);
-    const symbolAttrs = Object.fromEntries(
-        [...match[1].matchAll(/([\w:-]+)="([^"]*)"/g)]
-            .filter(([, key]) => key !== "id" && key !== "xmlns")
-            .map(([, key, value]) => [key, value]),
-    );
-    symbol = { attrs: symbolAttrs, body: match[2].trim() };
-}
 ---
 
-{
-    symbol ? (
-        <svg
-            class={`icon ${className}`}
-            style="aspect-ratio: 1 / 1;"
-            width={size}
-            {...symbol.attrs}
-            {...attrs}
-            set:html={symbol.body}
-        />
-    ) : (
-        <svg
-            class={`icon ${className}`}
-            style="aspect-ratio: 1 / 1;"
-            width={size}
-            data-sprite
-            {...attrs}
-        >
-            <use xlink:href={`/${src}.svg#${name}`} />
-        </svg>
-    )
-}
+<svg
+    class={`icon ${className}`}
+    style="aspect-ratio: 1 / 1;"
+    width={size}
+    data-sprite
+    {...attrs}
+>
+    <use xlink:href={`/${src}.svg#${name}`}></use>
+</svg>

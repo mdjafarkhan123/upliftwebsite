@@ -83,21 +83,21 @@
         background: var(--color-border-light);
     }
 
-    // The plus becomes a minus: its vertical stroke turns flat onto the
-    // horizontal one. Before the script loads every answer is visible, so
-    // every item shows the minus.
-    &__icon path:last-child {
-        transform-box: fill-box;
-        transform-origin: center;
-        transition: transform 0.35s var(--ease-out);
-    }
-
-    &__item.is-open &__icon path:last-child,
-    &:not(.is-enhanced) &__icon path:last-child {
-        transform: rotate(90deg);
+    // Closed items show a plus, open items a minus. Before the script loads
+    // every answer is visible, so every item shows the minus.
+    &__icon-closed {
+        display: none;
     }
 
     &.is-enhanced &__item:not(.is-open) {
+        .faq__icon-closed {
+            display: block;
+        }
+
+        .faq__icon-open {
+            display: none;
+        }
+
         .faq__panel {
             display: none;
         }
