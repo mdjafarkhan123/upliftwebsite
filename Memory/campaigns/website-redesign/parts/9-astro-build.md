@@ -9,18 +9,19 @@
 
 Design PNGs: Pencil `Export` of the sections of `t4ww9` / `LGKcx`, scale 1. Each step ends with a build and a commit.
 
-- [x] 1 Foundations: tokens, fonts, Button and Badge; icons `lu-*` (Lucide) and `ph-*` (Phosphor fill)
-- [x] 2 Header, phone menu, `.cta-bar` (`sticky-header.js`: needs `data-hero-book` and `data-final-cta`), Footer
-- [x] 3 Hero and technology strip
-- [x] 4 The problem and The system (tabs on desktop, accordion on phones, Sample phone)
-- [x] 5 Projects: Jafar's `website1–5.webp` with the current titles, no "Sample" label; pop-up; "Show more"
-- [x] 6 How it works and Pricing ($XXX)
-- [x] 7 About, Why choose us, Trades, FAQ, final call to action; old homepage code removed
+- [x] 1–7 Foundations, Header/Footer, every homepage section (`.cta-bar` needs `data-hero-book` and `data-final-cta`)
 - [x] 8 Motion: `motion.js` (GSAP, ScrollTrigger, SplitText, Lenis on desktop with a fine pointer), loaded by
   `interaction.js` after `services-tabs.js` unless reduced motion; `<html class="motion">` from Layout holds the hero text
 - [ ] 9 Checks from the roadmap's done-check; /app, legal and 404 against the new tokens
+  - [x] 2026-11-17: all 6 pages at 1440/390: one h1, heading order, alt text and image sizes, `aria-labelledby`,
+    no sideways scroll, no console errors; homepage complete with scripts off; every reveal shows when reached;
+    keyboard: visible focus everywhere, phone menu opens with Enter, closes with Esc and returns focus;
+    404 is `noindex` and out of the sitemap. Fixed: duplicate logo `id`, unnamed phone logo strip (focusable scroller)
+  - [ ] "Book a call" opens the booking page: all 8 still open the email fallback (`publicSite.booking.url` empty)
+  - [ ] Legal pages and 404 still use the old look (bright gradients, grid, square buttons); /app is close.
+    Restyle to the homepage panels and Button waits for Jafar's yes
 
-**Next:** step 9. Motion checked headless at 1440/390, reduced motion and scripts off (trades wrap, all visible).
+**Next:** step 9 — Jafar's yes on restyling legal/404, then the booking link. Motion checked headless at 1440/390, reduced motion and scripts off (trades wrap, all visible).
 `services-tabs.js` loads at once: lazy loading collapsed ~3300 px under menu jumps. Headless shots: wait ~1.5 s after
 load (deferred `home.scss` transitions) before judging.
 
@@ -36,14 +37,5 @@ Agents (Jafar, 2026-11-17): give each `CLAUDE.md`, the plan, this note and its s
 - Inputs (Jafar, 2026-11-17): "$XXX" prices and Sample app screens until he sends real ones; project cards use
   `website1–5.webp`; header "Log in" opens `https://app.upliftcontractor.com`; footer app card opens `/app`.
 
-Carried from part 6 (design system, approved 2026-11-16), for turning `design.pen` into `src/styles/critical.css`:
-
-- New design variables use the exact `critical.css` token names. The `device` theme (desktop/mobile) gives
-  the two ends of each fluid token. Add the new tokens: `--font-heading`, `--fs-fluid-display`, `--round-full`,
-  `--color-error-soft`, `--color-primary-soft-dark`. Changed values include radius 16/24/32 (was 20/30/40),
-  `--space-fluid-2xl` 120/72, and every colour (read them from the board's 01 Colour section).
-- Fonts: the site uses Inter only since part 10 (plan topic how-the-site-looks.md § Type); `design.pen` still
-  shows Inter Tight for headings.
-- The 19 old `design.pen` variables (`primary`, `page-bg`, …) are not the new system.
-- The brand on the board is rebuilt from `public/brand-logo.svg` (viewBox −360, 235.97, 394.79, 469.17) plus
-  text. Use the SVG; the old PNG logo has an off-white box.
+Tokens from the design system went into `critical.css` in step 1 (2026-11-17); `design.pen` still shows Inter
+Tight for headings, the site uses Inter only (part 10). Use `public/brand-logo.svg`, not the old PNG logo.

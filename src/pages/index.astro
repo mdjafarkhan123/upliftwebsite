@@ -108,7 +108,7 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
             <h2 id="technology-heading" class="technology__label">
                 {brandLogo.title}
             </h2>
-            <ul class="technology__logos">
+            <ul class="technology__logos" aria-labelledby="technology-heading">
                 {brandLogo.logos.map((logo) => (
                     <li>
                         <Image src={logo.image} alt={logo.name} height={28} loading="lazy" />
