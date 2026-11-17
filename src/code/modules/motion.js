@@ -39,7 +39,9 @@ function scrollPadding() {
 function initSmoothScroll(mm) {
     mm.add(`${DESKTOP} and ${FINE_POINTER}`, () => {
         lenis = new Lenis({
-            lerp: 0.1,
+            // Quicker to follow the wheel than Lenis's default (0.1), and further per notch.
+            lerp: 0.14,
+            wheelMultiplier: 1.2,
             anchors: { offset: -scrollPadding() },
             // Let dialogs and the phone menu scroll themselves.
             prevent: (node) => Boolean(node.closest?.("dialog, .mobile-menu")),

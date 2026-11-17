@@ -1,8 +1,8 @@
 /**
  * Shared interaction entry point.
- * Navigation and sticky header behavior are immediate; FAQ behavior loads as its
- * section approaches the viewport. Motion loads at once, after the services tabs,
- * unless the visitor asks for reduced motion.
+ * Navigation, sticky header, and every module that changes section height load
+ * at once. Motion loads after the services tabs, unless the visitor asks for
+ * reduced motion.
  */
 import { initMobileMenu } from "./modules/menu.js";
 import { initStickyHeader } from "./modules/sticky-header.js";
@@ -13,6 +13,13 @@ initStickyHeader();
 // under anyone jumping to a later section from the menu.
 if (document.querySelector(".projects")) {
     import("./modules/projects.js").then((module) => module.init?.());
+}
+const faq = document.querySelector(".faq");
+if (faq) {
+    import("./modules/accordion.js").then((module) => {
+        module.init?.();
+        faq.classList.add("is-enhanced");
+    });
 }
 const servicesContent = document.querySelector(".services__content");
 const servicesReady = servicesContent
@@ -36,9 +43,9 @@ if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
     reveal();
 }
 
-const modules = {
-    ".faq": () => import("./modules/accordion.js"),
-};
+// Section-based modules: loaded as their section approaches. Nothing here may
+// change a section's height (see the early loads above).
+const modules = {};
 
 function loadSection(element, loader) {
     loader()
