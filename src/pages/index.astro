@@ -11,15 +11,21 @@ import { projects } from "../data/data.js";
 import { problem, services } from "../data/data.js";
 // Services: each point's <strong> part becomes its title (services section).
 const splitPoint = (html) => {
-    const match = html.match(/^\s*<strong>\s*(.*?)\s*<\/strong>\s*(\.?)\s*(.*)$/s);
-    return match ? { title: match[1] + match[2], text: match[3].trim() } : { title: "", text: html };
+    const match = html.match(
+        /^\s*<strong>\s*(.*?)\s*<\/strong>\s*(\.?)\s*(.*)$/s,
+    );
+    return match
+        ? { title: match[1] + match[2], text: match[3].trim() }
+        : { title: "", text: html };
 };
 const pad = (i) => String(i + 1).padStart(2, "0");
 import Accordion from "../components/Accordion.astro";
 import { about, reason, contractors, faq, cta } from "../data/data.js";
 const bookingLink = publicSite.booking.url || publicSite.booking.fallbackUrl;
 // Trades split into equal sideways rows (contractors section).
-const tradesPerRow = Math.ceil(contractors.contractors.length / contractors.rows);
+const tradesPerRow = Math.ceil(
+    contractors.contractors.length / contractors.rows,
+);
 const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
     contractors.contractors.slice(i * tradesPerRow, (i + 1) * tradesPerRow),
 );
@@ -35,8 +41,16 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                     <span class="hero__pill-globe">
                         <Icon name="lu-globe" src="abovethefold" />
                     </span>
-                    <Icon name="lu-plus" src="abovethefold" className="hero__pill-plus" />
-                    <Icon name="lu-trending-up" src="abovethefold" className="hero__pill-growth" />
+                    <Icon
+                        name="lu-plus"
+                        src="abovethefold"
+                        className="hero__pill-plus"
+                    />
+                    <Icon
+                        name="lu-trending-up"
+                        src="abovethefold"
+                        className="hero__pill-growth"
+                    />
                 </span>{" "}
                 <span class="hero__line">{hero.title.middle}</span>{" "}
                 {hero.title.highlights.map((words) => (
@@ -54,14 +68,7 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                     type="secondary"
                 />
             </div>
-            <ul class="assurances">
-                {hero.assurances.map((item) => (
-                    <li>
-                        <Icon name="lu-circle-check" src="abovethefold" aria-hidden="true" />
-                        {item}
-                    </li>
-                ))}
-            </ul>
+
             <div class="hero__visual">
                 <div class="hero__photo">
                     <Image
@@ -80,8 +87,13 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                             <p class="hero__tag">{hero.you.tag}</p>
                             <!-- The worries' progress and pause: shown by motion.js once they rotate. -->
                             <div class="hero__story" hidden>
-                                <span class="hero__story-bars" aria-hidden="true">
-                                    {hero.you.worries.map(() => <span class="hero__story-bar" />)}
+                                <span
+                                    class="hero__story-bars"
+                                    aria-hidden="true"
+                                >
+                                    {hero.you.worries.map(() => (
+                                        <span class="hero__story-bar" />
+                                    ))}
                                 </span>
                                 <button
                                     type="button"
@@ -90,22 +102,37 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                                     data-pause-label={hero.you.pauseLabel}
                                     data-play-label={hero.you.playLabel}
                                 >
-                                    <Icon name="lu-pause" src="abovethefold" className="hero__story-pause" aria-hidden="true" />
-                                    <Icon name="lu-play" src="abovethefold" className="hero__story-play" aria-hidden="true" />
+                                    <Icon
+                                        name="lu-pause"
+                                        src="abovethefold"
+                                        className="hero__story-pause"
+                                        aria-hidden="true"
+                                    />
+                                    <Icon
+                                        name="lu-play"
+                                        src="abovethefold"
+                                        className="hero__story-play"
+                                        aria-hidden="true"
+                                    />
                                 </button>
                             </div>
                         </div>
                         <p class="hero__you-title">{hero.you.title}</p>
                         <p class="hero__you-text">
                             <span class="hero__you-full">{hero.you.text}</span>
-                            <!-- The same sentence, as the lead and one worry at a time (motion only). -->
+                            <!-- The same sentence as one line of text: the lead, then one worry at a time,
+                                 painted in by the green highlight (motion only). -->
                             <span class="hero__rotator" aria-hidden="true">
-                                <span class="hero__rotator-lead">{hero.you.lead}</span>
-                                <span class="hero__worries">
-                                    {hero.you.worries.map((worry) => (
-                                        <span class="hero__worry" data-answer={worry.answer}>{worry.text}</span>
-                                    ))}
-                                </span>
+                                {hero.you.lead}{" "}
+                                {hero.you.worries.map((worry, i) => (
+                                    <span
+                                        class="hero__worry"
+                                        data-answer={worry.answer}
+                                        hidden={i > 0}
+                                    >
+                                        {worry.text}
+                                    </span>
+                                ))}
                             </span>
                         </p>
                     </div>
@@ -118,10 +145,17 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                     <ul class="hero__checklist">
                         {hero.us.items.map((item) => (
                             <li class="hero__check">
-                                <Icon name="lu-circle-check" src="abovethefold" aria-hidden="true" />
+                                <Icon
+                                    name="lu-circle-check"
+                                    src="abovethefold"
+                                    aria-hidden="true"
+                                />
                                 <span class="hero__check-text">
                                     <span
-                                        class:list={["hero__check-name", item.answer && "hero__answer"]}
+                                        class:list={[
+                                            "hero__check-name",
+                                            item.answer && "hero__answer",
+                                        ]}
                                         data-answer={item.answer}
                                     >
                                         {item.name}
@@ -137,7 +171,11 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
         </div>
     </section>
 
-    <section id="technology" class="technology" aria-labelledby="technology-heading">
+    <section
+        id="technology"
+        class="technology"
+        aria-labelledby="technology-heading"
+    >
         <div class="technology__wrapper container">
             <h2 id="technology-heading" class="technology__label">
                 {brandLogo.title}
@@ -145,7 +183,12 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
             <ul class="technology__logos" aria-labelledby="technology-heading">
                 {brandLogo.logos.map((logo) => (
                     <li>
-                        <Image src={logo.image} alt={logo.name} height={28} loading="lazy" />
+                        <Image
+                            src={logo.image}
+                            alt={logo.name}
+                            height={28}
+                            loading="lazy"
+                        />
                     </li>
                 ))}
             </ul>
@@ -169,7 +212,9 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                             <span class="problem__tile" aria-hidden="true">
                                 <Icon name={item.icon} />
                             </span>
-                            <span class="problem__number" aria-hidden="true">{pad(i)}</span>
+                            <span class="problem__number" aria-hidden="true">
+                                {pad(i)}
+                            </span>
                         </div>
                         <h3 class="problem__card-title">{item.title}</h3>
                         <p class="problem__card-text">{item.description}</p>
@@ -188,10 +233,15 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                         <Badge title={services.badge} tone="dark" />
                         <h2 id="services-heading" class="services__title">
                             {services.title}{" "}
-                            <span class="services__highlight">{services.highlight}</span>
+                            <span class="services__highlight">
+                                {services.highlight}
+                            </span>
                         </h2>
                     </div>
-                    <div class="services__content" data-active={services.activeIndex}>
+                    <div
+                        class="services__content"
+                        data-active={services.activeIndex}
+                    >
                         <div
                             class="services__tabs"
                             role="tablist"
@@ -209,15 +259,27 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                                     aria-selected="false"
                                     tabindex="-1"
                                 >
-                                    <span class="services__number">{pad(i)}</span>
-                                    <span class="services__name">{service.title}</span>
-                                    <Icon name="lu-arrow-right" src="abovethefold" className="services__tab-arrow" aria-hidden="true" />
+                                    <span class="services__number">
+                                        {pad(i)}
+                                    </span>
+                                    <span class="services__name">
+                                        {service.title}
+                                    </span>
+                                    <Icon
+                                        name="lu-arrow-right"
+                                        src="abovethefold"
+                                        className="services__tab-arrow"
+                                        aria-hidden="true"
+                                    />
                                 </button>
                             ))}
                         </div>
                         <div class="services__items">
                             {services.content.map((service, i) => (
-                                <article class="services__item" id={`service-${i + 1}`}>
+                                <article
+                                    class="services__item"
+                                    id={`service-${i + 1}`}
+                                >
                                     <h3 class="services__item-heading">
                                         <button
                                             type="button"
@@ -225,61 +287,152 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                                             id={`services-trigger-${i}`}
                                             aria-controls={`services-panel-${i}`}
                                         >
-                                            <span class="services__number">{pad(i)}</span>
-                                            <span class="services__name">{service.title}</span>
-                                            <span class="services__toggle" aria-hidden="true">
-                                                <Icon name="lu-plus" src="abovethefold" className="services__plus" />
-                                                <Icon name="lu-minus" className="services__minus" />
+                                            <span class="services__number">
+                                                {pad(i)}
+                                            </span>
+                                            <span class="services__name">
+                                                {service.title}
+                                            </span>
+                                            <span
+                                                class="services__toggle"
+                                                aria-hidden="true"
+                                            >
+                                                <Icon
+                                                    name="lu-plus"
+                                                    src="abovethefold"
+                                                    className="services__plus"
+                                                />
+                                                <Icon
+                                                    name="lu-minus"
+                                                    className="services__minus"
+                                                />
                                             </span>
                                         </button>
-                                        <span class="services__item-title">{service.title}</span>
+                                        <span class="services__item-title">
+                                            {service.title}
+                                        </span>
                                     </h3>
-                                    <div class="services__panel" id={`services-panel-${i}`}>
+                                    <div
+                                        class="services__panel"
+                                        id={`services-panel-${i}`}
+                                    >
                                         <div class="services__text">
-                                            <p class="services__description" set:html={service.description} />
+                                            <p
+                                                class="services__description"
+                                                set:html={service.description}
+                                            />
                                             <ul class="services__points">
-                                                {service.items.map(splitPoint).map((point) => (
-                                                    <li class="services__point">
-                                                        <span class="services__check" aria-hidden="true">
-                                                            <Icon name="lu-check" />
-                                                        </span>
-                                                        <span>
-                                                            <strong class="services__point-title">{point.title}</strong>
-                                                            <span class="services__point-text">{point.text}</span>
-                                                        </span>
-                                                    </li>
-                                                ))}
+                                                {service.items
+                                                    .map(splitPoint)
+                                                    .map((point) => (
+                                                        <li class="services__point">
+                                                            <span
+                                                                class="services__check"
+                                                                aria-hidden="true"
+                                                            >
+                                                                <Icon name="lu-check" />
+                                                            </span>
+                                                            <span>
+                                                                <strong class="services__point-title">
+                                                                    {
+                                                                        point.title
+                                                                    }
+                                                                </strong>
+                                                                <span class="services__point-text">
+                                                                    {point.text}
+                                                                </span>
+                                                            </span>
+                                                        </li>
+                                                    ))}
                                             </ul>
                                         </div>
                                         {service.sample && (
                                             <div class="services__phone-wrap">
-                                                <div class="services__phone" role="group" aria-label={services.phoneLabel}>
+                                                <div
+                                                    class="services__phone"
+                                                    role="group"
+                                                    aria-label={
+                                                        services.phoneLabel
+                                                    }
+                                                >
                                                     <div class="services__screen">
-                                                        <div class="services__statusbar" aria-hidden="true">
-                                                            <span>{services.phoneTime}</span>
+                                                        <div
+                                                            class="services__statusbar"
+                                                            aria-hidden="true"
+                                                        >
+                                                            <span>
+                                                                {
+                                                                    services.phoneTime
+                                                                }
+                                                            </span>
                                                             <span class="services__island" />
-                                                            <Icon name="lu-battery-full" size={18} />
+                                                            <Icon
+                                                                name="lu-battery-full"
+                                                                size={18}
+                                                            />
                                                         </div>
                                                         <div class="services__contact">
-                                                            <span class="services__avatar" aria-hidden="true">{service.sample.contact.initials}</span>
+                                                            <span
+                                                                class="services__avatar"
+                                                                aria-hidden="true"
+                                                            >
+                                                                {
+                                                                    service
+                                                                        .sample
+                                                                        .contact
+                                                                        .initials
+                                                                }
+                                                            </span>
                                                             <span class="services__contact-name">
-                                                                <span>{service.sample.contact.name}</span>
-                                                                <span class="services__contact-meta">{service.sample.contact.meta}</span>
+                                                                <span>
+                                                                    {
+                                                                        service
+                                                                            .sample
+                                                                            .contact
+                                                                            .name
+                                                                    }
+                                                                </span>
+                                                                <span class="services__contact-meta">
+                                                                    {
+                                                                        service
+                                                                            .sample
+                                                                            .contact
+                                                                            .meta
+                                                                    }
+                                                                </span>
                                                             </span>
                                                             <p class="sample-label services__sample">
-                                                                <Icon name="lu-flask-conical" src="abovethefold" aria-hidden="true" />
-                                                                {services.sampleLabel}
+                                                                <Icon
+                                                                    name="lu-flask-conical"
+                                                                    src="abovethefold"
+                                                                    aria-hidden="true"
+                                                                />
+                                                                {
+                                                                    services.sampleLabel
+                                                                }
                                                             </p>
                                                         </div>
                                                         <ul class="services__messages">
-                                                            {service.sample.messages.map((message) => (
-                                                                <li class={`services__message services__message--${message.type}`}>
-                                                                    {message.icon && (
-                                                                        <Icon name={message.icon} src="abovethefold" aria-hidden="true" />
-                                                                    )}
-                                                                    {message.text}
-                                                                </li>
-                                                            ))}
+                                                            {service.sample.messages.map(
+                                                                (message) => (
+                                                                    <li
+                                                                        class={`services__message services__message--${message.type}`}
+                                                                    >
+                                                                        {message.icon && (
+                                                                            <Icon
+                                                                                name={
+                                                                                    message.icon
+                                                                                }
+                                                                                src="abovethefold"
+                                                                                aria-hidden="true"
+                                                                            />
+                                                                        )}
+                                                                        {
+                                                                            message.text
+                                                                        }
+                                                                    </li>
+                                                                ),
+                                                            )}
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -297,8 +450,14 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                     {[0, 1].map(() =>
                         services.content.map((service) => (
                             <>
-                                <span class="services__marquee-item">{service.title}</span>
-                                <Icon name="lu-asterisk" size={20} className="services__marquee-mark" />
+                                <span class="services__marquee-item">
+                                    {service.title}
+                                </span>
+                                <Icon
+                                    name="lu-asterisk"
+                                    size={20}
+                                    className="services__marquee-mark"
+                                />
                             </>
                         )),
                     )}
@@ -325,8 +484,13 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                             data-project-card={i}
                         >
                             <div class="projects__frame">
-                                <div class="projects__browser" aria-hidden="true">
-                                    <span></span><span></span><span></span>
+                                <div
+                                    class="projects__browser"
+                                    aria-hidden="true"
+                                >
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
                                 </div>
                                 <div class="projects__screen">
                                     <Image
@@ -338,9 +502,14 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                                         loading="lazy"
                                         format="webp"
                                     />
-                                    <span class="projects__view" aria-hidden="true">
+                                    <span
+                                        class="projects__view"
+                                        aria-hidden="true"
+                                    >
                                         <span class="btn">
-                                            <span class="btn__text">{projects.viewLabel}</span>
+                                            <span class="btn__text">
+                                                {projects.viewLabel}
+                                            </span>
                                             <span class="btn__icon">
                                                 <Icon name="lu-arrow-up-right" />
                                             </span>
@@ -350,16 +519,25 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                             </div>
                             <div class="projects__info">
                                 <div>
-                                    <h3 class="projects__title" data-project-title>
+                                    <h3
+                                        class="projects__title"
+                                        data-project-title
+                                    >
                                         {project.title}
                                     </h3>
                                     {project.category && (
-                                        <p class="projects__meta" data-project-meta>
+                                        <p
+                                            class="projects__meta"
+                                            data-project-meta
+                                        >
                                             {project.category}
                                         </p>
                                     )}
                                 </div>
-                                <span class="projects__arrow" aria-hidden="true">
+                                <span
+                                    class="projects__arrow"
+                                    aria-hidden="true"
+                                >
                                     <Icon name="lu-arrow-up-right" />
                                 </span>
                             </div>
@@ -397,7 +575,11 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                         >
                             {projects.items[0].title}
                         </h3>
-                        <p class="project-dialog__meta" data-project-dialog-meta hidden></p>
+                        <p
+                            class="project-dialog__meta"
+                            data-project-dialog-meta
+                            hidden
+                        ></p>
                     </div>
                     <div class="project-dialog__actions">
                         <a
@@ -408,7 +590,9 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                             data-project-dialog-visit
                             hidden
                         >
-                            <span class="btn__text">{projects.dialog.visit}</span>
+                            <span class="btn__text">
+                                {projects.dialog.visit}
+                            </span>
                             <span class="btn__icon" aria-hidden="true">
                                 <Icon name="lu-arrow-up-right" />
                             </span>
@@ -423,7 +607,12 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                         </button>
                     </div>
                 </div>
-                <div class="project-dialog__preview" tabindex="0" role="region" aria-label={projects.dialog.preview}>
+                <div
+                    class="project-dialog__preview"
+                    tabindex="0"
+                    role="region"
+                    aria-label={projects.dialog.preview}
+                >
                     {projects.items.map((project, i) => (
                         <div
                             class="project-dialog__slide"
@@ -433,7 +622,9 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                             hidden
                         >
                             <div class="projects__browser" aria-hidden="true">
-                                <span></span><span></span><span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </div>
                             <Image
                                 class="project-dialog__image"
@@ -448,21 +639,38 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                     ))}
                 </div>
                 <div class="project-dialog__nav">
-                    <button type="button" class="project-dialog__step" data-project-dialog-prev>
-                        <span class="project-dialog__icon-button" aria-hidden="true">
+                    <button
+                        type="button"
+                        class="project-dialog__step"
+                        data-project-dialog-prev
+                    >
+                        <span
+                            class="project-dialog__icon-button"
+                            aria-hidden="true"
+                        >
                             <Icon name="lu-arrow-left" />
                         </span>
-                        <span class="project-dialog__step-text">{projects.dialog.previous}</span>
+                        <span class="project-dialog__step-text">
+                            {projects.dialog.previous}
+                        </span>
                     </button>
-                    <p class="project-dialog__counter" data-project-dialog-counter
-                        data-separator={projects.dialog.counter}></p>
+                    <p
+                        class="project-dialog__counter"
+                        data-project-dialog-counter
+                        data-separator={projects.dialog.counter}
+                    ></p>
                     <button
                         type="button"
                         class="project-dialog__step project-dialog__step--next"
                         data-project-dialog-next
                     >
-                        <span class="project-dialog__step-text">{projects.dialog.next}</span>
-                        <span class="project-dialog__icon-button" aria-hidden="true">
+                        <span class="project-dialog__step-text">
+                            {projects.dialog.next}
+                        </span>
+                        <span
+                            class="project-dialog__icon-button"
+                            aria-hidden="true"
+                        >
                             <Icon name="lu-arrow-right" />
                         </span>
                     </button>
@@ -489,7 +697,10 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                             format="webp"
                         />
                         <p class="process__timeline">
-                            <span class="process__timeline-icon" aria-hidden="true">
+                            <span
+                                class="process__timeline-icon"
+                                aria-hidden="true"
+                            >
                                 <Icon name="lu-timer" src="sprite" />
                             </span>
                             {processData.timeline}
@@ -498,17 +709,32 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                 </div>
                 <ol class="process__steps" aria-label={processData.stepsLabel}>
                     {processData.steps.map((step, i) => (
-                        <li class:list={["process__step", { "process__step--active": i === 0 }]}>
-                            <span class="process__number" aria-hidden="true">{i + 1}</span>
+                        <li
+                            class:list={[
+                                "process__step",
+                                { "process__step--active": i === 0 },
+                            ]}
+                        >
+                            <span class="process__number" aria-hidden="true">
+                                {i + 1}
+                            </span>
                             <article class="process__card">
                                 <div class="process__card-top">
-                                    <h3 class="process__card-title">{step.title}</h3>
+                                    <h3 class="process__card-title">
+                                        {step.title}
+                                    </h3>
                                     <p class="process__time">
-                                        <Icon name="lu-clock-3" src="sprite" aria-hidden="true" />
+                                        <Icon
+                                            name="lu-clock-3"
+                                            src="sprite"
+                                            aria-hidden="true"
+                                        />
                                         {step.time}
                                     </p>
                                 </div>
-                                <p class="process__description">{step.description}</p>
+                                <p class="process__description">
+                                    {step.description}
+                                </p>
                             </article>
                         </li>
                     ))}
@@ -535,10 +761,16 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                     {pricing.plan.period}
                 </p>
                 <p class="pricing__setup">{pricing.plan.setup}</p>
-                <h4 id="pricing-features-heading" class="pricing__features-title">
+                <h4
+                    id="pricing-features-heading"
+                    class="pricing__features-title"
+                >
                     {pricing.plan.featuresTitle}
                 </h4>
-                <ul class="pricing__features" aria-labelledby="pricing-features-heading">
+                <ul
+                    class="pricing__features"
+                    aria-labelledby="pricing-features-heading"
+                >
                     {pricing.plan.features.map((feature) => (
                         <li>
                             <span class="pricing__check" aria-hidden="true">
@@ -562,7 +794,9 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                             <Icon name={perk.icon} src="sprite" />
                         </span>
                         <span class="pricing__perk-text">
-                            <span class="pricing__perk-title">{perk.title}</span>
+                            <span class="pricing__perk-title">
+                                {perk.title}
+                            </span>
                             {perk.description}
                         </span>
                     </li>
@@ -581,17 +815,28 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                 <div class="about__columns">
                     <p class="about__body">{about.body}</p>
                     <div class="about__aside">
-                        <ul class="about__system" aria-label={about.systemLabel}>
+                        <ul
+                            class="about__system"
+                            aria-label={about.systemLabel}
+                        >
                             {about.system.map((item) => (
                                 <li title={item.label}>
-                                    <Icon name={item.icon} src="sprite" aria-hidden="true" />
-                                    <span class="visually-hidden">{item.label}</span>
+                                    <Icon
+                                        name={item.icon}
+                                        src="sprite"
+                                        aria-hidden="true"
+                                    />
+                                    <span class="visually-hidden">
+                                        {item.label}
+                                    </span>
                                 </li>
                             ))}
                         </ul>
                         <p class="about__closing">{about.closing}</p>
                         <p class="about__byline">
-                            <span class="about__avatar" aria-hidden="true">{about.author.initials}</span>
+                            <span class="about__avatar" aria-hidden="true">
+                                {about.author.initials}
+                            </span>
                             <span class="about__author">
                                 <strong>{about.author.name}</strong>
                                 <span>{about.author.role}</span>
@@ -627,16 +872,26 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
     </section>
 
     <!-- SECTION: contractors -->
-    <section id="contractors" class="contractors" aria-labelledby="contractors-heading">
+    <section
+        id="contractors"
+        class="contractors"
+        aria-labelledby="contractors-heading"
+    >
         <div class="contractors__wrapper container">
             <Badge title={contractors.badge} tone="soft" />
             <h2 id="contractors-heading" set:html={contractors.title} />
         </div>
-        <div class="contractors__rows" role="list" aria-label={contractors.listLabel}>
+        <div
+            class="contractors__rows"
+            role="list"
+            aria-label={contractors.listLabel}
+        >
             {tradeRows.map((row) => (
                 <div class="contractors__row">
                     {row.map((trade) => (
-                        <span class="contractors__trade" role="listitem">{trade}</span>
+                        <span class="contractors__trade" role="listitem">
+                            {trade}
+                        </span>
                     ))}
                 </div>
             ))}
@@ -649,7 +904,12 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
             <div class="faq__intro">
                 <Badge title={faq.badge} tone="soft" />
                 <h2 id="faq-heading">{faq.title}</h2>
-                <Button title={faq.cta} link={bookingLink} src="sprite" class="faq__book" />
+                <Button
+                    title={faq.cta}
+                    link={bookingLink}
+                    src="sprite"
+                    class="faq__book"
+                />
             </div>
             <div class="faq__list" role="list">
                 {faq.content.map((item, i) => (
@@ -672,11 +932,21 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
             <div class="cta__wrapper container">
                 <h2 id="cta-heading">{cta.title}</h2>
                 <p class="cta__description">{cta.description}</p>
-                <Button title={cta.button} link={bookingLink} type="accent" src="sprite" class="cta__book" />
+                <Button
+                    title={cta.button}
+                    link={bookingLink}
+                    type="accent"
+                    src="sprite"
+                    class="cta__book"
+                />
                 <ul class="assurances cta__assurances">
                     {cta.assurances.map((item) => (
                         <li>
-                            <Icon name="lu-circle-check" src="sprite" aria-hidden="true" />
+                            <Icon
+                                name="lu-circle-check"
+                                src="sprite"
+                                aria-hidden="true"
+                            />
                             {item}
                         </li>
                     ))}
@@ -684,7 +954,6 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
             </div>
         </div>
     </section>
-
 
     <Fragment slot="bottom-style">
         <link

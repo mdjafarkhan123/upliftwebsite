@@ -9,8 +9,9 @@
  * - Cards and supporting text rise in as they reach the viewport.
  * - Buttons follow the cursor slightly (fine pointers only).
  * - Hero: the "You" text and the "Us" checklist come in once. Then, like an ad, the "You"
- *   text's worries take turns and light their answers in the "Us" card; its button, a
- *   mouse over the text, or scrolling away stops them.
+ *   text's worries take turns, each painted in by a stroke of the green highlight, and
+ *   light their answers in the "Us" card; its button, a mouse over the text, or scrolling
+ *   away stops them.
  * - Services: each newly chosen service settles in (no pinning; Jafar, 2026-11-17).
  * - How it works: a line draws through the steps as you scroll.
  * - Marquees: the service strip and the trade rows scroll sideways forever.
@@ -266,10 +267,12 @@ function initHero() {
 
 /**
  * The hero's worries, like an ad (Jafar, 2026-11-17). After the lead, "without paying
- * thousands", "without learning tech" and "without losing leads…" take turns, and each
- * one's answer in the "Us" card gets the green highlight. A bar times each worry. The
- * pause button or a mouse over the text stops the turns, and they only run while the
- * text is on screen. Screen readers keep the full sentence, which is only hidden visually.
+ * thousands", "without learning tech" and "without losing leads…" take turns. Each one is
+ * painted in by a stroke of the green highlight, word by word as one continuous drag, and
+ * then its answer in the "Us" card gets the same highlight; the next turn wipes it off the
+ * same way. A bar times each worry. The pause button or a mouse over the text stops the
+ * turns, and they only run while the text is on screen. Screen readers keep the full
+ * sentence, which is only hidden visually.
  */
 function initWorries(hero, you) {
     const worries = gsap.utils.toArray(".hero__worry", you);
@@ -277,14 +280,48 @@ function initWorries(hero, you) {
     const story = you.querySelector(".hero__story");
     const toggle = you.querySelector(".hero__story-toggle");
     const full = you.querySelector(".hero__you-full");
-    if (worries.length < 2 || bars.length !== worries.length || !story || !toggle || !full) return;
+    const text = you.querySelector(".hero__you-text");
+    if (worries.length < 2 || bars.length !== worries.length || !story || !toggle || !full || !text) return;
 
     full.classList.add("visually-hidden");
     you.classList.add("hero__you--rotating");
     story.hidden = false;
 
-    // Longer worries stay up longer: from about 3.6 s to 4.6 s for the longest.
-    const hold = (worry) => 2.6 + worry.textContent.trim().length * 0.045;
+    // Each word carries a piece of the stroke (styled in pages/home/_hero.scss).
+    const pieces = worries.map((worry) => {
+        worry.innerHTML = worry.textContent
+            .trim()
+            .split(" ")
+            .map((word) => `<span class="hero__paint"><span class="hero__ink">${word}</span></span>`)
+            .join(" ");
+        return [...worry.querySelectorAll(".hero__paint")];
+    });
+
+    // Keep the tallest worry's height, so the text never jumps when a shorter one shows.
+    const reserve = () => {
+        text.style.minHeight = "";
+        let tallest = 0;
+        worries.forEach((worry, i) => {
+            worries.forEach((other, j) => (other.hidden = i !== j));
+            tallest = Math.max(tallest, text.offsetHeight);
+        });
+        worries.forEach((worry, i) => (worry.hidden = i !== current));
+        text.style.minHeight = `${tallest}px`;
+    };
+
+    // One continuous drag across the words: each word gets time for its length, and the
+    // whole stroke is eased, so it speeds up and settles like a hand.
+    const stroke = (index, prop, duration, ease) => {
+        const path = gsap.timeline({ paused: true });
+        pieces[index].forEach((piece) =>
+            path.to(piece, { [prop]: 1, duration: piece.textContent.length + 1, ease: "none" }),
+        );
+        return gsap.to(path, { progress: 1, duration, ease });
+    };
+
+    // Longer worries stay up longer: from about 3.2 s to 4 s for the longest,
+    // including the stroke (Jafar asked for a quicker pace, 2026-11-17).
+    const hold = (worry) => 2.4 + worry.textContent.trim().length * 0.035;
     let current = 0;
     let timer = null;
     let onScreen = false;
@@ -301,6 +338,17 @@ function initWorries(hero, you) {
         );
     };
 
+    // Paints a worry in; its answer lights as the stroke lands.
+    const paintIn = (index, delay = 0) => {
+        gsap.set(pieces[index], { "--p": 0, "--q": 0 });
+        worries[index].hidden = false;
+        return gsap
+            .timeline({ delay })
+            .add(stroke(index, "--p", 0.6, "power2.inOut"))
+            .from(worries[index].querySelectorAll(".hero__ink"), { filter: "blur(4px)", duration: 0.35, stagger: 0.05 }, 0.05)
+            .call(light, [index], 0.45);
+    };
+
     // The bar's fill is the worry's clock: when it is full, the next worry comes in.
     const show = (index) => {
         bars.forEach((bar, i) => gsap.set(bar, { "--fill": i < index ? 1 : 0 }));
@@ -315,22 +363,23 @@ function initWorries(hero, you) {
                 onComplete: () => turn((index + 1) % worries.length),
             },
         );
-        gsap.delayedCall(0.25, light, [index]);
     };
 
+    // The current worry is wiped off, then the next one is painted in.
     const turn = (index) => {
-        gsap.to(worries[current], { yPercent: -100, autoAlpha: 0, duration: 0.5, ease: "power2.in" });
-        gsap.fromTo(
-            worries[index],
-            { yPercent: 100, autoAlpha: 0 },
-            { yPercent: 0, autoAlpha: 1, duration: 0.7, ease: EASE, delay: 0.3 },
-        );
+        const leaving = current;
         current = index;
         show(index);
+        stroke(leaving, "--q", 0.35, "power2.in").eventCallback("onComplete", () => {
+            worries[leaving].hidden = true;
+            paintIn(index, 0.05);
+        });
     };
 
-    gsap.set(worries, { yPercent: 100, autoAlpha: 0 });
-    gsap.set(worries[0], { yPercent: 0, autoAlpha: 1 });
+    reserve();
+    window.addEventListener("resize", reserve);
+    // The first worry is painted in as the "You" text comes in.
+    paintIn(0, 0.3);
     show(0);
 
     toggle.addEventListener("click", () => {

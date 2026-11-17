@@ -1,0 +1,64 @@
+@use "../../utils" as *;
+
+/* Hero: the worries' stroke. The hero's first-paint styles are in critical.css; these
+   are only used once motion.js runs, after the page has loaded, so they stay out of the
+   inline CSS. */
+
+/* With motion, the sentence shows as its lead plus one worry at a time, like an ad. It
+   stays one inline paragraph, so the worry reads as the sentence's own ending (Jafar,
+   2026-11-17). motion.js reserves the tallest worry's height, so nothing moves. */
+.hero__you--rotating .hero__rotator {
+    display: inline;
+}
+
+/* The worry is painted in like a stroke of the site's green highlight, the same one that
+   lights the answers in the "Us" card (Jafar chose it, 2026-11-17). motion.js splits it
+   into words, each carrying a piece of one continuous stroke: --p reveals the paint and
+   the word from the left, --q wipes them off from the left. */
+.hero__worry {
+    isolation: isolate;
+    color: var(--color-brand-bright);
+    font-weight: 600;
+}
+
+.hero__paint {
+    --p: 0;
+    --q: 0;
+    position: relative;
+    display: inline-block;
+    padding: 0.06em 0.2em;
+    margin: 0 -0.2em;
+
+    /* The pieces overlap across the spaces; only the stroke's two ends are rounded, so
+       no seams show between the words. */
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0.04em -0.06em;
+        background: var(--color-brand-bright);
+    }
+
+    &:first-child::before {
+        left: 0;
+        border-start-start-radius: var(--round-xs);
+        border-end-start-radius: var(--round-xs);
+    }
+
+    &:last-child::before {
+        right: 0;
+        border-start-end-radius: var(--round-xs);
+        border-end-end-radius: var(--round-xs);
+    }
+}
+
+.hero__paint::before,
+.hero__ink {
+    clip-path: inset(-0.3em calc((1 - var(--p)) * 100%) -0.3em calc(var(--q) * 100%));
+}
+
+.hero__ink {
+    position: relative;
+    display: inline-block;
+    color: var(--color-secondary);
+}

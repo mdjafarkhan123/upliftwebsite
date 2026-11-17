@@ -105,7 +105,10 @@ export const hero = {
         worries: [
             { text: "without paying thousands.", answer: "price" },
             { text: "without learning tech.", answer: "setup" },
-            { text: "without losing leads while you're on the job.", answer: "leads" },
+            {
+                text: "without losing leads while you're on the job.",
+                answer: "leads",
+            },
         ],
         pauseLabel: "Pause the changing text",
         playLabel: "Play the changing text",
@@ -126,16 +129,19 @@ export const hero = {
             },
             {
                 name: "Automated website",
-                benefit: "Built to rank, and it turns leads into text conversations on your phone",
+                benefit:
+                    "Built to rank, and it turns leads into text conversations on your phone",
             },
             {
                 name: "No lead goes cold",
-                benefit: "Missed calls get a text back, and slow replies get a follow-up",
+                benefit:
+                    "Missed calls get a text back, and slow replies get a follow-up",
                 answer: "leads",
             },
             {
                 name: "Repeat jobs and referrals",
-                benefit: "One click sends your past customers an offer, so they hire you again and tell their friends",
+                benefit:
+                    "One click sends your past customers an offer, so they hire you again and tell their friends",
             },
             {
                 name: "Your whole business in one app",
@@ -695,7 +701,7 @@ export const process = {
 // One plan; prices stay "$XXX" until Jafar sends the real numbers.
 export const pricing = {
     badge: "Pricing",
-    title: "One price. Everything included.",
+    title: "One price. No hidden fees.",
     description:
         "No tiers to compare and no surprise add-ons. You pay one setup fee and one monthly price. You stay because it works, not because a contract says so.",
     perks: [
@@ -720,7 +726,7 @@ export const pricing = {
         tag: "Monthly · no contract",
         price: "$100",
         period: "/month",
-        setup: "+ $XXX one-time setup",
+        setup: "+ $100 one-time setup",
         featuresTitle: "Everything in the system",
         features: [
             "Premium functional website",

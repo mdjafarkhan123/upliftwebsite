@@ -627,7 +627,7 @@ p strong {
 }
 .hero__panel .badge {
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
 }
 .hero__pill-globe {
     display: grid;
@@ -682,7 +682,7 @@ p strong {
     display: grid;
     gap: var(--space-xsm);
     width: 100%;
-    margin-top: var(--space-xsm);
+    margin-top: var(--space-md);
     text-align: left;
 }
 .hero__photo {
@@ -815,31 +815,11 @@ p strong {
 .hero__story-toggle[data-paused] .hero__story-play {
     display: block;
 }
-/* With motion, the sentence shows as its lead plus one worry at a time, like an ad. */
+/* The worries' copy of the "You" sentence stays hidden at first paint; motion.js shows it
+   later, styled in pages/home/_hero.scss (deferred, as it is never needed above the fold
+   before motion loads). */
 .hero__rotator {
     display: none;
-}
-.hero__you--rotating .hero__rotator {
-    display: block;
-}
-.hero__rotator-lead {
-    display: block;
-    text-wrap: balance;
-}
-/* The worries share one grid cell, so the block keeps the tallest one's height and
-   nothing moves when they change; the cell clips them as they slide through. They keep
-   the sentence's own type, so they read as its ending (Jafar, 2026-11-17). */
-.hero__worries {
-    display: grid;
-    overflow: hidden;
-}
-.hero__worry {
-    grid-area: 1 / 1;
-    color: var(--color-brand-bright);
-    font-weight: 600;
-}
-.hero__worry + .hero__worry {
-    visibility: hidden;
 }
 .hero__us {
     display: flex;
@@ -903,7 +883,11 @@ p strong {
     margin-inline: -0.1em;
     padding: 0 0.1em 0.04em;
     border-radius: var(--round-xs);
-    background: linear-gradient(var(--color-brand-bright), var(--color-brand-bright)) no-repeat 0 0 / 0% 100%;
+    background: linear-gradient(
+            var(--color-brand-bright),
+            var(--color-brand-bright)
+        )
+        no-repeat 0 0 / 0% 100%;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
     transition:
@@ -930,6 +914,9 @@ p strong {
 
 /* 480px */
 @media (min-width: 480px) {
+    .hero__panel .badge {
+        letter-spacing: 0.5px;
+    }
     .hero__actions {
         flex-direction: row;
         justify-content: center;
@@ -1063,6 +1050,9 @@ p strong {
     }
     .brand__bottom {
         font-size: 10px;
+    }
+    .hero__visual {
+        margin-top: var(--space-3xl);
     }
 }
 

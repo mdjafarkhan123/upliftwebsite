@@ -34,8 +34,10 @@ rise in and buttons respond to the cursor. Under the hero text, "You vs. us": th
 deserves and a dark card answers with Uplift's system, one line per service; the "You" text and the checklist come
 in once. (Jafar chose it over a looping sample feed, 2026-11-17, because every block must mean something.) Then,
 like an ad, the "You" sentence's three worries (paying thousands, learning tech, losing leads) take turns as its
-ending, in its own type with only green and bold marking them, and each one's answer gets the green highlight in
-the card. Bars time each worry; its pause button, a mouse over the text or
+ending. The sentence stays one inline paragraph; each worry is painted in by a stroke of the site's flat green
+highlight, dragged across its words with the text appearing inside it, and wiped off the same way for the next
+(Jafar chose this over a word slide, letter blur, rough brush and an "Uplift" pointer, 2026-11-17). As the stroke
+lands, the worry's answer gets the same highlight in the card. Bars time each worry; its pause button, a mouse over the text or
 scrolling away stops it. It is the hero's one loop. (Jafar's idea, 2026-11-17; he gave leave to break earlier
 motion agreements for a better result.) Two
 signature moments: a line draws through the three How it works steps as you scroll; the
