@@ -2,7 +2,7 @@
 
 **Campaign:** website-redesign · **Reads:** the core in `docs/plans/website-redesign/plan.md`, then all topics
 **Stage:** Build — started 2026-11-17 · **Claim:** none — released 2026-11-17 after step 8
-**Code:** branch `main`, main folder (merged 2026-11-17; push only on request)
+**Code:** branch `main`, main folder (live since 2026-11-17)
 **Done when:** the roadmap's done-check for part 9
 
 ## Steps

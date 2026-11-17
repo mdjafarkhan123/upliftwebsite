@@ -5,10 +5,10 @@
 **Plan:** Core approved by Jafar word by word on 2026-11-16. Parts 5–9 are in `ROADMAP.md`, in the order he agreed.
 **Stage:** Build
 
-**Current:** 9 Astro build — steps 1–8 done (homepage and motion built), paused 2026-11-17 before step 9 Checks; started with "$XXX" prices and Sample app screens (Jafar's choice); project
-cards use his real images. See `parts/9-astro-build.md`.
+**Live:** Jafar pushed `main` on 2026-11-17 (commit "New website"): the redesign is live with "$XXX" prices,
+Sample app screens, and step 9 checks not yet done.
 
-**Next part:** none after 9. Part 7 Copy draft waits until Jafar asks for new copy (2026-11-16).
+**Current:** none claimed. **Next session:** part 10 Speed optimization (Jafar, 2026-11-17), then part 9 step 9
+Checks. Part 7 Copy draft waits until Jafar asks for new copy (2026-11-16).
 
-**Blockers:** Jafar's price numbers, real app screenshots and the booking link are needed before launch, not
-before building.
+**Blockers:** Jafar's price numbers, real app screenshots and the booking link: still missing on the live site.
