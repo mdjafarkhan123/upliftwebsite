@@ -5,6 +5,7 @@
  *
  * - Smooth scrolling on desktop only (Lenis); phones keep native touch scrolling.
  * - Headings reveal line by line; the green highlight sweeps in behind marked words.
+ * - The problem statement fills word by word from faded to full colour as you scroll.
  * - Cards and supporting text rise in as they reach the viewport.
  * - Buttons follow the cursor slightly (fine pointers only).
  * - Hero: the sample feed plays missed call → text → lead → review on a loop.
@@ -113,8 +114,33 @@ function revealHeading(heading, delay = 0) {
     return tl;
 }
 
+/**
+ * Scroll-linked text fill (Jafar, 2026-11-17): the words stay in place and go from
+ * faded to full colour as the page scrolls, and fade back when scrolling up.
+ * Only colour changes, never weight, so the lines never re-wrap.
+ */
+const FILL_TEXT = "#problem-heading";
+
+function initTextFill() {
+    document.querySelectorAll(FILL_TEXT).forEach((text) => {
+        const split = SplitText.create(text, { type: "words", wordsClass: "fill-word" });
+        gsap.fromTo(
+            split.words,
+            { opacity: 0.2 },
+            {
+                opacity: 1,
+                ease: "none",
+                stagger: 0.1,
+                scrollTrigger: { trigger: text, start: "top 85%", end: "bottom 40%", scrub: 0.4 },
+            },
+        );
+    });
+}
+
 function initHeadings() {
-    const headings = document.querySelectorAll("main h2[id$='-heading']:not(.technology__label)");
+    const headings = document.querySelectorAll(
+        `main h2[id$='-heading']:not(.technology__label):not(${FILL_TEXT})`,
+    );
     headings.forEach((heading) => {
         gsap.set(heading, { opacity: 0 });
         ScrollTrigger.create({
@@ -364,6 +390,7 @@ export async function init() {
     initServices();
     initProcess();
     initMarquees();
+    initTextFill();
     initHeadings();
     initRise();
     initMagnetic(mm);
