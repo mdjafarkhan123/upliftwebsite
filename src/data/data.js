@@ -105,10 +105,6 @@ export const hero = {
         worries: [
             { text: "without paying thousands.", answer: "price" },
             { text: "without learning tech.", answer: "setup" },
-            {
-                text: "without losing leads while you're on the job.",
-                answer: "leads",
-            },
         ],
         pauseLabel: "Pause the changing text",
         playLabel: "Play the changing text",
