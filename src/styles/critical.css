@@ -919,8 +919,9 @@ p strong {
         border-radius: var(--round-full);
         background: var(--color-offwhite);
     }
+    /* Six links: tighter until 1200px, so the header fits at 992px. */
     .header__link {
-        padding: 9px 16px;
+        padding: 9px 12px;
         border-radius: var(--round-full);
         color: var(--color-text-dark);
         font-size: var(--fs-sm);
@@ -939,8 +940,9 @@ p strong {
     }
     .header__login {
         display: inline-flex;
-        padding: 9px 16px;
+        padding: 9px 12px;
         color: var(--color-secondary);
+        white-space: nowrap;
         font-size: var(--fs-sm);
         font-weight: 600;
     }
@@ -974,6 +976,10 @@ p strong {
 
 /* 1200px: desktop hero visual */
 @media (min-width: 1200px) {
+    .header__link,
+    .header__login {
+        padding-inline: 16px;
+    }
     .hero__visual {
         grid-template-columns: 920fr 472fr;
         gap: var(--space-sm);

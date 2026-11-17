@@ -663,8 +663,10 @@ export const navigation = {
     // Header links (desktop); the phone menu uses footer.company.items.
     items: [
         { label: "Services", href: "/#services" },
+        { label: "Projects", href: "/#projects" },
         { label: "How it works", href: "/#process" },
         { label: "Pricing", href: "/#pricing" },
+        { label: "About", href: "/#about" },
         { label: "FAQ", href: "/#faq" },
     ],
     // Sign-in to the Uplift app for existing clients (Jafar, 2026-11-17).

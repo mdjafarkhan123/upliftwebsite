@@ -52,7 +52,7 @@ phone rule and motion.
 the about content, and "Book a call" opening a booking page. The order and the other sections are Proposed, from the
 research and the current page:
 
-1. Header: logo, the links Services · How it works · Pricing · FAQ, and "Book a call"; on phones, a menu and a
+1. Header: logo, the links Services · Projects · How it works · Pricing · About · FAQ (Jafar, 2026-11-17), and "Book a call"; on phones, a menu and a
    sticky "Book a call" bar at the bottom of the screen. (Jafar, 2026-11-16) On phones, the header's "Book a call"
    hides when the hero's button scrolls away and the bar appears; the bar hides again when the closing call to
    action comes into view. (Jafar asked for the most user-friendly option, 2026-11-17) "Log in" by "Book a

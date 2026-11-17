@@ -8,3 +8,4 @@ Continues [meeting-notes.md](meeting-notes.md).
 - 2026-11-17 · Motion: how bold, which moments, smooth scrolling? · Jafar chose "Polished premium (Recommended)"; all four moments (hero system story, pinned services, How it works line, highlight sweep); smooth scroll "Desktop only (Recommended)" · Decided: as chosen
 - 2026-11-17 · Motion review · Jafar: "the scrolling feels a bit buggy", "scroll speed is slow" · Decided: FAQ script loads at once (it shrank the page mid-scroll); Lenis lerp 0.14, wheel ×1.2
 - 2026-11-17 · Motion review · Jafar: "for service section dont use any scrolling or sticky effect" · Decided: services pin removed; tabs work by click and keys only, the chosen service settles in
+- 2026-11-17 · Header links: add About (Jafar asked) and Projects? · Jafar chose "Add Projects and About (Recommended)" · Decided: header links Services · Projects · How it works · Pricing · About · FAQ, as in the footer
