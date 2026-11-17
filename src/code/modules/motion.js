@@ -8,7 +8,7 @@
  * - Cards and supporting text rise in as they reach the viewport.
  * - Buttons follow the cursor slightly (fine pointers only).
  * - Hero: the sample feed plays missed call → text → lead → review on a loop.
- * - Services: pinned on desktop while scrolling moves through the services.
+ * - Services: each newly chosen service settles in (no pinning; Jafar, 2026-11-17).
  * - How it works: a line draws through the steps as you scroll.
  * - Marquees: the service strip and the trade rows scroll sideways forever.
  *
@@ -66,16 +66,6 @@ function initSmoothScroll(mm) {
             lenis = null;
         };
     });
-}
-
-/** Scrolls to a page position, smoothly where Lenis runs. */
-function scrollToY(y, onComplete) {
-    if (lenis) {
-        lenis.scrollTo(y, { duration: 0.8, onComplete });
-    } else {
-        window.scrollTo({ top: y, behavior: "instant" });
-        requestAnimationFrame(() => onComplete?.());
-    }
 }
 
 /* Headings and the highlight sweep ----------------------------------------- */
@@ -264,81 +254,21 @@ function initHero() {
     });
 }
 
-/* Services: pinned on desktop ---------------------------------------------- */
+/* Services: a chosen service settles in ----------------------------------- */
 
-function initServices(mm) {
-    const band = document.querySelector(".services__band");
+function initServices() {
     const content = document.querySelector(".services__content");
-    if (!band || !content) return;
+    if (!content) return;
     const items = [...content.querySelectorAll(".services__item")];
-
-    // Each newly shown service settles in.
     content.addEventListener("services:change", ({ detail }) => {
         const item = items[detail.index];
         const parts = item?.querySelectorAll(".services__description, .services__point, .services__phone-wrap");
         if (!parts?.length || item.hidden) return;
-        gsap.fromTo(parts, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: EASE, stagger: 0.04, overwrite: true, clearProps: "transform,opacity" });
-    });
-
-    mm.add(DESKTOP, () => {
-        const controller = content.servicesTabs;
-        if (!controller || items.length < 2) return;
-        const last = items.length - 1;
-        const header = document.querySelector(".header");
-        const itemsBox = content.querySelector(".services__items");
-
-        // Hold the tallest service's height so switching never moves the page.
-        const tallest = () =>
-            Math.max(
-                ...items.map((item) => {
-                    const wasHidden = item.hidden;
-                    item.hidden = false;
-                    const height = item.offsetHeight;
-                    item.hidden = wasHidden;
-                    return height;
-                }),
-            );
-        let quiet = false;
-
-        // Below the header: centred when it fits, otherwise its top just under the header.
-        const offset = () => {
-            const top = (header?.offsetHeight || 0) + 24;
-            return Math.max(top, (window.innerHeight + top - 24 - content.offsetHeight) / 2);
-        };
-
-        const trigger = ScrollTrigger.create({
-            trigger: content,
-            // The section, not the band: the band's side margin would shift the pinned copy.
-            pin: band.closest(".services") || band,
-            anticipatePin: 1,
-            start: () => `top ${offset()}px`,
-            end: () => `+=${last * window.innerHeight * 0.55}`,
-            invalidateOnRefresh: true,
-            onRefreshInit: () => {
-                itemsBox.style.minHeight = "";
-                itemsBox.style.minHeight = `${tallest()}px`;
-            },
-            onUpdate: (self) => {
-                if (quiet) return;
-                const index = Math.round(self.progress * last);
-                if (index !== controller.active) controller.select(index);
-            },
-        });
-
-        // A chosen tab scrolls to its place in the pinned range.
-        const onChange = ({ detail }) => {
-            if (detail.source !== "user") return;
-            if (window.scrollY < trigger.start - 2 || window.scrollY > trigger.end + 2) return;
-            quiet = true;
-            const y = trigger.start + (detail.index / last) * (trigger.end - trigger.start);
-            scrollToY(y, () => (quiet = false));
-        };
-        content.addEventListener("services:change", onChange);
-
-        return () => {
-            content.removeEventListener("services:change", onChange);
-            itemsBox.style.minHeight = "";
-        };
+        gsap.fromTo(
+            parts,
+            { opacity: 0, y: 18 },
+            { opacity: 1, y: 0, duration: 0.5, ease: EASE, stagger: 0.04, overwrite: true, clearProps: "transform,opacity" },
+        );
     });
 }
 
@@ -431,8 +361,7 @@ export async function init() {
     const mm = gsap.matchMedia();
     initSmoothScroll(mm);
     initHero();
-    // Pins first: later triggers measure the page with the pin's extra space.
-    initServices(mm);
+    initServices();
     initProcess();
     initMarquees();
     initHeadings();
