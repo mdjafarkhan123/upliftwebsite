@@ -229,7 +229,11 @@ p strong {
     padding: 0 0.18em 0.04em;
     border-radius: var(--round-md);
     /* An image, so motion.js can sweep it in with background-size. */
-    background: linear-gradient(var(--color-brand-bright), var(--color-brand-bright)) no-repeat 0 0 / 100% 100%;
+    background: linear-gradient(
+            var(--color-brand-bright),
+            var(--color-brand-bright)
+        )
+        no-repeat 0 0 / 100% 100%;
     color: var(--color-secondary);
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
@@ -365,7 +369,7 @@ p strong {
     background: var(--color-white);
     color: var(--color-secondary);
     font-size: var(--fs-xsm);
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.3;
 }
 .badge--soft {
@@ -619,6 +623,10 @@ p strong {
     border-radius: var(--round-full);
     background: var(--color-green-900);
     vertical-align: 0.12em;
+}
+.hero__panel .badge {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 .hero__pill-globe {
     display: grid;
