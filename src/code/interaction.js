@@ -1,7 +1,7 @@
 /**
  * Shared interaction entry point.
  * Navigation, sticky header, the header's current-section link, and every module that changes section height load
- * at once. Motion loads after the services tabs, unless the visitor asks for
+ * at once. Motion loads after the services tabs and the page load, unless the visitor asks for
  * reduced motion.
  */
 import { initMobileMenu } from "./modules/menu.js";
@@ -34,9 +34,19 @@ const servicesReady = servicesContent
 // critical.css holds the hero text back while <html> has the "motion" class
 // (set in Layout.astro); motion.js releases it, and so does any failure here.
 const reveal = () => document.documentElement.classList.add("motion-ready");
+// Motion waits until the page has loaded and painted, so its 50 KB never delays the
+// first screen; the hero text does not need it (critical.css).
+const afterLoad = () =>
+    new Promise((resolve) => {
+        const idle = () =>
+            "requestIdleCallback" in window
+                ? requestIdleCallback(resolve, { timeout: 1500 })
+                : setTimeout(resolve, 200);
+        if (document.readyState === "complete") idle();
+        else window.addEventListener("load", idle, { once: true });
+    });
 if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
-    servicesReady
-        .catch(() => {})
+    Promise.all([servicesReady.catch(() => {}), afterLoad()])
         .then(() => import("./modules/motion.js"))
         .then((module) => module.init?.())
         .catch((error) => console.error("Motion unavailable:", error))

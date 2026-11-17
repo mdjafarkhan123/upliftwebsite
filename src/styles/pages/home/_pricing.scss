@@ -78,7 +78,7 @@
         font-family: var(--font-heading);
         font-size: var(--fs-fluid-display);
         font-weight: 600;
-        letter-spacing: -0.04em;
+        letter-spacing: calc(-0.04em + var(--tracking-heading));
     }
 
     &__setup {

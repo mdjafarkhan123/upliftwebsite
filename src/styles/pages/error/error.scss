@@ -81,7 +81,7 @@ section {
         max-width: 14ch;
         color: var(--color-green-800);
         font-size: clamp(4.2rem, 6.5vw, 8.4rem);
-        letter-spacing: -0.06em;
+        letter-spacing: calc(-0.06em + var(--tracking-heading));
         line-height: 0.98;
         text-wrap: balance;
 

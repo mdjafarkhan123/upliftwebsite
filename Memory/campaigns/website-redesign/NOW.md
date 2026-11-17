@@ -8,7 +8,8 @@
 **Live:** Jafar pushed `main` on 2026-11-17 (commit "New website"): the redesign is live with "$XXX" prices,
 Sample app screens, and step 9 checks not yet done.
 
-**Current:** none claimed. **Next session:** part 10 Speed optimization (Jafar, 2026-11-17), then part 9 step 9
+**Current:** part 10 Speed optimization, built and committed, unpushed; waits for Jafar's push and PageSpeed
+numbers — [note](parts/10-speed.md). **Next:** part 9 step 9
 Checks. Part 7 Copy draft waits until Jafar asks for new copy (2026-11-16).
 
 **Blockers:** Jafar's price numbers, real app screenshots and the booking link: still missing on the live site.

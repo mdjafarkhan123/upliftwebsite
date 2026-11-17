@@ -147,7 +147,7 @@
 
     &__card-title {
         font-size: var(--fs-lg);
-        letter-spacing: -0.025em;
+        letter-spacing: calc(-0.025em + var(--tracking-heading));
     }
 
     &__time {

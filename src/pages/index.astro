@@ -68,8 +68,9 @@ const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
                         class="hero__photo-img"
                         src={hero.photo.image}
                         alt={hero.photo.alt}
-                        widths={[480, 920, 1400]}
-                        sizes="(min-width: 1200px) 920px, 100vw"
+                        widths={[480, 720, 920, 1400]}
+                        sizes="(min-width: 1200px) calc(66vw - 50px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 48px)"
+                        quality={70}
                         loading="eager"
                         fetchpriority="high"
                         format="webp"

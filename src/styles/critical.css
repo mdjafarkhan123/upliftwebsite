@@ -3,13 +3,7 @@
 @font-face {
     font-family: Inter;
     src: url("/fonts/inter.woff2") format("woff2");
-    font-weight: 100 900;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Inter Tight";
-    src: url("/fonts/inter-tight.woff2") format("woff2");
-    font-weight: 100 900;
+    font-weight: 400 800;
     font-display: swap;
 }
 
@@ -122,7 +116,12 @@
     --shadow-system-node: 0 8px 25px rgb(40 61 48 / 3%);
     --shadow-mobile-menu: -20px 0 70px rgb(16 40 29 / 19%);
     --overlay-mobile-menu: rgb(13 35 25 / 50%);
-    --font-heading: "Inter Tight", "Inter", Arial, sans-serif;
+    --font-heading: "Inter", Arial, sans-serif;
+    /* Headings once used Inter Tight; Inter plus this spacing matches it with one font
+       file fewer (Jafar, 2026-11-17). Add it to every heading letter-spacing: the light
+       one at weights 400–500, where Inter Tight was tighter still. */
+    --tracking-heading: -0.035em;
+    --tracking-heading-light: -0.045em;
     --fs-fluid-display: clamp(5.6rem, 5.006rem + 1.524vw, 7.2rem);
     --round-full: 999px;
     --color-error-soft: #fdecec;
@@ -184,20 +183,21 @@ h4 {
     color: var(--color-heading-dark);
     font-family: var(--font-heading);
     font-weight: 600;
+    letter-spacing: var(--tracking-heading);
 }
 h1 {
     font-size: var(--fs-fluid-xl);
-    letter-spacing: -0.033em;
+    letter-spacing: calc(-0.033em + var(--tracking-heading));
     line-height: 1.04;
 }
 h2 {
     font-size: var(--fs-fluid-lg);
-    letter-spacing: -0.035em;
+    letter-spacing: calc(-0.035em + var(--tracking-heading));
     line-height: 1.05;
 }
 h3 {
     font-size: var(--fs-fluid-md);
-    letter-spacing: -0.02em;
+    letter-spacing: calc(-0.02em + var(--tracking-heading));
     line-height: 1.2;
 }
 h4 {
@@ -443,7 +443,7 @@ p strong {
     font-family: var(--font-heading);
     font-size: 26px;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    letter-spacing: calc(-0.02em + var(--tracking-heading));
 }
 .brand svg {
     width: 17px;
@@ -556,7 +556,7 @@ p strong {
     font-family: var(--font-heading);
     font-size: var(--fs-xl);
     font-weight: 500;
-    letter-spacing: -0.02em;
+    letter-spacing: calc(-0.02em + var(--tracking-heading-light));
 }
 .mobile-menu__link .icon {
     width: 20px;
@@ -827,7 +827,7 @@ p strong {
     font-family: var(--font-heading);
     font-size: var(--fs-fluid-display);
     font-weight: 600;
-    letter-spacing: -0.033em;
+    letter-spacing: calc(-0.033em + var(--tracking-heading));
     line-height: 1;
 }
 .status-card__days {
@@ -933,7 +933,7 @@ p strong {
         border-radius: var(--round-full);
         color: var(--color-text-dark);
         font-size: var(--fs-sm);
-        font-weight: 500;
+        font-weight: 600;
         transition:
             background var(--transition),
             color var(--transition);
@@ -994,8 +994,8 @@ p strong {
     }
 }
 
-/* Motion (motion.js): the hero text waits for its entrance. The photo never waits. */
-.motion:not(.motion-ready) .hero__panel > :not(.hero__visual),
+/* Motion (motion.js): only the hero feed and status card wait for their entrance. The hero
+   text and photo never wait, so the page's largest paint needs no script (Jafar, 2026-11-17). */
 .motion:not(.motion-ready) .hero__feed-wrap,
 .motion:not(.motion-ready) .status-card {
     opacity: 0;

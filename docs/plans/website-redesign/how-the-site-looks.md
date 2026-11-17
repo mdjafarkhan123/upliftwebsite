@@ -26,8 +26,10 @@ best on a phone, such as swipeable cards or an accordion instead of a wide grid 
 already works, it simply stacks. Both widths come from one page, so no section shows different content on phones.
 (Jafar, 2026-11-16)
 
+**Type.** One font, Inter, self-hosted. Headings once used Inter Tight; they now use Inter with tighter spacing (`--tracking-heading` in `critical.css`), which looks the same and saves a download. (Jafar, 2026-11-17)
+
 **Motion.** The site moves like an Awwwards site, built with GSAP. (Jafar, 2026-11-17) It is polished, not a
-showpiece: each animation ends within a second and never stops anyone reading. Headings reveal line by line, cards
+showpiece: each animation ends within a second and never stops anyone reading. Headings reveal line by line, except the hero's: the hero text shows at once, with no entrance, so the page paints fast (Jafar, 2026-11-17). Cards
 rise in and buttons respond to the cursor. Three signature moments: the hero phone plays missed call → automatic text →
 new lead → review request on a loop; a line draws through the three How it works steps as you scroll; the
 green highlight sweeps in behind heading words. The services section has no scroll-linked or sticky effect: only

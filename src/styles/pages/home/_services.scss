@@ -32,7 +32,7 @@
 
     &__title {
         color: var(--color-heading-white);
-        letter-spacing: -0.03em;
+        letter-spacing: calc(-0.03em + var(--tracking-heading));
         line-height: 1.08;
     }
 
@@ -96,7 +96,7 @@
         font-family: var(--font-heading);
         font-size: var(--fs-md);
         font-weight: 500;
-        letter-spacing: -0.015em;
+        letter-spacing: calc(-0.015em + var(--tracking-heading-light));
         line-height: 1.25;
     }
 
@@ -427,7 +427,7 @@
         font-family: var(--font-heading);
         font-size: var(--fs-md);
         font-weight: 500;
-        letter-spacing: -0.015em;
+        letter-spacing: calc(-0.015em + var(--tracking-heading-light));
     }
 
     &__marquee-mark {
@@ -548,7 +548,7 @@
             color: var(--color-white);
             font-size: var(--fs-fluid-md);
             font-weight: 600;
-            letter-spacing: -0.02em;
+            letter-spacing: calc(-0.02em + var(--tracking-heading));
             line-height: 1.15;
         }
 

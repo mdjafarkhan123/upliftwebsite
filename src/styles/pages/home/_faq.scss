@@ -56,7 +56,7 @@
         font-family: var(--font-heading);
         font-size: var(--fs-md);
         font-weight: 400;
-        letter-spacing: -0.01em;
+        letter-spacing: calc(-0.01em + var(--tracking-heading-light));
         line-height: 1.3;
     }
 

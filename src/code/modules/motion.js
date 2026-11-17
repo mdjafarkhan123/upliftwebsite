@@ -20,7 +20,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -28,8 +27,6 @@ const DESKTOP = "(min-width: 992px)";
 const FINE_POINTER = "(hover: hover) and (pointer: fine)";
 const EASE = "power3.out";
 const REVEAL_START = "top 88%";
-
-let lenis = null;
 
 /* Smooth scrolling ---------------------------------------------------------- */
 
@@ -39,32 +36,43 @@ function scrollPadding() {
 
 function initSmoothScroll(mm) {
     mm.add(`${DESKTOP} and ${FINE_POINTER}`, () => {
-        lenis = new Lenis({
-            // Quicker to follow the wheel than Lenis's default (0.1), and further per notch.
-            lerp: 0.14,
-            wheelMultiplier: 1.2,
-            anchors: { offset: -scrollPadding() },
-            // Let dialogs and the phone menu scroll themselves.
-            prevent: (node) => Boolean(node.closest?.("dialog, .mobile-menu")),
-        });
-        lenis.on("scroll", ScrollTrigger.update);
-        const tick = (time) => lenis.raf(time * 1000);
-        gsap.ticker.add(tick);
-        gsap.ticker.lagSmoothing(0);
+        // Lenis is fetched only here, so phones never download it.
+        let cleanup = null;
+        let active = true;
+        import("lenis").then(({ default: Lenis }) => {
+            if (!active) return;
+            const lenis = new Lenis({
+                // Quicker to follow the wheel than Lenis's default (0.1), and further per notch.
+                lerp: 0.14,
+                wheelMultiplier: 1.2,
+                anchors: { offset: -scrollPadding() },
+                // Let dialogs and the phone menu scroll themselves.
+                prevent: (node) => Boolean(node.closest?.("dialog, .mobile-menu")),
+            });
+            lenis.on("scroll", ScrollTrigger.update);
+            const tick = (time) => lenis.raf(time * 1000);
+            gsap.ticker.add(tick);
+            gsap.ticker.lagSmoothing(0);
 
-        // Stop the page behind an open dialog.
-        const sync = () => (document.querySelector("dialog[open]") ? lenis.stop() : lenis.start());
-        const observer = new MutationObserver(sync);
-        document.querySelectorAll("dialog").forEach((dialog) =>
-            observer.observe(dialog, { attributes: true, attributeFilter: ["open"] }),
-        );
+            // Stop the page behind an open dialog.
+            const sync = () => (document.querySelector("dialog[open]") ? lenis.stop() : lenis.start());
+            const observer = new MutationObserver(sync);
+            document.querySelectorAll("dialog").forEach((dialog) =>
+                observer.observe(dialog, { attributes: true, attributeFilter: ["open"] }),
+            );
+
+            cleanup = () => {
+                observer.disconnect();
+                gsap.ticker.remove(tick);
+                gsap.ticker.lagSmoothing(500, 33);
+                lenis.destroy();
+            };
+        });
 
         return () => {
-            observer.disconnect();
-            gsap.ticker.remove(tick);
-            gsap.ticker.lagSmoothing(500, 33);
-            lenis.destroy();
-            lenis = null;
+            active = false;
+            cleanup?.();
+            cleanup = null;
         };
     });
 }
@@ -237,28 +245,20 @@ function initMagnetic(mm) {
 function initHero() {
     const hero = document.querySelector(".hero");
     if (!hero) return;
-    const panel = hero.querySelector(".hero__panel");
-    const heading = hero.querySelector("h1");
-    const others = [".badge", ".hero__description", ".hero__actions", ".assurances"]
-        .map((selector) => panel.querySelector(`:scope > ${selector}`))
-        .filter(Boolean);
+    // The hero text has no entrance: it paints at once, without waiting for this
+    // module (Jafar, 2026-11-17). Only the feed and status card come in.
     const status = hero.querySelector(".status-card");
     const feedWrap = hero.querySelector(".hero__feed-wrap");
     const notes = gsap.utils.toArray(".hero__feed .notification", hero);
 
     const intro = gsap.timeline({ defaults: { ease: EASE } });
-    if (others[0]) intro.from(others[0], { opacity: 0, y: 16, duration: 0.6 }, 0);
-    if (heading) intro.add(revealHeading(heading), 0.1);
-    if (others.length > 1) {
-        intro.from(others.slice(1), { opacity: 0, y: 24, duration: 0.8, stagger: 0.1 }, 0.45);
-    }
-    if (status) intro.from(status, { opacity: 0, y: 40, duration: 0.9 }, 0.6);
-    if (feedWrap) intro.from(feedWrap, { opacity: 0, x: -24, duration: 0.8 }, 0.7);
+    if (status) intro.from(status, { opacity: 0, y: 40, duration: 0.9 }, 0);
+    if (feedWrap) intro.from(feedWrap, { opacity: 0, x: -24, duration: 0.8 }, 0.1);
     if (status) {
         const days = status.querySelectorAll(".status-card__days .is-done");
-        intro.from(days, { scaleY: 0.2, opacity: 0, duration: 0.4, stagger: 0.05, transformOrigin: "50% 100%" }, 0.9);
+        intro.from(days, { scaleY: 0.2, opacity: 0, duration: 0.4, stagger: 0.05, transformOrigin: "50% 100%" }, 0.3);
     }
-    // Hero content was held back by critical.css until this timeline existed.
+    // The feed and status card were held back by critical.css until this timeline existed.
     document.documentElement.classList.add("motion-ready");
 
     if (notes.length < 2) return;
@@ -269,7 +269,7 @@ function initHero() {
         loop.to(note, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, i === 0 ? 0.2 : ">+0.55");
     });
     loop.to(notes, { opacity: 0, y: -10, duration: 0.4, ease: "power2.in", stagger: 0.05 }, ">+2.4");
-    intro.call(() => loop.play(), null, 1.2);
+    intro.call(() => loop.play(), null, 0.6);
 
     // Run the loop only while the hero is on screen.
     ScrollTrigger.create({

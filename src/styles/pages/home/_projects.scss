@@ -132,7 +132,7 @@
     &__title {
         font-size: var(--fs-lg);
         font-weight: 500;
-        letter-spacing: -0.02em;
+        letter-spacing: calc(-0.02em + var(--tracking-heading-light));
     }
 
     &__meta {
@@ -199,7 +199,7 @@
     @include respond-to("laptop") {
         &__head h2 {
             font-size: var(--fs-fluid-display);
-            letter-spacing: -0.05em;
+            letter-spacing: calc(-0.05em + var(--tracking-heading));
             line-height: 1;
         }
     }
@@ -243,6 +243,7 @@ html:has(.project-dialog[open]) {
     &__title {
         font-size: var(--fs-xl);
         font-weight: 500;
+        letter-spacing: calc(-0.02em + var(--tracking-heading-light));
     }
 
     &__meta {

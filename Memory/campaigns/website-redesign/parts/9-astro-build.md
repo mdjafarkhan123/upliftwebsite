@@ -42,8 +42,8 @@ Carried from part 6 (design system, approved 2026-11-16), for turning `design.pe
   the two ends of each fluid token. Add the new tokens: `--font-heading`, `--fs-fluid-display`, `--round-full`,
   `--color-error-soft`, `--color-primary-soft-dark`. Changed values include radius 16/24/32 (was 20/30/40),
   `--space-fluid-2xl` 120/72, and every colour (read them from the board's 01 Colour section).
-- Fonts: the design uses Inter (body) and Inter Tight (headings). The site today loads its own "Uplift"
-  woff2 files from `public/fonts`; self-host the new fonts there.
+- Fonts: the site uses Inter only since part 10 (plan topic how-the-site-looks.md § Type); `design.pen` still
+  shows Inter Tight for headings.
 - The 19 old `design.pen` variables (`primary`, `page-bg`, …) are not the new system.
 - The brand on the board is rebuilt from `public/brand-logo.svg` (viewBox −360, 235.97, 394.79, 469.17) plus
   text. Use the SVG; the old PNG logo has an off-white box.

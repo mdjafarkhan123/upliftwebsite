@@ -68,7 +68,7 @@ section {
             max-width: 14ch;
             color: var(--color-white);
             font-size: clamp(4rem, 4.2vw, 6.4rem);
-            letter-spacing: -0.045em;
+            letter-spacing: calc(-0.045em + var(--tracking-heading));
         }
     }
 
@@ -121,7 +121,7 @@ section {
     h2 {
         color: var(--color-secondary);
         font-size: clamp(2.4rem, 2.8vw, 3.2rem);
-        letter-spacing: -0.03em;
+        letter-spacing: calc(-0.03em + var(--tracking-heading));
     }
 
     h3 {
