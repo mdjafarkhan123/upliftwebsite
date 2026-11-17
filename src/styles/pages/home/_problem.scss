@@ -1,0 +1,140 @@
+@use "../../utils" as *;
+
+/* The problem: a statement and four problem cards (2 + 2 on desktop). */
+.problem {
+    padding-top: var(--space-fluid-2xl);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(3.2rem, 2.309rem + 2.286vw, 5.6rem);
+    }
+
+    &__statement {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+        max-width: 1080px;
+    }
+
+    &__title {
+        font-size: clamp(2.4rem, 1.806rem + 1.524vw, 4rem);
+        font-weight: 500;
+        letter-spacing: -0.025em;
+        line-height: 1.25;
+    }
+
+    &__highlight {
+        display: block;
+        margin-top: var(--space-2xsm);
+        color: var(--color-primary);
+    }
+
+    &__list {
+        display: grid;
+        gap: var(--space-xsm);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        padding: var(--space-md);
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--round-xl);
+        background: var(--color-offwhite);
+    }
+
+    &__card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: var(--space-md);
+    }
+
+    &__tile {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: var(--round-md);
+        background: var(--color-primary-soft);
+        color: var(--color-primary);
+
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__number {
+        color: var(--color-heading-dark);
+        font-family: var(--font-heading);
+        font-size: var(--fs-xl);
+        font-weight: 700;
+    }
+
+    &__card-title {
+        margin-bottom: var(--space-2xsm);
+        font-size: var(--fs-lg);
+        font-weight: 500;
+        letter-spacing: -0.015em;
+        line-height: 1.3;
+    }
+
+    &__card-text {
+        font-size: var(--fs-sm);
+    }
+
+    @include respond-to("tablet") {
+        &__statement {
+            gap: var(--space-lg);
+        }
+
+        &__title {
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        &__highlight {
+            margin-top: 6px;
+        }
+
+        &__list {
+            grid-template-columns: repeat(12, 1fr);
+            gap: var(--space-sm);
+        }
+
+        // Wide card, narrow card; then narrow, wide (design).
+        &__card {
+            grid-column: span 6;
+            padding: var(--space-xl);
+        }
+
+        &__card-top {
+            margin-bottom: 28px;
+        }
+
+        &__card-title {
+            font-size: var(--fs-xl);
+            letter-spacing: -0.02em;
+        }
+
+        &__card-text {
+            font-size: var(--fs-base);
+        }
+    }
+
+    @include respond-to("laptop") {
+        &__card {
+            grid-column: span 5;
+
+            &:nth-child(4n + 1),
+            &:nth-child(4n + 4) {
+                grid-column: span 7;
+            }
+        }
+    }
+}

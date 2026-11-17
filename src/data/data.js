@@ -17,6 +17,7 @@ import CloudflareLogo from "../assets/images/technology-used/cloudflare.png";
 import FacebookLogo from "../assets/images/technology-used/facebook.png";
 import HeroPhoto from "../assets/images/home/hero-contractor.png";
 import AppDownloadQr from "../assets/images/app/download-qr.png";
+import ProcessPhoto from "../assets/images/home/process-contractor.png";
 
 /**
  * Public site settings
@@ -127,31 +128,68 @@ export const brandLogo = {
     ],
 };
 
+/* ============================ The problem section ============================ */
+// The four problems from the current about copy, word for word. `icon` is a
+// Phosphor fill symbol in public/sprite.svg.
+export const problem = {
+    badge: "The problem",
+    title: "Even among good contractors, we keep seeing the same issues come up again and again. It's not because of a lack of effort. They're working hard.",
+    highlight: "It's because the fundamental system isn't in place.",
+    items: [
+        {
+            icon: "ph-eye-slash",
+            title: "Hard to find on Google",
+            description:
+                "One of the most important pieces is the Google Business Profile (GBP). When homeowners search for local trades near them, these contractors' profiles don't show up in the results, while their competitors with strong profile & good reviews do. They've set up GBP, but not the right way, and they're not managing it actively. Their reviews are growing slowly, like they're stuck.",
+        },
+        {
+            icon: "ph-monitor",
+            title: "A website that sits there like a statue",
+            description:
+                "They're spending hard-earned money on ads, yet their conversion rate is poor because the leads who click through land on a website that sits there like a statue. Not a high-converting, functional website that captures leads and instantly turns them into text conversations that go directly to the contractor's phone.",
+        },
+        {
+            icon: "ph-coins",
+            title: "Money left on the table",
+            description:
+                "They're not running marketing campaigns to their past customers like promotions, discounts, referral offers etc. So they're leaving money on the table instead of getting the most out of every customer.",
+        },
+        {
+            icon: "ph-phone-x",
+            title: "Leads slip through the cracks",
+            description:
+                "Even with the leads they are already getting, they may forget to follow up, reply too slowly, or miss calls. Their leads, customers, jobs, quotes, invoices, and other important information are scattered across different tools and places. It's simply not an easy way to manage a business the way it should be managed.",
+        },
+    ],
+};
+
 export const reason = {
     badge: "Why choose us",
     icon: "arrow-right",
-    title: `Why we're <span class="marked-text">"totally unique"</span>...just like everyone else, right?`,
+    // The <br /> puts the second half on its own line (approved design, 2026-11-17).
+    title: `Why we're <span class="marked-text">"totally unique"</span><br />...just like everyone else, right?`,
+    // `icon` names a symbol in public/sprite.svg (Phosphor fill).
     content: [
         {
-            icon: "simplicity-icon",
+            icon: "ph-thumbs-up",
             title: "Simple to use",
             description:
                 "We built Uplift Contractor with the core concept of being simple to use, so everything is made to be exactly that.",
         },
         {
-            icon: "affordable-icon",
+            icon: "ph-wallet",
             title: "Affordable",
             description:
                 "Our prices are designed to keep you for 10 years, not 10 weeks. We're in it for the long haul.",
         },
         {
-            icon: "no-contract",
+            icon: "ph-file-x",
             title: "No contracts",
             description:
                 "If it's affordable & awesome, why would we need a contract... if you're happy, you'll stay. You are not locked-in here.",
         },
         {
-            icon: "no-shit",
+            icon: "ph-shield-check",
             title: "No bullsh*t",
             description:
                 "We don't believe in the fluff, we just tell you exactly what we're going to do and we do it. Period.",
@@ -168,10 +206,28 @@ export const about = {
     title: `Why <span class="marked-text">Uplift Contractor</span> Exists?`,
 
     // Author block (image is imported separately in index.astro, not here)
+    // Text byline only: no photo of Jafar anywhere (plan core).
     author: {
-        name: "Jafar khan",
+        name: "Jafar Khan",
         role: "Founder",
+        initials: "JK",
     },
+
+    // Homepage about section (approved design, 2026-11-17). `description`
+    // below keeps the full original text for the old draft page.
+    lead: "Uplift Contractor was built to fix exactly this, for contractors who don't want to learn tech, just want to focus on the business.",
+    body: "We help contractors grow and expand in the most easiest & affordable way possible by setting up the foundational marketing system. A high-converting, functional website, GBP setup and ongoing management, an easy-to-use business management app with AI-powered features, including a 5-Star Review Funnel, Missed Call Text Back, automated follow-ups, one-click marketing campaigns, and one simple place to track and organize leads, customers, quotes, jobs, scheduling, payments, and more.",
+    closing: "The whole thing runs quietly in the background. No extra effort, no extra staff needed. And behind it all, we handle the tech, keep everything running, and help whenever you need us.",
+    // Icon row: `icon` names a symbol in public/sprite.svg; `label` is read by screen readers.
+    systemLabel: "What the system includes",
+    system: [
+        { icon: "ph-globe", label: "High-converting website" },
+        { icon: "ph-star", label: "5-Star Review Funnel" },
+        { icon: "ph-chat-circle-text", label: "Missed Call Text Back" },
+        { icon: "ph-megaphone", label: "One-click marketing campaigns" },
+        { icon: "ph-map-pin", label: "Google Business Profile management" },
+        { icon: "ph-device-mobile", label: "Business management app" },
+    ],
 
     // Main paragraph. Keep as a single template string.
     description: `<div>Even among good contractors, we keep seeing the same issues come up again and again. It's not because of a lack of effort. They're working hard. It's because the fundamental system isn't in place.</div>
@@ -192,13 +248,24 @@ The whole thing runs quietly in the background. No extra effort, no extra staff 
 };
 
 /* ============================ Services section ============================ */
-// 6 service cards. Each card supports the fields used by the
-// .services-item markup (title, description, icon, category, link).
-// `icon` is the sprite name passed to <Icon name={...} src="..." />.
+// The six services: tabs on desktop, an accordion on phones.
+// `items` keep the current wording; the homepage shows the <strong> part as
+// each point's title and the rest as its text.
+// `sample` is made-up demo data for the phone screen, always shown with the
+// "Sample" label. Message types: "alert" (red chip), "note" (green chip),
+// "out" (the contractor's text), "in" (the customer's text). Chip icons are
+// symbols in public/abovethefold.svg.
 export const services = {
     badge: "Our services",
     icon: "icon",
-    title: `Simple systems that <span class="marked-text">actually work</span>. No degrees required`,
+    title: "Simple systems that actually work.",
+    highlight: "No degrees required.",
+    tabsLabel: "Our services",
+    // Opens "Missed call text back" first, as in the approved design.
+    activeIndex: 2,
+    sampleLabel: "Sample",
+    phoneLabel: "Sample phone screen",
+    phoneTime: "9:41",
     content: [
         {
             thumbnail: ProjectImg3,
@@ -211,6 +278,16 @@ export const services = {
                 "<strong>Never lose a website lead.</strong> Every website inquiry goes directly into your CRM, so you can track it, reply quickly, and follow up",
                 "<strong>Mobile Friendly & Super  Fast.</strong> 87% of people visit websites on their phones. We make sure your business looks extra sleek on mobile, and load speed? Always A+ fast",
             ],
+            sample: {
+                contact: { initials: "MK", name: "Mark K.", meta: "Website enquiry · gutters" },
+                messages: [
+                    { type: "note", icon: "lu-globe", text: "New website enquiry · 8:15 AM" },
+                    { type: "in", text: "Hi, my gutters are overflowing. Can someone check them next week?" },
+                    { type: "out", text: "Hi Mark, thanks for reaching out to Pine Ridge Roofing! Does Tuesday at 10 work?" },
+                    { type: "in", text: "Tuesday works. Thanks for the quick reply!" },
+                    { type: "note", icon: "lu-user-plus", text: "Saved as a new lead" },
+                ],
+            },
         },
         {
             thumbnail: Service2,
@@ -222,6 +299,15 @@ export const services = {
                 "<strong>Ask For Reviews In One Click</strong> As promised, we keep it simple. If you're confused, we're fired and extremely embarrassed.",
                 "<strong>Stop worrying about bad reviews.</strong> Unsure if you should ask for a review? We’ll take the guesswork out by guiding your customer to leave a 5-star review!",
             ],
+            sample: {
+                contact: { initials: "MT", name: "Mike T.", meta: "Job done · roof repair" },
+                messages: [
+                    { type: "note", icon: "lu-circle-check", text: "Job marked done · 4:30 PM" },
+                    { type: "out", text: "Thanks for choosing Pine Ridge Roofing, Mike! How did we do? Leave us a quick review here." },
+                    { type: "in", text: "Great crew, done in one day. Just left you 5 stars!" },
+                    { type: "note", icon: "lu-star", text: "New 5-star review" },
+                ],
+            },
         },
         {
             thumbnail: Service3,
@@ -233,6 +319,16 @@ export const services = {
                 "<strong>Show Customers You Care.</strong> Your ex didn't like it when you missed their calls - neither do your customers. At least send a text so they know you care.",
                 "<strong>Be available 24/7.</strong> Missed a call after hours? No worries, we’ll make sure everyone feels loved even while you’re getting your beauty sleep.",
             ],
+            sample: {
+                contact: { initials: "DR", name: "Dana R.", meta: "New lead · roofing" },
+                messages: [
+                    { type: "alert", icon: "lu-phone-missed", text: "Missed call · 10:42 AM" },
+                    { type: "out", text: "Hi, this is Pine Ridge Roofing. Sorry we missed your call! What can we help with?" },
+                    { type: "in", text: "Leak over the garage after the storm. Can someone look this week?" },
+                    { type: "out", text: "Yes! Does Thursday at 9 work? I'll send the address form." },
+                    { type: "note", icon: "lu-user-plus", text: "Saved as a new lead" },
+                ],
+            },
         },
 
         {
@@ -245,6 +341,15 @@ export const services = {
                 "<strong>Return Customer Campaigns.</strong> Having loyal customers is key to a succesful business. We'll make sure your customers feel cared for with special offers.",
                 "<strong>Marketing Campaigns At Your Fingertips</strong> Just click a button and we'll take care of the rest. No need to hire a marketing team.",
             ],
+            sample: {
+                contact: { initials: "SL", name: "Sarah L.", meta: "Past customer · siding" },
+                messages: [
+                    { type: "note", icon: "lu-message-square-text", text: "Spring campaign sent · 9:00 AM" },
+                    { type: "out", text: "Hi Sarah, it's Pine Ridge Roofing. Past customers get a free roof check this spring. Want a spot?" },
+                    { type: "in", text: "Yes please! My neighbour wants one too." },
+                    { type: "note", icon: "lu-user-plus", text: "2 bookings from this campaign" },
+                ],
+            },
         },
 
         {
@@ -257,6 +362,15 @@ export const services = {
                 "<strong>Turn Views Into Phone Calls.</strong> Getting seen is nice. Getting called is better. We'll optimize your profile to make it easy for homeowners to choose you and get in touch.",
                 `<strong>We Handle It, You Just Do The Work.</strong> Services, photos, posts, business details... Yeah, we know you'd rather be on a job site. Leave the Google stuff to us. `,
             ],
+            sample: {
+                contact: { initials: "JP", name: "Jen P.", meta: "Found you on Google" },
+                messages: [
+                    { type: "note", icon: "lu-star", text: "Profile updated · new photos" },
+                    { type: "in", text: "Hi, saw your photos on Google. Do you install metal roofs?" },
+                    { type: "out", text: "We do! Want a free quote this week? Friday morning is open." },
+                    { type: "note", icon: "lu-user-plus", text: "Saved as a new lead" },
+                ],
+            },
         },
         // {
         //     thumbnail: Service6,
@@ -279,13 +393,36 @@ export const services = {
                 "<strong>Follow-Ups That Happen Without You.</strong> Lead follow-ups, appointment reminders, payment nudges, and review requests, all automatic. Less admin, more done.",
                 "<strong>We Set It Up, You Run It.</strong> No tech headaches. We configure everything and walk you through it so you actually use it, not just pay for it.",
             ],
+            sample: {
+                contact: { initials: "JB", name: "Jake B.", meta: "Customer · roof replacement" },
+                messages: [
+                    { type: "note", icon: "lu-circle-check", text: "Quote accepted · 9:05 AM" },
+                    { type: "out", text: "Thanks Jake! You're booked for Monday at 8. We'll text you a reminder the day before." },
+                    { type: "note", icon: "lu-message-square-text", text: "Reminder sent · Sun 6 PM" },
+                    { type: "in", text: "Got it, see you tomorrow!" },
+                    { type: "note", icon: "lu-circle-check", text: "Invoice paid" },
+                ],
+            },
         },
     ],
 };
 
 export const projects = {
-    badge: "Our Works",
-    title: `Some of our Projects`,
+    badge: "Sample work",
+    title: "What your new website could look like",
+    description:
+        "Websites we've designed and built.",
+    viewLabel: "View project",
+    imageAlt: "Website design for",
+    showMore: "Show more projects",
+    dialog: {
+        close: "Close project",
+        visit: "Visit live site",
+        preview: "Project preview, scrollable",
+        previous: "Previous project",
+        next: "Next project",
+        counter: "of",
+    },
     items: [
         {
             title: "Project one",
@@ -317,6 +454,9 @@ export const projects = {
 export const contractors = {
     badge: "Contractors",
     title: 'Built for <span class="marked-text">all types</span> of contractors',
+    // The homepage shows the list in this many sideways rows.
+    rows: 3,
+    listLabel: "Trades we work with",
     contractors: [
         "Home builders",
         "Custom home builders",
@@ -385,26 +525,67 @@ export const contractors = {
 export const process = {
     badge: "Process",
     title: "What working with us looks like",
+    photo: {
+        image: ProcessPhoto,
+        alt: "A smiling contractor on a phone call outside a house under renovation",
+    },
+    timeline: "From first call to live in 7–10 days",
+    stepsLabel: "Steps of working with Uplift",
     steps: [
         {
             title: "15 minutes demo call",
+            time: "15 minutes",
             description: `It's actually a sales call, we just didn't want to scare you. But seriously... we'll answer all your questions, show you any features you have questions about, and show you live client accounts & results.`,
         },
         {
-            title: "We build your systems (7 - 10 days)",
+            title: "We build your systems",
+            time: "7–10 days",
             description: `Fill out a basic onboarding form with your business details. After we have the correct information, we'll get to work on building your new website & marketing system.`,
         },
         {
             title: "Website & systems delivered",
+            time: "Go live",
             description:
                 "Your website and systems go live. We show you how everything works so you can start booking jobs right away without changing how you run your business.",
         },
     ],
 };
 
+// One plan; prices stay "$XXX" until Jafar sends the real numbers.
+export const pricing = {
+    badge: "Pricing",
+    title: "One price. Everything included.",
+    description:
+        "No tiers to compare and no surprise add-ons. You pay one setup fee and one monthly price. You stay because it works, not because a contract says so.",
+    perks: [
+        { icon: "ph-file-x", title: "No contract", description: "Cancel any month. No lock-in." },
+        { icon: "ph-clock", title: "Live in 7–10 days", description: "From your first call to a working system." },
+        { icon: "ph-wrench", title: "We handle the tech", description: "Setup, updates and help when you need it." },
+    ],
+    plan: {
+        name: "The Uplift system",
+        tag: "Monthly · no contract",
+        price: "$XXX",
+        period: "/month",
+        setup: "+ $XXX one-time setup",
+        featuresTitle: "Everything in the system",
+        features: [
+            "Premium functional website",
+            "5-Star Magic Review Funnel",
+            "Missed call text back",
+            "One-Click Marketing Campaigns",
+            "Google Business Profile Management",
+            "Contractor Business Management App",
+            "Help whenever you need us",
+        ],
+        cta: "Book a call",
+    },
+};
+
 export const faq = {
     badge: "FAQs",
     title: "Got questions? We’ve the answers",
+    cta: "Book a call",
     content: [
         {
             question: "What happen if I decide to cancel my membership?",
@@ -434,6 +615,8 @@ export const cta = {
     title: "Let's build a website and system that actually brings you jobs.",
     description:
         "In this quick strategy call, we will show you everything we do to help you grow your business so you can implement it yourself or let us do it for you.",
+    button: "Book a call",
+    assurances: ["No contract", "Live in 7–10 days", "We handle the tech"],
 };
 
 export const footer = {

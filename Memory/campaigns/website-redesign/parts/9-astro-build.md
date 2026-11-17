@@ -9,22 +9,26 @@
 
 Design PNGs: Pencil `Export` of the sections of `t4ww9` / `LGKcx`, scale 1. Each step ends with a build and a commit.
 
-- [x] 1 Foundations: tokens, `inter*.woff2`, Button (`type`, `block`, `class`, `data-*`) and Badge (`tone`, dot
-  on by default); icons `lu-*` (Lucide) and `ph-*` (Phosphor fill) in both sprites; `utils/_index.scss` forwards mixins
+- [x] 1 Foundations: tokens, fonts, Button and Badge; icons `lu-*` (Lucide) and `ph-*` (Phosphor fill)
 - [x] 2 Header, phone menu, `.cta-bar` (`sticky-header.js`: needs `data-hero-book` and `data-final-cta`), Footer
-- [x] 3 Hero and technology strip, built and screenshotted at 1440 and 390 px; look matched the design. Last fixes
-  (pill spacing, phone photo crop, logo scroll) and the footer not yet seen
-- [ ] 4 The problem and The system (tabs on desktop, accordion on phones, Sample phone)
-- [ ] 5 Projects: Jafar's `website1–5.webp` with the current titles, no "Sample" label; pop-up; "Show more"
-- [ ] 6 How it works and Pricing ($XXX)
-- [ ] 7 About, Why choose us, Trades, FAQ, final call to action; old homepage code removed
+- [x] 3 Hero and technology strip
+- [x] 4 The problem and The system (tabs on desktop, accordion on phones, Sample phone)
+- [x] 5 Projects: Jafar's `website1–5.webp` with the current titles, no "Sample" label; pop-up; "Show more"
+- [x] 6 How it works and Pricing ($XXX)
+- [x] 7 About, Why choose us, Trades, FAQ, final call to action; old homepage code removed
 - [ ] 8 Motion (plan topic how-the-site-looks.md § Motion), in `src/code/modules`
 - [ ] 9 Checks from the roadmap's done-check; /app, legal and 404 against the new tokens
 
-**Next:** screenshot `/` at both widths (Chrome extension, or the headless shell in `~/.cache/ms-playwright`) and check the hero fixes and the footer. Then steps 4–7 by agents
-(Jafar, 2026-11-17: may use agents; give each `CLAUDE.md`, the plan, this note and its section PNGs). Each agent owns
-one `_<section>.scss` partial (add `@use` to `home.scss`), its block at the `<!-- SECTIONS -->` marker in `index.astro`
-and its export in `data.js`; on a failed Edit, re-read and retry. Old page: `git show b191c96:src/pages/index.astro`. `src/pages/indextwo.astro` (old draft) now shows
+**Next:** step 8 Motion, then step 9. Steps 4–7 built by four agents, reviewed at 1440/390, committed 2026-11-17.
+`services-tabs.js` loads at once: lazy loading collapsed ~3300 px under menu jumps. Headless shots: wait ~1.5 s after
+load (deferred `home.scss` transitions) before judging.
+
+**Open for Jafar:** Project six repeats `website1.webp` (his "ok" was unclear: drop it or send a 6th image?); approve
+or drop the five unapproved Sample phone screens in The system (`services[].sample`); Trades rows clip without motion
+(add "See all trades"?); About icon labels. "show you live client accounts & results" waits for part 7 copy.
+Settled: Projects intro "Websites we've designed and built."; category/live URL appear when he sends them.
+
+Agents (Jafar, 2026-11-17): give each `CLAUDE.md`, the plan, this note and its section PNGs. `src/pages/indextwo.astro` (old draft) now shows
 `[object Object]` for its heading: ask Jafar whether to delete it.
 
 ## Notes

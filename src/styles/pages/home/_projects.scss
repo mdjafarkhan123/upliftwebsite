@@ -1,0 +1,393 @@
+@use "../../utils" as *;
+
+/* Projects ("Sample work"): Jafar's website cards, "Show more" and the pop-up. */
+.projects {
+    padding-block: var(--space-fluid-2xl) 0;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-fluid-lg);
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        max-width: 740px;
+
+        h2 {
+            font-size: var(--fs-fluid-lg);
+        }
+    }
+
+    &__description {
+        color: var(--color-page-text-muted);
+        font-size: var(--fs-md);
+        line-height: 1.6;
+    }
+
+    &__grid {
+        display: grid;
+        gap: var(--space-xl) var(--space-lg);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    // With JavaScript, only the first cards show until "Show more" is used.
+    &--collapsed &__item:nth-child(n + 4) {
+        display: none;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        border-radius: var(--round-xl);
+
+        &:hover,
+        &:focus-visible {
+            .projects__view {
+                opacity: 1;
+            }
+
+            .projects__arrow {
+                background: var(--color-green-950);
+            }
+        }
+    }
+
+    &__frame {
+        overflow: hidden;
+        padding: var(--space-sm) var(--space-sm) var(--space-sm);
+        border-radius: var(--round-xl);
+        background: var(--color-offwhite);
+        box-shadow: inset 0 0 0 1px var(--color-border-light);
+    }
+
+    // Three-dot browser bar above each screenshot (also used in the pop-up).
+    &__browser {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        height: 30px;
+        padding-inline: var(--space-sm);
+        border-radius: var(--round-md) var(--round-md) 0 0;
+        background: var(--color-white);
+        border-bottom: 1px solid var(--color-border-light);
+
+        span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-border);
+        }
+    }
+
+    &__screen {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 10.5;
+        background: var(--color-white);
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.6s var(--ease-out);
+    }
+
+    &__card:hover &__image {
+        transform: scale(1.03);
+    }
+
+    // "View project" overlay on hover and keyboard focus.
+    &__view {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: color-mix(in srgb, var(--color-primary) 40%, transparent);
+        backdrop-filter: blur(6px);
+        opacity: 0;
+        transition: opacity var(--transition);
+
+        .btn {
+            font-size: var(--fs-base);
+            font-weight: 500;
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-sm);
+        padding-inline: var(--space-2xsm);
+    }
+
+    &__title {
+        font-size: var(--fs-lg);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+    }
+
+    &__meta {
+        color: var(--color-page-text-muted);
+        font-size: var(--fs-sm);
+    }
+
+    &__arrow {
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: var(--round-full);
+        background: var(--color-green-900);
+        color: var(--color-white);
+        transition: background var(--transition);
+
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &__more {
+        width: 100%;
+        min-height: 52px;
+        font-size: var(--fs-base);
+
+        &[hidden] {
+            display: none;
+        }
+    }
+
+    @include respond-to("tablet") {
+        &__grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--space-3xl) var(--space-lg);
+        }
+
+        &--collapsed &__item:nth-child(4) {
+            display: block;
+        }
+
+        &--collapsed &__item:nth-child(n + 5) {
+            display: none;
+        }
+
+        &__frame {
+            padding: 30px 28px 8px;
+        }
+
+        &__browser {
+            height: 30px;
+        }
+
+        &__more {
+            align-self: center;
+            width: auto;
+            gap: var(--space-xl);
+        }
+    }
+
+    @include respond-to("laptop") {
+        &__head h2 {
+            font-size: var(--fs-fluid-display);
+            letter-spacing: -0.05em;
+            line-height: 1;
+        }
+    }
+}
+
+/* Project pop-up: full screen on phones, a centred card on larger screens. */
+html:has(.project-dialog[open]) {
+    overflow: hidden;
+}
+
+.project-dialog {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: var(--color-white);
+    color: var(--color-text-dark);
+
+    &::backdrop {
+        background: color-mix(in srgb, var(--color-secondary) 70%, transparent);
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+        height: 100%;
+        padding: var(--space-md) var(--space-sm) var(--space-sm);
+    }
+
+    &__head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: var(--space-sm);
+    }
+
+    &__title {
+        font-size: var(--fs-xl);
+        font-weight: 500;
+    }
+
+    &__meta {
+        color: var(--color-page-text-muted);
+        font-size: var(--fs-sm);
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xsm);
+    }
+
+    &__visit[hidden] {
+        display: none;
+    }
+
+    &__icon-button {
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 0;
+        border-radius: var(--round-full);
+        background: var(--color-offwhite);
+        color: var(--color-secondary);
+        cursor: pointer;
+        transition: background var(--transition);
+
+        .icon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &__close:hover {
+        background: var(--color-border-light);
+    }
+
+    // Phones: the landscape preview sits in the middle of the full-screen pop-up.
+    &__preview {
+        display: flex;
+        flex-direction: column;
+        justify-content: safe center;
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        padding: var(--space-sm);
+        border-radius: var(--round-lg);
+        background: var(--color-offwhite);
+        overscroll-behavior: contain;
+
+        &:focus-visible {
+            outline: 3px solid var(--color-brand-bright);
+            outline-offset: 2px;
+        }
+    }
+
+    &__slide {
+        flex-shrink: 0;
+        overflow: hidden;
+        border-radius: var(--round-md);
+        background: var(--color-white);
+        box-shadow: var(--shadow-card);
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-xsm);
+    }
+
+    &__step {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-xsm);
+        padding: 0;
+        border: 0;
+        border-radius: var(--round-full);
+        background: none;
+        color: var(--color-secondary);
+        font: inherit;
+        font-size: var(--fs-base);
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover .project-dialog__icon-button {
+            background: var(--color-border-light);
+        }
+    }
+
+    // Phones show only the arrow buttons; the text stays for screen readers.
+    &__step-text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    &__counter {
+        color: var(--color-page-text-muted);
+        font-size: var(--fs-sm);
+        text-align: center;
+    }
+
+    @include respond-to("laptop") {
+        width: min(1180px, calc(100% - 48px));
+        height: min(820px, calc(100% - 48px));
+        margin: auto;
+        border-radius: var(--round-2xl);
+
+        &__inner {
+            gap: var(--space-md);
+            padding: var(--space-xl);
+        }
+
+        &__head {
+            align-items: center;
+        }
+
+        &__preview {
+            justify-content: flex-start;
+            padding: var(--space-xl) var(--space-3xl) 0;
+            border-radius: var(--round-xl);
+        }
+
+        &__slide {
+            border-radius: var(--round-md) var(--round-md) 0 0;
+        }
+
+        &__step-text {
+            position: static;
+            width: auto;
+            height: auto;
+            overflow: visible;
+            clip-path: none;
+        }
+    }
+}

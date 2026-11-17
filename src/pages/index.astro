@@ -6,7 +6,23 @@ import Button from "../components/Button.astro";
 import Badge from "../components/Badge.astro";
 import homeStyle from "../styles/pages/home/home.scss?url";
 import { publicSite, hero, brandLogo } from "../data/data.js";
+import { process as processData, pricing } from "../data/data.js";
+import { projects } from "../data/data.js";
+import { problem, services } from "../data/data.js";
+// Services: each point's <strong> part becomes its title (services section).
+const splitPoint = (html) => {
+    const match = html.match(/^\s*<strong>\s*(.*?)\s*<\/strong>\s*(\.?)\s*(.*)$/s);
+    return match ? { title: match[1] + match[2], text: match[3].trim() } : { title: "", text: html };
+};
+const pad = (i) => String(i + 1).padStart(2, "0");
+import Accordion from "../components/Accordion.astro";
+import { about, reason, contractors, faq, cta } from "../data/data.js";
 const bookingLink = publicSite.booking.url || publicSite.booking.fallbackUrl;
+// Trades split into equal sideways rows (contractors section).
+const tradesPerRow = Math.ceil(contractors.contractors.length / contractors.rows);
+const tradeRows = Array.from({ length: contractors.rows }, (_, i) =>
+    contractors.contractors.slice(i * tradesPerRow, (i + 1) * tradesPerRow),
+);
 ---
 
 <Layout>
@@ -123,7 +139,537 @@ const bookingLink = publicSite.booking.url || publicSite.booking.fallbackUrl;
         </div>
     </section>
 
-    <!-- SECTIONS: problem, services, projects, process, pricing, about, reason, contractors, faq, cta -->
+    <!-- SECTION: problem -->
+    <section id="problem" class="problem" aria-labelledby="problem-heading">
+        <div class="problem__wrapper container">
+            <div class="problem__statement">
+                <Badge title={problem.badge} tone="soft" />
+                <h2 id="problem-heading" class="problem__title">
+                    {problem.title}{" "}
+                    <span class="problem__highlight">{problem.highlight}</span>
+                </h2>
+            </div>
+            <ul class="problem__list">
+                {problem.items.map((item, i) => (
+                    <li class="problem__card">
+                        <div class="problem__card-top">
+                            <span class="problem__tile" aria-hidden="true">
+                                <Icon name={item.icon} />
+                            </span>
+                            <span class="problem__number" aria-hidden="true">{pad(i)}</span>
+                        </div>
+                        <h3 class="problem__card-title">{item.title}</h3>
+                        <p class="problem__card-text">{item.description}</p>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION: services -->
+    <section id="services" class="services" aria-labelledby="services-heading">
+        <div class="services__band panel">
+            <div class="services__inner">
+                <div class="services__wrapper container">
+                    <div class="services__heading">
+                        <Badge title={services.badge} tone="dark" />
+                        <h2 id="services-heading" class="services__title">
+                            {services.title}{" "}
+                            <span class="services__highlight">{services.highlight}</span>
+                        </h2>
+                    </div>
+                    <div class="services__content" data-active={services.activeIndex}>
+                        <div
+                            class="services__tabs"
+                            role="tablist"
+                            aria-label={services.tabsLabel}
+                            aria-orientation="vertical"
+                            hidden
+                        >
+                            {services.content.map((service, i) => (
+                                <button
+                                    type="button"
+                                    class="services__tab"
+                                    role="tab"
+                                    id={`services-tab-${i}`}
+                                    aria-controls={`services-panel-${i}`}
+                                    aria-selected="false"
+                                    tabindex="-1"
+                                >
+                                    <span class="services__number">{pad(i)}</span>
+                                    <span class="services__name">{service.title}</span>
+                                    <Icon name="lu-arrow-right" src="abovethefold" className="services__tab-arrow" aria-hidden="true" />
+                                </button>
+                            ))}
+                        </div>
+                        <div class="services__items">
+                            {services.content.map((service, i) => (
+                                <article class="services__item" id={`service-${i + 1}`}>
+                                    <h3 class="services__item-heading">
+                                        <button
+                                            type="button"
+                                            class="services__trigger"
+                                            id={`services-trigger-${i}`}
+                                            aria-controls={`services-panel-${i}`}
+                                        >
+                                            <span class="services__number">{pad(i)}</span>
+                                            <span class="services__name">{service.title}</span>
+                                            <span class="services__toggle" aria-hidden="true">
+                                                <Icon name="lu-plus" src="abovethefold" className="services__plus" />
+                                                <Icon name="lu-minus" className="services__minus" />
+                                            </span>
+                                        </button>
+                                        <span class="services__item-title">{service.title}</span>
+                                    </h3>
+                                    <div class="services__panel" id={`services-panel-${i}`}>
+                                        <div class="services__text">
+                                            <p class="services__description" set:html={service.description} />
+                                            <ul class="services__points">
+                                                {service.items.map(splitPoint).map((point) => (
+                                                    <li class="services__point">
+                                                        <span class="services__check" aria-hidden="true">
+                                                            <Icon name="lu-check" />
+                                                        </span>
+                                                        <span>
+                                                            <strong class="services__point-title">{point.title}</strong>
+                                                            <span class="services__point-text">{point.text}</span>
+                                                        </span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        {service.sample && (
+                                            <div class="services__phone-wrap">
+                                                <div class="services__phone" role="group" aria-label={services.phoneLabel}>
+                                                    <div class="services__screen">
+                                                        <div class="services__statusbar" aria-hidden="true">
+                                                            <span>{services.phoneTime}</span>
+                                                            <span class="services__island" />
+                                                            <Icon name="lu-battery-full" size={18} />
+                                                        </div>
+                                                        <div class="services__contact">
+                                                            <span class="services__avatar" aria-hidden="true">{service.sample.contact.initials}</span>
+                                                            <span class="services__contact-name">
+                                                                <span>{service.sample.contact.name}</span>
+                                                                <span class="services__contact-meta">{service.sample.contact.meta}</span>
+                                                            </span>
+                                                            <p class="sample-label services__sample">
+                                                                <Icon name="lu-flask-conical" src="abovethefold" aria-hidden="true" />
+                                                                {services.sampleLabel}
+                                                            </p>
+                                                        </div>
+                                                        <ul class="services__messages">
+                                                            {service.sample.messages.map((message) => (
+                                                                <li class={`services__message services__message--${message.type}`}>
+                                                                    {message.icon && (
+                                                                        <Icon name={message.icon} src="abovethefold" aria-hidden="true" />
+                                                                    )}
+                                                                    {message.text}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="services__marquee" aria-hidden="true">
+                {[0, 1].map(() =>
+                    services.content.map((service) => (
+                        <>
+                            <span class="services__marquee-item">{service.title}</span>
+                            <Icon name="lu-asterisk" size={20} className="services__marquee-mark" />
+                        </>
+                    )),
+                )}
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: projects -->
+    <section id="projects" class="projects" aria-labelledby="projects-heading">
+        <div class="projects__wrapper container">
+            <div class="projects__head">
+                <Badge title={projects.badge} />
+                <h2 id="projects-heading">{projects.title}</h2>
+                <p class="projects__description">{projects.description}</p>
+            </div>
+            <ul id="projects-grid" class="projects__grid">
+                {projects.items.map((project, i) => (
+                    <li class="projects__item">
+                        <a
+                            class="projects__card"
+                            href={project.thumbnail.src}
+                            aria-label={`${projects.viewLabel}: ${project.title}`}
+                            data-project-card={i}
+                        >
+                            <div class="projects__frame">
+                                <div class="projects__browser" aria-hidden="true">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="projects__screen">
+                                    <Image
+                                        class="projects__image"
+                                        src={project.thumbnail}
+                                        alt={`${projects.imageAlt} ${project.title}`}
+                                        widths={[400, 600, 808]}
+                                        sizes="(min-width: 992px) 560px, calc(100vw - 68px)"
+                                        loading="lazy"
+                                        format="webp"
+                                    />
+                                    <span class="projects__view" aria-hidden="true">
+                                        <span class="btn">
+                                            <span class="btn__text">{projects.viewLabel}</span>
+                                            <span class="btn__icon">
+                                                <Icon name="lu-arrow-up-right" />
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="projects__info">
+                                <div>
+                                    <h3 class="projects__title" data-project-title>
+                                        {project.title}
+                                    </h3>
+                                    {project.category && (
+                                        <p class="projects__meta" data-project-meta>
+                                            {project.category}
+                                        </p>
+                                    )}
+                                </div>
+                                <span class="projects__arrow" aria-hidden="true">
+                                    <Icon name="lu-arrow-up-right" />
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                ))}
+            </ul>
+            <button
+                type="button"
+                class="projects__more btn btn--secondary"
+                aria-controls="projects-grid"
+                aria-expanded="false"
+                data-projects-more
+                hidden
+            >
+                <span class="btn__text">{projects.showMore}</span>
+                <span class="btn__icon" aria-hidden="true">
+                    <Icon name="lu-arrow-down" />
+                </span>
+            </button>
+        </div>
+        <dialog
+            class="project-dialog"
+            aria-labelledby="project-dialog-title"
+            data-project-dialog
+        >
+            <div class="project-dialog__inner">
+                <div class="project-dialog__head">
+                    <div>
+                        <h3
+                            id="project-dialog-title"
+                            class="project-dialog__title"
+                            aria-live="polite"
+                            data-project-dialog-title
+                        >
+                            {projects.items[0].title}
+                        </h3>
+                        <p class="project-dialog__meta" data-project-dialog-meta hidden></p>
+                    </div>
+                    <div class="project-dialog__actions">
+                        <a
+                            class="btn project-dialog__visit"
+                            href="#projects"
+                            target="_blank"
+                            rel="noopener"
+                            data-project-dialog-visit
+                            hidden
+                        >
+                            <span class="btn__text">{projects.dialog.visit}</span>
+                            <span class="btn__icon" aria-hidden="true">
+                                <Icon name="lu-arrow-up-right" />
+                            </span>
+                        </a>
+                        <button
+                            type="button"
+                            class="project-dialog__icon-button project-dialog__close"
+                            aria-label={projects.dialog.close}
+                            data-project-dialog-close
+                        >
+                            <Icon name="lu-x" aria-hidden="true" />
+                        </button>
+                    </div>
+                </div>
+                <div class="project-dialog__preview" tabindex="0" role="region" aria-label={projects.dialog.preview}>
+                    {projects.items.map((project, i) => (
+                        <div
+                            class="project-dialog__slide"
+                            data-project-slide={i}
+                            data-url={project.url}
+                            data-category={project.category}
+                            hidden
+                        >
+                            <div class="projects__browser" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <Image
+                                class="project-dialog__image"
+                                src={project.thumbnail}
+                                alt={`${projects.imageAlt} ${project.title}`}
+                                widths={[600, 1024]}
+                                sizes="(min-width: 992px) 1050px, 100vw"
+                                loading="lazy"
+                                format="webp"
+                            />
+                        </div>
+                    ))}
+                </div>
+                <div class="project-dialog__nav">
+                    <button type="button" class="project-dialog__step" data-project-dialog-prev>
+                        <span class="project-dialog__icon-button" aria-hidden="true">
+                            <Icon name="lu-arrow-left" />
+                        </span>
+                        <span class="project-dialog__step-text">{projects.dialog.previous}</span>
+                    </button>
+                    <p class="project-dialog__counter" data-project-dialog-counter
+                        data-separator={projects.dialog.counter}></p>
+                    <button
+                        type="button"
+                        class="project-dialog__step project-dialog__step--next"
+                        data-project-dialog-next
+                    >
+                        <span class="project-dialog__step-text">{projects.dialog.next}</span>
+                        <span class="project-dialog__icon-button" aria-hidden="true">
+                            <Icon name="lu-arrow-right" />
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </dialog>
+    </section>
+
+    <!-- SECTION: process -->
+    <section id="process" class="process" aria-labelledby="process-heading">
+        <div class="process__panel panel">
+            <div class="process__wrapper container">
+                <div class="process__intro">
+                    <Badge title={processData.badge} />
+                    <h2 id="process-heading">{processData.title}</h2>
+                    <div class="process__photo">
+                        <Image
+                            class="process__photo-img"
+                            src={processData.photo.image}
+                            alt={processData.photo.alt}
+                            widths={[400, 720, 960]}
+                            sizes="(min-width: 992px) 470px, calc(100vw - 52px)"
+                            loading="lazy"
+                            format="webp"
+                        />
+                        <p class="process__timeline">
+                            <span class="process__timeline-icon" aria-hidden="true">
+                                <Icon name="lu-timer" src="sprite" />
+                            </span>
+                            {processData.timeline}
+                        </p>
+                    </div>
+                </div>
+                <ol class="process__steps" aria-label={processData.stepsLabel}>
+                    {processData.steps.map((step, i) => (
+                        <li class:list={["process__step", { "process__step--active": i === 0 }]}>
+                            <span class="process__number" aria-hidden="true">{i + 1}</span>
+                            <article class="process__card">
+                                <div class="process__card-top">
+                                    <h3 class="process__card-title">{step.title}</h3>
+                                    <p class="process__time">
+                                        <Icon name="lu-clock-3" src="sprite" aria-hidden="true" />
+                                        {step.time}
+                                    </p>
+                                </div>
+                                <p class="process__description">{step.description}</p>
+                            </article>
+                        </li>
+                    ))}
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: pricing -->
+    <section id="pricing" class="pricing" aria-labelledby="pricing-heading">
+        <div class="pricing__wrapper container">
+            <div class="pricing__intro">
+                <Badge title={pricing.badge} tone="soft" />
+                <h2 id="pricing-heading">{pricing.title}</h2>
+                <p class="pricing__description">{pricing.description}</p>
+            </div>
+            <div class="pricing__card">
+                <div class="pricing__card-top">
+                    <h3 class="pricing__plan">{pricing.plan.name}</h3>
+                    <p class="pricing__tag">{pricing.plan.tag}</p>
+                </div>
+                <p class="pricing__price">
+                    <span class="pricing__amount">{pricing.plan.price}</span>
+                    {pricing.plan.period}
+                </p>
+                <p class="pricing__setup">{pricing.plan.setup}</p>
+                <h4 id="pricing-features-heading" class="pricing__features-title">
+                    {pricing.plan.featuresTitle}
+                </h4>
+                <ul class="pricing__features" aria-labelledby="pricing-features-heading">
+                    {pricing.plan.features.map((feature) => (
+                        <li>
+                            <span class="pricing__check" aria-hidden="true">
+                                <Icon name="lu-check" src="sprite" />
+                            </span>
+                            {feature}
+                        </li>
+                    ))}
+                </ul>
+                <Button
+                    title={pricing.plan.cta}
+                    link={bookingLink}
+                    type="accent"
+                    class="pricing__cta"
+                />
+            </div>
+            <ul class="pricing__perks">
+                {pricing.perks.map((perk) => (
+                    <li class="pricing__perk">
+                        <span class="pricing__perk-icon" aria-hidden="true">
+                            <Icon name={perk.icon} src="sprite" />
+                        </span>
+                        <span class="pricing__perk-text">
+                            <span class="pricing__perk-title">{perk.title}</span>
+                            {perk.description}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION: about -->
+    <section id="about" class="about" aria-labelledby="about-heading">
+        <div class="about__panel panel panel--dark">
+            <div class="about__wrapper container">
+                <Badge title={about.badge} tone="dark" />
+                <h2 id="about-heading" set:html={about.title} />
+                <p class="about__lead">{about.lead}</p>
+                <div class="about__columns">
+                    <p class="about__body">{about.body}</p>
+                    <div class="about__aside">
+                        <ul class="about__system" aria-label={about.systemLabel}>
+                            {about.system.map((item) => (
+                                <li title={item.label}>
+                                    <Icon name={item.icon} src="sprite" aria-hidden="true" />
+                                    <span class="visually-hidden">{item.label}</span>
+                                </li>
+                            ))}
+                        </ul>
+                        <p class="about__closing">{about.closing}</p>
+                        <p class="about__byline">
+                            <span class="about__avatar" aria-hidden="true">{about.author.initials}</span>
+                            <span class="about__author">
+                                <strong>{about.author.name}</strong>
+                                <span>{about.author.role}</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: reason -->
+    <section id="why-us" class="reason" aria-labelledby="reason-heading">
+        <div class="reason__panel panel">
+            <div class="reason__wrapper container">
+                <Badge title={reason.badge} />
+                <h2 id="reason-heading" set:html={reason.title} />
+                <ul class="reason__list">
+                    {reason.content.map((item) => (
+                        <li class="reason__item">
+                            <span class="reason__icon" aria-hidden="true">
+                                <Icon name={item.icon} src="sprite" />
+                            </span>
+                            <div class="reason__text">
+                                <h3 class="reason__title">{item.title}</h3>
+                                <p>{item.description}</p>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: contractors -->
+    <section id="contractors" class="contractors" aria-labelledby="contractors-heading">
+        <div class="contractors__wrapper container">
+            <Badge title={contractors.badge} tone="soft" />
+            <h2 id="contractors-heading" set:html={contractors.title} />
+        </div>
+        <div class="contractors__rows" role="list" aria-label={contractors.listLabel}>
+            {tradeRows.map((row) => (
+                <div class="contractors__row">
+                    {row.map((trade) => (
+                        <span class="contractors__trade" role="listitem">{trade}</span>
+                    ))}
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- SECTION: faq -->
+    <section id="faq" class="faq" aria-labelledby="faq-heading">
+        <div class="faq__wrapper container">
+            <div class="faq__intro">
+                <Badge title={faq.badge} tone="soft" />
+                <h2 id="faq-heading">{faq.title}</h2>
+                <Button title={faq.cta} link={bookingLink} src="sprite" class="faq__book" />
+            </div>
+            <div class="faq__list" role="list">
+                {faq.content.map((item, i) => (
+                    <Accordion
+                        question={item.question}
+                        answer={item.answer}
+                        number={i}
+                        showIndex={false}
+                        icon="lu-plus"
+                        openIcon="lu-minus"
+                    />
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: cta -->
+    <section id="cta" class="cta" aria-labelledby="cta-heading" data-final-cta>
+        <div class="cta__panel panel panel--dark">
+            <div class="cta__wrapper container">
+                <h2 id="cta-heading">{cta.title}</h2>
+                <p class="cta__description">{cta.description}</p>
+                <Button title={cta.button} link={bookingLink} type="accent" src="sprite" class="cta__book" />
+                <ul class="assurances cta__assurances">
+                    {cta.assurances.map((item) => (
+                        <li>
+                            <Icon name="lu-circle-check" src="sprite" aria-hidden="true" />
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </section>
+
 
     <Fragment slot="bottom-style">
         <link

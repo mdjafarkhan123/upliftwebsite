@@ -5,7 +5,7 @@
 **Plan:** Core approved by Jafar word by word on 2026-11-16. Parts 5–9 are in `ROADMAP.md`, in the order he agreed.
 **Stage:** Build
 
-**Current:** 9 Astro build — steps 1–3 done, paused 2026-11-17; started with "$XXX" prices and Sample app screens (Jafar's choice); project
+**Current:** 9 Astro build — steps 1–7 done (whole homepage built), paused 2026-11-17 before step 8 Motion; started with "$XXX" prices and Sample app screens (Jafar's choice); project
 cards use his real images. See `parts/9-astro-build.md`.
 
 **Next part:** none after 9. Part 7 Copy draft waits until Jafar asks for new copy (2026-11-16).

@@ -8,14 +8,21 @@ import { initStickyHeader } from "./modules/sticky-header.js";
 initMobileMenu();
 initStickyHeader();
 
-import("./modules/truncedtext.js").then((module) => module.init?.());
-if (document.querySelector(".system-strip")) {
-    import("./modules/logo-strip.js").then((module) => module.init?.());
+// These change section height, so they load early: a late load would shift the page
+// under anyone jumping to a later section from the menu.
+if (document.querySelector(".projects")) {
+    import("./modules/projects.js").then((module) => module.init?.());
+}
+const servicesContent = document.querySelector(".services__content");
+if (servicesContent) {
+    import("./modules/services-tabs.js").then((module) => {
+        module.init?.();
+        servicesContent.classList.add("is-enhanced");
+    });
 }
 
 const modules = {
     ".faq": () => import("./modules/accordion.js"),
-    ".hero-system": () => import("./modules/hero-system.js"),
 };
 
 function loadSection(element, loader) {

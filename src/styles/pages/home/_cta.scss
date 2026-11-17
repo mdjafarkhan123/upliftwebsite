@@ -1,0 +1,78 @@
+@use "../../utils" as *;
+
+/* Final call to action: dark band with a soft green glow from below.
+   [data-final-cta] hides the phone "Book a call" bar while on screen. */
+.cta {
+    padding-top: var(--space-fluid-2xl);
+
+    &__panel {
+        padding-block: 72px 56px;
+        background:
+            radial-gradient(ellipse 70% 75% at 50% 105%, var(--color-green-650), transparent 70%),
+            var(--color-dark);
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            max-width: 800px;
+            color: var(--color-heading-white);
+        }
+    }
+
+    &__description {
+        max-width: 680px;
+        margin-top: var(--space-md);
+        color: var(--color-text-white);
+        font-size: var(--fs-base);
+        line-height: 1.65;
+    }
+
+    &__book {
+        width: 100%;
+        min-height: 56px;
+        justify-content: space-between;
+        margin-top: var(--space-xl);
+        padding-inline: 24px;
+        box-shadow: 0 12px 32px rgb(30 210 126 / 25%);
+    }
+
+    &__assurances {
+        margin-top: var(--space-lg);
+
+        li {
+            color: var(--color-text-white);
+        }
+
+        .icon {
+            color: var(--color-brand-bright);
+        }
+    }
+
+    @include respond-to("mobile-lg") {
+        &__book {
+            width: auto;
+            justify-content: center;
+            padding-inline: 30px;
+        }
+    }
+
+    @include respond-to("laptop") {
+        &__panel {
+            padding-block: 120px 108px;
+        }
+
+        &__description {
+            margin-top: var(--space-xl);
+            font-size: var(--fs-md);
+        }
+
+        &__book {
+            margin-top: var(--space-3xl);
+        }
+    }
+}
