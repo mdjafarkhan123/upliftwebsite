@@ -98,13 +98,13 @@ export const hero = {
         title: "You're good at what you do.",
         // The full sentence: shown still with reduced motion or scripts off, and always
         // read by screen readers and search engines.
-        text: "You deserve a system that helps you get jobs from Google, without paying thousands, learning tech, or losing leads while you're on the job.",
+        text: "You deserve a marketing system that helps you get more jobs from Google",
         // With motion, `lead` stays and each worry takes its turn after it, like an ad
         // (motion.js initHero). `answer` lights the matching words in the "Us" card.
-        lead: "You deserve a system that helps you get jobs from Google,",
+        lead: "You deserve a marketing system that helps you get more jobs from Google,",
         worries: [
-            { text: "without paying thousands.", answer: "price" },
-            { text: "without learning tech.", answer: "setup" },
+            { text: "without paying thousands upfront.", answer: "price" },
+            { text: "without wasting on paid advertising.", answer: "setup" },
         ],
         pauseLabel: "Pause the changing text",
         playLabel: "Play the changing text",
