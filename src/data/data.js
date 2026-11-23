@@ -840,7 +840,7 @@ export const legalPages = {
         title: "Privacy Policy",
         description:
             "What we collect, why we need it, and what you can ask us to do with it.",
-        eyebrow: "Legal · Last updated 28 October 2026",
+        eyebrow: "Legal · Last updated 23 November 2026",
         path: "/privacy",
         sections: [
             {
@@ -864,9 +864,14 @@ export const legalPages = {
                 body: "<p>A contractor can connect their business's Facebook Page so their team can read and answer Messenger chats in the same inbox as their texts and emails.</p>\n<p><strong>When a Page is connected,</strong> Facebook gives us the Page's name and ID, the permissions the contractor approved, and a key that lets us send and receive messages for that Page. We keep the key encrypted.</p>\n<p><strong>When someone messages that Page,</strong> we receive the message, the time it was sent, a note of any photo or file attached, and an ID number Facebook creates for that person on that Page only. We also see whether the contractor's replies were delivered and read. We receive the person's name and profile photo only if Facebook allows it; until then they appear as \"Facebook user\".</p>\n<p><strong>We use this only</strong> to show the contractor their conversations, send the replies their team writes, and keep the connection working. People write every reply. We don't use Messenger data for ads, we don't sell it, and we follow Meta's Platform Terms.</p>\n<p><strong>When a contractor disconnects the Page,</strong> new messages stop coming in and we erase the key at once. Earlier conversations stay in the contractor's records, like their other customer notes, until the contractor deletes them. The contractor can also remove our access from Facebook: Settings → Business Integrations → Uplift Contractor → Remove.</p>\n<p>To have your Messenger messages deleted, see our <a href=\"/data-deletion\">Data deletion</a> page.</p>",
             },
             {
+                id: "privacy-the-uplift-phone-app",
+                title: "The Uplift phone app",
+                body: "<p>Contractors and their teams can use the Uplift app on Android phones. It asks for each permission only when the feature needs it, and saying no never stops the rest of the app working.</p><ul><li><strong>Location.</strong> Read only at the moment someone clocks in or out or starts or ends a visit, and only while the app is open. It is saved with that time entry for their business. The app never tracks anyone in the background. With location off, times are saved without a place.</li><li><strong>Camera and microphone.</strong> Used only when you take photos or videos of your work, or call a customer from your business number.</li><li><strong>Contacts.</strong> Read only when you choose \"Add from contacts\", and then only the one contact you pick.</li><li><strong>Notifications.</strong> Sent through Google Firebase, so you hear about new messages, calls and jobs.</li><li><strong>Work saved with no signal</strong> stays on the phone until it uploads, and is removed from the phone when you sign out.</li></ul><p>The app has no ads and no tracking for advertising. Everything it sends goes to your business's account, under the same rules as the rest of this page.</p>",
+            },
+            {
                 id: "privacy-who-helps-us-run-the-service",
                 title: "Who helps us run the service",
-                body: "<ul><li>Supabase stores accounts, forms and customer records.</li><li>Cloudflare protects the website, checks for spam, delivers pages and stores files.</li><li>Brevo and Amazon SES send and receive email.</li><li>Twilio sends and receives text messages for contractors.</li><li>Meta carries Facebook Messenger messages for contractors who connect a Page.</li><li>Stripe handles online payments.</li><li>Mapbox powers maps and address lookups.</li></ul>\n<p>If we add a company that will handle real customer information, we update this list first.</p>",
+                body: "<ul><li>Supabase stores accounts, forms and customer records.</li><li>Cloudflare protects the website, checks for spam, delivers pages and stores files.</li><li>Brevo and Amazon SES send and receive email.</li><li>Twilio sends and receives text messages for contractors.</li><li>Twilio also connects calls made and received in the Uplift app.</li><li>Google Firebase delivers notifications to the Uplift app.</li><li>Meta carries Facebook Messenger messages for contractors who connect a Page.</li><li>Stripe handles online payments.</li><li>Mapbox powers maps and address lookups.</li></ul>\n<p>If we add a company that will handle real customer information, we update this list first.</p>",
             },
             {
                 id: "privacy-text-messages-from-uplift-contractor",
@@ -876,7 +881,7 @@ export const legalPages = {
             {
                 id: "privacy-how-long-we-keep-it-and-how-we-protect-it",
                 title: "How long we keep it, and how we protect it",
-                body: "<p>We keep information while we need it to run the service, follow the law, settle disputes and enforce our agreements. We use access controls and encryption, and keys for connected accounts such as Facebook Pages are always stored encrypted. No system is perfectly secure, but we work to keep yours safe.</p>",
+                body: "<p>We keep information while we need it to run the service, follow the law, settle disputes and enforce our agreements. We use access controls and encryption, and keys for connected accounts such as Facebook Pages are always stored encrypted. When information is deleted, copies can remain in our encrypted backups for about 15 days, used only to recover from a failure, until they are removed automatically. No system is perfectly secure, but we work to keep yours safe.</p>",
             },
             {
                 id: "privacy-your-choices",
